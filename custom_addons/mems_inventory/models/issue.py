@@ -28,6 +28,52 @@ class Issue(models.Model):
         vals['name'] = seq
         return super(Issue, self).create(vals)
 
+    @api.onchange('issue_line')
+    def get_total_amount(self):
+        total_qty = 0
+        total_amount = 0
+        for r in self:
+            for item in r.issue_line:
+                total_qty += item.qty
+                total_amount += item.amount
+
+        self.amount_qty = total_qty
+        self.amount_total = total_amount
+
+    def do_issue_approve(self):
+        return {
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'mems.issue.approve.wizard',
+            'target': 'new',
+            'type': 'ir.actions.act_window',
+            'context': {
+                'default_issue_id': self.id,
+                'default_issue_name': self.name,
+            }
+        }
+
+    def do_issue_cancel(self):
+        return {
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'mems.issue.cancel.wizard',
+            'target': 'new',
+            'type': 'ir.actions.act_window',
+            'context': {
+                'default_issue_id': self.id,
+                'default_issue_name': self.name,
+            }
+        }
+
+    def do_issue_print(self):
+        return {
+            'type': 'ir.actions.report',
+            'report_name': 'mems_inventory.issue_form',
+            'model': 'mems.issue',
+            'report_type': 'qweb-pdf',
+        }
+
 
 class IssueLine(models.Model):
     _name = 'mems.issue_line'
@@ -36,7 +82,7 @@ class IssueLine(models.Model):
     name = fields.Char('Name')
     qty = fields.Float('Qty')
     uom_id = fields.Many2one('mems.uom', string='Uom')
-    price = fields.Float('Price', readonly=True, store=True)
+    price = fields.Float('Price')
     amount = fields.Float('Amount', readonly=True, store=True)
 
     @api.onchange('part_id')

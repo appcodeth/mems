@@ -2,7 +2,7 @@
 <odoo>
     <report
         id="action_report_issue"
-        string="Issue"
+        string="Issue Form"
         model="mems.issue"
         report_type="qweb-pdf"
         file="mems_inventory.issue_form"
@@ -11,27 +11,29 @@
         print_report_name="'Issue - %s' % (object.name)"/>
 
     <template id="issue_logo">
-        <table class="table-logo">
+        <table class="table-logo" style="margin-bottom: 16pt">
             <tr>
                 <td width="15%">
                     <img src='/web/binary/company_logo' style="max-height:120px"/>
                 </td>
                 <td width="5%"/>
                 <td style="vertical-align: middle">
-                    <strong style="font-size:14pt">
+                    <strong style="font-size:16px">
                         <span t-esc="o.company_id.name"/>
                     </strong>
                     <div>
                         <span t-esc="o.company_id.street"/>
                         <span t-esc="o.company_id.street2"/>
+                    </div>
+                    <div>
                         <span t-if="o.company_id.phone">
                             Tel.
                             <span t-esc="o.company_id.phone"/>
                         </span>
-                        <div>
+                        <span t-if="o.company_id.vat">
                             Tax ID
                             <span t-esc="o.company_id.vat"/>
-                        </div>
+                        </span>
                     </div>
                 </td>
             </tr>
@@ -97,12 +99,12 @@
                     <table width="100%">
                         <tr>
                             <td colspan="5" style="text-align:center">
-                                <h2 class="mt-4 mb-2">Issue Form</h2>
+                                <h3 class="text-center mb-3">ใบเบิกวัตถุดิบ / Issue</h3>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="5" style="text-align:center">
-                                <img t-if="o.name" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.name,250,30)"/>
+                                <img t-if="o.name" class="mb-4" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.name,250,30)"/>
                             </td>
                         </tr>
                         <tr>
@@ -129,6 +131,12 @@
                                             <span t-esc="o.reason_id.name"/>
                                         </td>
                                     </tr>
+                                    <tr t-if="o.wo_id">
+                                        <th>Ref. W/O</th>
+                                        <td>
+                                            <span t-esc="o.wo_id.name"/>
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                             <td width="30%">
@@ -142,7 +150,7 @@
                                     <tr>
                                         <th>Issue Date</th>
                                         <td>
-                                            <span t-if="o.date_issue" t-esc="o.date_issue.strftime('%d/%m/%Y')"/>
+                                            <span t-if="o.date_issue" t-esc="o.date_issue"/>
                                         </td>
                                     </tr>
                                 </table>
@@ -200,23 +208,11 @@
                                             <span t-esc="o.remark"/>
                                         </td>
                                         <td width="40%">
-                                            <table class="table-sum" width="100%">
+                                            <table class="table-sum-noline" width="100%">
                                                 <tr>
                                                     <td style="text-align:right">Total Qty</td>
                                                     <td style="text-align:right">
                                                         <span t-esc="'{0:,.2f}'.format(o.amount_qty)" style="margin:0"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:right">Total Price</td>
-                                                    <td style="text-align:right">
-                                                        <span t-esc="'{0:,.2f}'.format(o.amount_untaxed)" style="margin:0"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align:right">Total Tax</td>
-                                                    <td style="text-align:right">
-                                                        <span t-esc="'{0:,.2f}'.format(o.amount_tax)" style="margin:0"/>
                                                     </td>
                                                 </tr>
                                                 <tr>

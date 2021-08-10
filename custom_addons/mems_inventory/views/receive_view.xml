@@ -4,7 +4,7 @@
         <field name="name">receive.search</field>
         <field name="model">mems.receive</field>
         <field name="arch" type="xml">
-            <search string="Equipment Search">
+            <search string="Receive Search">
                 <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
                 <filter name="group_state" string="State" context="{'group_by':'state'}"/>
             </search>
