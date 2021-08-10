@@ -32,7 +32,7 @@ odoo.define('mems_master.widgets', function(require) {
                 text = '';
                 if (this.value === 'draft') {
                     cssClass = 'status-warning';
-                    text = 'ตั้งเรื่อง';
+                    text = 'รออนุมัติ';
                 } else if (this.value === 'approve') {
                     cssClass = 'status-success';
                     text = 'อนุมัติ';
@@ -122,8 +122,20 @@ odoo.define('mems_master.widgets', function(require) {
                     cssClass = 'status-default';
                     text = 'จบงาน';
                 }
+            } else if (this.model === 'mems.receive' || this.model === 'mems.issue') {
+                cssClass = '';
+                text = '';
+                if (this.value === 'draft') {
+                    cssClass = 'status-warning';
+                    text = 'รออนุมัติ';
+                } else if (this.value === 'complete') {
+                    cssClass = 'status-success';
+                    text = 'สำเร็จ';
+                } else if (this.value === 'cancel') {
+                    cssClass = 'status-danger';
+                    text = 'ยกเลิก';
+                }
             }
-
             this.$el.html('<span class="status ' + cssClass + '">' + text + '</span>');
         }
     });

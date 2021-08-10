@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.ui.view" id="view_receive_search">
+        <field name="name">receive.search</field>
+        <field name="model">mems.receive</field>
+        <field name="arch" type="xml">
+            <search string="Equipment Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_receive_list">
         <field name="name">receive.list</field>
         <field name="model">mems.receive</field>
@@ -10,7 +21,7 @@
                 <field name="doc_no"/>
                 <field name="amount_qty"/>
                 <field name="amount_total"/>
-                <field name="state"/>
+                <field name="state" widget="labelStatus"/>
             </tree>
         </field>
     </record>
@@ -20,13 +31,19 @@
         <field name="model">mems.receive</field>
         <field name="arch" type="xml">
             <form string="Receive Form">
+                <header attrs="{'invisible': [('id','=',False)]}">
+                    <field name="state" invisible="1"/>
+                    <button string="Approve" class="oe_highlight" type="object" name="do_receive_approve" attrs="{'invisible': [('state', 'in', ['complete','cancel'])]}"/>
+                    <button string="Cancel" type="object" name="do_receive_cancel" attrs="{'invisible': [('state', 'in', ['complete','cancel'])]}"/>
+                    <button string="Print" type="object" name="do_receive_print"/>
+                </header>
                 <sheet>
                     <h1 attrs="{'invisible': [('name', '=', False)]}">
                         <field name="name" readonly="1"/>
                     </h1>
                     <group>
                         <group>
-                            <field name="po_id"/>
+                            <field name="po_id" domain="[('state', '=', 'approve')]"/>
                             <field name="supplier_id"/>
                             <field name="doc_no"/>
                         </group>
@@ -34,16 +51,33 @@
                             <field name="date_rcv"/>
                             <field name="user_id"/>
                         </group>
+                        <templates attrs="{'invisible': [('state', 'not in', ['cancel'])]}">
+                            <t t-name="ribbon-box">
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-red">
+                                        <field name="state" readonly="1"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                        <templates attrs="{'invisible': [('state', 'not in', ['complete'])]}">
+                            <t t-name="ribbon-box">
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-green">
+                                        <field name="state" readonly="1"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
                     </group>
                     <notebook>
                         <page string="Receive Line">
                             <field name="receive_line">
                                 <tree editable="bottom">
                                     <field name="part_id" width="300px"/>
-                                    <field name="name"/>
                                     <field name="qty"/>
                                     <field name="uom_id"/>
-                                    <field name="price" force_save="1" width="250px"/>
+                                    <field name="price" width="250px"/>
                                     <field name="amount" force_save="1" width="150px"/>
                                 </tree>
                             </field>

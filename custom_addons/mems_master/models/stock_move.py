@@ -15,9 +15,12 @@ class StockMove(models.Model):
         ('adjust', 'Adjust'),
     ], string='Doc Type')
     product_id = fields.Integer('Product ID')
+    product_code = fields.Char('Product Code')
     user_id = fields.Integer('User ID')
     qty = fields.Float('Qty')
     uom_id = fields.Many2one('mems.uom', string='Uom')
+    purchase_qty = fields.Float('Purchase Qty')
+    purchase_uom_id = fields.Many2one('mems.uom', string='Purchase Uom')
     amount = fields.Float('Amount')
     move_type = fields.Selection([
         ('in', 'In'),

@@ -279,6 +279,24 @@ body {
     border-top: 1px solid #ddd;
 }
 
+/* table-sum with no line style */
+.table-sum-noline {
+    width: 100%;
+}
+
+.table-sum-noline tbody tr td {
+    border: none;
+    padding: 2px 0;
+}
+
+.table-sum-noline tbody tr td:first-child {
+    font-weight: bold;
+}
+
+.table-sum-noline tbody tr td:last-child {
+    text-align: right;
+}
+
 /**/
 .table-signature {
     width: 100%;
@@ -327,6 +345,24 @@ body {
 
 .table-list tbody tr td {
     border: 1px solid #333;
+}
+
+/* table line alternative */
+.table-line {
+    margin: 0;
+}
+
+.table-line thead tr th {
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.table-line tbody tr td {
+    border-top: none;
+    border-bottom: 1px solid #444;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 /* box bordered */

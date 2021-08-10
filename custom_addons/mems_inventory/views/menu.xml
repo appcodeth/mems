@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <template id="inventory_widget_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mems_inventory/static/src/js/forms.js"/>
+        </xpath>
+    </template>
+
     <menuitem id="menu_inventory" name="Inventory" sequence="6"/>
     <menuitem id="menu_sub_data" parent="menu_inventory" name="Data" sequence="61"/>
     <menuitem id="menu_sub_stock" parent="menu_inventory" name="Stock" sequence="62"/>

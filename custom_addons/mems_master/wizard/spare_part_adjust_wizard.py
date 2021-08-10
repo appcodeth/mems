@@ -4,7 +4,7 @@ from datetime import datetime
 
 class SparePartAdjustWizard(models.TransientModel):
     _name = 'mems.spare_part.adjust.wizard'
-    doc_id = fields.Integer('ID')
+    product_id = fields.Integer('ID')
     name = fields.Char('Name')
     code = fields.Char('Code')
     uom_id = fields.Integer('Uom')
@@ -14,26 +14,26 @@ class SparePartAdjustWizard(models.TransientModel):
 
     def do_confirm_adjust(self):
         # update current stock qty
-        self.env['mems.spare_part'].browse([self.doc_id]).sudo().write({
+        self.env['mems.spare_part'].browse([self.product_id]).sudo().write({
             'stock_qty': self.new_qty
         })
 
         # insert the stock_move to keep history for tracking
         data = {
-            'name': self.name,
-            'doc_name': self.code,
+            'doc_id': None,
+            'doc_name': '',
             'doc_type': 'adjust',
             'move_type': 'adjust',
             'qty': self.new_qty,
+            'purchase_qty': self.new_qty,
             'amount': self.amount,
             'user_id': self.env.user.id,
             'move_data': datetime.now(),
+            'name': self.name,
+            'product_id': self.product_id,
+            'product_code': self.code,
         }
-
-        if self.doc_id:
-            data['id'] = self.doc_id
-            data['product_id'] = self.doc_id
-
         if self.uom_id:
             data['uom_id'] = self.uom_id
+            data['purchase_uom_id'] = self.uom_id
         self.env['mems.stock_move'].sudo().create(data)

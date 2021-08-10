@@ -29,16 +29,18 @@ class SparePart(models.Model):
 
     @api.model
     def create(self, vals):
-        count = self.env['mems.stock_move'].search_count([('doc_name', '=', vals['code'])])
+        count = self.env['mems.stock_move'].search_count([('product_code', '=', vals['code'])])
         if not count:
             data = {
-                'name': vals['name'],
-                'doc_name': vals['code'],
+                'doc_name': '',
                 'doc_type': 'init',
                 'qty': vals['stock_qty'],
+                'purchase_qty': vals['stock_qty'],
                 'amount': vals['cost_price'],
                 'move_type': 'in',
                 'user_id': self.env.user.id,
+                'name': vals['name'],
+                'product_code': vals['code'],
             }
 
             if vals.get('id'):
@@ -47,8 +49,9 @@ class SparePart(models.Model):
 
             if vals.get('uom_id'):
                 data['uom_id'] = vals['uom_id']
-            self.env['mems.stock_move'].create(data)
+                data['purchase_uom_id'] = vals['uom_id']
 
+            self.env['mems.stock_move'].create(data)
         return super(SparePart, self).create(vals)
 
     def do_spare_part_adjust(self):
@@ -59,7 +62,7 @@ class SparePart(models.Model):
             'target': 'new',
             'type': 'ir.actions.act_window',
             'context': {
-                'default_doc_id': self.id,
+                'default_product_id': self.id,
                 'default_name': self.name,
                 'default_code': self.code,
                 'default_uom_id': self.uom_id.id if self.uom_id else 0,
