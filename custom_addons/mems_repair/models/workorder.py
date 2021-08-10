@@ -72,7 +72,21 @@ class WorkOrder(models.Model):
 
     @api.onchange('equip_id')
     def get_equipment_detail(self):
+        # display relate brand
         self.equip_brand = self.equip_id.brand_id.name
+        # copy part items from equipment to workorder line
+        new_lines = []
+        for item in self.equip_id.equipment_line:
+            new_lines.append((0, 0, {
+                'wo_id': self.id,
+                'part_id': item.part_id.id,
+                'name': item.part_id.name,
+                'qty': item.qty,
+                'uom_id': item.uom_id.id,
+                'price': item.price,
+                'amount': item.amount,
+            }))
+        self.wo_line = new_lines
 
     @api.onchange('wo_line')
     def get_total_amount(self):
