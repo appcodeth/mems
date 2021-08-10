@@ -57,7 +57,7 @@ odoo.define('mems_master.widgets', function(require) {
                     text = 'รออนุมัติ';
                 } else if (this.value === 'approve') {
                     cssClass = 'status-info';
-                    text = 'รอชำระเงิน';
+                    text = 'อนุมัติ';
                } else if (this.value === 'paid') {
                     cssClass = 'status-success';
                     text = 'ชำระเงินแล้ว';

@@ -40,6 +40,15 @@
                     <button string="Print" type="object" name="do_purchase_print"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box" attrs="{'invisible': [('state', 'in', ['draft','close'])]}">
+                        <button name="action_view_receive"
+                                type="object"
+                                class="oe_stat_button"
+                                attrs="{'invisible': [('receive_count', '=', 0)]}"
+                                icon="fa-truck">
+                            <field name="receive_count" widget="statinfo" string="Receive"/>
+                        </button>
+                    </div>
                     <h1 attrs="{'invisible': [('name', '=', False)]}">
                         <field name="name" readonly="1"/>
                     </h1>

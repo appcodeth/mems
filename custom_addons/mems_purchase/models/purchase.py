@@ -46,6 +46,7 @@ class Purchase(models.Model):
     ], string='Status', default='draft')
     company_id = fields.Many2one('res.company', default=lambda self: self.env.user.company_id.id)
     purchase_line = fields.One2many('mems.purchase_line', 'po_id')
+    receive_count = fields.Integer('Receive Count', compute='get_count_receive', readonly=True)
 
     @api.model
     def create(self, vals):
@@ -220,6 +221,39 @@ class Purchase(models.Model):
             'view_id': compose_form_id,
             'views': [(compose_form_id, 'form')],
         }
+
+    def get_count_receive(self):
+        if self.id:
+            sql = """
+                    select
+                        coalesce(count(*), 0) as count_rcv
+                    from mems_receive
+                    where po_id={0} and state not in ('close', 'cancel')
+                """.format(self.id)
+            self.env.cr.execute(sql)
+            res = self.env.cr.dictfetchone()
+            self.receive_count = res['count_rcv']
+            return res['count_rcv']
+        return 0
+
+    def action_view_receive(self):
+        if self.id:
+            sql = """
+                    select
+                        id as rcv_id
+                    from mems_receive
+                    where po_id={0} and state not in ('close', 'cancel') limit 1
+                """.format(self.id)
+            self.env.cr.execute(sql)
+            res = self.env.cr.dictfetchone()
+            return {
+                'view_type': 'form',
+                'view_mode': 'form',
+                'res_model': 'mems.receive',
+                'target': 'current',
+                'res_id': res['rcv_id'],
+                'type': 'ir.actions.act_window',
+            }
 
 
 class PurchaseLine(models.Model):
