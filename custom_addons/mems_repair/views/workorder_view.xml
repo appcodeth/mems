@@ -31,7 +31,7 @@
         <field name="model">mems.workorder</field>
         <field name="arch" type="xml">
             <form string="Work Order Form">
-                <header>
+                <header attrs="{'invisible': [('id','=',False)]}">
                     <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete"/>
                     <button string="Approve" class="btn-primary" type="object" name="do_work_approve" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
                     <button string="Complete Task" class="oe_highlight" type="object" name="do_work_complete" attrs="{'invisible': [('state', 'not in', ['approve'])]}"/>
@@ -41,20 +41,7 @@
                     <button string="Email" type="object" name="do_workorder_email" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
                     <button string="Print" type="object" name="do_workorder_print"/>
                 </header>
-
                 <sheet>
-                    <!--                    <div class="oe_button_box" name="button_box" attrs="{'invisible': [('state', 'in', ['draft','close'])]}">-->
-                    <!--                        <button name="action_view_workorder"-->
-                    <!--                                type="object"-->
-                    <!--                                class="oe_stat_button"-->
-                    <!--                                attrs="{'invisible': [('issue_count', '=', 0)]}"-->
-                    <!--                                icon="fa-upload">-->
-                    <!--                            <field name="issue_count" widget="statinfo" string="Issue"/>-->
-                    <!--                        </button>-->
-                    <!--                    </div>-->
-                    <!--                    <widget name="web_ribbon" bg_color="bg-danger" title="Cancelled" attrs="{'invisible': [('state', 'not in', ['cancel'])]}"/>-->
-                    <!--                    <widget name="web_ribbon" bg_color="bg-success" title="Completed" attrs="{'invisible': [('state', 'not in', ['complete'])]}"/>-->
-                    <!--                    <widget name="web_ribbon" bg_color="bg-primary" title="Closed" attrs="{'invisible': [('state', 'not in', ['close'])]}"/>-->
                     <h1 attrs="{'invisible': [('name', '=', False)]}">
                         <field name="name" readonly="1"/>
                     </h1>
@@ -74,7 +61,7 @@
                             <field name="equip_image" widget="image" style="max-width:150px"/>
                         </group>
                     </group>
-                    <h1 style="margin-top: 20px">Repair Information</h1>
+                    <h2 class="o_horizontal_separator">Repair Information</h2>
                     <group>
                         <group>
                             <field name="problem_text"/>
@@ -86,7 +73,7 @@
                             <field name="user_id"/>
                         </group>
                     </group>
-                    <h1 style="margin-top: 20px">Service Responsibility</h1>
+                    <h2 class="o_horizontal_separator">Service Responsibility</h2>
                     <group>
                         <group class="no-height">
                             <field name="service_type" style="height:30px" widget='radio' options="{'horizontal': true}"/>
@@ -99,16 +86,19 @@
                             <field name="date_finish"/>
                         </group>
                     </group>
-                    <h1 style="margin: 20px 0">Spare Parts</h1>
-                    <field name="wo_line">
-                        <tree editable="bottom">
-                            <field name="part_id" style="width:400px"/>
-                            <field name="qty"/>
-                            <field name="uom_id"/>
-                            <field name="price" style="width:200px"/>
-                            <field name="amount" force_save="1"/>
-                        </tree>
-                    </field>
+                    <notebook>
+                        <page string="Spare Parts">
+                            <field name="wo_line">
+                                <tree editable="bottom">
+                                    <field name="part_id" style="width:400px"/>
+                                    <field name="qty"/>
+                                    <field name="uom_id"/>
+                                    <field name="price" style="width:200px"/>
+                                    <field name="amount" force_save="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                     <group>
                         <group class="no-height">
                             <field name="discount_type" widget='radio' options="{'horizontal': true}"/>

@@ -1,5 +1,4 @@
-odoo.define('mems_repair.custom_widget', function (require) {
-    var AbstractField = require('web.AbstractField');
+odoo.define('mems_repair.forms', function (require) {
     var registry = require('web.field_registry');
     var KanbanRenderer = require('web.KanbanRenderer');
 

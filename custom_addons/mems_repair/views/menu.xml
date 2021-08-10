@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <template id="repair_widget_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mems_repair/static/src/js/forms.js"/>
+        </xpath>
+    </template>
+
     <menuitem id="menu_repair" name="Repair" sequence="4"/>
     <menuitem id="menu_sub_service" parent="menu_repair" name="Service" sequence="41"/>
 </odoo>

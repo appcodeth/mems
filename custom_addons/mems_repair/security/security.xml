@@ -23,22 +23,5 @@
         <record id="base.default_user" model="res.users">
             <field name="groups_id" eval="[(4,ref('mems_repair.group_repair_manager'))]"/>
         </record>
-
-        <record model="ir.rule" id="repair_company_rule">
-            <field name="name">company multi-company</field>
-            <field name="model_id" ref="base.model_res_company"/>
-            <field name="groups" eval="[
-              (4, ref('base.group_user')),
-              (4, ref('group_repair_user')),
-              (4, ref('group_repair_manager'))]"/>
-            <field name="domain_force">[(1,'=',1)]</field>
-        </record>
-
-        <record model="ir.rule" id="workorder_rule">
-            <field name="name">workorder multi-company</field>
-            <field name="model_id" search="[('model','=','mems.workorder')]" model="ir.model"/>
-            <field name="global" eval="True"/>
-            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
-        </record>
     </data>
 </odoo>

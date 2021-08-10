@@ -13,11 +13,12 @@
     <template id="workorder_logo">
         <table class="table-logo" style="margin-bottom: 16pt">
             <tr>
-                <td width="18%">
-                    <img src='/web/binary/company_logo' style="max-height:140px"/>
+                <td width="15%">
+                    <img src='/web/binary/company_logo' style="max-height:120px"/>
                 </td>
+                <td width="5%"/>
                 <td style="vertical-align: middle">
-                    <strong style="font-size:14pt">
+                    <strong style="font-size:16px">
                         <span t-esc="o.company_id.name"/>
                     </strong>
                     <div>
@@ -25,12 +26,14 @@
                         <span t-esc="o.company_id.street2"/>
                     </div>
                     <div>
-                        Tel.
-                        <span t-esc="o.company_id.phone"/>
-                    </div>
-                    <div>
-                        Tax ID
-                        <span t-esc="o.company_id.vat"/>
+                        <span t-if="o.company_id.phone">
+                            Tel.
+                            <span t-esc="o.company_id.phone"/>
+                        </span>
+                        <span t-if="o.company_id.vat">
+                            Tax ID
+                            <span t-esc="o.company_id.vat"/>
+                        </span>
                     </div>
                 </td>
             </tr>
@@ -134,7 +137,7 @@
         </tr>
         <tr style="height:140mm">
             <td colspan="5">
-                <h3>รายการอะไหล่</h3>
+                <h3>Part Items</h3>
                 <table class="table-item">
                     <thead>
                         <tr style="background-color: #0097e6; color: #fff">
@@ -151,9 +154,8 @@
                                     <span t-esc="item_index + 1"/>
                                 </td>
                                 <td>
-                                    <div>[<span t-esc="item.part_id.code"/>]
-                                        <span t-esc="item.part_id.name"/>
-                                    </div>
+                                    [<span t-esc="item.part_id.code"/>]
+                                    <span t-esc="item.part_id.name"/>
                                 </td>
                                 <td class="right">
                                     <span t-esc="'{0:,.2f}'.format(item.qty)"/>
