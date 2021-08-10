@@ -112,8 +112,8 @@ class EquipmentLine(models.Model):
     def get_part_change(self):
         if not self.part_id:
             return
-        self.uom_id = self.part_id.purchase_uom_id or self.part_id.uom_id
-        self.price = self.part_id.unit_price
+        self.uom_id = self.part_id.uom_id
+        self.price = self.part_id.cost_price
         if not self.qty:
             self.qty = 1
         self.amount = self.price * self.qty

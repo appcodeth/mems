@@ -274,7 +274,7 @@ class WorkOrderLine(models.Model):
             return
         self.name = '[%s] %s' % (self.part_id.code, self.part_id.name)
         self.uom_id = self.part_id.uom_id
-        self.price = self.part_id.unit_price
+        self.price = self.part_id.cost_price
         if not self.qty:
             self.qty = 1
         self.amount = self.price * self.qty

@@ -43,18 +43,17 @@
     <template id="workorder_body">
         <tr>
             <td colspan="5" style="text-align:center">
-                <h2 class="m-0">Work Order Form</h2>
+                <h3 class="text-center mb-2">Spare Part Form</h3>
             </td>
         </tr>
         <tr style="height:50px">
             <td colspan="5" style="text-align:center" valign="middle">
-                <img t-if="o.name" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.name,250,30)"/>
+                <img t-if="o.name" class="mb-4" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.name,250,30)"/>
             </td>
         </tr>
         <tr>
             <td width="65%">
-                <!-- @formatter:off -->
-                <table class="table-header">
+                <table class="table-header" style="margin:0">
                     <tr>
                         <th>Equipment</th>
                         <td>
@@ -102,7 +101,6 @@
                         </td>
                     </tr>
                 </table>
-                <!-- @formatter:on -->
             </td>
             <td width="5%"/>
             <td>
@@ -137,7 +135,7 @@
         </tr>
         <tr style="height:140mm">
             <td colspan="5">
-                <h3>Part Items</h3>
+                <h4>Part Items</h4>
                 <table class="table-item">
                     <thead>
                         <tr style="background-color: #0097e6; color: #fff">

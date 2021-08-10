@@ -37,7 +37,7 @@
                     <button string="Complete Task" class="oe_highlight" type="object" name="do_work_complete" attrs="{'invisible': [('state', 'not in', ['approve'])]}"/>
                     <button string="Approve Close Task" class="oe_highlight" type="object" name="do_workorder_close" attrs="{'invisible': [('state', 'not in', ['complete'])]}"/>
                     <button string="Revise to Draft" type="object" name="do_workorder_revise" attrs="{'invisible': [('state', 'not in', ['approve'])]}"/>
-                    <button string="Cancel" type="object" class="btn-danger" name="do_workorder_cancel" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+                    <button string="Cancel" type="object" name="do_workorder_cancel" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
                     <button string="Email" type="object" name="do_workorder_email" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
                     <button string="Print" type="object" name="do_workorder_print"/>
                 </header>
