@@ -1,4 +1,5 @@
 from odoo import models, fields
+from datetime import datetime
 
 
 class WOApproveWizard(models.TransientModel):
@@ -7,26 +8,27 @@ class WOApproveWizard(models.TransientModel):
     wo_name = fields.Char('Work Order Name')
 
     def do_confirm_approve(self):
+        # get workorder by id
         wo = self.env['mems.workorder'].browse([self.wo_id])
 
+        # calculate total qty and amount
         total_qty = 0
+        total_amount = 0
         for item in wo.wo_line:
             total_qty += item.qty
+            total_amount += item.amount
 
+        # create issue header
         issue = self.env['mems.issue'].sudo().create({
             'wo_id': wo.id,
             'department_id': wo.department_id.id,
+            'date_issue': datetime.now(),
             'amount_qty': total_qty,
-            'amount_untaxed': wo.amount_untaxed,
-            'amount_tax': wo.amount_tax,
-            'amount_total': wo.amount_total,
-            'amount_discount': wo.amount_discount,
-            'amount_after_discount': wo.amount_after_discount,
-            'discount_type': wo.discount_type,
-            'discount_rate': wo.discount_rate,
+            'amount_total': total_amount,
             'state': 'draft',
         })
 
+        # create issue line item
         for item in wo.wo_line:
             self.env['mems.issue_line'].sudo().create({
                 'issue_id': issue.id,
@@ -35,7 +37,11 @@ class WOApproveWizard(models.TransientModel):
                 'name': item.name,
                 'qty': item.qty,
                 'price': item.price,
+                'amount': item.amount,
             })
 
+        # update workorder status
         wo.sudo().write({'state': 'approve'})
+
+        # update equipment status
         self.env['mems.equipment'].browse([wo.equip_id.id]).sudo().write({'state': 'repair'})
