@@ -6,7 +6,7 @@
     'version': '0.1',
     'author': 'Appcode Technology',
     'website': 'http://www.appcode.co.th/mems',
-    'depends': ['base', 'mail', 'mems_master', 'mems_inventory'],
+    'depends': ['base', 'mail', 'mems_equipment'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',

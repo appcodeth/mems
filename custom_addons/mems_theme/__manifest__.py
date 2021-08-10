@@ -4,7 +4,7 @@
     'author': 'Appcode Technology',
     'website': 'http://www.appcode.co.th/mems',
     'category': 'Custom',
-    'depends': ['base'],
+    'depends': ['base', 'web_sheet_full_width'],
     'data': [
         'views/menu.xml',
     ],

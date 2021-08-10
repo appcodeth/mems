@@ -4,7 +4,7 @@
     'author': 'Appcode Technology',
     'website': 'http://www.appcode.co.th/mems',
     'category': 'Custom',
-    'depends': ['base', 'mems_master'],
+    'depends': ['base', 'mail', 'mems_repair', 'mems_pulling'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',

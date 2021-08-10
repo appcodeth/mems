@@ -4,7 +4,7 @@
     'version': '0.1',
     'author': 'Appcode Technology',
     'website': 'http://www.appcode.co.th',
-    'depends': ['base', 'mems_master'],
+    'depends': ['base', 'mems_equipment'],
     'data': [
         'data/sequence.xml',
         'security/security.xml',
