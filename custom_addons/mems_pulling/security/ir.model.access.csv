@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_borrow_all,mems.borrow,model_mems_borrow,base.group_user,1,0,0,0
+access_borrow_user,mems.borrow,model_mems_borrow,group_pulling_user,1,0,0,0
+access_borrow_manager,mems.borrow,model_mems_borrow,group_pulling_manager,1,1,1,1
+access_restore_all,mems.restore,model_mems_restore,base.group_user,1,0,0,0
+access_restore_user,mems.restore,model_mems_restore,group_pulling_user,1,0,0,0
+access_restore_manager,mems.restore,model_mems_restore,group_pulling_manager,1,1,1,1

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="action_report_equipment_qrcode"
+        string="Equipment QR Code"
+        model="mems.equipment"
+        report_type="qweb-pdf"
+        file="mems_equipment.equipment_qrcode"
+        name="mems_equipment.equipment_qrcode"
+        paperformat="mems_equipment.paperformat_equipment_qr"
+        print_report_name="'Equipment - %s' % (object.code)"/>
+
+    <template id="equipment_qrcode">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div style="height:40mm;width:95mm;vertical-align:middle">
+                        <div class="row no-gutters">
+                            <div class="col-xs-9">
+                                <table class="table-qrcode">
+                                    <tr>
+                                        <th>Code</th>
+                                        <td class="px-2">
+                                            <span t-esc="o.code"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td class="px-2">
+                                            <span t-esc="o.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Department</th>
+                                        <td class="px-2">
+                                            <span t-esc="o.department_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Location</th>
+                                        <td class="px-2">
+                                            <span t-esc="o.stock_location.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-xs-3">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('QR',o.code,500,500)" class="img-responsive"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_spare_part_search">
+        <field name="name">spare_part.search</field>
+        <field name="model">mems.spare_part</field>
+        <field name="arch" type="xml">
+            <search string="Spare Part Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="code" string="Code" filter_domain="[('code', 'ilike', self)]"/>
+                <field name="barcode" string="Barcode" filter_domain="[('barcode', 'ilike', self)]"/>
+                <filter name="group_category" string="Category" context="{'group_by':'category_id'}"/>
+                <filter name="group_brand" string="Brand" context="{'group_by':'brand_id'}"/>
+                <filter name="group_location" string="Location" context="{'group_by':'location_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_spare_part_list">
+        <field name="name">spare_part.list</field>
+        <field name="model">mems.spare_part</field>
+        <field name="arch" type="xml">
+            <tree string="Spare Part List"
+                  decoration-danger="stock_qty &#60;= 0"
+                  decoration-warning="stock_qty &#60;= min_qty">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="uom_id"/>
+                <field name="location_id"/>
+                <field name="min_qty" invisible="1"/>
+                <field name="stock_qty" sum="Total Qty"/>
+                <field name="last_purchase_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_spare_part_form">
+        <field name="name">spare_part.form</field>
+        <field name="model">mems.spare_part</field>
+        <field name="arch" type="xml">
+            <form string="Spare Part Form">
+                <header>
+                    <button string="Adjust Stock Qty" type="object" name="do_spare_part_adjust"/>
+                </header>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Part Name"/>
+                        <h1>
+                            <field name="name" placeholder="Enter part name" required="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="barcode"/>
+                            <field name="brand_id"/>
+                            <field name="category_id"/>
+                            <field name="uom_id"/>
+                            <field name="purchase_uom_id"/>
+                        </group>
+                        <group>
+                            <field name="unit_price"/>
+                            <field name="cost_price"/>
+                            <field name="stock_qty" force_save="1"/>
+                            <field name="last_purchase_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Stock Control">
+                            <group>
+                                <group>
+                                    <field name="min_qty"/>
+                                    <field name="max_qty"/>
+                                    <field name="location_id"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_spare_part_kanban">
+        <field name="name">spare_part.kanban</field>
+        <field name="model">mems.spare_part</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="image"/>
+                <!-- @formatter:off -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('mems.spare_part','image',record.id.raw_value)" alt="" />
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h3 style="margin:5px 0"><field name="name"/></h3>
+                                <ul style="font-size:13px">
+                                    <li><span>On-hand : <field name="stock_qty"/></span></li>
+                                    <li><span>Location : <field name="location_id"/></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+                <!-- @formatter:on -->
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_spare_part_list">
+        <field name="name">Spare Part</field>
+        <field name="res_model">mems.spare_part</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first spare part</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_spare_part_list" parent="mems_master.menu_sub_stock" name="Spare Part" action="action_spare_part_list"/>
+</odoo>

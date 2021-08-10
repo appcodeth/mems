@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="mems.pm_checklist" id="pm_check01">
+            <field name="name">ตรวจสภาพเครื่อง</field>
+        </record>
+        <record model="mems.pm_checklist" id="pm_check02">
+            <field name="name">ตรวจสอบกระแสไฟฟ้า</field>
+        </record>
+        <record model="mems.pm_checklist" id="pm_check03">
+            <field name="name">ตรวจสอบการใช้งานตามคู่มือ</field>
+        </record>
+        <record model="mems.pm_checklist" id="pm_check04">
+            <field name="name">ทำความสะอาดเครื่อง</field>
+        </record>
+        <record model="mems.pm_checklist" id="pm_check05">
+            <field name="name">ทำความสะอาดส่วนประกอบ</field>
+        </record>
+    </data>
+</odoo>

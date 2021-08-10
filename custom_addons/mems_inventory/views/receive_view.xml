@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_receive_list">
+        <field name="name">receive.list</field>
+        <field name="model">mems.receive</field>
+        <field name="arch" type="xml">
+            <tree string="Receive List">
+                <field name="name"/>
+                <field name="date_rcv"/>
+                <field name="doc_no"/>
+                <field name="amount_qty"/>
+                <field name="amount_total"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_receive_form">
+        <field name="name">receive.form</field>
+        <field name="model">mems.receive</field>
+        <field name="arch" type="xml">
+            <form string="Receive Form">
+                <sheet>
+                    <h1 attrs="{'invisible': [('name', '=', False)]}">
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="po_id"/>
+                            <field name="supplier_id"/>
+                            <field name="doc_no"/>
+                        </group>
+                        <group>
+                            <field name="date_rcv"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Receive Line">
+                            <field name="receive_line">
+                                <tree editable="bottom">
+                                    <field name="part_id" width="300px"/>
+                                    <field name="name"/>
+                                    <field name="qty"/>
+                                    <field name="uom_id"/>
+                                    <field name="price" force_save="1" width="250px"/>
+                                    <field name="amount" force_save="1" width="150px"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group>
+                        <group class="no-height">
+                            <field name="remark" placeholder="Add a remark..."/>
+                        </group>
+                        <group class="oe_subtotal_footer oe_right no-height" colspan="2">
+                            <field name="amount_qty" force_save="1"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="amount_total"/>
+                            </div>
+                            <field name="amount_total" nolabel="1" force_save="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_receive_list">
+        <field name="name">Receive</field>
+        <field name="res_model">mems.receive</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first receive</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_receive_list" parent="mems_inventory.menu_sub_transfer" name="Receive" action="action_receive_list"/>
+</odoo>

@@ -1,0 +1,20 @@
+{
+    'name': 'MEMS Pulling',
+    'category': 'Custom',
+    'version': '0.1',
+    'author': 'Appcode Technology',
+    'website': 'http://www.appcode.co.th',
+    'depends': ['base', 'mems_master'],
+    'data': [
+        'data/sequence.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/menu.xml',
+        'views/borrow_view.xml',
+        'views/restore_view.xml',
+        'report/paper_format.xml',
+        'report/borrow_form.xml',
+        'wizard/borrow_cancel_wizard.xml',
+    ],
+    'demo': [],
+}

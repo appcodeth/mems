@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="spare_part_report_common" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+            <link href="/mems_master/static/src/css/report.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+    <report
+        id="action_report_spare_part_qrcode"
+        string="Spare Part QR Code"
+        model="mems.spare_part"
+        report_type="qweb-pdf"
+        file="mems_master.spare_part_qrcode"
+        name="mems_master.spare_part_qrcode"
+        paperformat="mems_master.paperformat_spare_qr"
+        print_report_name="'Spare Part - %s' % (object.code)"/>
+
+    <template id="spare_part_qrcode">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div style="height:40mm;width:95mm;vertical-align:middle">
+                        <div class="row no-gutters">
+                            <div class="col-xs-8">
+                                <table class="table-qrcode">
+                                    <tr>
+                                        <th width="15%">Code</th>
+                                        <td>
+                                            <span t-esc="o.code"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td>
+                                            <span t-esc="o.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Brand</th>
+                                        <td>
+                                            <span t-esc="o.brand_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Location</th>
+                                        <td>
+                                            <span t-esc="o.location_id.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-xs-4" style="text-align:right">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('QR',o.code,400,400)" class="img-responsive"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

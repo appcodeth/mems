@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.module.category" id="module_mems_repair">
+            <field name="name">MEMs Repair</field>
+            <field name="sequence">4</field>
+        </record>
+
+        <record id="group_repair_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_mems_repair"/>
+        </record>
+
+        <record id="group_repair_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_mems_repair"/>
+            <field name="implied_ids" eval="[(4, ref('group_repair_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('mems_repair.group_repair_manager'))]"/>
+        </record>
+
+        <record model="ir.rule" id="repair_company_rule">
+            <field name="name">company multi-company</field>
+            <field name="model_id" ref="base.model_res_company"/>
+            <field name="groups" eval="[
+              (4, ref('base.group_user')),
+              (4, ref('group_repair_user')),
+              (4, ref('group_repair_manager'))]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
+
+        <record model="ir.rule" id="workorder_rule">
+            <field name="name">workorder multi-company</field>
+            <field name="model_id" search="[('model','=','mems.workorder')]" model="ir.model"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+    </data>
+</odoo>

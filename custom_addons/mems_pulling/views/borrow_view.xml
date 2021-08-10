@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_borrow_list">
+        <field name="name">borrow.list</field>
+        <field name="model">mems.borrow</field>
+        <field name="arch" type="xml">
+            <tree string="Borrow List">
+                <field name="name"/>
+                <field name="equip_id"/>
+                <field name="department_id"/>
+                <field name="borrow_date"/>
+                <field name="expect_date"/>
+                <field name="state" widget="labelStatus"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_borrow_form">
+        <field name="name">borrow.form</field>
+        <field name="model">mems.borrow</field>
+        <field name="arch" type="xml">
+            <form string="Borrow Form">
+                <header attrs="{'invisible': [('id','=',False)]}">
+                    <field name="state" invisible="1"/>
+                    <button string="Approve to Borrow" class="oe_highlight" type="object" name="do_borrow_approve" attrs="{'invisible': [('state', 'in', ['borrow', 'cancel', 'close'])]}"/>
+                    <button string="Cancel" type="object" name="do_borrow_cancel" attrs="{'invisible': [('state', 'in', ['draft', 'cancel', 'close'])]}"/>
+                    <button string="Print" type="object" name="do_borrow_print"/>
+                </header>
+                <sheet>
+                    <h1 attrs="{'invisible': [('name', '=', False)]}">
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="equip_id"/>
+                            <field name="department_id"/>
+                            <field name="responsible_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="borrow_date"/>
+                            <field name="expect_date"/>
+                            <field name="duration_day"/>
+                        </group>
+                        <templates attrs="{'invisible': [('state', 'not in', ['cancel'])]}">
+                            <t t-name="ribbon-box">
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-red">
+                                        <field name="state" readonly="1"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_borrow_list">
+        <field name="name">Borrow</field>
+        <field name="res_model">mems.borrow</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first borrow</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_borrow_list" parent="mems_pulling.menu_sub_borrow" name="Borrow" action="action_borrow_list"/>
+</odoo>

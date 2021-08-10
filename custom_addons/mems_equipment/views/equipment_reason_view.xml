@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_equipment_reason_list">
+        <field name="name">equipment_reason.list</field>
+        <field name="model">mems.equipment_reason</field>
+        <field name="arch" type="xml">
+            <tree string="Equipment Reason List">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_equipment_reason_form">
+        <field name="name">equipment_reason.form</field>
+        <field name="model">mems.equipment_reason</field>
+        <field name="arch" type="xml">
+            <form string="Equipment Reason Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_equipment_reason_list">
+        <field name="name">Equipment Reason</field>
+        <field name="res_model">mems.equipment_reason</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first equipment reason</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_equipment_reason_list" parent="mems_equipment.menu_sub_equipment" name="Equipment Reason" action="action_equipment_reason_list"/>
+</odoo>

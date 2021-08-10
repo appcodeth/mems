@@ -1,0 +1,15 @@
+*.pyc
+*.egg
+*.sqlite3
+*.log
+.idea
+.vscode
+.DS_Store
+logs
+temp
+upload
+build
+dist
+odoo
+odoo.egg-info
+setup

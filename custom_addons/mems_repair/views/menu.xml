@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_repair" name="Repair" sequence="4"/>
+    <menuitem id="menu_sub_service" parent="menu_repair" name="Service" sequence="41"/>
+</odoo>

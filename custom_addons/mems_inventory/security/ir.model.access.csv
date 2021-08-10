@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_receive_all,mems.receive,model_mems_receive,base.group_user,1,0,0,0
+access_receive_user,mems.receive,model_mems_receive,group_inventory_user,1,0,0,0
+access_receive_manager,mems.receive,model_mems_receive,group_inventory_manager,1,1,1,1
+access_receive_line_all,mems.receive_line,model_mems_receive_line,base.group_user,1,0,0,0
+access_receive_line_user,mems.receive_line,model_mems_receive_line,group_inventory_user,1,0,0,0
+access_receive_line_manager,mems.receive_line,model_mems_receive_line,group_inventory_manager,1,1,1,1
+access_issue_all,mems.issue,model_mems_issue,base.group_user,1,0,0,0
+access_issue_user,mems.issue,model_mems_issue,group_inventory_user,1,0,0,0
+access_issue_manager,mems.issue,model_mems_issue,group_inventory_manager,1,1,1,1
+access_issue_line_all,mems.issue_line,model_mems_issue_line,base.group_user,1,0,0,0
+access_issue_line_user,mems.issue_line,model_mems_issue_line,group_inventory_user,1,0,0,0
+access_issue_line_manager,mems.issue_line,model_mems_issue_line,group_inventory_manager,1,1,1,1

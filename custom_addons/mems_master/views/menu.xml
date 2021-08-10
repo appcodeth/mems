@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="master_widget_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mems_master/static/src/js/widgets.js"/>
+        </xpath>
+    </template>
+
+    <menuitem id="menu_master" name="Master" sequence="9"/>
+    <menuitem id="menu_sub_data" parent="menu_master" name="Data" sequence="91"/>
+    <menuitem id="menu_sub_stock" parent="menu_master" name="Stock" sequence="92"/>
+    <menuitem id="menu_sub_purchase" parent="menu_master" name="Purchase" sequence="93"/>
+</odoo>

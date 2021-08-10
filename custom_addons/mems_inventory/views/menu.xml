@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_inventory" name="Inventory" sequence="6"/>
+    <menuitem id="menu_sub_data" parent="menu_inventory" name="Data" sequence="61"/>
+    <menuitem id="menu_sub_stock" parent="menu_inventory" name="Stock" sequence="62"/>
+    <menuitem id="menu_sub_transfer" parent="menu_inventory" name="Transfer" sequence="63"/>
+
+    <!-- duplicate menu -->
+    <menuitem id="menu_brand_list" parent="mems_inventory.menu_sub_data" name="Brand" action="mems_master.action_brand_list" sequence="611"/>
+    <menuitem id="menu_department_list" parent="mems_inventory.menu_sub_data" name="Department" action="mems_master.action_department_list" sequence="612"/>
+    <menuitem id="menu_stock_location_list" parent="mems_inventory.menu_sub_data" name="Stock Location" action="mems_master.action_stock_location_list" sequence="613"/>
+</odoo>

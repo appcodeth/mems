@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_workorder_search">
+        <field name="name">workorder.search</field>
+        <field name="model">mems.workorder</field>
+        <field name="arch" type="xml">
+            <search string="Work Order Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_workorder_list">
+        <field name="name">workorder.list</field>
+        <field name="model">mems.workorder</field>
+        <field name="arch" type="xml">
+            <tree string="Work Order List">
+                <field name="name"/>
+                <field name="equip_id"/>
+                <field name="department_id"/>
+                <field name="date_order"/>
+                <field name="amount_total" sum="Amount Total"/>
+                <field name="state" widget="labelStatus"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_workorder_form">
+        <field name="name">workorder.form</field>
+        <field name="model">mems.workorder</field>
+        <field name="arch" type="xml">
+            <form string="Work Order Form">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete"/>
+                    <button string="Approve" class="btn-primary" type="object" name="do_work_approve" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                    <button string="Complete Task" class="oe_highlight" type="object" name="do_work_complete" attrs="{'invisible': [('state', 'not in', ['approve'])]}"/>
+                    <button string="Approve Close Task" class="oe_highlight" type="object" name="do_workorder_close" attrs="{'invisible': [('state', 'not in', ['complete'])]}"/>
+                    <button string="Revise to Draft" type="object" name="do_workorder_revise" attrs="{'invisible': [('state', 'not in', ['approve'])]}"/>
+                    <button string="Cancel" type="object" class="btn-danger" name="do_workorder_cancel" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+                    <button string="Email" type="object" name="do_workorder_email" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+                    <button string="Print" type="object" name="do_workorder_print"/>
+                </header>
+
+                <sheet>
+                    <!--                    <div class="oe_button_box" name="button_box" attrs="{'invisible': [('state', 'in', ['draft','close'])]}">-->
+                    <!--                        <button name="action_view_workorder"-->
+                    <!--                                type="object"-->
+                    <!--                                class="oe_stat_button"-->
+                    <!--                                attrs="{'invisible': [('issue_count', '=', 0)]}"-->
+                    <!--                                icon="fa-upload">-->
+                    <!--                            <field name="issue_count" widget="statinfo" string="Issue"/>-->
+                    <!--                        </button>-->
+                    <!--                    </div>-->
+                    <!--                    <widget name="web_ribbon" bg_color="bg-danger" title="Cancelled" attrs="{'invisible': [('state', 'not in', ['cancel'])]}"/>-->
+                    <!--                    <widget name="web_ribbon" bg_color="bg-success" title="Completed" attrs="{'invisible': [('state', 'not in', ['complete'])]}"/>-->
+                    <!--                    <widget name="web_ribbon" bg_color="bg-primary" title="Closed" attrs="{'invisible': [('state', 'not in', ['close'])]}"/>-->
+                    <h1 attrs="{'invisible': [('name', '=', False)]}">
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="department_id"/>
+                            <field name="equip_id"/>
+                            <field name="equip_code" force_save="1"/>
+                            <field name="equip_brand" force_save="1"/>
+                            <field name="equip_model" force_save="1"/>
+                            <field name="equip_sn"/>
+                            <field name="equip_warty_type"/>
+                            <field name="equip_warty_expire"/>
+                        </group>
+                        <group>
+                            <field name="equip_price"/>
+                            <field name="equip_image" widget="image" style="max-width:150px"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top: 20px">Repair Information</h1>
+                    <group>
+                        <group>
+                            <field name="problem_text"/>
+                            <field name="suggestion_text"/>
+                            <field name="image_attachments" widget="many2many_binary"/>
+                        </group>
+                        <group>
+                            <field name="date_order"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                    <h1 style="margin-top: 20px">Service Responsibility</h1>
+                    <group>
+                        <group class="no-height">
+                            <field name="service_type" style="height:30px" widget='radio' options="{'horizontal': true}"/>
+                            <field name="responsible_id" style="height:30px" attrs="{'invisible': [('service_type','=','by_vendor')]}"/>
+                            <field name="supplier_id" style="height:30px" attrs="{'invisible': [('service_type','=','by_team')]}"/>
+                            <field name="po_id" style="height:30px" attrs="{'invisible': [('service_type','=','by_team')]}"/>
+                        </group>
+                        <group>
+                            <field name="date_plan"/>
+                            <field name="date_finish"/>
+                        </group>
+                    </group>
+                    <h1 style="margin: 20px 0">Spare Parts</h1>
+                    <field name="wo_line">
+                        <tree editable="bottom">
+                            <field name="part_id" style="width:400px"/>
+                            <field name="qty"/>
+                            <field name="uom_id"/>
+                            <field name="price" style="width:200px"/>
+                            <field name="amount" force_save="1"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <group class="no-height">
+                            <field name="discount_type" widget='radio' options="{'horizontal': true}"/>
+                            <field name="remark" placeholder="Add a remark..."/>
+                        </group>
+                        <group class="oe_subtotal_footer oe_right no-height" colspan="2">
+                            <field name="amount_untaxed" force_save="1" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <field name="discount_rate" style="width:120px" attrs="{'invisible': ['|', ('discount_type', 'in', ['amount', 'no']),('discount_type', '=', False)]}"/>
+                            <field name="amount_discount" style="width:120px" attrs="{'invisible': ['|', ('discount_type', 'in', ['percent', 'no']),('discount_type', '=', False)]}" options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_after_discount" force_save="1" widget='monetary' attrs="{'invisible': ['|', ('discount_type', 'in', ['amount', 'no']),('discount_type', '=', False)]}" options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_tax" force_save="1" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="amount_total"/>
+                            </div>
+                            <field name="amount_total" nolabel="1" style="width:120px" force_save="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_workorder_list">
+        <field name="name">Work Order</field>
+        <field name="res_model">mems.workorder</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first workorder</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_workorder_list" parent="mems_repair.menu_sub_service" name="Work Order" action="action_workorder_list"/>
+</odoo>

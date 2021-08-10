@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_workorder_search">
+        <field name="name">workorder.search</field>
+        <field name="model">mems.workorder</field>
+        <field name="arch" type="xml">
+            <search string="Work Order Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="equip_id" string="Equipment Name" filter_domain="[('equip_id.name', 'ilike', self)]"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_workorder_kanban">
+        <field name="name">workorder.kanban</field>
+        <field name="model">mems.workorder</field>
+        <field name="arch" type="xml">
+            <kanban disable_drag_drop_record="true">
+                <field name="id"/>
+                <!-- @formatter:off -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <h3 style="margin:5px 0"><field name="name"/></h3>
+                                <ul style="font-size:13px">
+                                    <li><span><field name="equip_id"/></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+                <!-- @formatter:on -->
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_workorder_kanban">
+        <field name="name">Work Order Tracking</field>
+        <field name="res_model">mems.workorder</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="context">{'search_default_group_state': 1}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first workorder</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_workorder_kanban" parent="mems_repair.menu_sub_service" name="Work Order Tracking" action="action_workorder_kanban"/>
+</odoo>

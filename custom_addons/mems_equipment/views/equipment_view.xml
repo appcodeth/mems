@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_equipment_search">
+        <field name="name">equipment.search</field>
+        <field name="model">mems.equipment</field>
+        <field name="arch" type="xml">
+            <search string="Equipment Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="code" string="Code" filter_domain="[('code', 'ilike', self)]"/>
+                <field name="barcode" string="Barcode" filter_domain="[('barcode', 'ilike', self)]"/>
+                <field name="model_name" string="Model Name" filter_domain="[('model_name', 'ilike', self)]"/>
+                <field name="serial_no" string="Serial Number" filter_domain="[('serial_no', 'ilike', self)]"/>
+                <filter name="group_name" string="Name" context="{'group_by':'name'}"/>
+                <filter name="group_category" string="Category" context="{'group_by':'category_id'}"/>
+                <filter name="group_department" string="Department" context="{'group_by':'department_id'}"/>
+                <filter name="group_brand" string="Brand" context="{'group_by':'brand_id'}"/>
+                <filter name="group_receive" string="Receive By" context="{'group_by':'receive_by'}"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_equipment_list">
+        <field name="name">equipment.list</field>
+        <field name="model">mems.equipment</field>
+        <field name="arch" type="xml">
+            <tree string="Equipment List">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="category_id"/>
+                <field name="brand_id"/>
+                <field name="model_name"/>
+                <field name="stock_location"/>
+                <field name="unit_price" sum='Total Price'/>
+                <field name="state" widget="labelStatus"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_equipment_form">
+        <field name="name">equipment.form</field>
+        <field name="model">mems.equipment</field>
+        <field name="arch" type="xml">
+            <form string="Equipment Form">
+                <field name="state" invisible="1"/>
+                <header attrs="{'invisible': ['|',('id','=',False),('state','=','inactive')]}">
+                    <button string="Make to inactive" type="object" name="do_equipment_cancel"/>
+                </header>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Equipment Name"/>
+                        <h1>
+                            <field name="name" placeholder="Enter equipment name" required="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="barcode"/>
+                            <field name="category_id"/>
+                            <field name="department_id"/>
+                        </group>
+                        <group>
+                            <field name="brand_id"/>
+                            <field name="model_name"/>
+                            <field name="serial_no"/>
+                            <field name="unit_price"/>
+                        </group>
+                        <templates attrs="{'invisible': [('state', 'not in', ['inactive'])]}">
+                            <t t-name="ribbon-box">
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-red">
+                                        <field name="state" readonly="1"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </group>
+                    <h2 class="o_horizontal_separator">Warranty Information</h2>
+                    <group>
+                        <group>
+                            <field name="supplier_id"/>
+                        </group>
+                        <group>
+                            <field name="warranty_type"/>
+                            <field name="warranty_start_date"/>
+                            <field name="warranty_end_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Inventory">
+                            <group>
+                                <group>
+                                    <field name="receive_by"/>
+                                    <field name="receive_date"/>
+                                    <field name="receive_doc_name"/>
+                                </group>
+                                <group>
+                                    <field name="uom_id"/>
+                                    <field name="stock_location"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Manuals">
+                            <group>
+                                <group>
+                                    <field name="description"/>
+                                    <field name="spec_attachments" widget="many2many_binary"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Part Items">
+                            <field name="equipment_line">
+                                <tree editable="bottom">
+                                    <field name="part_id"/>
+                                    <field name="qty"/>
+                                    <field name="uom_id" width="250px"/>
+                                    <field name="price" width="250px"/>
+                                    <field name="amount" force_save="1" width="250px"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="PM History">
+                            <field name="pm_line" readonly="1">
+                                <tree create="false" delete="false">
+                                    <field name="name"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Calibration History">
+                            <field name="calibrate_line" readonly="1">
+                                <tree create="false" delete="false">
+                                    <field name="name"/>
+                                    <field name="supplier_id"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_equipment_kanban">
+        <field name="name">equipment.kanban</field>
+        <field name="model">mems.equipment</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="image"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('mems.equipment','image',record.id.raw_value)" alt=""/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h3 style="margin:5px 0">
+                                    <field name="name"/>
+                                </h3>
+                                <ul style="font-size:13px">
+                                    <li>
+                                        <span>
+                                            Code :
+                                            <field name="code"/>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            Department :
+                                            <field name="department_id"/>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <span class="badge badge-danger" style="border:none" attrs="{'invisible': [('state', 'not in', ['inactive'])]}">Canceled</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_equipment_list">
+        <field name="name">Equipment</field>
+        <field name="res_model">mems.equipment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first equipment</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_equipment_list" parent="mems_equipment.menu_sub_equipment" name="Equipment" action="action_equipment_list"/>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="mems_theme_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/mems_theme/static/src/css/style.less"/>
+        </xpath>
+    </template>
+
+    <template id="menu_secondary_custom" inherit_id="web.menu_secondary">
+        <xpath expr="//div[@class='o_sub_menu_footer']" position="replace">
+            <div class="o_sub_menu_footer">Version 0.1.0 (Build 20210101)</div>
+        </xpath>
+    </template>
+</odoo>

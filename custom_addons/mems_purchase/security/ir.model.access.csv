@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rfq_all,mems.rfq,model_mems_rfq,base.group_user,1,0,0,0
+access_rfq_user,mems.rfq,model_mems_rfq,group_purchase_user,1,0,0,0
+access_rfq_manager,mems.rfq,model_mems_rfq,group_purchase_manager,1,1,1,1
+access_rfq_line_all,mems.rfq_line,model_mems_rfq_line,base.group_user,1,0,0,0
+access_rfq_line_user,mems.rfq_line,model_mems_rfq_line,group_purchase_user,1,0,0,0
+access_rfq_line_manager,mems.rfq_line,model_mems_rfq_line,group_purchase_manager,1,1,1,1
+access_purchase_all,mems.purchase,model_mems_purchase,base.group_user,1,0,0,0
+access_purchase_user,mems.purchase,model_mems_purchase,group_purchase_user,1,0,0,0
+access_purchase_manager,mems.purchase,model_mems_purchase,group_purchase_manager,1,1,1,1
+access_purchase_line_all,mems.purchase_line,model_mems_purchase_line,base.group_user,1,0,0,0
+access_purchase_line_user,mems.purchase_line,model_mems_purchase_line,group_purchase_user,1,0,0,0
+access_purchase_line_manager,mems.purchase_line,model_mems_purchase_line,group_purchase_manager,1,1,1,1
+access_payment_all,mems.payment,model_mems_payment,base.group_user,1,0,0,0
+access_payment_user,mems.payment,model_mems_payment,group_purchase_user,1,0,0,0
+access_payment_manager,mems.payment,model_mems_payment,group_purchase_manager,1,1,1,1

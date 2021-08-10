@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="mems.supplier" id="supplier01">
+            <field name="name">บริษัท ออปต้าเมด จำกัด</field>
+            <field name="type">company</field>
+            <field name="code">000001</field>
+            <field name="address">99/28 หมู่ 4 อาคารเอเอทาวเวอร์ ชั้น 20 ถนนแจ้งวัฒนะ ตำบลคลองเกลือ อำเภอปากเกร็ด จังหวัดนนทบุรี 11120</field>
+            <field name="tax_id">0123456789012</field>
+            <field name="branch">00000</field>
+            <field name="phone">02-2222222</field>
+            <field name="fax">02-2222222</field>
+            <field name="email">info@optamed.co.th</field>
+            <field name="website">www.optamed.co.th</field>
+            <field name="contact">คุณพชรา 081-2222222</field>
+        </record>
+    </data>
+</odoo>

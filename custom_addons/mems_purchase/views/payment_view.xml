@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_payment_list">
+        <field name="name">payment.list</field>
+        <field name="model">mems.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Payment List">
+                <field name="name"/>
+                <field name="pay_date"/>
+                <field name="doc_name"/>
+                <field name="doc_type"/>
+                <field name="pay_receive" sum="Total Amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_payment_form">
+        <field name="name">payment.form</field>
+        <field name="model">mems.payment</field>
+        <field name="arch" type="xml">
+            <form string="Payment Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="doc_name"/>
+                            <field name="doc_type"/>
+                            <field name="doc_amount"/>
+                            <field name="memo"/>
+                        </group>
+                        <group>
+                            <field name="pay_date"/>
+                            <field name="pay_method"/>
+                            <field name="pay_receive"/>
+                            <field name="bank_account_id" attrs="{'invisible': [('pay_method', '=', 'cash')]}"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_payment_list">
+        <field name="name">Payment</field>
+        <field name="res_model">mems.payment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first payment</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_payment_list" parent="mems_purchase.menu_sub_payment" name="Payment" action="action_payment_list"/>
+</odoo>

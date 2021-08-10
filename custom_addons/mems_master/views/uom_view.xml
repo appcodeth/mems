@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_uom_list">
+        <field name="name">uom.list</field>
+        <field name="model">mems.uom</field>
+        <field name="arch" type="xml">
+            <tree string="Uom List">
+                <field name="name"/>
+                <field name="name_en"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_uom_form">
+        <field name="name">uom.form</field>
+        <field name="model">mems.uom</field>
+        <field name="arch" type="xml">
+            <form string="Uom Form">
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Uom Name"/>
+                        <h1>
+                            <field name="name" placeholder="Enter uom name" required="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name_en"/>
+                            <field name="category_id"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                            <field name="ratio"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_uom_list">
+        <field name="name">Uom</field>
+        <field name="res_model">mems.uom</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first uom</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_uom_list" parent="mems_master.menu_sub_stock" name="Unit of Measure" action="action_uom_list" sequence="615"/>
+</odoo>

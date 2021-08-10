@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_supplier_list">
+        <field name="name">supplier.list</field>
+        <field name="model">mems.supplier</field>
+        <field name="arch" type="xml">
+            <tree string="Supplier List">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_supplier_form">
+        <field name="name">supplier.form</field>
+        <field name="model">mems.supplier</field>
+        <field name="arch" type="xml">
+            <form string="Supplier Form">
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Supplier Name"/>
+                        <h1>
+                            <field name="name" placeholder="Enter supplier name" required="True"/>
+                        </h1>
+                        <field name="type" widget='radio' options="{'horizontal': true}"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="address"/>
+                            <field name="tax_id"/>
+                            <field name="branch" attrs="{'invisible': [('type','=','personal')]}"/>
+                        </group>
+                        <group>
+                            <field name="phone" widget="phone"/>
+                            <field name="fax" widget="phone" attrs="{'invisible': [('type','=','personal')]}"/>
+                            <field name="email" widget="email"/>
+                            <field name="website" widget="url" attrs="{'invisible': [('type','=','personal')]}"/>
+                            <field name="contact" attrs="{'invisible': [('type','=','personal')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_supplier_kanban">
+        <field name="name">supplier.kanban</field>
+        <field name="model">mems.supplier</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="image"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('mems.supplier','image',record.id.raw_value)" alt=""/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h3 style="margin:5px 0">
+                                    <field name="name"/>
+                                </h3>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_supplier_list">
+        <field name="name">Supplier</field>
+        <field name="res_model">mems.supplier</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first supplier</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_supplier_list" parent="mems_master.menu_sub_purchase" name="Supplier" action="action_supplier_list"/>
+
+</odoo>

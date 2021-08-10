@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_stock_location_list">
+        <field name="name">stock_location.list</field>
+        <field name="model">mems.stock_location</field>
+        <field name="arch" type="xml">
+            <tree string="Stock Location List">
+                <field name="name"/>
+                <field name="shelf_no"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_stock_location_form">
+        <field name="name">stock_location.form</field>
+        <field name="model">mems.stock_location</field>
+        <field name="arch" type="xml">
+            <form string="Stock Location Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="shelf_no"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_stock_location_list">
+        <field name="name">Stock Location</field>
+        <field name="res_model">mems.stock_location</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first stock location</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_stock_location_list" parent="mems_master.menu_sub_stock" name="Stock Location" action="action_stock_location_list"/>
+</odoo>

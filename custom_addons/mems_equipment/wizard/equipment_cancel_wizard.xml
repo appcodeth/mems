@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_equipment_cancel_wizard" model="ir.ui.view">
+        <field name="name">Confirm Cancel</field>
+        <field name="model">mems.equipment.cancel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Confirm">
+                <group>
+                    <field name="equip_name" readonly="1"/>
+                    <field name="reason_id" options='{"no_create": 1, "no_create_edit": 1}'/>
+                </group>
+                <footer>
+                    <button string="OK" name="do_confirm_cancel" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

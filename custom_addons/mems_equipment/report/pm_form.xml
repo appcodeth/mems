@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="action_report_pm"
+        string="PM Form"
+        model="mems.pm"
+        report_type="qweb-pdf"
+        file="mems_equipment.pm_form"
+        name="mems_equipment.pm_form"
+        paperformat="mems_equipment.paperformat_equipment"
+        print_report_name="'PM - %s' % (object.name)"/>
+
+    <template id="pm_logo">
+        <table class="table-logo" style="margin-bottom: 16pt">
+            <tr>
+                <td width="15%">
+                    <img src='/web/binary/company_logo' style="max-height:120px"/>
+                </td>
+                <td width="5%"/>
+                <td style="vertical-align: middle">
+                    <strong style="font-size:16px">
+                        <span t-esc="o.company_id.name"/>
+                    </strong>
+                    <div>
+                        <span t-esc="o.company_id.street"/>
+                        <span t-esc="o.company_id.street2"/>
+                    </div>
+                    <div>
+                        <span t-if="o.company_id.phone">
+                            Tel.
+                            <span t-esc="o.company_id.phone"/>
+                        </span>
+                        <span t-if="o.company_id.vat">
+                            Tax ID
+                            <span t-esc="o.company_id.vat"/>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="pm_form">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="mems_equipment.pm_logo"/>
+                    <h3 class="text-center my-5">PM Form</h3>
+                    <hr/>
+                    <div class="box mb-4">
+                        <div class="box-body">
+                            <div class="row no-gutters">
+                                <div class="col-xs-10">
+                                    <table width="100%">
+                                        <tr>
+                                            <th>Doc No</th>
+                                            <td>
+                                                <span t-esc="o.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Start Date</th>
+                                            <td>
+                                                <span t-esc="o.start_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>End Date</th>
+                                            <td>
+                                                <span t-esc="o.end_date"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-2">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('QR',o.name,500,500)" class="img-responsive"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box mb-4">
+                        <div class="box-header">
+                            <h4 class="m-0">General Information</h4>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <table width="100%">
+                                        <tr>
+                                            <th>Code</th>
+                                            <td>
+                                                <span t-esc="o.equip_id.code"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Barcode</th>
+                                            <td>
+                                                <span t-esc="o.equip_id.barcode"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Name</th>
+                                            <td>
+                                                <span t-esc="o.equip_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Category</th>
+                                            <td>
+                                                <span t-esc="o.equip_id.category_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Department</th>
+                                            <td>
+                                                <span t-esc="o.equip_id.department_id.name"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="text-right" t-if="o.equip_id.image">
+                                        <img t-attf-src="data:image/*;base64,{{o.equip_id.image}}" class="img-fluid" style="max-height:250px"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box mb-4" style="height: 130mm">
+                        <div class="box-header">
+                            <h4 class="m-0">PM Checklist</h4>
+                        </div>
+                        <table class="table-list">
+                            <thead>
+                                <tr>
+                                    <th style="width:5%">No.</th>
+                                    <th>Description</th>
+                                    <th style="width:10%">Duration (Day)</th>
+                                    <th style="width:1%">Done</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.pm_line" t-as="l">
+                                    <tr>
+                                        <td class="text-center">
+                                            <span t-esc="l_index + 1"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="l.checklist_id.name"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span/>
+                                        </td>
+                                        <td class="text-center">
+                                            <div style="border: 1px solid #333; width: 22px; height: 22px; margin:0 auto;"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-xs-4">
+                            <div style="border: 1px solid #333; border-radius: 10px; text-align:center" class="pt-2 pb-2 px-3 mr-1">
+                                <div>Responsible By</div>
+                                <div style="border-bottom: 1px solid #333; margin: 40px 15px 10px 15px"/>
+                                <div>
+                                    (<span t-esc="o.responsible_id.name"/>)
+                                </div>
+                                <div style="margin-top:10px">
+                                    Date
+                                    <div style="width:60%; display:inline-block; border-bottom: 1px solid #333"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div style="border: 1px solid #333; border-radius: 10px; text-align:center" class="pt-2 pb-2 px-3 mx-1">
+                                <div>Check By</div>
+                                <div style="border-bottom: 1px solid #333; margin: 40px 15px 10px 15px"/>
+                                <div>
+                                    (<div style="width:80%;display:inline-block"/>)
+                                </div>
+                                <div style="margin-top:10px">
+                                    Date
+                                    <div style="width:60%; display:inline-block; border-bottom: 1px solid #333"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div style="border: 1px solid #333; border-radius: 10px; text-align:center" class="pt-2 pb-2 px-3 ml-1">
+                                <div>Approve By</div>
+                                <div style="border-bottom: 1px solid #333; margin: 40px 15px 10px 15px"/>
+                                <div>
+                                    (<div style="width:80%;display:inline-block"/>)
+                                </div>
+                                <div style="margin-top:10px">
+                                    Date
+                                    <div style="width:60%; display:inline-block; border-bottom: 1px solid #333"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <span>Page:</span>
+                        <span class="page"/>
+                        <span>of</span>
+                        <span class="topage"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

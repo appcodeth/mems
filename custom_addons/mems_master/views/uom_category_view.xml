@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_uom_category_list">
+        <field name="name">uom_category.list</field>
+        <field name="model">mems.uom_category</field>
+        <field name="arch" type="xml">
+            <tree string="Uom Category List">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_uom_category_form">
+        <field name="name">uom_category.form</field>
+        <field name="model">mems.uom_category</field>
+        <field name="arch" type="xml">
+            <form string="Uom Category Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_uom_category_list">
+        <field name="name">Uom Category</field>
+        <field name="res_model">mems.uom_category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first uom category</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_uom_category_list" parent="mems_master.menu_sub_stock" name="Uom Category" action="action_uom_category_list" sequence="616"/>
+</odoo>

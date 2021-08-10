@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="pulling_widget_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mems_pulling/static/src/js/forms.js"/>
+        </xpath>
+    </template>
+
+    <menuitem id="menu_pulling" name="Pulling" sequence="5"/>
+    <menuitem id="menu_sub_borrow" parent="menu_pulling" name="Borrow" sequence="51"/>
+    <menuitem id="menu_sub_restore" parent="menu_pulling" name="Restore" sequence="52"/>
+</odoo>

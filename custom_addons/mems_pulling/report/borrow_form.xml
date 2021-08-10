@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="action_report_borrow"
+        string="Borrow Form"
+        model="mems.borrow"
+        report_type="qweb-pdf"
+        file="mems_pulling.borrow_form"
+        name="mems_pulling.borrow_form"
+        paperformat="mems_pulling.paperformat_pulling"
+        print_report_name="'Borrow - %s' % (object.name)"/>
+
+    <template id="borrow_logo">
+        <table class="table-logo" style="margin-bottom: 16pt">
+            <tr>
+                <td width="15%">
+                    <img src='/web/binary/company_logo' style="max-height:120px"/>
+                </td>
+                <td width="5%"/>
+                <td style="vertical-align: middle">
+                    <strong style="font-size:16px">
+                        <span t-esc="o.company_id.name"/>
+                    </strong>
+                    <div>
+                        <span t-esc="o.company_id.street"/>
+                        <span t-esc="o.company_id.street2"/>
+                    </div>
+                    <div>
+                        <span t-if="o.company_id.phone">
+                            Tel.
+                            <span t-esc="o.company_id.phone"/>
+                        </span>
+                        <span t-if="o.company_id.vat">
+                            Tax ID
+                            <span t-esc="o.company_id.vat"/>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="borrow_form">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="mems_pulling.borrow_logo"/>
+                    <h3 class="text-center my-5">Pulling Form</h3>
+                    <hr/>
+                    <div class="box mb-4">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-10">
+                                    <table width="100%">
+                                        <tr>
+                                            <th>Doc No</th>
+                                            <td colspan="4">
+                                                <span t-esc="o.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Department</th>
+                                            <td>
+                                                <span t-esc="o.department_id.name"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Start Date</th>
+                                            <td>
+                                                <span t-if="o.borrow_date" t-esc="o.borrow_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Expected Date</th>
+                                            <td>
+                                                <span t-if="o.expect_date" t-esc="o.expect_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>State</th>
+                                            <td>
+                                                <h5 class="m-0">
+                                                    <span t-if="o.state == 'draft'">ตั้งเรื่อง</span>
+                                                    <span t-if="o.state == 'borrow'">ยืม</span>
+                                                    <span t-if="o.state == 'cancel'">ยกเลิก</span>
+                                                    <span t-if="o.state == 'close'">คืน</span>
+                                                </h5>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-2">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('QR',o.name,500,500)" class="img-responsive"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box mb-5">
+                        <div class="box-header">
+                            <h4 class="m-0">Equipment</h4>
+                        </div>
+                        <table class="table-list">
+                            <thead>
+                                <tr>
+                                    <th style="width:5%">No.</th>
+                                    <th>Item</th>
+                                    <th style="width:10%">Qty</th>
+                                    <th style="width:10%">Uom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">
+                                        1
+                                    </td>
+                                    <td>
+                                        [<span t-esc="o.equip_id.code"/>]
+                                        <span t-esc="o.equip_id.name"/>
+                                    </td>
+                                    <td class="text-center">
+                                        1
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="o.equip_id.uom_id.name or 'Unit'"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row no-gutters" style="margin-top:40px">
+                        <div class="col-xs-4">
+                            <div style="text-align:center" class="mr-1">
+                                <div>Responsible By</div>
+                                <div style="border-bottom: 1px solid #333; margin: 40px 15px 10px 15px"/>
+                                <div>
+                                    (<span t-esc="o.responsible_id.name"/>)
+                                </div>
+                                <div style="margin-top:5px">
+                                    Date
+                                    <div style="width:60%; display:inline-block; border-bottom: 1px dotted #333"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div style="text-align:center" class="mx-1">
+                                <div>Check By</div>
+                                <div style="border-bottom: 1px solid #333; margin: 40px 15px 10px 15px"/>
+                                <div>
+                                    (<div style="width:80%;display:inline-block"/>)
+                                </div>
+                                <div style="margin-top:5px">
+                                    Date
+                                    <div style="width:60%; display:inline-block; border-bottom: 1px dotted #333"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div style="text-align:center" class="ml-1">
+                                <div>Approve By</div>
+                                <div style="border-bottom: 1px solid #333; margin: 40px 15px 10px 15px"/>
+                                <div>
+                                    (<div style="width:80%;display:inline-block"/>)
+                                </div>
+                                <div style="margin-top:5px">
+                                    Date
+                                    <div style="width:60%; display:inline-block; border-bottom: 1px dotted #333"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <span>Page:</span>
+                        <span class="page"/>
+                        <span>of</span>
+                        <span class="topage"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

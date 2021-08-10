@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="mems.uom_category" id="uom_category01">
+            <field name="name">หน่วย (Unit)</field>
+        </record>
+        <record model="mems.uom_category" id="uom_category02">
+            <field name="name">น้ำหนัก (Weight)</field>
+        </record>
+        <record model="mems.uom_category" id="uom_category03">
+            <field name="name">ระยะทาง (Distance / Length)</field>
+        </record>
+        <record model="mems.uom_category" id="uom_category04">
+            <field name="name">เวลา (Time)</field>
+        </record>
+        <record model="mems.uom_category" id="uom_category05">
+            <field name="name">ปริมาตร (Volume)</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_pm_checklist_list">
+        <field name="name">pm_checklist.list</field>
+        <field name="model">mems.pm_checklist</field>
+        <field name="arch" type="xml">
+            <tree string="PM Checklist List">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_pm_checklist_form">
+        <field name="name">pm_checklist.form</field>
+        <field name="model">mems.pm_checklist</field>
+        <field name="arch" type="xml">
+            <form string="PM Checklist Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_pm_checklist_list">
+        <field name="name">PM Checklist</field>
+        <field name="res_model">mems.pm_checklist</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first checklist</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_pm_checklist_list" parent="mems_equipment.menu_sub_pm" name="PM Checklist" action="action_pm_checklist_list"/>
+</odoo>

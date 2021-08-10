@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_wizard_payment_form">
+        <field name="name">mems.purchase.payment.wizard.form</field>
+        <field name="model">mems.purchase.payment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Payment">
+                <group>
+                    <group>
+                        <field name="po_id" readonly="1"/>
+                        <field name="supplier_id" readonly="1"/>
+                        <field name="pay_method" widget="radio"/>
+                        <field name="bank_account_id" attrs="{'invisible': [('pay_method', 'in', ['cash', 'cheque'])]}"/>
+                        <field name="pay_amount" readonly="1" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <field name="pay_receive"/>
+                    </group>
+                    <group>
+                        <field name="pay_date"/>
+                        <field name="memo"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Pay" type="object" name="action_save_payment" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

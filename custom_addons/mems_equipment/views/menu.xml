@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="equipment_widget_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mems_equipment/static/src/js/forms.js"/>
+        </xpath>
+    </template>
+
+    <menuitem id="menu_equipment" name="Equipment" sequence="3"/>
+    <menuitem id="menu_sub_equipment" parent="menu_equipment" name="Equipment" sequence="31"/>
+    <menuitem id="menu_sub_pm" parent="menu_equipment" name="PM" sequence="32"/>
+    <menuitem id="menu_sub_calibrate" parent="menu_equipment" name="Calibrate" sequence="33"/>
+</odoo>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="spare_part_report_common" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+            <link href="/mems_master/static/src/css/report.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+    <report
+        id="action_report_spare_part"
+        string="Spare Part Form"
+        model="mems.spare_part"
+        report_type="qweb-pdf"
+        file="mems_master.spare_part_form"
+        name="mems_master.spare_part_form"
+        paperformat="mems_master.paperformat_inventory"
+        print_report_name="'Spare Part - %s' % (object.code)"/>
+
+    <template id="form_logo">
+        <table class="table-logo" style="margin-bottom: 16pt">
+            <tr>
+                <td width="15%">
+                    <img src='/web/binary/company_logo' style="max-height:110px"/>
+                </td>
+                <td width="5%"/>
+                <td style="vertical-align: middle">
+                    <strong style="font-size:16px">
+                        <span t-esc="o.company_id.name"/>
+                    </strong>
+                    <div>
+                        <span t-esc="o.company_id.street"/>
+                        <span t-esc="o.company_id.street2"/>
+                    </div>
+                    <div>
+                        <span t-if="o.company_id.phone">
+                            Tel.
+                            <span t-esc="o.company_id.phone"/>
+                        </span>
+                        <span t-if="o.company_id.vat">
+                            Tax ID
+                            <span t-esc="o.company_id.vat"/>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="form_body">
+        <h3 class="text-center my-5">Spare Part Form</h3>
+        <div class="box mb-4">
+            <div class="box-header">
+                <h4 class="m-0">General Information</h4>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <table width="100%">
+                            <tr>
+                                <th>Code</th>
+                                <td>
+                                    <span t-esc="o.code"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Barcode</th>
+                                <td>
+                                    <span t-esc="o.barcode"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <td>
+                                    <span t-esc="o.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Category</th>
+                                <td>
+                                    <span t-esc="o.category_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Brand</th>
+                                <td>
+                                    <span t-esc="o.brand_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Unit Price</th>
+                                <td>
+                                    <span t-esc="'{0:,.2f}'.format(o.unit_price)"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Last Purchase Date</th>
+                                <td>
+                                    <span t-if="o.last_purchase_date" t-esc="o.last_purchase_date"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="text-right" t-if="o.image">
+                            <img t-attf-src="data:image/*;base64,{{o.image}}" class="img-fluid" style="max-height:250px"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box mb-4">
+            <div class="box-header">
+                <h4 class="m-0">Stock &amp; Location</h4>
+            </div>
+            <div class="box-body">
+                <table width="100%">
+                    <tr>
+                        <th>Unit of Measure</th>
+                        <td>
+                            <span t-esc="o.uom_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Stock Qty</th>
+                        <td>
+                            <span t-esc="o.stock_qty"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Min Qty</th>
+                        <td>
+                            <span t-esc="o.min_qty"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Max Qty</th>
+                        <td>
+                            <span t-esc="o.max_qty"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Stock Location</th>
+                        <td>
+                            <span t-esc="o.location_id.name"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="box mb-4">
+            <div class="box-header">
+                <h4 class="m-0">Description</h4>
+            </div>
+            <div class="box-body">
+                <span t-esc="o.description"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="spare_part_form">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="mems_master.form_logo"/>
+                    <t t-call="mems_master.form_body"/>
+                    <div class="footer">
+                        <span>Page:</span>
+                        <span class="page"/>
+                        <span>of</span>
+                        <span class="topage"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

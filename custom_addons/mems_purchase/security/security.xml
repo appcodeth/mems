@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.module.category" id="module_mems_purchase">
+            <field name="name">MEMs Purchase</field>
+            <field name="sequence">7</field>
+        </record>
+
+        <record id="group_purchase_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_mems_purchase"/>
+        </record>
+
+        <record id="group_purchase_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_mems_purchase"/>
+            <field name="implied_ids" eval="[(4, ref('group_purchase_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+    </data>
+
+    <data noupdate="1">
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('mems_purchase.group_purchase_manager'))]"/>
+        </record>
+    </data>
+</odoo>

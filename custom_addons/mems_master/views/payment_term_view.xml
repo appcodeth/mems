@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_payment_term_list">
+        <field name="name">payment_term.list</field>
+        <field name="model">mems.payment_term</field>
+        <field name="arch" type="xml">
+            <tree string="Payment Term List">
+                <field name="name"/>
+                <field name="name_en"/>
+                <field name="number_of_day"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_payment_term_form">
+        <field name="name">payment_term.form</field>
+        <field name="model">mems.payment_term</field>
+        <field name="arch" type="xml">
+            <form string="Payment Term Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="name_en"/>
+                            <field name="number_of_day"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_payment_term_list">
+        <field name="name">Payment Term</field>
+        <field name="res_model">mems.payment_term</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first payment term</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_payment_term_list" parent="mems_master.menu_sub_purchase" name="Payment Term" action="action_payment_term_list"/>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="purchase_widget_assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/mems_purchase/static/src/js/forms.js"/>
+        </xpath>
+    </template>
+
+    <menuitem id="menu_purchase" name="Purchase" sequence="7"/>
+    <menuitem id="menu_sub_order" parent="menu_purchase" name="Orders" sequence="71"/>
+    <menuitem id="menu_sub_payment" parent="menu_purchase" name="Payment" sequence="72"/>
+    <menuitem id="menu_sub_master" parent="menu_purchase" name="Master" sequence="73"/>
+
+    <!-- duplicate menu -->
+    <menuitem id="menu_supplier_list" parent="mems_purchase.menu_sub_master" name="Supplier" action="mems_master.action_supplier_list"/>
+    <menuitem id="menu_payment_term_list" parent="mems_purchase.menu_sub_master" name="Payment Term" action="mems_master.action_payment_term_list"/>
+    <menuitem id="menu_bank_list" parent="mems_purchase.menu_sub_master" name="Bank Account" action="mems_master.action_bank_account_list"/>
+</odoo>

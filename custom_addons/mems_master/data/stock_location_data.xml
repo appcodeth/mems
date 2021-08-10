@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="mems.stock_location" id="location01">
+            <field name="name">R1-FL01</field>
+            <field name="shelf_no">FL01</field>
+            <field name="description">ห้องเครื่องมือชั้น 1 ห้อง 101</field>
+        </record>
+        <record model="mems.stock_location" id="location02">
+            <field name="name">R1-FL02</field>
+            <field name="shelf_no">FL02</field>
+            <field name="description">ห้องเครื่องมือชั้น 2 ห้อง 101</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_category_list">
+        <field name="name">category.list</field>
+        <field name="model">mems.category</field>
+        <field name="arch" type="xml">
+            <tree string="Category List">
+                <field name="name"/>
+                <field name="parent_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_category_form">
+        <field name="name">category.form</field>
+        <field name="model">mems.category</field>
+        <field name="arch" type="xml">
+            <form string="Category Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_category_list">
+        <field name="name">Category</field>
+        <field name="res_model">mems.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first category</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_category_list" parent="mems_master.menu_sub_stock" name="Category" action="action_category_list" sequence="614"/>
+</odoo>
