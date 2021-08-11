@@ -2,7 +2,7 @@
 <odoo>
     <report
         id="action_report_workorder"
-        string="Work Order"
+        string="Work Order Form"
         model="mems.workorder"
         report_type="qweb-pdf"
         file="mems_repair.workorder_form"
@@ -43,7 +43,7 @@
     <template id="workorder_body">
         <tr>
             <td colspan="5" style="text-align:center">
-                <h3 class="text-center mb-2">Spare Part Form</h3>
+                <h3 class="text-center mb-2">ใบแจ้งซ่อม / Work Order</h3>
             </td>
         </tr>
         <tr style="height:50px">
