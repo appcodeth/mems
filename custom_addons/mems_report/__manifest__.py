@@ -6,7 +6,6 @@
     'category': 'Custom',
     'depends': ['base'],
     'data': [
-        'views/menu.xml',
         'views/report_view.xml',
     ],
     'demo': [],

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <record id="action_dashboard" model="ir.actions.client">
-        <field name="name">Dashboard</field>
-        <field name="tag">mems_dashboard_action</field>
-    </record>
-
-    <menuitem id="manu_dashboard" parent="mems_report.menu_sub_home" action="action_dashboard" name="Dashboard" sequence="1"/>
-</odoo>

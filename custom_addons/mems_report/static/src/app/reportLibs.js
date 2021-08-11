@@ -4,6 +4,12 @@ function numberWithCommas(num) {
     return num.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function numberWithCommas(num, digits) {
+    if (!num)
+        return 0;
+    return num.toFixed(digits).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function twoDigitsNumber(num) {
     if (!num)
         return;

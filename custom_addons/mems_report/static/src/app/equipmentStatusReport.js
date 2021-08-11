@@ -23,7 +23,7 @@ function runReport() {
     var sum_total_count = 0;
 
     $.ajax({
-        url: '/api/equipment/all',
+        url: '/api/equipment/status',
         type: 'get',
         async: false,
         success: function (res) {
@@ -42,13 +42,13 @@ function runReport() {
                     '<td>' + data.categ_name + '</td>' +
                     '<td>' + (data.uom_name || '') + '</td>' +
                     '<td>' + data.brand_name + '/' + data.model_name + '</td>' +
-                    '<td class="text-center">' + data.active_count + '</td>' +
-                    '<td class="text-center">' + data.repair_count + '</td>' +
-                    '<td class="text-center">' + data.calibrate_count + '</td>' +
-                    '<td class="text-center">' + data.pm_count + '</td>' +
-                    '<td class="text-center">' + data.borrow_count + '</td>' +
-                    '<td class="text-center">' + data.inactive_count + '</td>' +
-                    '<td class="text-center">' + data.total_count + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.active_count, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.repair_count, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.calibrate_count, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.pm_count, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.borrow_count, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.inactive_count, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.total_count, 0) + '</td>' +
                     '</tr>';
             });
             // make tbody data
@@ -57,13 +57,13 @@ function runReport() {
             // make tfoot data
             tr = '<tr>' +
                 '<th colspan="5">รวม</th>' +
-                '<th class="text-center">' + sum_active_count + '</th>' +
-                '<th class="text-center">' + sum_repair_count + '</th>' +
-                '<th class="text-center">' + sum_calibrate_count + '</th>' +
-                '<th class="text-center">' + sum_pm_count + '</th>' +
-                '<th class="text-center">' + sum_borrow_count + '</th>' +
-                '<th class="text-center">' + sum_inactive_count + '</th>' +
-                '<th class="text-center">' + sum_total_count + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_active_count, 0) + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_repair_count, 0) + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_calibrate_count, 0) + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_pm_count, 0) + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_borrow_count, 0) + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_inactive_count, 0) + '</th>' +
+                '<th class="text-center">' + numberWithCommas(sum_total_count, 0) + '</th>' +
                 '</tr>';
 
             table_result.append('<tfoot>' + tr + '</tfoot>');

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="EquipmentReport">
+    <t t-name="EquipmentStatusReport">
         <div class="container-fluid">
-            <h1>รายงานคุรุภัณฑ์</h1>
+            <h1>รายงานสถานะคุรุภัณฑ์</h1>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="form-inline">
@@ -45,6 +45,6 @@
             </div>
         </div>
         <script src="/mems_report/static/src/app/reportLibs.js"></script>
-        <script src="/mems_report/static/src/app/equipmentReport.js"></script>
+        <script src="/mems_report/static/src/app/equipmentStatusReport.js"></script>
     </t>
 </templates>

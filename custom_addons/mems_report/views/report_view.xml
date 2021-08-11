@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="action_equipment_report" model="ir.actions.client">
-        <field name="name">Equipment Report</field>
-        <field name="tag">mems_equipment_report</field>
+    <template id="mems_report_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/mems_report/static/src/vendor/datepicker/css/bootstrap-datepicker3.min.css"/>
+            <script type="text/javascript" src="/mems_report/static/src/js/reportAction.js"/>
+            <script type="text/javascript" src="/mems_report/static/src/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+            <script type="text/javascript" src="/mems_report/static/src/vendor/datepicker/locales/bootstrap-datepicker.th.min.js"></script>
+        </xpath>
+    </template>
+
+    <!-- equipment -->
+    <record id="action_equipment_status_report" model="ir.actions.client">
+        <field name="name">Equipment Status Report</field>
+        <field name="tag">mems_equipment_status_report</field>
+    </record>
+
+    <!-- inventory -->
+    <record id="action_inventory_balance_report" model="ir.actions.client">
+        <field name="name">Inventory Balance Report</field>
+        <field name="tag">mems_inventory_balance_report</field>
     </record>
 
     <menuitem id="menu_report" name="รายงาน" sequence="7"/>
     <menuitem id="menu_section_equipment_report" parent="menu_report" name="คุรุภัณฑ์" sequence="71"/>
-    <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_report" name="รายงานคุรุภัณฑ์"/>
-    <menuitem id="menu_equipment2" parent="menu_section_equipment_report" action="action_equipment_report" name="สอบเทียบ/วัด"/>
-    <menuitem id="menu_equipment3" parent="menu_section_equipment_report" action="action_equipment_report" name="การบำรุงรักษา"/>
+    <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สถานะคุรุภัณฑ์"/>
+    <menuitem id="menu_equipment2" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สอบเทียบ/วัด"/>
+    <menuitem id="menu_equipment3" parent="menu_section_equipment_report" action="action_equipment_status_report" name="การบำรุงรักษา"/>
 
     <menuitem id="menu_sub_repair" parent="menu_report" name="งานซ่อม" sequence="72"/>
-    <menuitem id="menu_downtime1" parent="menu_sub_repair" action="action_equipment_report" name="เครื่อง Down Time"/>
-    <menuitem id="menu_downtime2" parent="menu_sub_repair" action="action_equipment_report" name="สถานะการซ่อม"/>
-    <menuitem id="menu_downtime3" parent="menu_sub_repair" action="action_equipment_report" name="สถานะการซ่อม (ภายนอก)"/>
-    <menuitem id="menu_downtime3" parent="menu_sub_repair" action="action_equipment_report" name="การซ่อมที่เกินกำหนด"/>
+    <menuitem id="menu_downtime1" parent="menu_sub_repair" action="action_equipment_status_report" name="เครื่อง Down Time"/>
+    <menuitem id="menu_downtime2" parent="menu_sub_repair" action="action_equipment_status_report" name="สถานะการซ่อม"/>
+    <menuitem id="menu_downtime3" parent="menu_sub_repair" action="action_equipment_status_report" name="สถานะการซ่อม (ภายนอก)"/>
+    <menuitem id="menu_downtime3" parent="menu_sub_repair" action="action_equipment_status_report" name="การซ่อมที่เกินกำหนด"/>
 
     <menuitem id="menu_sub_inventory" parent="menu_report" name="คลังสินค้า" sequence="73"/>
-    <menuitem id="menu_inv1" parent="menu_sub_inventory" action="action_equipment_report" name="สินค้าคงคลัง"/>
-    <menuitem id="menu_inv2" parent="menu_sub_inventory" action="action_equipment_report" name="ความเคลื่อนไหวสินค้า"/>
-    <menuitem id="menu_inv3" parent="menu_sub_inventory" action="action_equipment_report" name="สินค้าใกล้หมด"/>
-    <menuitem id="menu_inv4" parent="menu_sub_inventory" action="action_equipment_report" name="สินค้าใช้บ่อย"/>
-    <menuitem id="menu_inv5" parent="menu_sub_inventory" action="action_equipment_report" name="การรับสินค้า"/>
-    <menuitem id="menu_inv6" parent="menu_sub_inventory" action="action_equipment_report" name="การเบิกสินค้า"/>
-    <menuitem id="menu_inv7" parent="menu_sub_inventory" action="action_equipment_report" name="สถานะการจัดซื้อ"/>
+    <menuitem id="menu_inv1" parent="menu_sub_inventory" action="action_inventory_balance_report" name="สินค้าคงคลัง"/>
+    <menuitem id="menu_inv2" parent="menu_sub_inventory" action="action_equipment_status_report" name="ความเคลื่อนไหวสินค้า"/>
+    <menuitem id="menu_inv3" parent="menu_sub_inventory" action="action_equipment_status_report" name="สินค้าใกล้หมด"/>
+    <menuitem id="menu_inv4" parent="menu_sub_inventory" action="action_equipment_status_report" name="สินค้าใช้บ่อย"/>
+    <menuitem id="menu_inv5" parent="menu_sub_inventory" action="action_equipment_status_report" name="การรับสินค้า"/>
+    <menuitem id="menu_inv6" parent="menu_sub_inventory" action="action_equipment_status_report" name="การเบิกสินค้า"/>
+    <menuitem id="menu_inv7" parent="menu_sub_inventory" action="action_equipment_status_report" name="สถานะการจัดซื้อ"/>
 
     <menuitem id="menu_sub_pulling" parent="menu_report" name="ยืม-คืน" sequence="74"/>
-    <menuitem id="menu_pulling1" parent="menu_sub_pulling" action="action_equipment_report" name="การยืมคุรุภัณฑ์"/>
-    <menuitem id="menu_pulling2" parent="menu_sub_pulling" action="action_equipment_report" name="การคืนคุรุภัณฑ์"/>
-    <menuitem id="menu_pulling3" parent="menu_sub_pulling" action="action_equipment_report" name="คุรุภัณฑ์ที่ยืมเกินกำหนด"/>
+    <menuitem id="menu_pulling1" parent="menu_sub_pulling" action="action_equipment_status_report" name="การยืมคุรุภัณฑ์"/>
+    <menuitem id="menu_pulling2" parent="menu_sub_pulling" action="action_equipment_status_report" name="การคืนคุรุภัณฑ์"/>
+    <menuitem id="menu_pulling3" parent="menu_sub_pulling" action="action_equipment_status_report" name="คุรุภัณฑ์ที่ยืมเกินกำหนด"/>
 
     <menuitem id="menu_sub_perf" parent="menu_report" name="ประสิทธิภาพ" sequence="75"/>
-    <menuitem id="menu_perf1" parent="menu_sub_perf" action="action_equipment_report" name="ประสิทธิภาพช่าง"/>
+    <menuitem id="menu_perf1" parent="menu_sub_perf" action="action_equipment_status_report" name="ประสิทธิภาพช่าง"/>
 </odoo>

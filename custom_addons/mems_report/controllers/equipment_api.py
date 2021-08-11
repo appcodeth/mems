@@ -7,8 +7,8 @@ from odoo.http import request, Response
 
 class EquipmentApi(http.Controller):
 
-    @http.route('/api/equipment/all', type='http', auth='public')
-    def equipment_all(self, **kw):
+    @http.route('/api/equipment/status', type='http', auth='public')
+    def equipment_status(self, **kw):
         sql = """
             select
                 substring(eqp.code, 0, position('/' in eqp.code)) as code,
