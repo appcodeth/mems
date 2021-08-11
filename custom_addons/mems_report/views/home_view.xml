@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_home" model="ir.actions.client">
+        <field name="name">Home</field>
+        <field name="tag">mems_home_action</field>
+    </record>
+
+    <menuitem id="menu_home_panel" parent="mems_report.menu_sub_home" action="action_home" name="Shortcuts" sequence="2"/>
+</odoo>

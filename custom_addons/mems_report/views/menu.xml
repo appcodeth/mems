@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="mems_report_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/mems_report/static/src/css/style.css"/>
+            <link rel="stylesheet" href="/mems_report/static/src/vendor/datepicker/css/bootstrap-datepicker3.min.css"/>
+            <script type="text/javascript" src="/mems_report/static/src/js/home.js"/>
+            <script type="text/javascript" src="/mems_report/static/src/vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+            <script type="text/javascript" src="/mems_report/static/src/vendor/datepicker/locales/bootstrap-datepicker.th.min.js"></script>
+            <script type="text/javascript" src="/mems_report/static/src/js/angular/angular.min.js"></script>
+        </xpath>
+    </template>
+
+    <menuitem id="menu_home" name="Home" sequence="8"/>
+    <menuitem id="menu_sub_home" parent="menu_home" name="Menu"/>
+    <menuitem id="menu_sub_help" parent="menu_home" name="Support"/>
+</odoo>

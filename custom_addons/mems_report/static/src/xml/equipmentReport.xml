@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="EquipmentReport">
+        <div class="container-fluid">
+            <h1>รายงานคุรุภัณฑ์</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-inline">
+                        <a href="#" class="btn btn-success" id="btnShowReport">แสดงรายงาน</a>
+                        <div class="pull-right">
+                            <span style="margin-right:5px">ส่งออกเป็น</span>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-file-pdf-o"/>
+                                    PDF
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-file-excel-o"/>
+                                    Excel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="panel-report" style="display:none">
+                <table class="table table-bordered table-hover" id="table-report">
+                    <thead>
+                        <tr>
+                            <th class="text-center">รหัส</th>
+                            <th>คุรุภัณฑ์</th>
+                            <th class="text-center">ประเภท</th>
+                            <th class="text-center">หน่วยนับ</th>
+                            <th class="text-center">ยี่ห้อ / รุ่น</th>
+                            <th class="text-center">พร้อมใช้</th>
+                            <th class="text-center">ซ่อม</th>
+                            <th class="text-center">สอบเทียบ</th>
+                            <th class="text-center">บำรุงรักษา</th>
+                            <th class="text-center">ยืม</th>
+                            <th class="text-center">ยกเลิก</th>
+                            <th class="text-center">รวม</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <script src="/mems_report/static/src/app/reportLibs.js"></script>
+        <script src="/mems_report/static/src/app/equipmentReport.js"></script>
+    </t>
+</templates>
