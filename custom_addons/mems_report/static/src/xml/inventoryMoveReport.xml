@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="InventoryMoveReport">
+        <div class="container-fluid">
+            <h1>รายงานความเคลื่อนไหวสินค้า</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="form-inline">
+                        <a href="#" class="btn btn-success" id="btnShowReport">แสดงรายงาน</a>
+                        <div class="pull-right">
+                            <span style="margin-right:5px">ส่งออกเป็น</span>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-file-pdf-o"/>
+                                    PDF
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-file-excel-o"/>
+                                    Excel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="panel-report" style="display:none">
+                <table class="table table-bordered table-hover" id="table-report">
+                    <thead>
+                        <tr>
+                            <th class="text-center" width="15%">วันที่</th>
+                            <th>ประเภทรายการ</th>
+                            <th>เลขเอกสาร</th>
+                            <th class="text-center" width="12%">รับ</th>
+                            <th class="text-center" width="12%">เบิก</th>
+                            <th class="text-center" width="12%">ปรับยอด</th>
+                            <th class="text-center" width="12%">คงเหลือ</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <script src="/mems_report/static/src/app/reportLibs.js"></script>
+        <script src="/mems_report/static/src/app/inventoryMoveReport.js"></script>
+    </t>
+</templates>

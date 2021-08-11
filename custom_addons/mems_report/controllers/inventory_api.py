@@ -42,3 +42,47 @@ class InventoryApi(http.Controller):
                 'total_cost': r[8],
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+    @http.route('/api/inventory/move', type='http', auth='public')
+    def inventory_move(self, **kw):
+        sql = """
+            select
+                to_char(mv.move_date, 'DD-MM-YYYY HH:MI') as move_date,
+                mv.product_code as code,
+                mv.name,
+                uom.name as uom_name,
+                mv.doc_id,
+                mv.doc_name,
+                mv.doc_type,
+                case
+                    when mv.doc_type='init' then 'กำหนดค่าเริ่มต้น'
+                    when mv.doc_type='adjust' then 'ปรับยอด'
+                    when mv.doc_type='receive' then 'รับเข้า'
+                    when mv.doc_type='issue' then 'เบิกออก' end as doc_type_desc,
+                case when mv.move_type='in' then mv.qty else 0 end as int_qty,
+                case when mv.move_type='out' then mv.qty else 0 end as out_qty,
+                case when mv.move_type='adjust' then mv.qty else 0 end as adjust_qty,
+                (select stock_qty from mems_spare_part sp where sp.code=mv.product_code) as stock_qty
+            from mems_stock_move mv
+                left join mems_uom uom on mv.uom_id=uom.id
+            order by product_code, move_date asc
+        """
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'move_date': r[0],
+                'code': r[1],
+                'name': r[2],
+                'uom_name': r[3],
+                'doc_id': r[4],
+                'doc_name': r[5],
+                'doc_type': r[6],
+                'doc_type_desc': r[7],
+                'int_qty': r[8],
+                'out_qty': r[9],
+                'adjust_qty': r[10],
+                'stock_qty': r[11],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')

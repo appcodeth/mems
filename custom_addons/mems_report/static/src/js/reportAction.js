@@ -13,7 +13,13 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/inventoryBalanceReport.xml'],
     });
 
+    var InventoryMoveReportAction = Widget.extend({
+        template: 'InventoryMoveReport',
+        xmlDependencies: ['/mems_report/static/src/xml/inventoryMoveReport.xml'],
+    });
+
     core.action_registry.add('mems_equipment_status_report', EquipmentStatusReportAction);
     core.action_registry.add('mems_inventory_balance_report', InventoryBalanceReportAction);
+    core.action_registry.add('mems_inventory_move_report', InventoryMoveReportAction);
     return {};
 });
