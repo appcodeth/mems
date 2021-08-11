@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="InventoryMoveReport">
+    <t t-name="InventoryLowReport">
         <div class="container-fluid">
-            <h1>รายงานความเคลื่อนไหวสินค้า</h1>
+            <h1>รายงานสินค้าใกล้หมด</h1>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="form-inline">
@@ -27,19 +27,19 @@
                 <table class="table table-bordered table-hover" id="table-report">
                     <thead>
                         <tr>
-                            <th class="text-center" width="15%">วันที่</th>
-                            <th>ประเภทรายการ</th>
-                            <th>เลขเอกสาร</th>
-                            <th class="text-center" width="10%">รับ</th>
-                            <th class="text-center" width="10%">เบิก</th>
-                            <th class="text-center" width="10%">ปรับยอด</th>
-                            <th class="text-center" width="10%">คงเหลือ</th>
+                            <th class="text-center">รหัส</th>
+                            <th>ชื่ออะไหล่</th>
+                            <th>ประเภท</th>
+                            <th>หน่วยนับ</th>
+                            <th>ยี่ห้อ</th>
+                            <th>ที่เก็บ</th>
+                            <th class="text-center">คงเหลือ</th>
                         </tr>
                     </thead>
                 </table>
             </div>
         </div>
         <script src="/mems_report/static/src/app/reportLibs.js"></script>
-        <script src="/mems_report/static/src/app/inventoryMoveReport.js"></script>
+        <script src="/mems_report/static/src/app/inventoryLowReport.js"></script>
     </t>
 </templates>
