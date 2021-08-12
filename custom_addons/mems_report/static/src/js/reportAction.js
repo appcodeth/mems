@@ -51,6 +51,12 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/pullingBorrowReport.xml'],
     });
 
+    var PullingRestoreReportAction = Widget.extend({
+        template: 'PullingRestoreReport',
+        xmlDependencies: ['/mems_report/static/src/xml/pullingRestoreReport.xml'],
+    });
+
+
     core.action_registry.add('mems_equipment_status_report', EquipmentStatusReportAction);
     core.action_registry.add('mems_inventory_balance_report', InventoryBalanceReportAction);
     core.action_registry.add('mems_inventory_move_report', InventoryMoveReportAction);
@@ -60,5 +66,6 @@ odoo.define('mems_report.report_action', function(require) {
     core.action_registry.add('mems_inventory_issue_report', InventoryIssueReportAction);
     core.action_registry.add('mems_inventory_purchase_report', InventoryPurchaseReportAction);
     core.action_registry.add('mems_pulling_borrow_report', PullingBorrowReportAction);
+    core.action_registry.add('mems_pulling_restore_report', PullingRestoreReportAction);
     return {};
 });
