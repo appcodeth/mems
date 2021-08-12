@@ -11,7 +11,7 @@
                         <label>ถึงวันที่</label>
                         <input type="text" id="end_date" name="end_date" class="form-control datepicker"/>
                         <a href="#" class="btn btn-success" id="btnShowReport">แสดงรายงาน</a>
-                        <a href="#" class="btn" id="btnClearReport">ยกเลิก</a>
+                        <a href="#" class="btn btn-default" id="btnClearReport">ยกเลิก</a>
                         <div class="pull-right">
                             <div class="btn-group" role="group" aria-label="...">
                                 <button type="button" class="btn btn-default">

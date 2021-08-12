@@ -51,6 +51,12 @@
         <field name="tag">mems_inventory_purchase_report</field>
     </record>
 
+    <!-- pulling -->
+    <record id="action_pulling_borrow_report" model="ir.actions.client">
+        <field name="name">Pulling Borrow Report</field>
+        <field name="tag">mems_pulling_borrow_report</field>
+    </record>
+
     <menuitem id="menu_report" name="รายงาน" sequence="7"/>
     <menuitem id="menu_section_equipment_report" parent="menu_report" name="คุรุภัณฑ์" sequence="71"/>
     <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สถานะคุรุภัณฑ์"/>
@@ -73,7 +79,7 @@
     <menuitem id="menu_inv7" parent="menu_sub_inventory" action="action_inventory_purchase_report" name="สถานะการจัดซื้อ"/>
 
     <menuitem id="menu_sub_pulling" parent="menu_report" name="ยืม-คืน" sequence="74"/>
-    <menuitem id="menu_pulling1" parent="menu_sub_pulling" action="action_equipment_status_report" name="การยืมคุรุภัณฑ์"/>
+    <menuitem id="menu_pulling1" parent="menu_sub_pulling" action="action_pulling_borrow_report" name="การยืมคุรุภัณฑ์"/>
     <menuitem id="menu_pulling2" parent="menu_sub_pulling" action="action_equipment_status_report" name="การคืนคุรุภัณฑ์"/>
     <menuitem id="menu_pulling3" parent="menu_sub_pulling" action="action_equipment_status_report" name="คุรุภัณฑ์ที่ยืมเกินกำหนด"/>
 
