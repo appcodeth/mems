@@ -8,7 +8,6 @@
                     <div class="form-inline">
                         <a href="#" class="btn btn-success" id="btnShowReport">แสดงรายงาน</a>
                         <div class="pull-right">
-                            <span style="margin-right:5px">ส่งออกเป็น</span>
                             <div class="btn-group" role="group" aria-label="...">
                                 <button type="button" class="btn btn-default">
                                     <i class="fa fa-file-pdf-o"/>

@@ -17,13 +17,12 @@ function runReport() {
     var sum_stock_qty = 0;
 
     $.ajax({
-        url: '/api/inventory/low',
+        url: '/api/inventory/topuse',
         type: 'get',
         async: false,
         success: function (res) {
             $.each(res.rows, function (index, data) {
-                sum_stock_qty += data.stock_qty;
-
+                sum_stock_qty += data.qty;
                 tr += '<tr>' +
                     '<td class="text-center">' + (index + 1) + '</td>' +
                     '<td class="text-center">' + (data.code || '') + '</td>' +
@@ -32,7 +31,7 @@ function runReport() {
                     '<td>' + (data.uom_name || '') + '</td>' +
                     '<td>' + (data.brand_name || '') + '</td>' +
                     '<td>' + (data.loc_name || '') + '</td>' +
-                    '<td class="text-center">' + numberWithCommas(data.stock_qty, 0) + '</td>' +
+                    '<td class="text-center">' + numberWithCommas(data.qty, 0) + '</td>' +
                     '</tr>';
             });
             // make tbody data

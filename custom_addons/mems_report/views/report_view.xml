@@ -31,6 +31,16 @@
         <field name="tag">mems_inventory_low_report</field>
     </record>
 
+    <record id="action_inventory_topuse_report" model="ir.actions.client">
+        <field name="name">Inventory Top Use Report</field>
+        <field name="tag">mems_inventory_topuse_report</field>
+    </record>
+
+    <record id="action_inventory_receive_report" model="ir.actions.client">
+        <field name="name">Inventory Receive Report</field>
+        <field name="tag">mems_inventory_receive_report</field>
+    </record>
+
     <menuitem id="menu_report" name="รายงาน" sequence="7"/>
     <menuitem id="menu_section_equipment_report" parent="menu_report" name="คุรุภัณฑ์" sequence="71"/>
     <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สถานะคุรุภัณฑ์"/>
@@ -47,8 +57,8 @@
     <menuitem id="menu_inv1" parent="menu_sub_inventory" action="action_inventory_balance_report" name="สินค้าคงคลัง"/>
     <menuitem id="menu_inv2" parent="menu_sub_inventory" action="action_inventory_move_report" name="ความเคลื่อนไหวสินค้า"/>
     <menuitem id="menu_inv3" parent="menu_sub_inventory" action="action_inventory_low_report" name="สินค้าใกล้หมด"/>
-    <menuitem id="menu_inv4" parent="menu_sub_inventory" action="action_equipment_status_report" name="สินค้าใช้บ่อย"/>
-    <menuitem id="menu_inv5" parent="menu_sub_inventory" action="action_equipment_status_report" name="การรับสินค้า"/>
+    <menuitem id="menu_inv4" parent="menu_sub_inventory" action="action_inventory_topuse_report" name="สินค้าใช้บ่อย"/>
+    <menuitem id="menu_inv5" parent="menu_sub_inventory" action="action_inventory_receive_report" name="การรับสินค้า"/>
     <menuitem id="menu_inv6" parent="menu_sub_inventory" action="action_equipment_status_report" name="การเบิกสินค้า"/>
     <menuitem id="menu_inv7" parent="menu_sub_inventory" action="action_equipment_status_report" name="สถานะการจัดซื้อ"/>
 

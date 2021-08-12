@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="EquipmentStatusReport">
+    <t t-name="InventoryReceiveReport">
         <div class="container-fluid">
-            <h1>รายงานสถานะคุรุภัณฑ์</h1>
+            <h1>รายงานการรับสินค้า</h1>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="form-inline">
+                        <label>วันที่</label>
+                        <input type="text" id="from_date" name="from_date" class="form-control datepicker"/>
+                        <label>ถึงวันที่</label>
+                        <input type="text" id="end_date" name="end_date" class="form-control datepicker"/>
                         <a href="#" class="btn btn-success" id="btnShowReport">แสดงรายงาน</a>
+                        <a href="#" class="btn" id="btnClearReport">ยกเลิก</a>
                         <div class="pull-right">
                             <div class="btn-group" role="group" aria-label="...">
                                 <button type="button" class="btn btn-default">
@@ -26,24 +31,22 @@
                 <table class="table table-bordered table-hover" id="table-report">
                     <thead>
                         <tr>
-                            <th class="text-center">รหัส</th>
-                            <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ประเภท</th>
+                            <th class="text-center">ลำดับ</th>
+                            <th class="text-center">วันที่รับ</th>
+                            <th class="text-center">เลขที่ใบรับ</th>
+                            <th class="text-center">เลขที่ P/O</th>
+                            <th class="text-center">วันที่ P/O</th>
+                            <th>ผู้จัดจำหน่าย</th>
                             <th class="text-center">หน่วยนับ</th>
-                            <th class="text-center">ยี่ห้อ / รุ่น</th>
-                            <th class="text-center">พร้อมใช้</th>
-                            <th class="text-center">ซ่อม</th>
-                            <th class="text-center">สอบเทียบ</th>
-                            <th class="text-center">บำรุงรักษา</th>
-                            <th class="text-center">ยืม</th>
-                            <th class="text-center">ยกเลิก</th>
-                            <th class="text-center">รวม</th>
+                            <th class="text-center">จำนวน</th>
+                            <th class="text-right">ราคาซื้อ</th>
+                            <th class="text-right">รวมเงิน</th>
                         </tr>
                     </thead>
                 </table>
             </div>
         </div>
         <script src="/mems_report/static/src/app/reportLibs.js"></script>
-        <script src="/mems_report/static/src/app/equipmentStatusReport.js"></script>
+        <script src="/mems_report/static/src/app/inventoryReceiveReport.js"></script>
     </t>
 </templates>

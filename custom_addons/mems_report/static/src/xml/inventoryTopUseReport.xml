@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="EquipmentStatusReport">
+    <t t-name="InventoryTopUseReport">
         <div class="container-fluid">
-            <h1>รายงานสถานะคุรุภัณฑ์</h1>
+            <h1>รายงานสินค้าใช้บ่อย</h1>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="form-inline">
@@ -26,24 +26,20 @@
                 <table class="table table-bordered table-hover" id="table-report">
                     <thead>
                         <tr>
+                            <th class="text-center">ลำดับ</th>
                             <th class="text-center">รหัส</th>
-                            <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ประเภท</th>
-                            <th class="text-center">หน่วยนับ</th>
-                            <th class="text-center">ยี่ห้อ / รุ่น</th>
-                            <th class="text-center">พร้อมใช้</th>
-                            <th class="text-center">ซ่อม</th>
-                            <th class="text-center">สอบเทียบ</th>
-                            <th class="text-center">บำรุงรักษา</th>
-                            <th class="text-center">ยืม</th>
-                            <th class="text-center">ยกเลิก</th>
-                            <th class="text-center">รวม</th>
+                            <th>ชื่ออะไหล่</th>
+                            <th>ประเภท</th>
+                            <th>หน่วยนับ</th>
+                            <th>ยี่ห้อ</th>
+                            <th>ที่เก็บ</th>
+                            <th class="text-center">จำนวนที่ใช้</th>
                         </tr>
                     </thead>
                 </table>
             </div>
         </div>
         <script src="/mems_report/static/src/app/reportLibs.js"></script>
-        <script src="/mems_report/static/src/app/equipmentStatusReport.js"></script>
+        <script src="/mems_report/static/src/app/inventoryTopUseReport.js"></script>
     </t>
 </templates>
