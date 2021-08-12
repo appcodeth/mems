@@ -40,8 +40,7 @@
                             <th class="text-center">ระยะเวลา (วัน)</th>
                             <th class="text-center">รหัสคุรุภัณฑ์</th>
                             <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ยี่ห้อ</th>
-                            <th class="text-center">รุ่น</th>
+                            <th class="text-center">ยี่ห้อ/รุ่น</th>
                             <th class="text-center">เลขเครื่อง S/N</th>
                             <th class="text-center">ผู้รับเรื่อง</th>
                             <th class="text-center">จำนวน</th>

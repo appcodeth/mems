@@ -48,8 +48,7 @@ function runReport() {
                     '<td class="text-center">' + (data.no_day || '1') + '</td>' +
                     '<td class="text-center">' + (data.code || '') + '</td>' +
                     '<td>' + (data.equip_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.brand_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.model_name || '') + '</td>' +
+                    '<td class="text-center">' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
                     '<td class="text-center">' + (data.serial_no || '') + '</td>' +
                     '<td class="text-center">' + (data.login || '') + '</td>' +
                     '<td class="text-center">' + (data.qty || '') + '</td>' +

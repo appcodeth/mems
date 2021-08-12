@@ -24,8 +24,7 @@ function runReport() {
                     '<td class="text-center">' + (index + 1) + '</td>' +
                     '<td class="text-center">' + (data.code || '') + '</td>' +
                     '<td>' + (data.name || '') + '</td>' +
-                    '<td>' + (data.brand_name || '') + '</td>' +
-                    '<td>' + (data.model_name || '') + '</td>' +
+                    '<td>' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
                     '<td class="text-center">' + (data.serial_no || '') + '</td>' +
                     '<td class="text-center">' + (data.borrow_name || '') + '</td>' +
                     '<td>' + (data.dept_name || '') + '</td>' +
