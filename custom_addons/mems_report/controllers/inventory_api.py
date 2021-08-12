@@ -201,3 +201,89 @@ class InventoryApi(http.Controller):
                 'amount': r[10],
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+
+    @http.route('/api/inventory/issue', type='http', auth='public')
+    def inventory_issue(self, **kw):
+        start_date = request.params.get('start_date') + ' 00:00:00'
+        end_date = request.params.get('end_date') + ' 23:59:59'
+        sql = """
+            select
+                pt.code,
+                pt.name,
+                isu.name as issue_name,
+                isu.date_issue as issue_date,
+                wo.name as wo_name,
+                wo.date_order as wo_date,
+                dp.name as dept_name,
+                um.name as uom_name,
+                isl.qty,
+                isl.price,
+                isl.amount
+            from mems_issue_line isl
+                left join mems_issue isu on isl.issue_id=isu.id
+                left join mems_workorder wo on isu.wo_id=wo.id
+                left join mems_department dp on isu.department_id=dp.id
+                left join mems_spare_part pt on isl.part_id=pt.id
+                left join mems_uom um on isl.uom_id=um.id
+            where isu.date_issue between '{0}' and '{1}' and isu.state='complete'
+            order by pt.code,issue_name asc
+        """.format(start_date, end_date)
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'code': r[0],
+                'name': r[1],
+                'issue_name': r[2],
+                'issue_date': r[3],
+                'wo_name': r[4],
+                'wo_date': r[5],
+                'dept_name': r[6],
+                'uom_name': r[7],
+                'qty': r[8],
+                'price': r[9],
+                'amount': r[10],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+
+    @http.route('/api/inventory/purchase', type='http', auth='public')
+    def inventory_purchase(self, **kw):
+        start_date = request.params.get('start_date') + ' 00:00:00'
+        end_date = request.params.get('end_date') + ' 23:59:59'
+        sql = """
+            select
+                po.name,
+                po.date_order,
+                po.date_payment,
+                po.ref_rfq,
+                sp.name as sup_name,
+                po.amount_untaxed,
+                po.amount_tax,
+                po.amount_discount,
+                po.amount_total,
+                po.state
+            from mems_purchase po
+                left join mems_supplier sp on po.supplier_id=sp.id
+            where po.state not in ('draft', 'cancel') and po.date_order between '{0}' and '{1}'
+            order by po.name asc
+        """.format(start_date, end_date)
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'name': r[0],
+                'date_order': r[1],
+                'date_payment': r[2],
+                'ref_rfq': r[3],
+                'sup_name': r[4],
+                'amount_untaxed': r[5],
+                'amount_tax': r[6],
+                'amount_discount': r[7],
+                'amount_total': r[8],
+                'state': r[9],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')

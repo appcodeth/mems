@@ -33,11 +33,23 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/inventoryReceiveReport.xml'],
     });
 
+    var InventoryIssueReportAction = Widget.extend({
+        template: 'InventoryIssueReport',
+        xmlDependencies: ['/mems_report/static/src/xml/inventoryIssueReport.xml'],
+    });
+
+    var InventoryPurchaseReportAction = Widget.extend({
+        template: 'InventoryPurchaseReport',
+        xmlDependencies: ['/mems_report/static/src/xml/inventoryPurchaseReport.xml'],
+    });
+
     core.action_registry.add('mems_equipment_status_report', EquipmentStatusReportAction);
     core.action_registry.add('mems_inventory_balance_report', InventoryBalanceReportAction);
     core.action_registry.add('mems_inventory_move_report', InventoryMoveReportAction);
     core.action_registry.add('mems_inventory_low_report', InventoryLowReportAction);
     core.action_registry.add('mems_inventory_topuse_report', InventoryTopUseReportAction);
     core.action_registry.add('mems_inventory_receive_report', InventoryReceiveReportAction);
+    core.action_registry.add('mems_inventory_issue_report', InventoryIssueReportAction);
+    core.action_registry.add('mems_inventory_purchase_report', InventoryPurchaseReportAction);
     return {};
 });

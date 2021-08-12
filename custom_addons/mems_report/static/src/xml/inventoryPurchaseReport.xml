@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="InventoryReceiveReport">
+    <t t-name="InventoryPurchaseReport">
         <div class="container-fluid">
-            <h1>รายงานการรับสินค้า</h1>
+            <h1>รายงานสถานะการจัดซื้อ</h1>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="form-inline">
@@ -32,21 +32,21 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">วันที่รับ</th>
-                            <th class="text-center">เลขที่ใบรับ</th>
                             <th class="text-center">เลขที่ P/O</th>
                             <th class="text-center">วันที่ P/O</th>
+                            <th class="text-center">เลขที่ RFQ</th>
                             <th>ผู้จัดจำหน่าย</th>
-                            <th class="text-center">หน่วยนับ</th>
-                            <th class="text-center">จำนวน</th>
-                            <th class="text-right">ราคา/หน่วย</th>
-                            <th class="text-right">รวมเงิน</th>
+                            <th class="text-center">วันที่ชำระเงิน</th>
+                            <th class="text-center">สถานะ</th>
+                            <th class="text-right">ราคาไม่รวมภาษี</th>
+                            <th class="text-right">ภาษี</th>
+                            <th class="text-right">รวมเป็นเงิน</th>
                         </tr>
                     </thead>
                 </table>
             </div>
         </div>
         <script src="/mems_report/static/src/app/reportLibs.js"></script>
-        <script src="/mems_report/static/src/app/inventoryReceiveReport.js"></script>
+        <script src="/mems_report/static/src/app/inventoryPurchaseReport.js"></script>
     </t>
 </templates>
