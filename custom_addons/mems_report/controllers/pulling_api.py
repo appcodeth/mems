@@ -101,3 +101,44 @@ class PullingApi(http.Controller):
                 'no_day': r[12],
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+
+    @http.route('/api/pulling/overdate', type='http', auth='public')
+    def pulling_overdate(self, **kw):
+        sql = """
+            select
+                eq.code,
+                eq.name,
+                eq.model_name,
+                eq.serial_no,
+                bn.name as brand_name,
+                br.name as borrow_name,
+                dp.name as dept_name,
+                br.borrow_date,
+                br.expect_date,
+                date_part('day', now()::timestamp - br.expect_date::timestamp) as no_day
+            from mems_borrow br
+                left join mems_equipment eq on br.equip_id=eq.id
+                left join mems_department dp on br.department_id=dp.id
+                left join mems_brand bn on eq.brand_id=bn.id
+                left join res_users u on br.responsible_id=u.id
+            where br.state='borrow' and now() > br.expect_date
+            order by br.borrow_date,eq.code asc
+        """
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'code': r[0],
+                'name': r[1],
+                'model_name': r[2],
+                'serial_no': r[3],
+                'brand_name': r[4],
+                'borrow_name': r[5],
+                'dept_name': r[6],
+                'borrow_date': r[7],
+                'expect_date': r[8],
+                'no_day': r[9],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
