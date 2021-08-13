@@ -9,6 +9,11 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/equipmentStatusReport.xml'],
     });
 
+    var EquipmentCalibrateReportAction = Widget.extend({
+        template: 'EquipmentCalibrateReport',
+        xmlDependencies: ['/mems_report/static/src/xml/equipmentCalibrateReport.xml'],
+    });
+
     // Inventory
     var InventoryBalanceReportAction = Widget.extend({
         template: 'InventoryBalanceReport',
@@ -61,8 +66,15 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/pullingOverdateReport.xml'],
     });
 
+    // staff
+    var StaffPerformanceReportAction = Widget.extend({
+        template: 'StaffPerformanceReport',
+        xmlDependencies: ['/mems_report/static/src/xml/staffPerformanceReport.xml'],
+    });
 
     core.action_registry.add('mems_equipment_status_report', EquipmentStatusReportAction);
+    core.action_registry.add('mems_equipment_calibrate_report', EquipmentCalibrateReportAction);
+
     core.action_registry.add('mems_inventory_balance_report', InventoryBalanceReportAction);
     core.action_registry.add('mems_inventory_move_report', InventoryMoveReportAction);
     core.action_registry.add('mems_inventory_low_report', InventoryLowReportAction);
@@ -73,5 +85,6 @@ odoo.define('mems_report.report_action', function(require) {
     core.action_registry.add('mems_pulling_borrow_report', PullingBorrowReportAction);
     core.action_registry.add('mems_pulling_restore_report', PullingRestoreReportAction);
     core.action_registry.add('mems_pulling_overdate_report', PullingOverdateReportAction);
+    core.action_registry.add('mems_staff_performance_report', StaffPerformanceReportAction);
     return {};
 });

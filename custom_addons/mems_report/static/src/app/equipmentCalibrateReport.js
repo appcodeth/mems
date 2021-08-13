@@ -30,41 +30,28 @@ function runReport() {
     var sum_total_cost = 0;
 
     $.ajax({
-        url: '/api/pulling/restore?start_date=' + start_date + '&end_date=' + end_date,
+        url: '/api/equipment/calibrate?start_date=' + start_date + '&end_date=' + end_date,
         type: 'get',
         async: false,
         success: function (res) {
-            var total_qty = 0;
-
             $.each(res.rows, function (index, data) {
-                total_qty += data.qty;
                 tr += '<tr>' +
                     '<td class="text-center">' + (index + 1) + '</td>' +
-                    '<td class="text-center">' + (data.name || '') + '</td>' +
-                    '<td class="text-center">' + (data.restore_date || '') + '</td>' +
-                    '<td>' + (data.dept_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.borrow_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.borrow_date || '') + '</td>' +
-                    '<td class="text-center">' + (data.no_day || '1') + '</td>' +
+                    '<td class="text-center">' + (data.ca_name || '') + '</td>' +
+                    '<td class="text-center">' + (data.start_date || '') + '</td>' +
+                    '<td class="text-center">' + (data.end_date || '') + '</td>' +
+                    '<td>' + (data.sup_name || '') + '</td>' +
                     '<td class="text-center">' + (data.code || '') + '</td>' +
-                    '<td>' + (data.equip_name || '') + '</td>' +
+                    '<td>' + (data.name || '') + '</td>' +
+                    '<td class="text-center">' + (data.categ_name || '') + '</td>' +
                     '<td class="text-center">' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
                     '<td class="text-center">' + (data.serial_no || '') + '</td>' +
                     '<td class="text-center">' + (data.login || '') + '</td>' +
-                    '<td class="text-center">' + (data.qty || '') + '</td>' +
                 '</tr>';
             });
 
             // make tbody data
             table_result.append('<tbody>' + tr + '</tbody>');
-
-            // make tfoot data
-            tr = '<tr>' +
-                '<th colspan="12">รวม</th>' +
-                '<th class="text-center">' + numberWithCommas(total_qty, 0) + '</th>' +
-            '</tr>';
-
-            table_result.append('<tfoot>' + tr + '</tfoot>');
             showReport();
         },
         error: function (err) {

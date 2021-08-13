@@ -60,7 +60,7 @@ function runReport() {
 
             // make tfoot data
             tr = '<tr>' +
-                '<th colspan="12">รวม</th>' +
+                '<th colspan="11">รวม</th>' +
                 '<th class="text-center">' + numberWithCommas(total_qty, 0) + '</th>' +
             '</tr>';
 

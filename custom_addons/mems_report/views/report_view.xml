@@ -15,6 +15,11 @@
         <field name="tag">mems_equipment_status_report</field>
     </record>
 
+    <record id="action_equipment_calibrate_report" model="ir.actions.client">
+        <field name="name">Equipment Calibrate Report</field>
+        <field name="tag">mems_equipment_calibrate_report</field>
+    </record>
+
     <!-- inventory -->
     <record id="action_inventory_balance_report" model="ir.actions.client">
         <field name="name">Inventory Balance Report</field>
@@ -67,10 +72,17 @@
         <field name="tag">mems_pulling_overdate_report</field>
     </record>
 
+    <!-- staff -->
+    <record id="action_staff_performance_report" model="ir.actions.client">
+        <field name="name">Staff Performance Report</field>
+        <field name="tag">mems_staff_performance_report</field>
+    </record>
+
+
     <menuitem id="menu_report" name="รายงาน" sequence="7"/>
     <menuitem id="menu_section_equipment_report" parent="menu_report" name="คุรุภัณฑ์" sequence="71"/>
     <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สถานะคุรุภัณฑ์"/>
-    <menuitem id="menu_equipment2" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สอบเทียบ/วัด"/>
+    <menuitem id="menu_equipment2" parent="menu_section_equipment_report" action="action_equipment_calibrate_report" name="สอบเทียบ/วัด"/>
     <menuitem id="menu_equipment3" parent="menu_section_equipment_report" action="action_equipment_status_report" name="การบำรุงรักษา"/>
 
     <menuitem id="menu_sub_repair" parent="menu_report" name="งานซ่อม" sequence="72"/>
@@ -94,5 +106,5 @@
     <menuitem id="menu_pulling3" parent="menu_sub_pulling" action="action_pulling_overdate_report" name="คุรุภัณฑ์ที่ยืมเกินกำหนด"/>
 
     <menuitem id="menu_sub_perf" parent="menu_report" name="ประสิทธิภาพ" sequence="75"/>
-    <menuitem id="menu_perf1" parent="menu_sub_perf" action="action_equipment_status_report" name="ประสิทธิภาพช่าง"/>
+    <menuitem id="menu_perf1" parent="menu_sub_perf" action="action_staff_performance_report" name="ประสิทธิภาพช่าง"/>
 </odoo>
