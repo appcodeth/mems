@@ -201,3 +201,46 @@ class EquipmentApi(http.Controller):
                 'state': r[10],
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+
+    @http.route('/api/equipment/warranty', type='http', auth='public')
+    def equipment_warranty(self, **kw):
+        sql = """
+            select
+                eq.code,
+                eq.name,
+                ca.name as categ_name,
+                um.name as uom_name,
+                bn.name as brand_name,
+                eq.model_name,
+                eq.serial_no,
+                eq.warranty_start_date,
+                eq.warranty_end_date,
+                sp.name as sup_name,
+                date_part('day', eq.warranty_end_date::timestamp - now()::timestamp) as no_day
+            from mems_equipment eq
+                left join mems_category ca on eq.category_id=ca.id
+                left join mems_brand bn on eq.brand_id=bn.id
+                left join mems_supplier sp on eq.supplier_id=sp.id
+                left join mems_uom um on eq.uom_id=um.id
+            where eq.warranty_start_date is not null or eq.warranty_end_date is not null
+            order by eq.code,eq.warranty_end_date asc
+        """
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'code': r[0],
+                'name': r[1],
+                'categ_name': r[2],
+                'uom_name': r[3],
+                'brand_name': r[4],
+                'model_name': r[5],
+                'serial_no': r[6],
+                'warranty_start_date': r[7],
+                'warranty_end_date': r[8],
+                'sup_name': r[9],
+                'no_day': r[10],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')

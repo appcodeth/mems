@@ -30,6 +30,11 @@
         <field name="tag">mems_equipment_downtime_report</field>
     </record>
 
+    <record id="action_equipment_warranty_report" model="ir.actions.client">
+        <field name="name">Equipment Warranty Report</field>
+        <field name="tag">mems_equipment_warranty_report</field>
+    </record>
+
     <!-- inventory -->
     <record id="action_inventory_balance_report" model="ir.actions.client">
         <field name="name">Inventory Balance Report</field>
@@ -91,7 +96,7 @@
     <menuitem id="menu_report" name="รายงาน" sequence="7"/>
     <menuitem id="menu_section_equipment_report" parent="menu_report" name="คุรุภัณฑ์" sequence="71"/>
     <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สถานะคุรุภัณฑ์"/>
-    <menuitem id="menu_equipment2" parent="menu_section_equipment_report" action="action_equipment_status_report" name="เครื่องหมดประกัน"/>
+    <menuitem id="menu_equipment2" parent="menu_section_equipment_report" action="action_equipment_warranty_report" name="เครื่องหมดประกัน"/>
     <menuitem id="menu_equipment3" parent="menu_section_equipment_report" action="action_equipment_calibrate_report" name="สอบเทียบ/วัด"/>
     <menuitem id="menu_equipment4" parent="menu_section_equipment_report" action="action_equipment_pm_report" name="การบำรุงรักษา"/>
 
