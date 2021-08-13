@@ -1,0 +1,162 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mems_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20201204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-05 06:35+0000\n"
+"PO-Revision-Date: 2021-08-05 06:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:126
+#, python-format
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#. module: mems_dashboard
+#: model:ir.ui.menu,name:mems_dashboard.menu_dashboard
+msgid "Dashboard"
+msgstr "แดชบอร์ด"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:64
+#, python-format
+msgid "Discard"
+msgstr "ยกเลิก"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:112
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:119
+#, python-format
+msgid "Draft"
+msgstr "เตรียมการ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:96
+#, python-format
+msgid "Items"
+msgstr "รายการ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:90
+#, python-format
+msgid "Latest Repairs"
+msgstr "งานล่าสุด"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:95
+#, python-format
+msgid "No."
+msgstr "ลำดับ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:47
+#, python-format
+msgid "On Calibrate"
+msgstr "สอบเทียบ/วัด"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:30
+#, python-format
+msgid "On Repairs"
+msgstr "ซ่อม"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:5
+#: model:ir.actions.client,name:mems_dashboard.action_dashboard_overview
+#: model:ir.ui.menu,name:mems_dashboard.menu_dashboard_overview
+#, python-format
+msgid "Overview"
+msgstr "ภาพรวม"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:13
+#, python-format
+msgid "Ready"
+msgstr "พร้อมใช้"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:117
+#, python-format
+msgid "Repair Heart Rate Accerelator S/N: 000001"
+msgstr "Repair Heart Rate Accerelator S/N: 000001"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:124
+#, python-format
+msgid "Repair Home Isolator Machine S/N: 000001"
+msgstr "Repair Home Isolator Machine S/N: 000001"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:131
+#, python-format
+msgid "Repair Power Supply for Heart Ward S/N: 000001"
+msgstr "Repair Power Supply for Heart Ward S/N: 000001"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:103
+#, python-format
+msgid "Repair Thermometer S/N: 000001"
+msgstr "Repair Thermometer S/N: 000001"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:110
+#, python-format
+msgid "Repair Vanill Isolators S/N: 000001"
+msgstr "Repair Vanill Isolators S/N: 000001"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:97
+#, python-format
+msgid "Status"
+msgstr "สถานะ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:105
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:133
+#, python-format
+msgid "Success"
+msgstr "สำเร็จ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:102
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:109
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:116
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:123
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:130
+#, python-format
+msgid "WO00001"
+msgstr "WO00001"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/dashboard.xml:80
+#, python-format
+msgid "Year 2564"
+msgstr "ปี 2564"

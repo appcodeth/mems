@@ -1,13 +1,14 @@
 {
-    'name': 'MEMs Theme',
+    'name': 'MEMs Dashboard',
+    'summary': 'Medical Equipment Dashboard',
+    'description': '',
+    'category': 'Custom',
     'version': '0.1',
     'author': 'Appcode Technology',
     'website': 'http://www.appcode.co.th/mems',
-    'category': 'Custom',
-    'depends': ['base', 'web_sheet_full_width'],
+    'depends': ['base'],
     'data': [
         'views/menu.xml',
-        'views/webclient_template.xml',
     ],
     'demo': [],
 }

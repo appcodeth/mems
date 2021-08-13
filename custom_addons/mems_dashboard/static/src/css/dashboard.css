@@ -1,0 +1,70 @@
+.dashboard .badge {
+    padding: 3px 6px;
+    border-color: transparent;
+}
+
+.dashboard .card-dashboard {
+    color: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.dashboard .card-dashboard .icon {
+    text-align: center;
+    color: rgba(0,0,0,0.15);
+}
+
+.dashboard .card-dashboard .icon .fa {
+    margin: 5px 0;
+}
+
+.dashboard .card-dashboard .icon .fa-3x {
+    font-size: 3.2em;
+}
+
+.dashboard .card-dashboard h1 {
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.dashboard .card-dashboard .small {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.dashboard .card-success {
+    color: #fff;
+    background-color: #00a65a;
+}
+
+.dashboard .card-success .card-body {
+    background-color: #00a65a !important;
+}
+
+.dashboard .card-info {
+    color: #fff;
+    background-color: #00c0ef;
+}
+
+.dashboard .card-info .card-body {
+    background-color: #00c0ef !important;
+}
+
+.dashboard .card-warning {
+    color: #fff;
+    background-color: #f39c12;
+}
+
+.dashboard .card-warning .card-body {
+    background-color: #f39c12 !important;
+}
+
+.dashboard .card-danger {
+    color: #fff;
+    background-color: #dd4b39;
+}
+
+.dashboard .card-danger .card-body {
+    background-color: #dd4b39 !important;
+}
