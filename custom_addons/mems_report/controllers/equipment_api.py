@@ -99,3 +99,49 @@ class EquipmentApi(http.Controller):
                 'login': r[11],
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+
+    @http.route('/api/equipment/pm', type='http', auth='public')
+    def equipment_pm(self, **kw):
+        start_date = request.params.get('start_date') + ' 00:00:00'
+        end_date = request.params.get('end_date') + ' 23:59:59'
+        sql = """
+            select
+                eq.code,
+                eq.name,
+                ct.name as categ_name,
+                um.name as uom_name,
+                bn.name as brand_name,
+                eq.model_name,
+                eq.serial_no,
+                pm.name as pm_name,
+                pm.start_date,
+                pm.end_date,
+                us.login
+            from mems_pm pm
+                left join mems_equipment eq on pm.equip_id=eq.id
+                left join mems_category ct on eq.category_id=ct.id
+                left join mems_brand bn on eq.brand_id=bn.id
+                left join mems_uom um on eq.uom_id=um.id
+                left join res_users us on pm.responsible_id=us.id
+            where pm.state='approve' and pm.start_date between '{0}' and '{1}'
+            order by pm.name,eq.code asc
+        """.format(start_date, end_date)
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'code': r[0],
+                'name': r[1],
+                'categ_name': r[2],
+                'uom_name': r[3],
+                'brand_name': r[4],
+                'model_name': r[5],
+                'serial_no': r[6],
+                'pm_name': r[7],
+                'start_date': r[8],
+                'end_date': r[9],
+                'login': r[10],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
