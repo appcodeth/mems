@@ -149,6 +149,7 @@ class EquipmentApi(http.Controller):
     def equipment_downtime(self, **kw):
         sql = """
             select
+                distinct
                 eq.code,
                 eq.name,
                 ca.name as categ_name,

@@ -93,6 +93,12 @@
         <field name="tag">mems_staff_performance_report</field>
     </record>
 
+    <!-- repair -->
+    <record id="action_repair_workorder_report" model="ir.actions.client">
+        <field name="name">Repair Workorder Report</field>
+        <field name="tag">mems_repair_workorder_report</field>
+    </record>
+
     <menuitem id="menu_report" name="รายงาน" sequence="7"/>
     <menuitem id="menu_section_equipment_report" parent="menu_report" name="คุรุภัณฑ์" sequence="71"/>
     <menuitem id="menu_equipment1" parent="menu_section_equipment_report" action="action_equipment_status_report" name="สถานะคุรุภัณฑ์"/>
@@ -102,8 +108,7 @@
 
     <menuitem id="menu_sub_repair" parent="menu_report" name="งานซ่อม" sequence="72"/>
     <menuitem id="menu_downtime1" parent="menu_sub_repair" action="action_equipment_downtime_report" name="เครื่อง Down Time"/>
-    <menuitem id="menu_downtime2" parent="menu_sub_repair" action="action_equipment_status_report" name="สถานะการซ่อม"/>
-    <menuitem id="menu_downtime3" parent="menu_sub_repair" action="action_equipment_status_report" name="สถานะการซ่อม (ภายนอก)"/>
+    <menuitem id="menu_downtime2" parent="menu_sub_repair" action="action_repair_workorder_report" name="สถานะการซ่อม"/>
     <menuitem id="menu_downtime3" parent="menu_sub_repair" action="action_equipment_status_report" name="การซ่อมที่เกินกำหนด"/>
 
     <menuitem id="menu_sub_inventory" parent="menu_report" name="คลังสินค้า" sequence="73"/>
