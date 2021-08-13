@@ -19,6 +19,11 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/equipmentPmReport.xml'],
     });
 
+    var EquipmentDowntimeReportAction = Widget.extend({
+        template: 'EquipmentDowntimeReport',
+        xmlDependencies: ['/mems_report/static/src/xml/equipmentDowntimeReport.xml'],
+    });
+
     // Inventory
     var InventoryBalanceReportAction = Widget.extend({
         template: 'InventoryBalanceReport',
@@ -80,6 +85,7 @@ odoo.define('mems_report.report_action', function(require) {
     core.action_registry.add('mems_equipment_status_report', EquipmentStatusReportAction);
     core.action_registry.add('mems_equipment_calibrate_report', EquipmentCalibrateReportAction);
     core.action_registry.add('mems_equipment_pm_report', EquipmentPmReportAction);
+    core.action_registry.add('mems_equipment_downtime_report', EquipmentDowntimeReportAction);
     core.action_registry.add('mems_inventory_balance_report', InventoryBalanceReportAction);
     core.action_registry.add('mems_inventory_move_report', InventoryMoveReportAction);
     core.action_registry.add('mems_inventory_low_report', InventoryLowReportAction);

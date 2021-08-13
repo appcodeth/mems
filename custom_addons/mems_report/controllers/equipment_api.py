@@ -100,7 +100,6 @@ class EquipmentApi(http.Controller):
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
 
-
     @http.route('/api/equipment/pm', type='http', auth='public')
     def equipment_pm(self, **kw):
         start_date = request.params.get('start_date') + ' 00:00:00'
@@ -143,5 +142,62 @@ class EquipmentApi(http.Controller):
                 'start_date': r[8],
                 'end_date': r[9],
                 'login': r[10],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+    @http.route('/api/equipment/downtime', type='http', auth='public')
+    def equipment_downtime(self, **kw):
+        sql = """
+            select
+                eq.code,
+                eq.name,
+                ca.name as categ_name,
+                um.name as uom_name,
+                bn.name as brand_name,
+                eq.model_name,
+                eq.serial_no,
+                case when eq.state = 'pm' then pm.start_date
+                    when eq.state = 'calibrate' then cl.start_date
+                    when eq.state = 'repair' then wo.date_order
+                    when eq.state = 'borrow' then bw.borrow_date end as start_date,
+                case when eq.state = 'pm' then pm.end_date
+                    when eq.state = 'calibrate' then cl.end_date
+                    when eq.state = 'repair' then wo.date_finish
+                    when eq.state = 'borrow' then bw.expect_date end as end_date,
+                case when eq.state = 'pm' then date_part('day', now()::timestamp - pm.start_date::timestamp)
+                    when eq.state = 'calibrate' then date_part('day', now()::timestamp - cl.start_date::timestamp)
+                    when eq.state = 'repair' then date_part('day', now()::timestamp - wo.date_order::timestamp)
+                    when eq.state = 'borrow' then  date_part('day', now()::timestamp -bw.borrow_date::timestamp) end as no_day,
+                case when eq.state='pm' then 'บำรุงรักษา'
+                    when eq.state = 'calibrate' then 'สอบเทียบ/วัด'
+                    when eq.state = 'repair' then 'ส่งซ่อม'
+                    when eq.state = 'borrow' then 'ยืม' end as state
+            from mems_equipment eq
+                left join mems_category ca on eq.category_id=ca.id
+                left join mems_brand bn on eq.brand_id=bn.id
+                left join mems_uom um on eq.uom_id=um.id
+                left join mems_pm pm on pm.equip_id=eq.id
+                left join mems_calibration cl on cl.equip_id=eq.id
+                left join mems_borrow bw on bw.equip_id=eq.id
+                left join mems_workorder wo on wo.equip_id=eq.id
+            where eq.state not in('active', 'cancel')
+            order by eq.code asc
+        """
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'code': r[0],
+                'name': r[1],
+                'categ_name': r[2],
+                'uom_name': r[3],
+                'brand_name': r[4],
+                'model_name': r[5],
+                'serial_no': r[6],
+                'start_date': r[7],
+                'end_date': r[8],
+                'no_day': r[9],
+                'state': r[10],
             })
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
