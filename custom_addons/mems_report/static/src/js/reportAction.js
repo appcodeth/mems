@@ -93,6 +93,11 @@ odoo.define('mems_report.report_action', function(require) {
         xmlDependencies: ['/mems_report/static/src/xml/repairWorkorderReport.xml'],
     });
 
+    var RepairOverdateAction = Widget.extend({
+        template: 'RepairOverdateReport',
+        xmlDependencies: ['/mems_report/static/src/xml/repairOverdateReport.xml'],
+    });
+
     core.action_registry.add('mems_equipment_status_report', EquipmentStatusReportAction);
     core.action_registry.add('mems_equipment_calibrate_report', EquipmentCalibrateReportAction);
     core.action_registry.add('mems_equipment_pm_report', EquipmentPmReportAction);
@@ -110,5 +115,6 @@ odoo.define('mems_report.report_action', function(require) {
     core.action_registry.add('mems_pulling_overdate_report', PullingOverdateReportAction);
     core.action_registry.add('mems_staff_performance_report', StaffPerformanceReportAction);
     core.action_registry.add('mems_repair_workorder_report', RepairWorkorderReportAction);
+    core.action_registry.add('mems_repair_overdate_report', RepairOverdateAction);
     return {};
 });
