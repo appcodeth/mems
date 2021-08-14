@@ -2,15 +2,15 @@
 <templates id="template" xml:space="preserve">
   <t t-name="DashboardOverview">
       <div class="container-fluid dashboard">
-          <h1 class="mt-4 mb-4">Overview</h1>
+          <h1 class="mt-4 mb-4">คุรุภัณฑ์</h1>
           <div class="row">
               <div class="col-lg-3">
                   <div class="panel card-dashboard card-success mb-5">
                       <div class="panel-body">
                           <div class="row no-gutters">
                               <div class="col-lg-9">
-                                  <h1>150</h1>
-                                  <div class="small"><a href="#" class="text-white">Ready</a></div>
+                                  <h1 id="count-active">0</h1>
+                                  <div class="small"><a href="#" class="text-white">พร้อมใช้</a></div>
                               </div>
                               <div class="col-lg-3">
                                   <div class="icon">
@@ -26,8 +26,8 @@
                       <div class="panel-body">
                           <div class="row no-gutters">
                               <div class="col-lg-9">
-                                  <h1>14</h1>
-                                  <div class="small"><a href="#" class="text-white">On Repairs</a></div>
+                                  <h1 id="count-repair">0</h1>
+                                  <div class="small"><a href="#" class="text-white">ซ่อม</a></div>
                               </div>
                               <div class="col-lg-3">
                                   <div class="icon">
@@ -43,8 +43,8 @@
                       <div class="panel-body">
                           <div class="row no-gutters">
                               <div class="col-lg-9">
-                                  <h1>160</h1>
-                                  <div class="small"><a href="#" class="text-white">On Calibrate</a></div>
+                                  <h1 id="count-pm">0</h1>
+                                  <div class="small"><a href="#" class="text-white">สอบเทียบ/วัด/บำรุงรักษา</a></div>
                               </div>
                               <div class="col-lg-3">
                                   <div class="icon">
@@ -60,12 +60,12 @@
                       <div class="panel-body">
                           <div class="row no-gutters">
                               <div class="col-lg-9">
-                                  <h1>2</h1>
-                                  <div class="small"><a href="#" class="text-white">Discard</a></div>
+                                  <h1 id="count-pulling">0</h1>
+                                  <div class="small"><a href="#" class="text-white">ยืม</a></div>
                               </div>
                               <div class="col-lg-3">
                                   <div class="icon">
-                                      <i class="fa fa-times fa-3x"/>
+                                      <i class="fa fa-upload fa-3x"/>
                                   </div>
                               </div>
                           </div>
@@ -75,9 +75,14 @@
           </div>
           <div class="row mb-5">
               <div class="col-lg-8">
-                <div class="panel shadow-sm mb-5">
-                    <div class="panel-heading bg-transparent">
-                        <h3 class="panel-title m-0">Year 2564</h3>
+                <div class="panel panel-default shadow-sm mb-5">
+                    <div class="panel-heading" style="background-color:transparent">
+                        <h3 class="panel-title m-0">
+                            สถิติงานซ่อม
+                            <span id="currentYear">
+                                <script>document.getElementById('currentYear').appendChild(document.createTextNode(new Date().getFullYear()+543))</script>
+                            </span>
+                        </h3>
                     </div>
                     <div class="panel-body">
                         <canvas id="myChart" height="130"/>
@@ -85,11 +90,21 @@
                 </div>
               </div>
               <div class="col-lg-4">
-                <div class="panel shadow-sm mb-5">
+
+                    <div class="panel panel-default shadow-sm mb-5">
+                        <div class="panel-heading" style="background-color:transparent">
+                            <h3 class="panel-title m-0">สัดส่วนงานซ่อม</h3>
+                        </div>
+                        <div class="panel-body">
+                            <canvas id="pie-chart" height="150"></canvas>
+                        </div>
+                    </div>
+
+                  <div class="panel panel-default shadow-sm mb-5">
                     <div class="panel-heading bg-transparent">
                         <h3 class="panel-title m-0">Latest Repairs</h3>
                     </div>
-                    <table class="table table-hover">
+                      <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -97,7 +112,7 @@
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        <tbody>
+                          <tbody>
                             <tr>
                                 <td><a href="#">WO00001</a></td>
                                 <td>Repair Thermometer S/N: 000001</td>
@@ -105,31 +120,31 @@
                                     <span class="badge badge-success">Success</span>
                                 </td>
                             </tr>
-                            <tr>
+                              <tr>
                                 <td><a href="#">WO00001</a></td>
-                                <td>Repair Vanill Isolators S/N: 000001</td>
-                                <td>
+                                  <td>Repair Vanill Isolators S/N: 000001</td>
+                                  <td>
                                     <span class="badge badge-warning">Draft</span>
                                 </td>
                             </tr>
-                            <tr>
+                              <tr>
                                 <td><a href="#">WO00001</a></td>
-                                <td>Repair Heart Rate Accerelator S/N: 000001</td>
-                                <td>
+                                  <td>Repair Heart Rate Accerelator S/N: 000001</td>
+                                  <td>
                                     <span class="badge badge-warning">Draft</span>
                                 </td>
                             </tr>
-                            <tr>
+                              <tr>
                                 <td><a href="#">WO00001</a></td>
-                                <td>Repair Home Isolator Machine S/N: 000001</td>
-                                <td>
+                                  <td>Repair Home Isolator Machine S/N: 000001</td>
+                                  <td>
                                     <span class="badge badge-danger">Cancel</span>
                                 </td>
                             </tr>
-                            <tr>
+                              <tr>
                                 <td><a href="#">WO00001</a></td>
-                                <td>Repair Power Supply for Heart Ward S/N: 000001</td>
-                                <td>
+                                  <td>Repair Power Supply for Heart Ward S/N: 000001</td>
+                                  <td>
                                     <span class="badge badge-success">Success</span>
                                 </td>
                             </tr>
@@ -140,6 +155,7 @@
           </div>
       </div>
       <script type="text/javascript" src="/mems_dashboard/static/src/vendor/chartjs/Chart.min.js"/>
+      <script type="text/javascript" src="/mems_dashboard/static/src/js/chartjs-plugin-datalabels@0.7.0"/>
       <script type="text/javascript" src="/mems_dashboard/static/src/js/dashboard_chart.js"/>
   </t>
 </templates>
