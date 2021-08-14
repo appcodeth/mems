@@ -1,1 +1,1 @@
-from .controllers import dashboard_api
+from .controllers import dashboard_api, menu_api

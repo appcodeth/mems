@@ -118,6 +118,7 @@ var myPieChart = new Chart(document.getElementById('pie-chart'), {
     }
 });
 
+// main function of barChart
 function runBarChart() {
     $.ajax({
         url: '/api/dashboard/barchart',
@@ -135,6 +136,7 @@ function runBarChart() {
     });
 }
 
+// main function of pieChart
 function runPieChart() {
     $.ajax({
         url: '/api/dashboard/piechart',
@@ -151,8 +153,53 @@ function runPieChart() {
     });
 }
 
+// link to workorder form
+function gotoMenu(id) {
+    $.get('/api/getmenu?model_id=mems.workorder&menu_name=Work Order', function (res) {
+        if (res.menu_id) {
+            window.location.href = '/web#view_type=form&model=mems.workorder&menu_id=' + res.menu_id + '&action=' + res.action_id + '&id=' + id;
+        } else {
+            alert('Can not link menu!!');
+        }
+    });
+}
+
+// get workorder list
+var table_result = $('#table-workorder');
+var beginHtml = table_result.html();
+
+function runWorkOrderList() {
+    table_result.html('');
+    table_result.append(beginHtml);
+    table_result.hide();
+
+    var tr = '';
+    $.ajax({
+        url: '/api/dashboard/workorder',
+        type: 'get',
+        async: false,
+        success: function (res) {
+            $('#data-count').html('(' + res.rows.length + ')');
+            $.each(res.rows, function (index, data) {
+                tr += '<tr>' +
+                    '<td><a href="javascript:gotoMenu(' + data.id + ')">' + (data.name || '') + '</a></td>' +
+                    '<td>' + (data.date_order || '') + '</td>' +
+                    '<td>' + (data.date_order || '') + '</td>' +
+                '</tr>';
+            });
+            table_result.append('<tbody>' + tr + '</tbody>');
+            table_result.show();
+        },
+        error: function (err) {
+            console.log('Connect error!', err);
+        }
+    });
+}
+
+// main
 $(function () {
     runReport();
     runBarChart();
     runPieChart();
+    runWorkOrderList();
 });

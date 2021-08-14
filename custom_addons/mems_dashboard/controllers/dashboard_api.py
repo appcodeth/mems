@@ -79,3 +79,32 @@ class DashboardApi(http.Controller):
         for r in results:
             rows = [r[0], r[1]]
         return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
+
+    @http.route('/api/dashboard/workorder', type='http', auth='public')
+    def staff_performance(self, **kw):
+        sql = """
+            select
+                wo.id,
+                wo.name,
+                wo.date_order,
+                'งานซ่อม [' || eq.code || ']' || eq.name as wo_name,
+                case
+                    when wo.state='approve' then 'รอซ่อม'
+                    when wo.state='complete' then 'ซ่อมเสร็จ รอตรวจสอบ' end as state
+            from mems_workorder wo
+                left join mems_equipment eq on wo.equip_id=eq.id
+            where wo.state not in ('draft', 'close', 'cancel') and wo.responsible_id={0}
+            order by wo.name asc
+        """.format(http.request.env.context.get('uid'))
+        request.cr.execute(sql)
+        results = request.cr.fetchall()
+        rows = []
+        for r in results:
+            rows.append({
+                'id': r[0],
+                'name': r[1],
+                'date_order': r[2],
+                'wo_name': r[3],
+                'state': r[4],
+            })
+        return Response(json.dumps({'ok': True, 'rows': rows}), content_type='application/json')
