@@ -41,7 +41,7 @@ window.chartColors = {
     grey: 'rgba(201, 203, 207, 0.8)',
 };
 
-Chart.defaults.global.defaultFontFamily = 'Kanit';
+Chart.defaults.global.defaultFontFamily = 'Sarabun';
 
 // bar chart
 var ctx = document.getElementById('myChart').getContext('2d');
