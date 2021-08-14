@@ -41,7 +41,8 @@ window.chartColors = {
     grey: 'rgba(201, 203, 207, 0.8)',
 };
 
-Chart.defaults.global.defaultFontFamily = 'Sarabun';
+// set default fonts
+Chart.defaults.global.defaultFontFamily = 'Segoe UI';
 
 // bar chart
 var ctx = document.getElementById('myChart').getContext('2d');

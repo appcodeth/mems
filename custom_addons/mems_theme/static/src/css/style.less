@@ -1,4 +1,4 @@
-@font-family-sans-serif: "Sarabun", Helvetica, Verdana, Arial, sans-serif;
+@font-family-sans-serif: "Segoe UI", Helvetica, Verdana, Arial, sans-serif;
 @font-size-base: 16px;
 @headings-font-weight: bold;
 
@@ -14,6 +14,13 @@ a {
 
 .btn-sm {
     font-size: 14px;
+    line-height: 1.6em;
+}
+
+.btn-default {
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
 }
 
 /* navbar icons */
@@ -77,6 +84,17 @@ a {
     font-family: 'FontAwesome', sans-serif;
 }
 
+/**/
+.oe_secondary_menu  a[data-menu-xmlid='mems_dashboard.menu_video_demo']:after {
+    content: "Hot";
+    float: right;
+    font-size: 11px;
+    color: #fff;
+    background-color: #dd4b39;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
 /* button icons */
 .o_form_button_edit:before {
     content: "\f040";
@@ -119,24 +137,24 @@ a {
 }
 
 .navbar-inverse {
-    background-color: #3c8dbc;
-    border-color: #3c8dbc;
+    background-color: #1f8ecf;
+    border-color: #1f8ecf;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #367fa9;
+    background-color: #1380bf;
 }
 
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #367fa9;
+    background-color: #1380bf;
 }
 
 .navbar-inverse .navbar-nav > li:hover > a {
-    background-color: #367fa9;
+    background-color: #1380bf;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -145,6 +163,11 @@ a {
     margin: 4px 0;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.navbar-inverse .navbar-header .btn-link {
+    color: #fff;
+    margin: 0 10px;
 }
 
 /* sidebar */
@@ -161,7 +184,11 @@ a {
 }
 
 .o_web_client > .o_main .o_sub_menu .o_sub_menu_content .oe_secondary_menu_section > a {
-    color: #666;
+    color: #777;
+}
+
+.o_web_client > .o_main .o_sub_menu .o_sub_menu_content .oe_secondary_menu_section > a:hover {
+    color: #fff;
 }
 
 .o_web_client > .o_main .o_sub_menu .o_sub_menu_content .oe_secondary_submenu {
@@ -169,7 +196,7 @@ a {
 }
 
 .o_web_client > .o_main .o_sub_menu .o_sub_menu_content .oe_secondary_submenu > li:not(.active) > a {
-    color: #aaa;
+    color: #bbb;
 }
 
 .o_web_client > .o_main .o_sub_menu .o_sub_menu_content .oe_secondary_submenu li {
@@ -195,7 +222,7 @@ a {
 
 .o_web_client .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff !important;
-    background-color: #367fa9 !important;
+    background-color: #1380bf !important;
 }
 
 .o_web_client > .o_main .o_sub_menu .o_sub_menu_content .oe_secondary_submenu .oe_menu_toggler::before {
@@ -256,7 +283,7 @@ a {
 .o_form_view .o_form_sheet_bg {
     background-image: none;
     border-bottom: none;
-    background-color: #fff;
+    background-color: #ecf0f5;
 }
 
 /* forms input */
@@ -283,9 +310,14 @@ a {
     min-height: 75px;
 }
 
+/* main content */
+.o_web_client > .o_main .o_main_content .o_content {
+    background-color: #ecf0f5;
+}
+
 /* forms autocomplete */
 .ui-autocomplete .ui-menu-item {
-    font-family: "Sarabun", sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 .o_datepicker .o_datepicker_button {
@@ -350,7 +382,8 @@ a {
 
 .o_control_panel > .breadcrumb {
     background-color: transparent;
-    margin: 5px 0 10px 0;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .o_control_panel > .breadcrumb > li {
@@ -359,7 +392,7 @@ a {
 }
 
 .o_control_panel > .o_cp_searchview {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 /* text separators */
@@ -447,7 +480,7 @@ h2 > .o_field_widget {
 }
 
 .ribbon-green {
-    font: Bold 14px "Sarabun", sans-serif;
+    font: Bold 14px "Segoe UI", sans-serif;
     text-align: center;
     text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
     transform: rotate(45deg);
@@ -482,7 +515,7 @@ h2 > .o_field_widget {
 }
 
 .ribbon-red {
-    font: Bold 14px "Sarabun", sans-serif;
+    font: Bold 14px "Segoe UI", sans-serif;
     text-align: center;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -570,10 +603,4 @@ h2 > .o_field_widget {
 .o_form_view .oe_button_box .oe_stat_button .o_button_icon {
     padding: 0 35px 0 10px;
     font-size: 26px;
-}
-
-/**/
-.navbar-header .btn-link {
-    color: #fff;
-    margin: 0 10px;
 }

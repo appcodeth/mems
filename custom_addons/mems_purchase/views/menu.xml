@@ -6,6 +6,9 @@
         </xpath>
     </template>
 
+    <!-- hide discuss menu -->
+    <menuitem id="mail.mail_channel_menu_root_chat" name="Discuss" active="false" action="mail.mail_channel_action_client_chat" groups="base.group_user" sequence="1"/>
+
     <menuitem id="menu_purchase" name="Purchase" sequence="7"/>
     <menuitem id="menu_sub_order" parent="menu_purchase" name="Orders" sequence="71"/>
     <menuitem id="menu_sub_payment" parent="menu_purchase" name="Payment" sequence="72"/>
