@@ -108,6 +108,7 @@
                                 <th>เลขที่</th>
                                 <th>งาน</th>
                                 <th>สถานะ</th>
+                                <th></th>
                             </tr>
                         </thead>
                     </table>

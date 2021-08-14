@@ -183,8 +183,9 @@ function runWorkOrderList() {
             $.each(res.rows, function (index, data) {
                 tr += '<tr>' +
                     '<td><a href="javascript:gotoMenu(' + data.id + ')">' + (data.name || '') + '</a></td>' +
-                    '<td>' + (data.date_order || '') + '</td>' +
-                    '<td>' + (data.date_order || '') + '</td>' +
+                    '<td>' + (data.wo_name || '') + '</td>' +
+                    '<td style="color:#080">' + (data.state || '') + '</td>' +
+                    '<td><a href="javascript:gotoMenu(' + data.id + ')" class="btn btn-default">เปิดดู</a></td>' +
                 '</tr>';
             });
             table_result.append('<tbody>' + tr + '</tbody>');
