@@ -415,7 +415,7 @@ msgstr "รุ่น"
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_name
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_search
 msgid "Name"
-msgstr "ชื่อ"
+msgstr "เลขที่"
 
 #. module: mems_repair
 #: selection:mems.workorder,discount_type:0
@@ -613,7 +613,7 @@ msgstr "โทรศัพท์ :"
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_amount_total
 msgid "Total"
-msgstr "จำนวนเงินรวมทั้งสิ้น"
+msgstr "จำนวนเงิน"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body

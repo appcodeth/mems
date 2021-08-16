@@ -108,12 +108,11 @@ class WorkOrder(models.Model):
         self.amount_untaxed = subtotal
         self.amount_after_discount = price_after_discount
         self.amount_total = price_after_discount
-
         if self.tax_type == 'include':
             amount_exclude_tax = (price_after_discount * 100) / (100 + TAX_RATE)
             self.amount_tax = price_after_discount - amount_exclude_tax
             self.amount_total = price_after_discount
-        elif self.tax_type == 'exclude':
+        else:
             self.amount_tax = (price_after_discount * TAX_RATE) / 100
             self.amount_total = price_after_discount + self.amount_tax
 
