@@ -30,6 +30,10 @@
                             Tel.
                             <span t-esc="o.company_id.phone"/>
                         </span>
+                        <span t-if="o.company_id.fax" style="margin: 0 10px">
+                            Fax
+                            <span t-esc="o.company_id.fax"/>
+                        </span>
                         <span t-if="o.company_id.vat">
                             Tax ID
                             <span t-esc="o.company_id.vat"/>

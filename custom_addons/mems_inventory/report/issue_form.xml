@@ -30,6 +30,10 @@
                             Tel.
                             <span t-esc="o.company_id.phone"/>
                         </span>
+                        <span t-if="o.company_id.fax" style="margin: 0 10px">
+                            Fax
+                            <span t-esc="o.company_id.fax"/>
+                        </span>
                         <span t-if="o.company_id.vat">
                             Tax ID
                             <span t-esc="o.company_id.vat"/>
@@ -99,7 +103,7 @@
                     <table width="100%">
                         <tr>
                             <td colspan="5" style="text-align:center">
-                                <h3 class="text-center mb-3">ใบเบิกวัตถุดิบ / Issue</h3>
+                                <h3 class="text-center mb-3">ใบเบิกอะไหล่ / Issue</h3>
                             </td>
                         </tr>
                         <tr>

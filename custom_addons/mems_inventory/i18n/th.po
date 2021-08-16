@@ -1,0 +1,654 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mems_inventory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20201204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-16 12:37+0000\n"
+"PO-Revision-Date: 2021-08-16 12:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_footer
+#: model:ir.ui.view,arch_db:mems_inventory.receive_footer
+msgid "<span>Approved By</span>"
+msgstr "<span>ผู้อนุมัติ</span>"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_footer
+#: model:ir.ui.view,arch_db:mems_inventory.receive_footer
+msgid "<span>Check By</span>"
+msgstr "<span>ผู้ตรวจสอบ</span>"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_footer
+#: model:ir.ui.view,arch_db:mems_inventory.receive_footer
+msgid "<span>Date</span>"
+msgstr "<span>วันที่</span>"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "<span>Page:</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span>of</span>\n"
+"                        <span class=\"topage\"/>"
+msgstr "<span>หน้า</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span> จาก </span>\n"
+"                        <span class=\"topage\"/>"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "<strong>Remark</strong>"
+msgstr "<strong>หมายเหตุ</strong>"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_form
+msgid "Add a remark..."
+msgstr "เพิ่มหมายเหตุ..."
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Address"
+msgstr "ที่อยู่"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_amount
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_amount
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Amount"
+msgstr "รวมเงิน"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_form
+msgid "Approve"
+msgstr "อนุมัติ"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_brand_list
+msgid "Brand"
+msgstr "ยี่ห้อ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_form
+#: selection:mems.issue,state:0
+#: selection:mems.receive,state:0
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_category_list
+msgid "Category"
+msgstr "ประเภทสินค้า"
+
+#. module: mems_inventory
+#: model:ir.actions.act_window,help:mems_inventory.action_issue_list
+msgid "Click this to create the first issue"
+msgstr "คลิกที่นี่เพื่อสร้างใบเบิกสินค้า"
+
+#. module: mems_inventory
+#: model:ir.actions.act_window,help:mems_inventory.action_receive_list
+msgid "Click this to create the first receive"
+msgstr "คลิกที่นี่เพื่อสร้างใบรับสินค้า"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_company_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_company_id
+msgid "Company"
+msgstr "บริษัท"
+
+#. module: mems_inventory
+#: selection:mems.issue,state:0
+#: selection:mems.receive,state:0
+msgid "Complete"
+msgstr "สำเร็จ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_cancel_wizard
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Contact"
+msgstr "ติดต่อ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_create_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_create_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_sub_data
+msgid "Data"
+msgstr "ข้อมูล"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_department_id
+#: model:ir.ui.menu,name:mems_inventory.menu_department_list
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+msgid "Department"
+msgstr "แผนก"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_discount_rate
+msgid "Discount %"
+msgstr "ส่วนลด %"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_display_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_approve_wizard
+msgid "Do you want to approve"
+msgstr "คุณต้องการอนุมัติ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_cancel_wizard
+msgid "Do you want to cancel"
+msgstr "คุณต้องการยกเลิก"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Doc No"
+msgstr "เลขเอกสาร"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_doc_no
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_doc_no
+msgid "Document No"
+msgstr "เลขเอกสาร"
+
+#. module: mems_inventory
+#: selection:mems.issue,state:0
+#: selection:mems.receive,state:0
+msgid "Draft"
+msgstr "รออนุมัติ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Email:"
+msgstr "อีเมล:"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Fax"
+msgstr "แฟ็กซ์ :"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_inventory
+msgid "Inventory"
+msgstr "คลังสินค้า"
+
+#. module: mems_inventory
+#: model:ir.actions.act_window,name:mems_inventory.action_issue_list
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_issue_id
+#: model:ir.ui.menu,name:mems_inventory.menu_issue_list
+msgid "Issue"
+msgstr "ใบเบิกสินค้า"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_date_issue
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+msgid "Issue Date"
+msgstr "วันที่เบิก"
+
+#. module: mems_inventory
+#: model:ir.actions.report,name:mems_inventory.action_report_issue
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_form
+msgid "Issue Form"
+msgstr "ใบเบิกสินค้า"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_issue_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_issue_id
+msgid "Issue ID"
+msgstr "รหัส"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_issue_line
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_form
+msgid "Issue Line"
+msgstr "รายการเบิก"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_list
+msgid "Issue List"
+msgstr "รายการเบิก"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_issue_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_issue_name
+msgid "Issue Name"
+msgstr "เลขที่"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_name
+msgid "Issue No"
+msgstr "เลขที่"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_search
+msgid "Issue Search"
+msgstr "ค้นหาใบเบิก"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Item"
+msgstr "รายการ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard___last_update
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_write_uid
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_cancel_wizard_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_write_date
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mems_inventory
+#: model:ir.module.category,name:mems_inventory.module_mems_inventory
+msgid "MEMs Inventory"
+msgstr "MEMs Inventory"
+
+#. module: mems_inventory
+#: model:res.groups,name:mems_inventory.group_inventory_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_name
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_search
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_search
+msgid "Name"
+msgstr "ชื่อ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "No."
+msgstr "ลำดับ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_approve_wizard
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_cancel_wizard
+msgid "OK"
+msgstr "ตกลง"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "PO Date"
+msgstr "วันที่สั่งซื้อ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_part_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_part_id
+msgid "Part"
+msgstr "อะไหล่"
+
+#. module: mems_inventory
+#: code:addons/mems_inventory/wizard/issue_approve_wizard.py:18
+#, python-format
+msgid "Please enter product price in issue line"
+msgstr "กรุณากรอกราคาต่อหน่วยของสินค้า!"
+
+#. module: mems_inventory
+#: code:addons/mems_inventory/wizard/receive_approve_wizard.py:18
+#, python-format
+msgid "Please enter product price in receive line"
+msgstr "กรุณากรอกราคาต่อหน่วยของสินค้า!"
+
+#. module: mems_inventory
+#: code:addons/mems_inventory/wizard/issue_approve_wizard.py:16
+#, python-format
+msgid "Please select uom in issue line"
+msgstr "กรุณากรอกจำนวนสินค้าในการเบิก!"
+
+#. module: mems_inventory
+#: code:addons/mems_inventory/wizard/receive_approve_wizard.py:16
+#, python-format
+msgid "Please select uom in receive line"
+msgstr "กรุณากรอกจำนวนสินค้าในการรับ!"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_price
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_price
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Price"
+msgstr "ราคา/หน่วย"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_form
+msgid "Print"
+msgstr "พิมพ์"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_po_id
+msgid "Purchase"
+msgstr "ใบสั่งซื้อ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_qty
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_qty
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Qty"
+msgstr "จำนวน"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_rcv_id
+msgid "Rcv"
+msgstr "รับ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_reason_id_2716
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+msgid "Reason"
+msgstr "เหตุผล"
+
+#. module: mems_inventory
+#: model:ir.actions.act_window,name:mems_inventory.action_receive_list
+#: model:ir.ui.menu,name:mems_inventory.menu_receive_list
+msgid "Receive"
+msgstr "ใบรับสินค้า"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_date_rcv
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Receive Date"
+msgstr "วันที่รับ"
+
+#. module: mems_inventory
+#: model:ir.actions.report,name:mems_inventory.action_report_receive
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_form
+msgid "Receive Form"
+msgstr "ใบรับสินค้า"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_rcv_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_rcv_id
+msgid "Receive ID"
+msgstr "รหัส"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_receive_line
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_form
+msgid "Receive Line"
+msgstr "รายการรับสินค้า"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_list
+msgid "Receive List"
+msgstr "รายการรับสินค้า"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_approve_wizard_rcv_name
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_cancel_wizard_rcv_name
+msgid "Receive Name"
+msgstr "เลขที่"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_name
+msgid "Receive No"
+msgstr "เลขที่"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_search
+msgid "Receive Search"
+msgstr "ค้นหาใบรับสินค้า"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+msgid "Ref. Doc"
+msgstr "เลขเอกสารอ้างอิง"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Ref. P/O"
+msgstr "เลขที่ใบสั่งซื้อ"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+msgid "Ref. W/O"
+msgstr "เลขที่ใบแจ้งซ่อม"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_remark
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_remark
+msgid "Remark"
+msgstr "หมายเหตุ"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_part_list
+msgid "Spare Part"
+msgstr "อะไหล่"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_state
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_state
+#: model:ir.ui.view,arch_db:mems_inventory.view_issue_search
+#: model:ir.ui.view,arch_db:mems_inventory.view_receive_search
+msgid "State"
+msgstr "สถานะ"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_sub_stock
+msgid "Stock"
+msgstr "คลังสินค้า"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_stock_location_list
+msgid "Stock Location"
+msgstr "ที่เก็บ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_supplier_id
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Supplier"
+msgstr "ผู้จัดจำหน่าย"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_logo
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_logo
+msgid "Tax ID"
+msgstr "เลขประจำตัวผู้เสียภาษี"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_logo
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_logo
+msgid "Tel."
+msgstr "โทรศัพท์ :"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_amount_total
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_amount_total
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Total Amount"
+msgstr "จำนวนเงินรวมทั้งสิ้น"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_amount_qty
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_amount_qty
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Total Qty"
+msgstr "จำนวนรวม"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_sub_transfer
+msgid "Transfer"
+msgstr "โอนย้าย"
+
+#. module: mems_inventory
+#: model:ir.ui.menu,name:mems_inventory.menu_uom_list
+msgid "Unit of Measure"
+msgstr "หน่วยนับ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_line_uom_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_line_uom_id
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "Uom"
+msgstr "หน่วยนับ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_user_id
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_receive_user_id
+#: model:res.groups,name:mems_inventory.group_inventory_user
+msgid "User"
+msgstr "ผู้ทำรายการ"
+
+#. module: mems_inventory
+#: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_wo_id
+msgid "Work Order"
+msgstr "ใบแจ้งซ่อม"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_issue
+msgid "mems.issue"
+msgstr "mems.issue"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_issue_approve_wizard
+msgid "mems.issue.approve.wizard"
+msgstr "mems.issue.approve.wizard"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_issue_cancel_wizard
+msgid "mems.issue.cancel.wizard"
+msgstr "mems.issue.cancel.wizard"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_issue_line
+msgid "mems.issue_line"
+msgstr "mems.issue_line"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_receive
+msgid "mems.receive"
+msgstr "mems.receive"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_receive_approve_wizard
+msgid "mems.receive.approve.wizard"
+msgstr "mems.receive.approve.wizard"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_receive_cancel_wizard
+msgid "mems.receive.cancel.wizard"
+msgstr "mems.receive.cancel.wizard"
+
+#. module: mems_inventory
+#: model:ir.model,name:mems_inventory.model_mems_receive_line
+msgid "mems.receive_line"
+msgstr "mems.receive_line"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.receive_form
+msgid "ใบรับสินค้า / Receive"
+msgstr "ใบรับสินค้า / Receive"
+
+#. module: mems_inventory
+#: model:ir.ui.view,arch_db:mems_inventory.issue_form
+msgid "ใบเบิกอะไหล่ / Issue"
+msgstr "ใบเบิกอะไหล่ / Issue"
