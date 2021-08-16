@@ -1,5 +1,6 @@
 body {
-    font-family: "Sarabun", sans-serif;
+    color: #666;
+    font-family: "Kanit", sans-serif;
 }
 
 /* no column space */
@@ -167,6 +168,8 @@ body {
 /* table qrcode */
 .table-qrcode {
     width: 100%;
+    font-size: 16px;
+    margin-left: 15px;
 }
 
 .table-qrcode tr th {
@@ -392,4 +395,13 @@ body {
   border-width: 2.2em;
   border-right-color: #f39c12;
   border-top-color: #f39c12;
+}
+
+/* adjust font weight */
+strong {
+    font-weight: 500;
+}
+
+table th {
+    font-weight: 500;
 }

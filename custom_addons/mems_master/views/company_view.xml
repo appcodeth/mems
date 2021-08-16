@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">mems_master.view_company_form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/field[@name='email']" position="before">
+                <field name="fax"/>
+            </xpath>
+
+            <xpath expr="//field[@name='report_header']" position="after">
+                <field name="sig_image" widget="image" style="width:85px"/>
+                <field name="rub_image" widget="image" style="width:85px"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

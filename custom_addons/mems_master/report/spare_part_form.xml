@@ -2,7 +2,7 @@
 <odoo>
     <template id="spare_part_report_common" inherit_id="web.report_assets_common">
         <xpath expr="." position="inside">
-            <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+            <link href="/mems_master/static/src/css/fonts.css" rel="stylesheet"/>
             <link href="/mems_master/static/src/css/report.css" rel="stylesheet"/>
         </xpath>
     </template>

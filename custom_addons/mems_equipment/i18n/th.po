@@ -38,9 +38,9 @@ msgid "<span>Page:</span>\n"
 "                        <span class=\"page\"/>\n"
 "                        <span>of</span>\n"
 "                        <span class=\"topage\"/>"
-msgstr "<span>หน้า:</span>\n"
+msgstr "<span>หน้า</span>\n"
 "                        <span class=\"page\"/>\n"
-"                        <span>จาก</span>\n"
+"                        <span> จาก </span>\n"
 "                        <span class=\"topage\"/>"
 
 #. module: mems_equipment
@@ -108,11 +108,15 @@ msgid "Brand"
 msgstr "ยี่ห้อ"
 
 #. module: mems_equipment
-#: model:ir.actions.act_window,name:mems_equipment.action_calibration_list
 #: model:ir.ui.menu,name:mems_equipment.menu_sub_calibrate
 #: selection:mems.equipment,state:0
 msgid "Calibrate"
 msgstr "สอบเทียบ"
+
+#. module: mems_equipment
+#: model:ir.actions.act_window,name:mems_equipment.action_calibration_list
+msgid "Calibrate"
+msgstr "สอบเทียบ/วัด"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_calibration_calendar
@@ -201,7 +205,7 @@ msgstr "ผู้ตรวจสอบ"
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_line_checklist_id
 msgid "Checklist"
-msgstr "รายการบำรุงรักษา"
+msgstr "รายการ"
 
 #. module: mems_equipment
 #: model:ir.actions.act_window,help:mems_equipment.action_calibration_list
@@ -787,7 +791,7 @@ msgstr "รหัส"
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_pm_form
 msgid "PM Line"
-msgstr "การบำรุงรักษา"
+msgstr "รายการบำรุงรักษา"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_pm_list
@@ -966,7 +970,7 @@ msgstr "ผู้จัดจำหน่าย"
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
 #: model:ir.ui.view,arch_db:mems_equipment.pm_logo
 msgid "Tax ID"
-msgstr "เลขผู้เสียภาษี"
+msgstr "เลขประจำตัวผู้เสียภาษี"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
@@ -978,7 +982,14 @@ msgstr "เลขผู้เสียภาษี:"
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
 #: model:ir.ui.view,arch_db:mems_equipment.pm_logo
 msgid "Tel."
-msgstr "โทรศัพท์"
+msgstr "โทรศัพท์ :"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_logo
+#: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
+#: model:ir.ui.view,arch_db:mems_equipment.pm_logo
+msgid "Fax"
+msgstr "แฟ็กซ์ :"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_list

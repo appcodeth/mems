@@ -42,7 +42,7 @@ window.chartColors = {
 };
 
 // set default fonts
-Chart.defaults.global.defaultFontFamily = 'Segoe UI';
+Chart.defaults.global.defaultFontFamily = 'Kanit';
 
 // bar chart
 var ctx = document.getElementById('myChart').getContext('2d');

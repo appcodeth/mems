@@ -34,6 +34,7 @@
         'views/category_view.xml',
         'views/uom_view.xml',
         'views/uom_category_view.xml',
+        'views/company_view.xml',
         'wizard/spare_part_adjust_wizard.xml',
     ],
     'demo': [],
