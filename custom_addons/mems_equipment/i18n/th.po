@@ -124,10 +124,14 @@ msgid "Calibrate Calendar"
 msgstr "ปฏิทินสอบเทียบ"
 
 #. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_calibration_form
 msgid "Calibrate Form"
 msgstr "ฟอร์มสอบเทียบ"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Calibrate Form"
+msgstr "แบบฟอร์มสอบเทียบ/วัด"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_cal_id
@@ -166,7 +170,7 @@ msgstr "สอบเทียบ/วัด"
 #. module: mems_equipment
 #: model:ir.actions.report,name:mems_equipment.action_report_calibrate
 msgid "Calibration Form"
-msgstr "ฟอร์มสอบเทียบ"
+msgstr "แบบฟอร์มสอบเทียบ/วัด"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
@@ -453,11 +457,15 @@ msgid "Equipment"
 msgstr "คุรุภัณฑ์"
 
 #. module: mems_equipment
-#: model:ir.actions.report,name:mems_equipment.action_report_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Equipment Form"
 msgstr "ฟอร์มคุรุภัณฑ์"
+
+#. module: mems_equipment
+#: model:ir.actions.report,name:mems_equipment.action_report_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.equipment_form
+msgid "Equipment Form"
+msgstr "ข้อมูลคุรุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_equip_id
@@ -770,11 +778,15 @@ msgid "PM Checklist List"
 msgstr "รายการบำรุงรักษา"
 
 #. module: mems_equipment
-#: model:ir.actions.report,name:mems_equipment.action_report_pm
-#: model:ir.ui.view,arch_db:mems_equipment.pm_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_pm_form
 msgid "PM Form"
 msgstr "ฟอร์มบำรุงรักษา"
+
+#. module: mems_equipment
+#: model:ir.actions.report,name:mems_equipment.action_report_pm
+#: model:ir.ui.view,arch_db:mems_equipment.pm_form
+msgid "PM Form"
+msgstr "แบบฟอร์มบำรุงรักษา"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form

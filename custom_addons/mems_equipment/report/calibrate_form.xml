@@ -30,6 +30,10 @@
                             Tel.
                             <span t-esc="o.company_id.phone"/>
                         </span>
+                        <span t-if="o.company_id.fax" style="margin: 0 10px">
+                            Fax
+                            <span t-esc="o.company_id.fax"/>
+                        </span>
                         <span t-if="o.company_id.vat">
                             Tax ID
                             <span t-esc="o.company_id.vat"/>
@@ -149,7 +153,7 @@
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="text-right" t-if="o.equip_id.image">
-                                        <img t-attf-src="data:image/*;base64,{{o.equip_id.image}}" class="img-fluid" style="max-height:250px"/>
+                                        <img t-attf-src="data:image/*;base64,{{o.equip_id.image}}" class="img-responsive" style="max-height:250px"/>
                                     </div>
                                 </div>
                             </div>

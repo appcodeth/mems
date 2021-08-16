@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-xs-4">
                         <div class="text-right" t-if="o.image">
-                            <img t-attf-src="data:image/*;base64,{{o.image}}" class="img-fluid" style="max-height:250px"/>
+                            <img t-attf-src="data:image/*;base64,{{o.image}}" class="img-responsive" style="max-height:250px"/>
                         </div>
                     </div>
                 </div>
