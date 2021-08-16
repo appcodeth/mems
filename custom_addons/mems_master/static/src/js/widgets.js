@@ -63,7 +63,7 @@ odoo.define('mems_master.widgets', function(require) {
                     text = 'ชำระเงินแล้ว';
                 } else if (this.value === 'close') {
                     cssClass = 'status-default';
-                    text = 'ปิด';
+                    text = 'จบงาน';
                 } else if (this.value === 'cancel') {
                     cssClass = 'status-danger';
                     text = 'ยกเลิก';

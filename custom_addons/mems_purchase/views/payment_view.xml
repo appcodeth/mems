@@ -25,12 +25,12 @@
                             <field name="name"/>
                             <field name="doc_name"/>
                             <field name="doc_type"/>
-                            <field name="doc_amount"/>
+                            <field name="pay_method"/>
                             <field name="memo"/>
                         </group>
                         <group>
                             <field name="pay_date"/>
-                            <field name="pay_method"/>
+                            <field name="doc_amount"/>
                             <field name="pay_receive"/>
                             <field name="bank_account_id" attrs="{'invisible': [('pay_method', '=', 'cash')]}"/>
                             <field name="user_id"/>

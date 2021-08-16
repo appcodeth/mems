@@ -1,0 +1,961 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mems_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20201204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-16 14:00+0000\n"
+"PO-Revision-Date: 2021-08-16 14:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mems_purchase
+#: model:mail.template,report_name:mems_purchase.mail_template_purchase_form
+#: model:mail.template,report_name:mems_purchase.mail_template_rfq_form
+msgid "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
+msgstr "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
+
+#. module: mems_purchase
+#: model:mail.template,subject:mems_purchase.mail_template_purchase_form
+#: model:mail.template,subject:mems_purchase.mail_template_rfq_form
+msgid "${object.supplier_id.name} Purchase (Ref ${object.name or 'n/a' })"
+msgstr "${object.supplier_id.name} ใบสั่งซื้อ (Ref ${object.name or 'n/a' })"
+
+#. module: mems_purchase
+#: model:mail.template,body_html:mems_purchase.mail_template_purchase_form
+msgid "<?xml version=\"1.0\"?>\n"
+"<data><p>เรียน ${object.supplier_id.name}</p>\n"
+"                <p>\n"
+"                    Here is your purchase\n"
+"                    <strong>${object.name}</strong>\n"
+"                </p>\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you</p>\n"
+"            </data>"
+msgstr "<?xml version=\"1.0\"?>\n"
+"<data><p>เรียน ${object.supplier_id.name}</p>\n"
+"                <p>\n"
+"                    เราส่งใบสั่งซื้อสินค้า ตามไฟล์แนบ\n"
+"                    <strong>${object.name}</strong>\n"
+"                </p>\n"
+"                <p>สอบถามข้อมูลเพิ่มเติม สามารถตอบกลับได้ที่อีเมลนี้</p>\n"
+"                <p>ขอบคุณ</p>\n"
+"            </data>"
+
+#. module: mems_purchase
+#: model:mail.template,body_html:mems_purchase.mail_template_rfq_form
+msgid "<?xml version=\"1.0\"?>\n"
+"<data><p>Dear ${object.supplier_id.name}</p>\n"
+"                <p>\n"
+"                    Here is your quotation\n"
+"                    <strong>${object.name}</strong>\n"
+"                </p>\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you</p>\n"
+"            </data>"
+msgstr "<?xml version=\"1.0\"?>\n"
+"<data><p>เรียน ${object.supplier_id.name}</p>\n"
+"                <p>\n"
+"                    เราส่งใบขอราคาสินค้า ตามไฟล์แนบ\n"
+"                    <strong>${object.name}</strong>\n"
+"                </p>\n"
+"                <p>สามารถตอบกลับ และส่งราคาสินค้ามาได้ที่อีเมลนี้</p>\n"
+"                <p>ขอบคุณ</p>\n"
+"            </data>"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_footer
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_footer
+msgid "<span>Approver By</span>"
+msgstr "<span>ผู้อนุมัติ</span>"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_footer
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_footer
+msgid "<span>Date</span>"
+msgstr "<span>วันที่</span>"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form
+msgid "<span>Page:</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span>of</span>\n"
+"                        <span class=\"topage\"/>"
+msgstr "<span>หน้า</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span> จาก </span>\n"
+"                        <span class=\"topage\"/>"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_footer
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_footer
+msgid "<span>Purchase By</span>"
+msgstr "<span>ผู้สั่งซื้อ</span>"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "<strong>Remark</strong>"
+msgstr "<strong>หมายเหตุ</strong>"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+msgid "Add a remark..."
+msgstr "เพิ่มหมายเหตุ..."
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_address
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_address
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Address"
+msgstr "ที่อยู่"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_amount
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_amount
+msgid "Amount"
+msgstr "รวมเงิน"
+
+#. module: mems_purchase
+#: selection:mems.purchase,discount_type:0
+#: selection:mems.rfq,discount_type:0
+msgid "Amount"
+msgstr "เงินสด"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+#: selection:mems.purchase,state:0
+#: selection:mems.rfq,state:0
+msgid "Approve"
+msgstr "อนุมัติ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_bank_account_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_bank_account_id
+#: model:ir.ui.menu,name:mems_purchase.menu_bank_list
+msgid "Bank Account"
+msgstr "บัญชีธนาคาร"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_branch
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_branch
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Branch"
+msgstr "สาขา"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_wizard_payment_form
+#: selection:mems.purchase,state:0
+#: selection:mems.rfq,state:0
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#. module: mems_purchase
+#: selection:mems.purchase.payment.wizard,pay_method:0
+msgid "Cash"
+msgstr "เงินสด"
+
+#. module: mems_purchase
+#: model:ir.actions.act_window,help:mems_purchase.action_rfq_list
+msgid "Click this to create the first RFQ"
+msgstr "คลิกที่นี่เพื่อสร้างใบขอราคา"
+
+#. module: mems_purchase
+#: model:ir.actions.act_window,help:mems_purchase.action_payment_list
+msgid "Click this to create the first payment"
+msgstr "คลิกที่นี่เพื่อเพิ่มรายการชำระเงิน"
+
+#. module: mems_purchase
+#: model:ir.actions.act_window,help:mems_purchase.action_purchase_list
+msgid "Click this to create the first purchase"
+msgstr "คลิกที่นี่เพื่อสร้างใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: selection:mems.purchase,state:0
+msgid "Close"
+msgstr "จบงาน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_company_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_company_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_company_id
+msgid "Company"
+msgstr "บริษัท"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_cancel_wizard
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_create_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_create_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Credit"
+msgstr "เครดิต"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_date_order
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+msgid "Date Order"
+msgstr "วันที่ซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_date_order
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Date Order"
+msgstr "วันที่"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_date_payment
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_date_payment
+msgid "Date Payment"
+msgstr "วันที่ครบกำหนด"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_description
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_description
+msgid "Description"
+msgstr "รายละเอียด"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_discount
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_discount
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Discount"
+msgstr "ส่วนลด"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_discount_rate
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_discount_rate
+msgid "Discount %"
+msgstr "ส่วนลด %"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_amount_discount
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_amount_discount
+msgid "Discount Amount"
+msgstr "ส่วนลด"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_discount_type
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_discount_type
+msgid "Discount Type"
+msgstr "ประเภทส่วนลด"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_display_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_approve_wizard
+msgid "Do you want to approve"
+msgstr "คุณต้องการอนุมัติ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_cancel_wizard
+msgid "Do you want to cancel"
+msgstr "คุณต้องการยกเลิก"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_doc_amount
+msgid "Doc Amount"
+msgstr "ยอดสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_doc_id
+msgid "Doc Id"
+msgstr "รหัส"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_doc_name
+msgid "Doc Name"
+msgstr "เลขที่ P/O"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_doc_type
+msgid "Doc Type"
+msgstr "ประเภท"
+
+#. module: mems_purchase
+#: selection:mems.purchase,state:0
+#: selection:mems.rfq,state:0
+msgid "Draft"
+msgstr "รออนุมัติ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_email
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_email
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+msgid "Email"
+msgstr "อีเมล"
+
+#. module: mems_purchase
+#: selection:mems.purchase,tax_type:0
+#: selection:mems.rfq,tax_type:0
+msgid "Exclude"
+msgstr "ราคาไม่รวมภาษี"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Expire Date"
+msgstr "วันที่ครบกำหนด"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_fax
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_fax
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Fax"
+msgstr "แฟ็กซ์ :"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_footer
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_footer
+msgid "In sign"
+msgstr "ในนาม"
+
+#. module: mems_purchase
+#: selection:mems.purchase,tax_type:0
+#: selection:mems.rfq,tax_type:0
+msgid "Include"
+msgstr "ราคารวมภาษี"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Item"
+msgstr "รายการ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard___last_update
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_write_uid
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_write_date
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mems_purchase
+#: model:ir.module.category,name:mems_purchase.module_mems_purchase
+msgid "MEMs Purchase"
+msgstr "MEMs Purchase"
+
+#. module: mems_purchase
+#: model:res.groups,name:mems_purchase.group_purchase_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: mems_purchase
+#: model:ir.ui.menu,name:mems_purchase.menu_sub_master
+msgid "Master"
+msgstr "ข้อมูล"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_name
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_search
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_search
+msgid "Name"
+msgstr "เลขที่"
+
+#. module: mems_purchase
+#: selection:mems.purchase,discount_type:0
+#: selection:mems.rfq,discount_type:0
+msgid "No Discount"
+msgstr "ไม่มีส่วนลด"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "No."
+msgstr "เลขที่"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_memo
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_memo
+msgid "Note"
+msgstr "หมายเหตุ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_po_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_approve_wizard
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_cancel_wizard
+msgid "OK"
+msgstr "ตกลง"
+
+#. module: mems_purchase
+#: model:ir.ui.menu,name:mems_purchase.menu_sub_order
+msgid "Orders"
+msgstr "รายการ"
+
+#. module: mems_purchase
+#: model:ir.actions.report,name:mems_purchase.action_report_purchase
+msgid "PO Form"
+msgstr "ใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_po_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_po_id
+msgid "PO ID"
+msgstr "รหัส"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+msgid "PO Line"
+msgstr "รายการ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_approve_wizard_po_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_po_cancel_wizard_po_name
+msgid "PO Name"
+msgstr "เลขที่"
+
+#. module: mems_purchase
+#: selection:mems.purchase,state:0
+msgid "Paid"
+msgstr "ชำระแล้ว"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_part_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_part_id
+msgid "Part"
+msgstr "อะไหล่"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_wizard_payment_form
+msgid "Pay"
+msgstr "ชำระเงิน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_pay_amount
+msgid "Pay Amount"
+msgstr "ยอดชำระ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_pay_date
+msgid "Pay Date"
+msgstr "วันที่ชำระ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_pay_method
+msgid "Pay Method"
+msgstr "ชำระโดย"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_pay_receive
+msgid "Pay Receive"
+msgstr "จำนวนเงิน"
+
+#. module: mems_purchase
+#: model:ir.ui.menu,name:mems_purchase.menu_sub_payment
+#: model:ir.ui.view,arch_db:mems_purchase.view_wizard_payment_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+msgid "Payment"
+msgstr "ชำระเงิน"
+
+#. module: mems_purchase
+#: model:ir.actions.act_window,name:mems_purchase.action_payment_list
+#: model:ir.ui.menu,name:mems_purchase.menu_payment_list
+msgid "Payment"
+msgstr "การชำระเงิน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_pay_amount
+msgid "Payment Amount"
+msgstr "ยอดชำระ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_pay_date
+msgid "Payment Date"
+msgstr "วันที่ชำระ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_payment_form
+msgid "Payment Form"
+msgstr "ฟอร์มการชำระ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_payment_list
+msgid "Payment List"
+msgstr "รายการชำระ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_pay_method
+msgid "Payment Method"
+msgstr "ชำระโดย"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_pay_receive
+msgid "Payment Receive"
+msgstr "จำนวนเงิน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_term_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_payment_term_id
+#: model:ir.ui.menu,name:mems_purchase.menu_payment_term_list
+msgid "Payment Term"
+msgstr "เครดิต"
+
+#. module: mems_purchase
+#: selection:mems.purchase,discount_type:0
+#: selection:mems.rfq,discount_type:0
+msgid "Percent"
+msgstr "เปอร์เซ็นต์"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_phone
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_phone
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_po_id
+msgid "Po"
+msgstr "ใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_amount_after_discount
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_amount_after_discount
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Price after discount"
+msgstr "จำนวนเงินหลังหักส่วนลด"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+msgid "Print"
+msgstr "พิมพ์"
+
+#. module: mems_purchase
+#: model:ir.actions.act_window,name:mems_purchase.action_purchase_list
+#: model:ir.ui.menu,name:mems_purchase.menu_purchase
+msgid "Purchase"
+msgstr "ใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+msgid "Purchase Form"
+msgstr "ฟอร์มใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_purchase_line
+msgid "Purchase Line"
+msgstr "รายการใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_list
+msgid "Purchase List"
+msgstr "รายการใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_po_id
+#: model:ir.ui.menu,name:mems_purchase.menu_purchase_list
+msgid "Purchase Order"
+msgstr "ใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_search
+msgid "Purchase Search"
+msgstr "ค้นหาใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_qty
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_qty
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Qty"
+msgstr "จำนวน"
+
+#. module: mems_purchase
+#: model:ir.actions.act_window,name:mems_purchase.action_rfq_list
+#: model:ir.ui.menu,name:mems_purchase.menu_rfq_list
+msgid "RFQ"
+msgstr "ใบขอราคา"
+
+#. module: mems_purchase
+#: model:ir.actions.report,name:mems_purchase.action_report_rfq
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+msgid "RFQ Form"
+msgstr "ใบขอราคา"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_rfq_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_rfq_id
+msgid "RFQ ID"
+msgstr "รหัส"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_form
+msgid "RFQ Line"
+msgstr "รายการ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_list
+msgid "RFQ List"
+msgstr "รายการ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_approve_wizard_rfq_name
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_cancel_wizard_rfq_name
+msgid "RFQ Name"
+msgstr "เลขที่"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_search
+msgid "RFQ Search"
+msgstr "ค้นหาใบขอราคา"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+msgid "Receive"
+msgstr "รับสินค้า"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_receive_count
+msgid "Receive Count"
+msgstr "รับสินค้า"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_ref_rfq
+msgid "Ref RFQ"
+msgstr "อ้างอิง RFQ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+msgid "Ref RFQ:"
+msgstr "อ้างอิง RFQ:"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_remark
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_remark
+msgid "Remark"
+msgstr "หมายเหตุ"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Request for quotation as below"
+msgstr "รายละเอียดสินค้า ดังต่อไปนี้"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_rfq_id
+msgid "Rfq"
+msgstr "ใบขอราคา"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_rfq_line
+msgid "Rfq Line"
+msgstr "รายการใบขอราคา"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_search
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_search
+msgid "State"
+msgstr "สถานะ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_state
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_state
+msgid "Status"
+msgstr "สถานะ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_amount_untaxed
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_amount_untaxed
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Subtotal"
+msgstr "รวมเป็นเงิน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_payment_wizard_supplier_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_supplier_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_supplier_id
+#: model:ir.ui.menu,name:mems_purchase.menu_supplier_list
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Supplier"
+msgstr "ผู้จัดจำหน่าย"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_tax
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_tax
+msgid "Tax"
+msgstr "ภาษี"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Tax 7%"
+msgstr "ภาษี 7%"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_tax_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_tax_id
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_logo
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_logo
+msgid "Tax ID"
+msgstr "เลขประจำตัวผู้เสียภาษี"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_tax_rate
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_tax_rate
+msgid "Tax Rate"
+msgstr "อัตราภาษี"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_tax_type
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_tax_type
+msgid "Tax Type"
+msgstr "เงื่อนไขราคา"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_amount_tax
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_amount_tax
+msgid "Taxes"
+msgstr "ภาษีมูลค่าเพิ่ม"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_logo
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_logo
+msgid "Tel."
+msgstr "โทรศัพท์ :"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_logo
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_logo
+msgid "Fax"
+msgstr "แฟ็กซ์ :"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Total"
+msgstr "รวมเงิน"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_amount_total
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_amount_total
+#: model:ir.ui.view,arch_db:mems_purchase.view_payment_list
+msgid "Total Amount"
+msgstr "จำนวนเงิน"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Total Amount"
+msgstr "จำนวนเงินรวมทั้งสิ้น"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.view_rfq_list
+msgid "Total Price"
+msgstr "รวมเงิน"
+
+#. module: mems_purchase
+#: selection:mems.purchase.payment.wizard,pay_method:0
+msgid "Transfer"
+msgstr "โอนผ่านบัญชี"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_price
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_price
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Unit Price"
+msgstr "ราคาต่อหน่วย"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_uom_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_uom_id
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "Uom"
+msgstr "หน่วยนับ"
+
+#. module: mems_purchase
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_user_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_user_id
+#: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_user_id
+#: model:res.groups,name:mems_purchase.group_purchase_user
+msgid "User"
+msgstr "ผู้ทำรายการ"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_payment
+msgid "mems.payment"
+msgstr "mems.payment"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_po_approve_wizard
+msgid "mems.po.approve.wizard"
+msgstr "mems.po.approve.wizard"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_po_cancel_wizard
+msgid "mems.po.cancel.wizard"
+msgstr "mems.po.cancel.wizard"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_purchase
+msgid "mems.purchase"
+msgstr "mems.purchase"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_purchase_payment_wizard
+msgid "mems.purchase.payment.wizard"
+msgstr "mems.purchase.payment.wizard"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_purchase_line
+msgid "mems.purchase_line"
+msgstr "mems.purchase_line"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_rfq
+msgid "mems.rfq"
+msgstr "mems.rfq"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_rfq_approve_wizard
+msgid "mems.rfq.approve.wizard"
+msgstr "mems.rfq.approve.wizard"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_rfq_cancel_wizard
+msgid "mems.rfq.cancel.wizard"
+msgstr "mems.rfq.cancel.wizard"
+
+#. module: mems_purchase
+#: model:ir.model,name:mems_purchase.model_mems_rfq_line
+msgid "mems.rfq_line"
+msgstr "mems.rfq_line"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+msgid "ใบขอราคา / Quotation"
+msgstr "ใบขอราคา / Quotation"
+
+#. module: mems_purchase
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+msgid "ใบสั่งซื้อ / Purchase Order"
+msgstr "ใบสั่งซื้อ / Purchase Order"
