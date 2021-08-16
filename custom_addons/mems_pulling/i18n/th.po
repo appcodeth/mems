@@ -1,0 +1,387 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mems_pulling
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20201204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-16 09:32+0000\n"
+"PO-Revision-Date: 2021-08-16 09:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "<span>Page:</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span>of</span>\n"
+"                        <span class=\"topage\"/>"
+msgstr "<span>หน้า</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span> จาก </span>\n"
+"                        <span class=\"topage\"/>"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Approve By"
+msgstr "ผู้อนุมัติ"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_form
+msgid "Approve to Borrow"
+msgstr "อนุมัติการยืม"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_restore_form
+msgid "Approve to Restore"
+msgstr "อนุมัติการคืน"
+
+#. module: mems_pulling
+#: model:ir.ui.menu,name:mems_pulling.menu_sub_borrow
+#: selection:mems.borrow,state:0
+msgid "Borrow"
+msgstr "ยืม"
+
+#. module: mems_pulling
+#: model:ir.actions.act_window,name:mems_pulling.action_borrow_list
+#: model:ir.ui.menu,name:mems_pulling.menu_borrow_list
+msgid "Borrow"
+msgstr "ยืมคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_borrow_date
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_borrow_date
+msgid "Borrow Date"
+msgstr "วันที่ยืม"
+
+#. module: mems_pulling
+#: model:ir.actions.report,name:mems_pulling.action_report_borrow
+msgid "Borrow Form"
+msgstr "ใบยืมคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_form
+msgid "Borrow Form"
+msgstr "ฟอร์มการยืมคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_borrow_id
+msgid "Borrow ID"
+msgstr "รหัส"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_list
+msgid "Borrow List"
+msgstr "ยืมคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_borrow_name
+msgid "Borrow Name"
+msgstr "ชื่อ"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_borrow_id
+msgid "Borrow No."
+msgstr "เลขที่ใบยืม"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_form
+#: selection:mems.borrow,state:0
+#: selection:mems.restore,state:0
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Check By"
+msgstr "ผู้ตรวจสอบ"
+
+#. module: mems_pulling
+#: model:ir.actions.act_window,help:mems_pulling.action_borrow_list
+msgid "Click this to create the first borrow"
+msgstr "คลิกที่นี่เพื่อสร้างใบยืมคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.actions.act_window,help:mems_pulling.action_restore_list
+msgid "Click this to create the first restore"
+msgstr "คลิกที่นี่เพื่อสร้างใบคืนคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: selection:mems.borrow,state:0
+#: selection:mems.restore,state:0
+msgid "Close"
+msgstr "ปิดงาน"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_company_id
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_company_id
+msgid "Company"
+msgstr "บริษัท"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_cancel_wizard
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_create_uid
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_create_date
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_create_date
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Date"
+msgstr "วันที่"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_department_id
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_department
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Department"
+msgstr "แผนก"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_display_name
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_display_name
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_cancel_wizard
+msgid "Do you want to cancel"
+msgstr "คุณต้องการยกเลิก"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Doc No"
+msgstr "เลขเอกสาร"
+
+#. module: mems_pulling
+#: selection:mems.borrow,state:0
+#: selection:mems.restore,state:0
+msgid "Draft"
+msgstr "รออนุมัติ"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_duration_day
+msgid "Duration Day"
+msgstr "ระยะเวลา (วัน)"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_equip_id
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_equip_id
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Equipment"
+msgstr "คุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_expect_date
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Expected Date"
+msgstr "วันที่กำหนดคืน"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_id
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_id
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_id
+msgid "ID"
+msgstr "รหัส"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Item"
+msgstr "รายการ"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow___last_update
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard___last_update
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_write_uid
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_cancel_wizard_write_date
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_write_date
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mems_pulling
+#: model:ir.module.category,name:mems_pulling.module_mems_pulling
+msgid "MEMs Pulling"
+msgstr "MEMs Pulling"
+
+#. module: mems_pulling
+#: model:res.groups,name:mems_pulling.group_pulling_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_name
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_name
+msgid "Name"
+msgstr "เลขที่"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "No."
+msgstr "ลำดับ"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_cancel_wizard
+msgid "OK"
+msgstr "ตกลง"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_over_day
+msgid "Over Day"
+msgstr "เกินกำหนด(วัน)"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_borrow_form
+msgid "Print"
+msgstr "พิมพ์"
+
+#. module: mems_pulling
+#: model:ir.ui.menu,name:mems_pulling.menu_pulling
+msgid "Pulling"
+msgstr "ยืม/คืน"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Qty"
+msgstr "จำนวน"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_responsible_id
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_responsible_id
+msgid "Responsible"
+msgstr "ผู้รับผิดชอบ"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Responsible By"
+msgstr "ผู้ดำเนินการ"
+
+#. module: mems_pulling
+#: model:ir.ui.menu,name:mems_pulling.menu_sub_restore
+#: selection:mems.restore,state:0
+msgid "Restore"
+msgstr "คืน"
+
+#. module: mems_pulling
+#: model:ir.actions.act_window,name:mems_pulling.action_restore_list
+#: model:ir.ui.menu,name:mems_pulling.menu_restore_list
+msgid "Restore"
+msgstr "คืนคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_restore_date
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_restore_date
+msgid "Restore Date"
+msgstr "วันที่คืน"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_restore_form
+msgid "Restore Form"
+msgstr "ฟอร์มการคืน"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.view_restore_list
+msgid "Restore List"
+msgstr "คืนคุรุภัณฑ์"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Start Date"
+msgstr "วันที่เริ่มต้น"
+
+#. module: mems_pulling
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_borrow_state
+#: model:ir.model.fields,field_description:mems_pulling.field_mems_restore_state
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "State"
+msgstr "สถานะ"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_logo
+msgid "Tax ID"
+msgstr "เลขประจำตัวผู้เสียภาษี"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_logo
+msgid "Tel."
+msgstr "โทรศัพท์ :"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "Uom"
+msgstr "หน่วยนับ"
+
+#. module: mems_pulling
+#: model:res.groups,name:mems_pulling.group_pulling_user
+msgid "User"
+msgstr "User"
+
+#. module: mems_pulling
+#: model:ir.model,name:mems_pulling.model_mems_borrow
+msgid "mems.borrow"
+msgstr "mems.borrow"
+
+#. module: mems_pulling
+#: model:ir.model,name:mems_pulling.model_mems_borrow_cancel_wizard
+msgid "mems.borrow.cancel.wizard"
+msgstr "mems.borrow.cancel.wizard"
+
+#. module: mems_pulling
+#: model:ir.model,name:mems_pulling.model_mems_restore
+msgid "mems.restore"
+msgstr "mems.restore"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "คืน"
+msgstr "คืน"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "ตั้งเรื่อง"
+msgstr "ตั้งเรื่อง"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "ยกเลิก"
+msgstr "ยกเลิก"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "ยืม"
+msgstr "ยืม"
+
+#. module: mems_pulling
+#: model:ir.ui.view,arch_db:mems_pulling.borrow_form
+msgid "ใบยืมคุรุภัณฑ์"
+msgstr "ใบยืมคุรุภัณฑ์"

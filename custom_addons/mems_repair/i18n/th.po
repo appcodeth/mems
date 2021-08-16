@@ -672,7 +672,7 @@ msgstr "ใบแจ้งซ่อม"
 #: model:ir.actions.report,name:mems_repair.action_report_workorder
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 msgid "Work Order Form"
-msgstr "ฟอร์มใบแจ้งซ่อม"
+msgstr "แบบฟอร์มใบแจ้งซ่อม"
 
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_wo_id
