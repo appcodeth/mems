@@ -25,7 +25,7 @@ class WorkOrderReviseWizard(models.TransientModel):
         sql = """
             select
                 coalesce(count(*), 0) as count_issue
-            from mems_stock_journal
+            from mems_stock_move
             where doc_id={0} and doc_name='{1}' and doc_type='issue'
         """.format(issue_id, issue.name)
         self.env.cr.execute(sql)

@@ -287,7 +287,7 @@ msgstr "คุณต้องการปิดงาน"
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_revise_wizard
 msgid "Do you want to revise"
-msgstr "คุณต้องการนำงานกลับมาแก้ไข"
+msgstr "คุณต้องการกลับมาแก้ไข"
 
 #. module: mems_repair
 #: selection:mems.workorder,state:0
