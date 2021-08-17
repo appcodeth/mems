@@ -50,5 +50,5 @@
         </field>
     </record>
 
-    <menuitem id="menu_department_list" parent="mems_master.menu_sub_data" name="Department" action="action_department_list"/>
+    <menuitem id="menu_department_list" parent="mems_master.menu_sub_data" name="Department" action="action_department_list" sequence="912"/>
 </odoo>

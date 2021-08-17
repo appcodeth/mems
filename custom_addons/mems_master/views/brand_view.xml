@@ -38,5 +38,5 @@
         </field>
     </record>
 
-    <menuitem id="menu_brand_list" parent="mems_master.menu_sub_data" name="Brand" action="action_brand_list"/>
+    <menuitem id="menu_brand_list" parent="mems_master.menu_sub_data" name="Brand" action="action_brand_list" sequence="913"/>
 </odoo>

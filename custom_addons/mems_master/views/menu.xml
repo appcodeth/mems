@@ -6,8 +6,12 @@
         </xpath>
     </template>
 
+    <!-- master menu -->
     <menuitem id="menu_master" name="Master" sequence="9"/>
     <menuitem id="menu_sub_data" parent="menu_master" name="Data" sequence="91"/>
     <menuitem id="menu_sub_stock" parent="menu_master" name="Stock" sequence="92"/>
     <menuitem id="menu_sub_purchase" parent="menu_master" name="Purchase" sequence="93"/>
+
+    <!-- duplicate menu -->
+    <menuitem id="menu_action_res_company_form" parent="mems_master.menu_sub_data" action="base.action_res_company_form" sequence="911"/>
 </odoo>

@@ -936,6 +936,12 @@ msgid "Website"
 msgstr "เว็บไซต์"
 
 #. module: mems_master
+#: model:ir.model,name:mems_master.model_res_company
+#: model:ir.ui.menu,name:mems_master.menu_action_res_company_form
+msgid "Companies"
+msgstr "บริษัท"
+
+#. module: mems_master
 #: model:ir.model,name:mems_master.model_mems_bank
 msgid "mems.bank"
 msgstr "mems.bank"

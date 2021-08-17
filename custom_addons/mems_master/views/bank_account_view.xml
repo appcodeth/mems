@@ -46,5 +46,5 @@
         </field>
     </record>
 
-    <menuitem id="menu_bank_list" parent="mems_master.menu_sub_data" name="Bank Account" action="action_bank_account_list"/>
+    <menuitem id="menu_bank_list" parent="mems_master.menu_sub_data" name="Bank Account" action="action_bank_account_list" sequence="914"/>
 </odoo>
