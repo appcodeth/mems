@@ -1,0 +1,1006 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mems_master
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20201204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-17 06:24+0000\n"
+"PO-Revision-Date: 2021-08-17 06:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.spare_part_form
+msgid "<span>Page:</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span>of</span>\n"
+"                        <span class=\"topage\"/>"
+msgstr "<span>หน้า</span>\n"
+"                        <span class=\"page\"/>\n"
+"                        <span> จาก </span>\n"
+"                        <span class=\"topage\"/>"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_account_name
+msgid "Account Name"
+msgstr "ชื่อบัญชี"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_account_no
+msgid "Account No"
+msgstr "เลขบัญชี"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_address
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_address
+msgid "Address"
+msgstr "ที่อยู่"
+
+#. module: mems_master
+#: selection:mems.stock_move,doc_type:0
+#: selection:mems.stock_move,move_type:0
+msgid "Adjust"
+msgstr "ปรับยอด"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
+msgid "Adjust Stock Qty"
+msgstr "ปรับยอดสต็อก"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_amount
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_amount
+msgid "Amount"
+msgstr "รวมเงิน"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_bank_account_list
+#: model:ir.ui.menu,name:mems_master.menu_bank_list
+msgid "Bank Account"
+msgstr "บัญชีธนาคาร"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_bank_account_form
+msgid "Bank Account Form"
+msgstr "ฟอร์มบัญชีธนาคาร"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_bank_account_list
+msgid "Bank Account List"
+msgstr "รายการบัญชีธนาคาร"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_bank_branch
+msgid "Bank Branch"
+msgstr "สาขา"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_bank_id
+msgid "Bank Name"
+msgstr "ธนาคาร"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_bank_type
+msgid "Bank Type"
+msgstr "ประเภทบัญชี"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_barcode
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Barcode"
+msgstr "บาร์โค้ด"
+
+#. module: mems_master
+#: selection:mems.uom,type:0
+msgid "Bigger than the reference"
+msgstr "มากกว่าหน่วยอ้างอิง"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_branch
+msgid "Branch"
+msgstr "สาขา"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_brand_list
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_brand_id
+#: model:ir.ui.menu,name:mems_master.menu_brand_list
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.spare_part_qrcode
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Brand"
+msgstr "ยี่ห้อ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_brand_form
+msgid "Brand Form"
+msgstr "ฟอร์มยี่ห้อ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_brand_list
+msgid "Brand List"
+msgstr "ยี่ห้อ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_adjust_wizard
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_category_list
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_category_id
+#: model:ir.ui.menu,name:mems_master.menu_category_list
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Category"
+msgstr "ประเภท"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_category_form
+msgid "Category Form"
+msgstr "ฟอร์มประเภทสินค้า"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_category_list
+msgid "Category List"
+msgstr "รายการประเภทสินค้า"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_bank_account_list
+msgid "Click this to create the first bank account"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลสมุดบัญชีธนาคาร"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_brand_list
+msgid "Click this to create the first brand"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลยี่ห้อ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_category_list
+msgid "Click this to create the first category"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลประเภทสินค้า"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_department_list
+msgid "Click this to create the first department"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลแผนก"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_issue_reason_list
+msgid "Click this to create the first issue reason"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลเหตุผลการเบิกสินค้า"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_payment_term_list
+msgid "Click this to create the first payment term"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลเครดิตชำระ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_spare_part_list
+msgid "Click this to create the first spare part"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลอะไหล่"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_stock_location_list
+msgid "Click this to create the first stock location"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลสถานที่เก็บ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_supplier_list
+msgid "Click this to create the first supplier"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลผู้จัดจำหน่าย"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_uom_list
+msgid "Click this to create the first uom"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,help:mems_master.action_uom_category_list
+msgid "Click this to create the first uom category"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลประเภทหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_code
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_code
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_code
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.spare_part_qrcode
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Code"
+msgstr "รหัส"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_company_id
+#: selection:mems.supplier,type:0
+msgid "Company"
+msgstr "บริษัท"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_adjust_wizard
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_contact
+msgid "Contact"
+msgstr "ผู้ติดต่อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_contact
+msgid "Contact Name"
+msgstr "ชื่อผู้ติดต่อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_cost_price
+msgid "Cost Price"
+msgstr "ราคาซื้อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_create_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_create_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: mems_master
+#: selection:mems.bank_account,bank_type:0
+msgid "Current"
+msgstr "กระแสรายวัน"
+
+#. module: mems_master
+#: model:ir.ui.menu,name:mems_master.menu_sub_data
+msgid "Data"
+msgstr "ข้อมูล"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_department_list
+#: model:ir.ui.menu,name:mems_master.menu_department_list
+msgid "Department"
+msgstr "แผนก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_department_form
+msgid "Department Form"
+msgstr "ฟอร์มแผนก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_department_list
+msgid "Department List"
+msgstr "รายการแผนก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_department_form
+msgid "Department Name"
+msgstr "ชื่อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_description
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_description
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_description
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_description
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
+msgid "Description"
+msgstr "รายละเอียด"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_display_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_doc_id
+msgid "Doc ID"
+msgstr "รหัส"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_doc_name
+msgid "Doc Name"
+msgstr "เลขที่ P/O"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_doc_type
+msgid "Doc Type"
+msgstr "ประเภท"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_email
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_email
+msgid "Email"
+msgstr "อีเมล"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_department_form
+msgid "Enter department name"
+msgstr "ชื่อแผนก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
+msgid "Enter part name"
+msgstr "ชื่ออะไหล่"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_supplier_form
+msgid "Enter supplier name"
+msgstr "ชื่อผู้จัดจำหน่าย"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_uom_form
+msgid "Enter uom name"
+msgstr "ชื่อหน่วยนับ"
+
+#. module: mems_master
+#: selection:mems.uom,type:0
+msgid "Equal the reference"
+msgstr "เท่ากับหน่วยอ้างอิง"
+
+#. module: mems_master
+#: selection:mems.stock_move,doc_type:0
+msgid "Equipment"
+msgstr "คุรุภัณฑ์"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_fax
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_fax
+#: model:ir.model.fields,field_description:mems_master.field_res_company_fax
+msgid "Fax"
+msgstr "แฟ็กซ์ :"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "General Information"
+msgstr "ข้อมูลทั่วไป"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_product_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_image
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_image
+msgid "Image"
+msgstr "รูปภาพ"
+
+#. module: mems_master
+#: selection:mems.stock_move,move_type:0
+msgid "In"
+msgstr "เข้า"
+
+#. module: mems_master
+#: selection:mems.stock_move,doc_type:0
+msgid "Initial"
+msgstr "เริ่มต้น"
+
+#. module: mems_master
+#: selection:mems.stock_move,doc_type:0
+msgid "Issue"
+msgstr "เบิก"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_issue_reason_list
+#: model:ir.ui.menu,name:mems_master.menu_issue_reason_list
+msgid "Issue Reason"
+msgstr "เหตุผลการเบิก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_issue_reason_form
+msgid "Issue Reason Form"
+msgstr "ฟอร์มเหตุผลการเบิก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_issue_reason_list
+msgid "Issue Reason List"
+msgstr "รายการเหตุผลการเบิก"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_category___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_department___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom___last_update
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_last_purchase_date
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Last Purchase Date"
+msgstr "วันที่ซื้อล่าสุด"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_write_uid
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_account_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_write_date
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.spare_part_qrcode
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Location"
+msgstr "ที่เก็บ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_kanban
+msgid "Location :"
+msgstr "ที่เก็บ :"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_lot_no
+msgid "Lot No"
+msgstr "หมายเลข Lot"
+
+#. module: mems_master
+#: model:ir.module.category,name:mems_master.module_mems_master
+msgid "MEMs Master"
+msgstr "MEMs Master"
+
+#. module: mems_master
+#: model:res.groups,name:mems_master.group_master_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: mems_master
+#: model:ir.ui.menu,name:mems_master.menu_master
+msgid "Master"
+msgstr "ข้อมูล"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_max_qty
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Max Qty"
+msgstr "จำนวนสูงสุด"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_min_qty
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Min Qty"
+msgstr "จำนวนต่ำสุด"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_move_date
+msgid "Move Date"
+msgstr "วันที่"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_move_type
+msgid "Move Type"
+msgstr "ประเภท"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_issue_reason_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_name
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_name
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.spare_part_qrcode
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Name"
+msgstr "ชื่อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_brand_name_en
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_name_en
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_name_en
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_name_en
+msgid "Name English"
+msgstr "ชื่อภาษาอังกฤษ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_new_qty
+msgid "New Qty"
+msgstr "จำนวนใหม่"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_payment_term_number_of_day
+msgid "No. of Days"
+msgstr "ระยะเวลา (วัน)"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_adjust_wizard
+msgid "OK"
+msgstr "ตกลง"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_kanban
+msgid "On-hand :"
+msgstr "คงเหลือ :"
+
+#. module: mems_master
+#: selection:mems.stock_move,move_type:0
+msgid "Out"
+msgstr "ออก"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_category_parent_id
+msgid "Parent"
+msgstr "ประเภทหลัก"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
+msgid "Part Name"
+msgstr "ชื่อ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_payment_term_list
+#: model:ir.ui.menu,name:mems_master.menu_payment_term_list
+msgid "Payment Term"
+msgstr "เครดิตชำระ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_payment_term_form
+msgid "Payment Term Form"
+msgstr "ฟอร์มเครดิตชำระ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_payment_term_list
+msgid "Payment Term List"
+msgstr "รายการเครดิตชำระ"
+
+#. module: mems_master
+#: selection:mems.supplier,type:0
+msgid "Personal"
+msgstr "บุคคล"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_department_phone
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_phone
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_product_code
+msgid "Product Code"
+msgstr "รหัสสินค้า"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_product_id
+msgid "Product ID"
+msgstr "รหัสสินค้า"
+
+#. module: mems_master
+#: code:addons/mems_master/models/spare_part.py:27
+#: sql_constraint:mems.spare_part:0
+#, python-format
+msgid "Product barcode is existed"
+msgstr "บาร์โค้ดของสินค้านี้มีอยู่แล้ว!"
+
+#. module: mems_master
+#: code:addons/mems_master/models/spare_part.py:26
+#: sql_constraint:mems.spare_part:0
+#, python-format
+msgid "Product code is existed"
+msgstr "รหัสของสินค้านี้มีอยู่แล้ว!"
+
+#. module: mems_master
+#: model:ir.ui.menu,name:mems_master.menu_sub_purchase
+msgid "Purchase"
+msgstr "การซื้อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_purchase_qty
+msgid "Purchase Qty"
+msgstr "จำนวนซื้อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_purchase_uom_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_purchase_uom_id
+msgid "Purchase Uom"
+msgstr "หน่วยซื้อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_qty
+msgid "Qty"
+msgstr "จำนวน"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_ratio
+msgid "Ratio"
+msgstr "จำนวน"
+
+#. module: mems_master
+#: selection:mems.stock_move,doc_type:0
+msgid "Receive"
+msgstr "รับเข้า"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_type
+msgid "Reference Type"
+msgstr "การอ้างอิง"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_res_company_rub_image
+msgid "Rubber"
+msgstr "ตราประทับ"
+
+#. module: mems_master
+#: selection:mems.bank_account,bank_type:0
+msgid "Saving"
+msgstr "ออมทรัพย์"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_shelf_no
+msgid "Shelf Name"
+msgstr "เลขที่ชั้น"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_bank_short_name
+msgid "Short Name"
+msgstr "ชื่อย่อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_res_company_sig_image
+msgid "Signature"
+msgstr "ลายเซ็นต์"
+
+#. module: mems_master
+#: selection:mems.uom,type:0
+msgid "Smaller than the reference"
+msgstr "น้อยกว่าหน่วยอ้างอิง"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_spare_part_list
+#: model:ir.ui.menu,name:mems_master.menu_spare_part_list
+msgid "Spare Part"
+msgstr "อะไหล่"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
+msgid "Spare Part Form"
+msgstr "ฟอร์มอะไหล่"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.actions.report,name:mems_master.action_report_spare_part
+msgid "Spare Part Form"
+msgstr "ข้อมูลอะไหล่"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_list
+msgid "Spare Part List"
+msgstr "รายการอะไหล่"
+
+#. module: mems_master
+#: model:ir.actions.report,name:mems_master.action_report_spare_part_qrcode
+msgid "Spare Part QR Code"
+msgstr "แผ่นป้าย Q/R Code"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_search
+msgid "Spare Part Search"
+msgstr "ค้นหาอะไหล่"
+
+#. module: mems_master
+#: model:ir.ui.menu,name:mems_master.menu_sub_stock
+msgid "Stock"
+msgstr "คลังสินค้า"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Stock &amp; Location"
+msgstr "คลัง &amp; ที่เก็บ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
+msgid "Stock Control"
+msgstr "คลังสินค้า"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_stock_location_list
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_location_id
+#: model:ir.ui.menu,name:mems_master.menu_stock_location_list
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Stock Location"
+msgstr "ที่เก็บ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_stock_location_form
+msgid "Stock Location Form"
+msgstr "ฟอร์มที่เก็บ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_stock_location_list
+msgid "Stock Location List"
+msgstr "รายการที่เก็บ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_stock_qty
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_stock_qty
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Stock Qty"
+msgstr "จำนวนในคลัง"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_supplier_list
+#: model:ir.ui.menu,name:mems_master.menu_supplier_list
+msgid "Supplier"
+msgstr "ผู้จัดจำหน่าย"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_supplier_form
+msgid "Supplier Form"
+msgstr "ฟอร์มผู้จัดจำหน่าย"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_supplier_list
+msgid "Supplier List"
+msgstr "รายการผู้จัดจำหน่าย"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_supplier_form
+msgid "Supplier Name"
+msgstr "ชื่อ"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_tax_id
+#: model:ir.ui.view,arch_db:mems_master.form_logo
+msgid "Tax ID"
+msgstr "เลขประจำตัวผู้เสียภาษี"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.form_logo
+msgid "Tel."
+msgstr "โทรศัพท์ :"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_list
+msgid "Total Qty"
+msgstr "จำนวนรวม"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_type
+msgid "Type"
+msgstr "ประเภท"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_unit_price
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Unit Price"
+msgstr "ราคาต่อหน่วย"
+
+#. module: mems_master
+#: model:ir.ui.menu,name:mems_master.menu_uom_list
+#: model:ir.ui.view,arch_db:mems_master.form_body
+msgid "Unit of Measure"
+msgstr "หน่วยนับ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_uom_list
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_adjust_wizard_uom_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_uom_id
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_uom_id
+msgid "Uom"
+msgstr "หน่วยนับ"
+
+#. module: mems_master
+#: model:ir.actions.act_window,name:mems_master.action_uom_category_list
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_id_2143
+#: model:ir.ui.menu,name:mems_master.menu_uom_category_list
+msgid "Uom Category"
+msgstr "ประเภทหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_uom_category_form
+msgid "Uom Category Form"
+msgstr "ฟอร์มประเภทหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_uom_category_list
+msgid "Uom Category List"
+msgstr "รายการประเภทหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_uom_form
+msgid "Uom Form"
+msgstr "ฟอร์มหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_uom_list
+msgid "Uom List"
+msgstr "รายการหน่วยนับ"
+
+#. module: mems_master
+#: model:ir.ui.view,arch_db:mems_master.view_uom_form
+msgid "Uom Name"
+msgstr "ชื่อ"
+
+#. module: mems_master
+#: model:res.groups,name:mems_master.group_master_user
+msgid "User"
+msgstr "User"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_user_id
+msgid "User ID"
+msgstr "รหัสผู้ใช้"
+
+#. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_website
+msgid "Website"
+msgstr "เว็บไซต์"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_bank
+msgid "mems.bank"
+msgstr "mems.bank"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_bank_account
+msgid "mems.bank_account"
+msgstr "mems.bank_account"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_brand
+msgid "mems.brand"
+msgstr "mems.brand"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_category
+msgid "mems.category"
+msgstr "mems.category"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_department
+msgid "mems.department"
+msgstr "mems.department"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_issue_reason
+msgid "mems.issue_reason"
+msgstr "mems.issue_reason"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_payment_term
+msgid "mems.payment_term"
+msgstr "mems.payment_term"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_spare_part
+msgid "mems.spare_part"
+msgstr "mems.spare_part"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_spare_part_adjust_wizard
+msgid "mems.spare_part.adjust.wizard"
+msgstr "mems.spare_part.adjust.wizard"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_stock_location
+msgid "mems.stock_location"
+msgstr "mems.stock_location"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_stock_move
+msgid "mems.stock_move"
+msgstr "mems.stock_move"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_supplier
+msgid "mems.supplier"
+msgstr "mems.supplier"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_uom
+msgid "mems.uom"
+msgstr "mems.uom"
+
+#. module: mems_master
+#: model:ir.model,name:mems_master.model_mems_uom_category
+msgid "mems.uom_category"
+msgstr "mems.uom_category"
