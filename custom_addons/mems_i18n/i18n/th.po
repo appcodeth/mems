@@ -1,0 +1,69 @@
+# Translation of Odoo Server.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20201204\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-15 04:48+0000\n"
+"PO-Revision-Date: 2021-08-15 04:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base
+#: model:ir.ui.menu,name:base.menu_view_base_module_upgrade
+msgid "Apply Scheduled Upgrades"
+msgstr "อัพเกรดตามเวลา"
+
+#. module: base
+#: model:ir.ui.menu,name:base.menu_view_base_module_update
+msgid "Update Apps List"
+msgstr "อัพเดทรายการแอพ"
+
+#. module: base
+#: model:ir.actions.client,name:base.modules_updates_act_cl
+#: model:ir.ui.menu,name:base.menu_module_updates
+msgid "Updates"
+msgstr "อัพเดท"
+
+#. module: base
+#: model:ir.actions.client,name:base.modules_act_cl
+#: model:ir.ui.menu,name:base.module_mi
+msgid "App Store"
+msgstr "แอพสโตร์"
+
+#. module: base
+#: model:ir.actions.act_window,name:base.open_module_tree
+#: model:ir.ui.menu,name:base.menu_management
+#: model:ir.ui.menu,name:base.menu_module_tree
+#: model:ir.ui.view,arch_db:base.module_tree
+#: model:ir.ui.view,arch_db:base.view_module_filter
+msgid "Apps"
+msgstr "แอพ"
+
+#. module: base
+#: code:addons/base/module/module.py:425
+#: model:ir.ui.view,arch_db:base.module_form
+#: model:ir.ui.view,arch_db:base.module_view_kanban
+#, python-format
+msgid "Install"
+msgstr "ติดตั้ง"
+
+#. module: base
+#: selection:ir.module.module,state:0
+#: selection:ir.module.module.dependency,state:0
+#: selection:ir.module.module.exclusion,state:0
+#: model:ir.ui.view,arch_db:base.module_view_kanban
+#: model:ir.ui.view,arch_db:base.view_module_filter
+msgid "Installed"
+msgstr "ติดตั้งแล้ว"
+
+#. module: base
+#: model:ir.actions.act_window,name:base.res_config_setting_act_window
+#: model:ir.ui.menu,name:base.menu_administration
+#: model:ir.ui.view,arch_db:base.res_config_settings_view_form
+#: model:res.groups,name:base.group_system
+msgid "Settings"
+msgstr "ตั้งค่า"
