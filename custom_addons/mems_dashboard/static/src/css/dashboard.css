@@ -68,3 +68,20 @@
 .dashboard .card-danger .card-body {
     background-color: #dd4b39 !important;
 }
+
+/**/
+.video {
+    margin-bottom: 30px;
+}
+
+/**/
+.list-item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list-item li {
+    margin: 12px 0;
+    font-size: 18px;
+}
