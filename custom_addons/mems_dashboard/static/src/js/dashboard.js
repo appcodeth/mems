@@ -9,9 +9,25 @@ odoo.define('mems_dashboard.dashboard', function (require) {
         xmlDependencies: ['/mems_dashboard/static/src/xml/dashboard.xml'],
     });
 
-    core.action_registry.add('dashboard_overview', DashboardAction);
+    var PricingTableAction = Widget.extend({
+        template: 'PricingTable',
+        xmlDependencies: ['/mems_dashboard/static/src/xml/pricing.xml'],
+    });
 
-    return {
-        DashboardAction: DashboardAction,
-    }
+    var ManualDownloadAction = Widget.extend({
+        template: 'ManualDownload',
+        xmlDependencies: ['/mems_dashboard/static/src/xml/manual.xml'],
+    });
+
+    var VideoSuggestionAction = Widget.extend({
+        template: 'VideoSuggestion',
+        xmlDependencies: ['/mems_dashboard/static/src/xml/video.xml'],
+    });
+
+    core.action_registry.add('dashboard_overview', DashboardAction);
+    core.action_registry.add('pricing_table_overview', PricingTableAction);
+    core.action_registry.add('manual_download_overview', ManualDownloadAction);
+    core.action_registry.add('video_suggest_overview', VideoSuggestionAction);
+
+    return {};
 });

@@ -13,9 +13,24 @@
         <field name="tag">dashboard_overview</field>
     </record>
 
+    <record id="action_pricing_overview" model="ir.actions.client">
+        <field name="name">Pricing Table</field>
+        <field name="tag">pricing_table_overview</field>
+    </record>
+
+    <record id="action_manual_overview" model="ir.actions.client">
+        <field name="name">Manual Download</field>
+        <field name="tag">manual_download_overview</field>
+    </record>
+
+    <record id="action_video_overview" model="ir.actions.client">
+        <field name="name">Video Suggestion</field>
+        <field name="tag">video_suggest_overview</field>
+    </record>
+
     <menuitem id="menu_dashboard" name="Dashboard" sequence="2"/>
     <menuitem id="menu_dashboard_overview" parent="menu_dashboard" name="Overview" action="action_dashboard_overview" sequence="21"/>
-    <menuitem id="menu_price_package" parent="menu_dashboard" name="Packages" action="action_dashboard_overview" sequence="22"/>
-    <menuitem id="menu_video_demo" parent="menu_dashboard" name="Videos" action="action_dashboard_overview" sequence="23"/>
-    <menuitem id="menu_help_support" parent="menu_dashboard" name="Help &amp; Supports" action="action_dashboard_overview" sequence="24"/>
+    <menuitem id="menu_price_package" parent="menu_dashboard" name="Packages" action="action_pricing_overview" sequence="22"/>
+    <menuitem id="menu_video_demo" parent="menu_dashboard" name="Videos" action="action_video_overview" sequence="23"/>
+    <menuitem id="menu_help_support" parent="menu_dashboard" name="Help &amp; Supports" action="action_manual_overview" sequence="24"/>
 </odoo>
