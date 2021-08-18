@@ -1,0 +1,150 @@
+/* layout and background */
+body {
+    font-family: "Kanit", sans-serif;
+    font-size: 18px;
+    background: url('/mems_theme/static/src/img/bg1.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+body:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(123deg, rgba(31, 142, 207, 0.8) -26%, #103475 99%);
+}
+
+.body_login {
+    width: 100%;
+    height: 100%;
+}
+
+/* login layout */
+.o_database_list {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 700px;
+    overflow: hidden;
+    padding: 30px 75px;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,.1);
+}
+
+.o_database_list .pull-right {
+    float: none !important;
+    text-align: center;
+}
+
+/* buttons */
+.o_database_list .btn {
+    border-radius: 200px;
+    font-size: 18px;
+    letter-spacing: .1rem;
+    border: 1px solid transparent;
+    transition : border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.o_database_list .btn-link {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 5px 0;
+    font-size: 18px;
+    color: #a8a8a8 !important;
+    background-color: #fff !important;
+    box-shadow: 0 1px 2px 1px #ddd;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.o_database_list .btn-link:hover {
+    color:#009688;
+    border-color:#009688;
+    background-color:#fff;
+    box-shadow:0 6px 22px rgba(0,82,73,.2)
+}
+
+.o_database_list .btn-link .fa-facebook-square,
+.o_database_list .btn-link .fa-google-plus-square {
+    transition: color 0.2s ease-in-out;
+}
+
+.o_database_list .btn-link:hover .fa-facebook-square {
+    color: #4267b2;
+}
+
+.o_database_list .btn-link:hover .fa-google-plus-square {
+    color: #db4437;
+}
+
+.o_database_list .btn-hide {
+    display: none;
+    visibility: hidden;
+}
+
+.o_database_list .btn-login {
+    position: relative;
+    display: block;
+    padding: 15px 20px;
+    margin: 5px 0;
+    width: 100%;
+    color: #fff;
+    background-color: #009688;
+    transition : all 0.2s ease-in-out;
+}
+
+.o_database_list .btn-login:hover {
+    color:#009688;
+    border-color:#009688;
+    background-color:#fff;
+    box-shadow:0 6px 22px rgba(0,82,73,.2)
+}
+
+/* alerts */
+.o_database_list .alert {
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* forms */
+.o_database_list .oe_login_form {
+    margin-bottom: 20px;
+}
+
+.o_database_list label {
+    color: #555;
+    font-weight: 400;
+}
+
+/* inputs */
+.o_database_list .form-control {
+    width: 100%;
+    height: 50px;
+    padding-left:15px;
+    padding-right: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+.o_database_list .form-control:focus {
+    border-color:#6e8095;
+    outline: none;
+    box-shadow: none;
+}
+
+/* logo style */
+.o_database_list .company_logo {
+    width: 100%;
+    max-width: 205px;
+    margin-bottom: 20px;
+}

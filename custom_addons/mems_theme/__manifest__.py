@@ -7,7 +7,10 @@
     'depends': ['base', 'web_sheet_full_width'],
     'data': [
         'views/menu.xml',
+
         'views/webclient_template.xml',
+
+        'views/login_view.xml',
     ],
     'demo': [],
 }

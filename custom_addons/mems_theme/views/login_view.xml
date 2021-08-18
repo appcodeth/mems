@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_login" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/mems_theme/static/src/css/fonts.css"/>
+            <link rel="stylesheet" href="/mems_theme/static/src/css/login.less"/>
+        </xpath>
+    </template>
+
+    <template id="login_layout" inherit_id="web.login_layout" name="Login Layout Inherit">
+        <xpath expr="//t[@t-set='body_classname']" position="after">
+            <t t-set="body_classname" t-value="''"/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('row')]" position="attributes">
+            <attribute name="class">body_login</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_database_list')]" position="before">
+            <div id="background-wrapper"></div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_database_list')]" position="attributes">
+            <attribute name="class">o_database_list</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('text-center')]/img" position="attributes">
+            <attribute name="class">company_logo</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'o_database_list')]/div[2]" position="replace">
+            <div class="text-center" t-if="not disable_footer">
+                <a href="/web/database/manager">Manage Databases</a>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="login" inherit_id="web.login" name="Login Inherit">
+        <xpath expr="//label[@for='db']" position="replace"/>
+
+        <xpath expr="//input[@name='login']" position="attributes">
+            <attribute name="placeholder"></attribute>
+            <attribute name="autocomplete">off</attribute>
+            <attribute name="autocorrect">off</attribute>
+        </xpath>
+
+        <xpath expr="//input[@name='password']" position="attributes">
+            <attribute name="placeholder"></attribute>
+        </xpath>
+
+        <xpath expr="//span[hasclass('input-group-btn')]/a[@href='/web/database/selector']" position="replace">
+            <a href="/web/database/selector" class="btn btn-default btn-select">
+                <i class="fa fa-database"></i>
+            </a>
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'oe_login_buttons')]" position="before">
+            <div class="clearfix oe_login_buttons">
+                <input type="submit" class="btn btn-primary btn-login" value="Log in"/>
+                <div class="text-center" style="margin-bottom:15px">
+                    <hr/>
+                    <span style="color:#888">or connect with</span>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//button[@type='submit']" position="attributes">
+            <attribute name="class">btn-hide</attribute>
+        </xpath>
+    </template>
+</odoo>
