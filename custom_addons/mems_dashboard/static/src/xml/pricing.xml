@@ -1,12 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="PricingTable">
-        <div class="container-fluid">
+        <div class="container">
+            <h1 class="text-center" style="margin:40px 0">
+                <span style="font-size:32px">แพกเกจราคา</span>
+            </h1>
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h1 class="text-center" style="margin-top:40px">
-                        <span style="font-size:32px">แพกเกจราคา</span>
-                    </h1>
+                <div class="col-lg-4">
+                    <div class="pricing">
+                        <div class="price-header">
+                            <h3>Free</h3>
+                            <div>Basic Plan</div>
+                            <h1>฿0.00</h1>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fa fa-check"></i> ใช้งานโมดูลพื้นฐานได้</li>
+                                <li><i class="fa fa-check"></i> แสดงโลโก้ที่รายงาน</li>
+                                <li><i class="fa fa-check"></i> 50 รายการ/วัน</li>
+                                <li><i class="fa fa-times"></i> ขอปรับแต่ง/แก้ไข เพิ่มรายงาน</li>
+                                <li><i class="fa fa-times"></i> พิมพ์ Q/R Code</li>
+                                <li><i class="fa fa-times"></i> รองรับ Mobile Inventory</li>
+                            </ul>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#" class="btn btn-price">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing price-main">
+                        <div class="price-header">
+                            <h3>Pro</h3>
+                            <div>For Business</div>
+                            <h1>฿7,900
+                                <span style="font-size:22px">/ ปี</span>
+                            </h1>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fa fa-check"></i> ใช้งานได้ทุกโมดูล</li>
+                                <li><i class="fa fa-check"></i> ใช้ได้ทุกรายงาน</li>
+                                <li><i class="fa fa-check"></i> Dedicated Server</li>
+                                <li><i class="fa fa-check"></i> ปรับแต่งแก้ไข ขอเพิ่มรายงานได้</li>
+                                <li><i class="fa fa-check"></i> รองรับการพิมพ์ Q/R Code</li>
+                                <li><i class="fa fa-times"></i> รองรับ Mobile Inventory</li>
+                            </ul>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#" class="btn btn-price">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing">
+                        <div class="price-header">
+                            <h3>Enterprise</h3>
+                            <div>Custom Business</div>
+                            <h1>฿9,500
+                                <span style="font-size:22px">/ ปี</span>
+                            </h1>
+                        </div>
+                        <div class="price-body">
+                            <ul>
+                                <li><i class="fa fa-check"></i> ใช้งานได้ทุกโมดูล</li>
+                                <li><i class="fa fa-check"></i> ใช้ได้ทุกรายงาน</li>
+                                <li><i class="fa fa-check"></i> Dedicated Server</li>
+                                <li><i class="fa fa-check"></i> ปรับแต่งแก้ไข ขอเพิ่มรายงานได้</li>
+                                <li><i class="fa fa-check"></i> รองรับการพิมพ์ Q/R Code</li>
+                                <li><i class="fa fa-check"></i> รองรับ Mobile Inventory</li>
+                            </ul>
+                        </div>
+                        <div class="price-footer">
+                            <a href="#" class="btn btn-price">Select Plan</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
