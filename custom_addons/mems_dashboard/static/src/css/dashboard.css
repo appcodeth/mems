@@ -83,5 +83,14 @@
 
 .list-item li {
     margin: 12px 0;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+/**/
+.mt-1 {
+    margin-top: 5px;
+}
+
+.mt-2 {
+    margin-top: 10px;
 }

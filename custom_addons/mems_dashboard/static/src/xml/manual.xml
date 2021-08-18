@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="ManualDownload">
-        <div class="container-fluid">
+        <div class="container">
+            <h1 class="text-center" style="margin:40px 0">
+                <span style="font-size:32px">คู่มือการใช้งาน</span>
+            </h1>
             <div class="row">
-                <div class="col-lg-6 col-lg-offset-3">
-                    <h1 class="text-center" style="margin:40px 0">
-                        <span style="font-size:32px">คู่มือการใช้งาน</span>
-                    </h1>
-                    <div class="panel panel-default" style="border:0">
-                       <div class="panel-body" style="padding: 15px 30px">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color:transparent">
+                            <h2 style="margin:5px 0">สำหรับ User</h2>
+                        </div>
+                        <div class="panel-body" style="padding: 15px 30px">
                             <ul class="list-item">
                                 <li>
                                     <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
@@ -50,14 +53,54 @@
                                     <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
                                     <a href="#">Chapter10 - รายงาน</a>
                                 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" style="background-color:transparent">
+                            <h2 style="margin:5px 0">สำหรับ Admin</h2>
+                        </div>
+                        <div class="panel-body" style="padding: 15px 30px">
+                            <ul class="list-item">
                                 <li>
                                     <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
-                                    <a href="#">Chapter11 - การกำหนดค่าทางเทคนิค <span class="small">(อีเมล / เลขเอกสาร / หน้ากระดาษ)</span></a>
+                                    <a href="#">Chapter01 - การตั้งค่าเลขเอกสาร</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter02 - การกำหนดสิทธิใช้งาน</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter03 - การตั้งค่าอีเมล</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter04 - การตั้งเวลา Job Schedule</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter05 - การสำรองข้อมูล</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter06 - การเพิ่ม แก้ไข และลบฟิลด์ข้อมูล</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter07 - การแก้ไขหน้าจอ</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="/mems_dashboard/static/src/img/pdf.png" height="24px"/></a>
+                                    <a href="#">Chapter08 - การแปลภาษาเพิ่มเติม</a>
                                 </li>
                             </ul>
-                       </div>
-                   </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </t>
