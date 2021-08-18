@@ -15,6 +15,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <t t-call="web.menu"/>
+                    <div class="navbar-text navbar-right">
+                        <div class="label label-warning" style="font-weight:400">
+                            <span style="font-size:14px">แพคเกจ: Free</span>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </xpath>
