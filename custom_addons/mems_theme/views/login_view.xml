@@ -17,7 +17,9 @@
         </xpath>
 
         <xpath expr="//div[hasclass('o_database_list')]" position="before">
-            <div id="background-wrapper"></div>
+            <div id="background-wrapper">
+                <img src="/mems_theme/static/src/img/logo.png" class="img-logo"/>
+            </div>
         </xpath>
 
         <xpath expr="//div[hasclass('o_database_list')]" position="attributes">
