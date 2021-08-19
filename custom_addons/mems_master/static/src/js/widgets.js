@@ -12,10 +12,10 @@ odoo.define('mems_master.widgets', function(require) {
                     cssClass = 'status-success';
                     text = 'พร้อมใช้';
                 } else if (this.value === 'pm') {
-                    cssClass = 'status-warning';
+                    cssClass = 'status-info';
                     text = 'บำรุงรักษา';
                 } else if (this.value === 'calibrate') {
-                    cssClass = 'status-warning';
+                    cssClass = 'status-info';
                     text = 'สอบเทียบ';
                 } else if (this.value === 'borrow') {
                     cssClass = 'status-warning';

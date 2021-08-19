@@ -18,7 +18,9 @@
 
         <xpath expr="//div[hasclass('o_database_list')]" position="before">
             <div id="background-wrapper">
-                <a href="/"><img src="/mems_theme/static/src/img/logo.png" class="img-logo"/></a>
+                <a href="/">
+                    <img src="/mems_theme/static/src/img/logo.png" class="img-logo"/>
+                </a>
             </div>
         </xpath>
 
@@ -32,13 +34,21 @@
 
         <xpath expr="//div[contains(@class, 'o_database_list')]/div[2]" position="replace">
             <div class="text-center" t-if="not disable_footer">
-                <a href="/web/database/manager">Manage Databases</a>
+                <a href="/web/database/manager">จัดการฐานข้อมูล</a>
             </div>
         </xpath>
     </template>
 
     <template id="login" inherit_id="web.login" name="Login Inherit">
         <xpath expr="//label[@for='db']" position="replace"/>
+
+        <xpath expr="//label[@for='login']" position="replace">
+            <label for="login" class="control-label">ชื่อผู้ใช้</label>
+        </xpath>
+
+        <xpath expr="//label[@for='password']" position="replace">
+            <label for="login" class="control-label">รหัสผ่าน</label>
+        </xpath>
 
         <xpath expr="//input[@name='login']" position="attributes">
             <attribute name="placeholder"></attribute>
@@ -61,7 +71,7 @@
                 <input type="submit" class="btn btn-primary btn-login" value="Log in"/>
                 <div class="text-center" style="margin-bottom:15px">
                     <hr/>
-                    <span style="color:#888">or connect with</span>
+                    <span style="color:#888">หรือ</span>
                 </div>
             </div>
         </xpath>
