@@ -643,9 +643,13 @@ msgstr "พิมพ์"
 
 #. module: mems_purchase
 #: model:ir.actions.act_window,name:mems_purchase.action_purchase_list
-#: model:ir.ui.menu,name:mems_purchase.menu_purchase
 msgid "Purchase"
 msgstr "ใบสั่งซื้อ"
+
+#. module: mems_purchase
+#: model:ir.ui.menu,name:mems_purchase.menu_purchase
+msgid "Purchase"
+msgstr "การซื้อ"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
