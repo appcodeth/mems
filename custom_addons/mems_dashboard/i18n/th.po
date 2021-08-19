@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20201204\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-14 16:01+0000\n"
-"PO-Revision-Date: 2021-08-14 16:01+0000\n"
+"POT-Creation-Date: 2021-08-19 08:18+0000\n"
+"PO-Revision-Date: 2021-08-19 08:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,195 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:13
+#, python-format
+msgid "Basic Plan"
+msgstr "Basic Plan"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:18
+#, python-format
+msgid "Chapter01 - การตั้งค่าบริษัท"
+msgstr "Chapter01 - การตั้งค่าบริษัท"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:69
+#, python-format
+msgid "Chapter01 - การตั้งค่าเลขเอกสาร"
+msgstr "Chapter01 - การตั้งค่าเลขเอกสาร"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:22
+#, python-format
+msgid "Chapter02 - การกำหนดข้อมูลเริ่มต้น"
+msgstr "Chapter02 - การกำหนดข้อมูลเริ่มต้น"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:73
+#, python-format
+msgid "Chapter02 - การกำหนดสิทธิใช้งาน"
+msgstr "Chapter02 - การกำหนดสิทธิใช้งาน"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:26
+#, python-format
+msgid "Chapter03 - การจัดการผู้ใช้และสิทธิการใช้งาน"
+msgstr "Chapter03 - การจัดการผู้ใช้และสิทธิการใช้งาน"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:77
+#, python-format
+msgid "Chapter03 - การตั้งค่าอีเมล"
+msgstr "Chapter03 - การตั้งค่าอีเมล"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:30
+#, python-format
+msgid "Chapter04 - การจัดการคุรุภัณฑ์"
+msgstr "Chapter04 - การจัดการคุรุภัณฑ์"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:81
+#, python-format
+msgid "Chapter04 - การตั้งเวลา Job Schedule"
+msgstr "Chapter04 - การตั้งเวลา Job Schedule"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:34
+#, python-format
+msgid "Chapter05 - การซ่อม"
+msgstr "Chapter05 - การซ่อม"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:85
+#, python-format
+msgid "Chapter05 - การสำรองข้อมูล"
+msgstr "Chapter05 - การสำรองข้อมูล"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:38
+#, python-format
+msgid "Chapter06 - การสอบเทียบ/วัด และบำรุงรักษา (PM)"
+msgstr "Chapter06 - การสอบเทียบ/วัด และบำรุงรักษา (PM)"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:89
+#, python-format
+msgid "Chapter06 - การเพิ่ม แก้ไข และลบฟิลด์ข้อมูล"
+msgstr "Chapter06 - การเพิ่ม แก้ไข และลบฟิลด์ข้อมูล"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:42
+#, python-format
+msgid "Chapter07 - การยืม-คืนคุรุภัณฑ์"
+msgstr "Chapter07 - การยืม-คืนคุรุภัณฑ์"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:93
+#, python-format
+msgid "Chapter07 - การแก้ไขหน้าจอ"
+msgstr "Chapter07 - การแก้ไขหน้าจอ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:46
+#, python-format
+msgid "Chapter08 - การจัดการคลังสินค้า/อะไหล่ (Inventory)"
+msgstr "Chapter08 - การจัดการคลังสินค้า/อะไหล่ (Inventory)"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:97
+#, python-format
+msgid "Chapter08 - การแปลภาษาเพิ่มเติม"
+msgstr "Chapter08 - การแปลภาษาเพิ่มเติม"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:50
+#, python-format
+msgid "Chapter09 - การจัดซื้อ"
+msgstr "Chapter09 - การจัดซื้อ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:54
+#, python-format
+msgid "Chapter10 - รายงาน"
+msgstr "Chapter10 - รายงาน"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:59
+#, python-format
+msgid "Custom Business"
+msgstr "Custom Business"
+
+#. module: mems_dashboard
 #: model:ir.ui.menu,name:mems_dashboard.menu_dashboard
 msgid "Dashboard"
 msgstr "แดชบอร์ด"
 
 #. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:44
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:68
+#, python-format
+msgid "Dedicated Server"
+msgstr "Dedicated Server"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:58
+#, python-format
+msgid "Enterprise"
+msgstr "Enterprise"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:35
+#, python-format
+msgid "For Business"
+msgstr "For Business"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:12
+#, python-format
+msgid "Free"
+msgstr "Free"
+
+#. module: mems_dashboard
 #: model:ir.ui.menu,name:mems_dashboard.menu_help_support
 msgid "Help & Supports"
 msgstr "คู่มือการใช้งาน"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/video.xml:14
+#, python-format
+msgid "MEMs คือ อะไร?"
+msgstr "MEMs คือ อะไร?"
+
+#. module: mems_dashboard
+#: model:ir.actions.client,name:mems_dashboard.action_manual_overview
+msgid "Manual Download"
+msgstr "Manual Download"
 
 #. module: mems_dashboard
 #: model:ir.actions.client,name:mems_dashboard.action_dashboard_overview
@@ -37,9 +218,49 @@ msgid "Packages"
 msgstr "แพคเกจราคา"
 
 #. module: mems_dashboard
+#: model:ir.actions.client,name:mems_dashboard.action_pricing_overview
+msgid "Pricing Table"
+msgstr "Pricing Table"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:34
+#, python-format
+msgid "Pro"
+msgstr "Pro"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:27
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:51
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:75
+#, python-format
+msgid "Select Plan"
+msgstr "เลือกแพกเกจ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:20
+#, python-format
+msgid "Shared Server"
+msgstr "Shared Server"
+
+#. module: mems_dashboard
+#: model:ir.actions.client,name:mems_dashboard.action_video_overview
+msgid "Video Suggestion"
+msgstr "Video Suggestion"
+
+#. module: mems_dashboard
 #: model:ir.ui.menu,name:mems_dashboard.menu_video_demo
 msgid "Videos"
-msgstr "วีดีโอการใช้งาน"
+msgstr "วีดีโอแนะนำ"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:21
+#, python-format
+msgid "ขอปรับแต่ง/แก้ไข เพิ่มรายงาน"
+msgstr "ขอปรับแต่ง/แก้ไข เพิ่มรายงาน"
 
 #. module: mems_dashboard
 #. openerp-web
@@ -47,6 +268,13 @@ msgstr "วีดีโอการใช้งาน"
 #, python-format
 msgid "คุรุภัณฑ์"
 msgstr "คุรุภัณฑ์"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:6
+#, python-format
+msgid "คู่มือการใช้งาน"
+msgstr "คู่มือการใช้งาน"
 
 #. module: mems_dashboard
 #. openerp-web
@@ -64,10 +292,25 @@ msgstr "งานของคุณ Backlog"
 
 #. module: mems_dashboard
 #. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/video.xml:20
+#, python-format
+msgid "จะเริ่มต้นใช้งานทำอย่างไร?"
+msgstr "จะเริ่มต้นใช้งานทำอย่างไร?"
+
+#. module: mems_dashboard
+#. openerp-web
 #: code:addons/mems_dashboard/static/src/xml/dashboard.xml:30
 #, python-format
 msgid "ซ่อม"
 msgstr "ซ่อม"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:45
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:69
+#, python-format
+msgid "ปรับแต่งแก้ไข ขอเพิ่มรายงานได้"
+msgstr "ปรับแต่งแก้ไข ขอเพิ่มรายงานได้"
 
 #. module: mems_dashboard
 #. openerp-web
@@ -78,10 +321,41 @@ msgstr "พร้อมใช้"
 
 #. module: mems_dashboard
 #. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:22
+#, python-format
+msgid "พิมพ์ Q/R Code"
+msgstr "พิมพ์ Q/R Code"
+
+#. module: mems_dashboard
+#. openerp-web
 #: code:addons/mems_dashboard/static/src/xml/dashboard.xml:64
 #, python-format
 msgid "ยืม"
 msgstr "ยืม"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:23
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:47
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:71
+#, python-format
+msgid "รองรับ Mobile Inventory"
+msgstr "รองรับ Mobile Inventory"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:46
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:70
+#, python-format
+msgid "รองรับการพิมพ์ Q/R Code"
+msgstr "รองรับการพิมพ์ Q/R Code"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/video.xml:6
+#, python-format
+msgid "วีดีโอแนะนำ"
+msgstr "วีดีโอแนะนำ"
 
 #. module: mems_dashboard
 #. openerp-web
@@ -113,7 +387,65 @@ msgstr "สัดส่วนงานซ่อม"
 
 #. module: mems_dashboard
 #. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:63
+#, python-format
+msgid "สำหรับ Admin"
+msgstr "สำหรับ Admin"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/manual.xml:12
+#, python-format
+msgid "สำหรับ User"
+msgstr "สำหรับ User"
+
+#. module: mems_dashboard
+#. openerp-web
 #: code:addons/mems_dashboard/static/src/xml/dashboard.xml:108
 #, python-format
 msgid "เลขที่"
 msgstr "เลขที่"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/video.xml:8
+#, python-format
+msgid "แนะนำสินค้า"
+msgstr "แนะนำสินค้า"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:6
+#, python-format
+msgid "แพกเกจราคา"
+msgstr "แพกเกจราคา"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:19
+#, python-format
+msgid "แสดงโลโก้ที่รายงาน"
+msgstr "แสดงโลโก้ที่รายงาน"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:18
+#, python-format
+msgid "ใช้งานโมดูลพื้นฐานได้"
+msgstr "ใช้งานโมดูลพื้นฐานได้"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:42
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:66
+#, python-format
+msgid "ใช้งานได้ทุกโมดูล"
+msgstr "ใช้งานได้ทุกโมดูล"
+
+#. module: mems_dashboard
+#. openerp-web
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:43
+#: code:addons/mems_dashboard/static/src/xml/pricing.xml:67
+#, python-format
+msgid "ใช้ได้ทุกรายงาน"
+msgstr "ใช้ได้ทุกรายงาน"
