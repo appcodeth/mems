@@ -1,6 +1,7 @@
 body {
     color: #666;
     font-family: "CSPrakas", sans-serif;
+    font-size: 16px;
 }
 
 /* no column space */
@@ -192,7 +193,8 @@ body {
 }
 
 .box .box-header h4 {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .box table {
@@ -397,7 +399,14 @@ body {
   border-top-color: #f39c12;
 }
 
-/* adjust font weight */
+/* fixed report heading: CSPrakas */
+h3.text-center {
+    font-size: 28px;
+    margin: 30px 0 !important;
+}
+
+/* adjust font weight: Kanit */
+/*
 strong {
     font-weight: 500;
 }
@@ -405,3 +414,5 @@ strong {
 table th {
     font-weight: 500;
 }
+*/
+
