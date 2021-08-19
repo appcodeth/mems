@@ -401,8 +401,7 @@ body {
 
 /* fixed report heading: CSPrakas */
 h3.text-center {
-    font-size: 28px;
-    margin: 30px 0 !important;
+    font-size: 26px;
 }
 
 /* adjust font weight: Kanit */
@@ -415,4 +414,3 @@ table th {
     font-weight: 500;
 }
 */
-
