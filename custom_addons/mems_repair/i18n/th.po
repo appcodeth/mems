@@ -746,5 +746,5 @@ msgstr "mems.workorder_line"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
-msgid "ใบแจ้งซ่อม Order"
-msgstr "ใบแจ้งซ่อม Order"
+msgid "ใบแจ้งซ่อม"
+msgstr "ใบแจ้งซ่อม"
