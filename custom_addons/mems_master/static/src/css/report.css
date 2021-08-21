@@ -152,6 +152,7 @@ body {
 /* table logo */
 .table-logo {
   width: 100%;
+  font-size: 14px;
 }
 
 .table-logo h2 {
