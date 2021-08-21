@@ -961,5 +961,5 @@ msgstr "ใบขอราคา"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
-msgid "ใบสั่งซื้อ Order"
-msgstr "ใบสั่งซื้อ Order"
+msgid "ใบขอราคา"
+msgstr "ใบขอราคา"
