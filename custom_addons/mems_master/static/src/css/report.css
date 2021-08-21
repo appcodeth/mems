@@ -1,7 +1,7 @@
 body {
     color: #666;
     font-size: 16px;
-    font-family: "Sarabun", sans-serif;
+    font-family: "CSPrakas", sans-serif;
 }
 
 /* no column space */
@@ -193,7 +193,8 @@ body {
 }
 
 .box .box-header h4 {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .box table {
@@ -401,4 +402,5 @@ body {
 /**/
 h3.text-center {
     font-size: 26px;
+    font-weight: bold;
 }

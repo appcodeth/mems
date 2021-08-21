@@ -11,7 +11,7 @@ class EquipmentApi(http.Controller):
     def equipment_status(self, **kw):
         sql = """
             select
-                substring(eqp.code, 0, position('/' in eqp.code)) as code,
+                '' as code,
                 eqp.name,
                 cate.name as categ_name,
                 uom.name as uom_name,
@@ -29,7 +29,7 @@ class EquipmentApi(http.Controller):
                 left join mems_uom uom on eqp.uom_id=uom.id
                 left join mems_brand brn on eqp.brand_id=brn.id
                 left join mems_department dep on eqp.department_id=dep.id
-            group by substring(eqp.code, 0, position('/' in eqp.code)), eqp.name, cate.name, uom.name, brn.name, eqp.model_name
+            group by eqp.name, cate.name, uom.name, brn.name, eqp.model_name
         """
         request.cr.execute(sql)
         results = request.cr.fetchall()

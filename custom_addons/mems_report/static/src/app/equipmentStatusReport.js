@@ -37,7 +37,7 @@ function runReport() {
                 sum_total_count += data.total_count;
 
                 tr += '<tr>' +
-                    '<td>' + data.code + '</td>' +
+                    '<td class="text-center">' + (index + 1) + '</td>' +
                     '<td>' + data.name + '</td>' +
                     '<td>' + data.categ_name + '</td>' +
                     '<td>' + (data.uom_name || '') + '</td>' +
