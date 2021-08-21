@@ -956,10 +956,10 @@ msgstr "mems.rfq_line"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
-msgid "ใบขอราคา / Quotation"
-msgstr "ใบขอราคา / Quotation"
+msgid "ใบขอราคา"
+msgstr "ใบขอราคา"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
-msgid "ใบสั่งซื้อ / Purchase Order"
-msgstr "ใบสั่งซื้อ / Purchase Order"
+msgid "ใบสั่งซื้อ Order"
+msgstr "ใบสั่งซื้อ Order"
