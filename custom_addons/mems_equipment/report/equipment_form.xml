@@ -49,7 +49,7 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
                     <t t-call="mems_equipment.equipment_logo"/>
-                    <h3 class="text-center my-5">Equipment Form</h3>
+                    <h3 class="text-center my-4">Equipment Form</h3>
                     <div class="box mb-4">
                         <div class="box-header">
                             <h4 class="m-0">General Information</h4>
