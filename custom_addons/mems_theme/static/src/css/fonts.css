@@ -58,27 +58,3 @@
     font-weight: 700;
     src: url("/mems_theme/static/src/fonts/sarabun-700.woff2") format("woff2"), url("/mems_theme/static/src/fonts/sarabun-700.woff") format("woff");
 }
-@font-face {
-    font-family: "CSPrakas";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/mems_theme/static/src/fonts/CSPraKas.otf");
-}
-@font-face {
-    font-family: "CSPrakas";
-    font-style: normal;
-    font-weight: 700;
-    src: url("/mems_theme/static/src/fonts/CSPraKasBold.otf");
-}
-@font-face {
-    font-family: "CSPrakasFD";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/mems_theme/static/src/fonts/CSPraKasFD.otf");
-}
-@font-face {
-    font-family: "CSPrakasFD";
-    font-style: normal;
-    font-weight: 700;
-    src: url("/mems_theme/static/src/fonts/CSPraKasBoldFD.otf");
-}
