@@ -8,6 +8,10 @@ class SparePart(models.Model):
     barcode = fields.Char('Barcode', unique=True)
     lot_no = fields.Char('Lot No')
     image = fields.Binary('Image', attatchment=True)
+    type = fields.Selection([
+        ('product', 'Product'),
+        ('service', 'Service'),
+    ], default='product', string='Type')
     category_id = fields.Many2one('mems.category', string='Category')
     uom_id = fields.Many2one('mems.uom', string='Uom')
     purchase_uom_id = fields.Many2one('mems.uom', string='Purchase Uom')
@@ -29,29 +33,34 @@ class SparePart(models.Model):
 
     @api.model
     def create(self, vals):
-        count = self.env['mems.stock_move'].search_count([('product_code', '=', vals['code'])])
-        if not count:
-            data = {
-                'doc_name': '',
-                'doc_type': 'init',
-                'qty': vals['stock_qty'],
-                'purchase_qty': vals['stock_qty'],
-                'amount': vals['cost_price'],
-                'move_type': 'in',
-                'user_id': self.env.user.id,
-                'name': vals['name'],
-                'product_code': vals['code'],
-            }
+        # when product type is 'product'
+        if vals['type'] == 'product' or self.type == 'product':
+            count = self.env['mems.stock_move'].search_count([('product_code', '=', vals['code'])])
+            if not count:
+                data = {
+                    'doc_name': '',
+                    'doc_type': 'init',
+                    'qty': vals['stock_qty'],
+                    'purchase_qty': vals['stock_qty'],
+                    'amount': vals['cost_price'],
+                    'move_type': 'in',
+                    'user_id': self.env.user.id,
+                    'name': vals['name'],
+                    'product_code': vals['code'],
+                }
 
-            if vals.get('id'):
-                data['id'] = vals['id']
-                data['product_id'] = vals['id']
+                if vals.get('id'):
+                    data['id'] = vals['id']
+                    data['product_id'] = vals['id']
 
-            if vals.get('uom_id'):
-                data['uom_id'] = vals['uom_id']
-                data['purchase_uom_id'] = vals['uom_id']
+                if vals.get('uom_id'):
+                    data['uom_id'] = vals['uom_id']
+                    data['purchase_uom_id'] = vals['uom_id']
 
-            self.env['mems.stock_move'].create(data)
+                self.env['mems.stock_move'].create(data)
+            else:
+                # when product type is 'service'
+                print('** product type is service **')
         return super(SparePart, self).create(vals)
 
     def do_spare_part_adjust(self):

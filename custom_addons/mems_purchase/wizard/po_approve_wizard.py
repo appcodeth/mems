@@ -15,8 +15,9 @@ class POApproveWizard(models.TransientModel):
         total_qty = 0
         total_amount = 0
         for item in purchase.purchase_line:
-            total_qty += item.qty
-            total_amount += item.amount
+            if item.part_id.type == 'product':
+                total_qty += item.qty
+                total_amount += item.amount
 
         # create receive header
         receive = self.env['mems.receive'].sudo().create({
@@ -31,15 +32,16 @@ class POApproveWizard(models.TransientModel):
 
         # create receive line items
         for item in purchase.purchase_line:
-            self.env['mems.receive_line'].sudo().create({
-                'rcv_id': receive.id,
-                'part_id': item.part_id.id,
-                'uom_id': item.uom_id.id,
-                'name': item.name,
-                'qty': item.qty,
-                'price': item.price,
-                'amount': item.amount,
-            })
+            if item.part_id.type == 'product':
+                self.env['mems.receive_line'].sudo().create({
+                    'rcv_id': receive.id,
+                    'part_id': item.part_id.id,
+                    'uom_id': item.uom_id.id,
+                    'name': item.name,
+                    'qty': item.qty,
+                    'price': item.price,
+                    'amount': item.amount,
+                })
 
         # update purchase status
         purchase.sudo().write({'state': 'approve'})

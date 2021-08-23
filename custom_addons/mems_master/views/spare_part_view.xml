@@ -20,13 +20,13 @@
         <field name="model">mems.spare_part</field>
         <field name="arch" type="xml">
             <tree string="Spare Part List"
-                  decoration-danger="stock_qty &#60;= 0"
-                  decoration-warning="stock_qty &#60;= min_qty">
+                  decoration-danger="type=='product' and stock_qty &#60;= 0"
+                  decoration-warning="type=='product' and stock_qty &#60;= min_qty">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="category_id"/>
                 <field name="uom_id"/>
-                <field name="location_id"/>
+                <field name="type"/>
                 <field name="min_qty" invisible="1"/>
                 <field name="stock_qty" sum="Total Qty"/>
                 <field name="last_purchase_date"/>
@@ -40,7 +40,7 @@
         <field name="arch" type="xml">
             <form string="Spare Part Form">
                 <header>
-                    <button string="Adjust Stock Qty" type="object" name="do_spare_part_adjust"/>
+                    <button string="Adjust Stock Qty" type="object" name="do_spare_part_adjust" attrs="{'invisible': [('type','=','service')]}"/>
                 </header>
                 <sheet>
                     <field name="image" widget="image" class="oe_avatar"/>
@@ -49,28 +49,29 @@
                         <h1>
                             <field name="name" placeholder="Enter part name" required="True"/>
                         </h1>
+                        <field name="type" widget='radio' options="{'horizontal': true}"/>
                     </div>
                     <group>
                         <group>
                             <field name="code"/>
-                            <field name="barcode"/>
-                            <field name="brand_id"/>
+                            <field name="barcode" attrs="{'invisible': [('type','=','service')]}"/>
+                            <field name="brand_id" attrs="{'invisible': [('type','=','service')]}"/>
                             <field name="category_id"/>
                             <field name="uom_id"/>
-                            <field name="purchase_uom_id"/>
+                            <field name="purchase_uom_id" attrs="{'invisible': [('type','=','service')]}"/>
                         </group>
                         <group>
-                            <field name="unit_price"/>
+                            <field name="unit_price" attrs="{'invisible': [('type','=','service')]}"/>
                             <field name="cost_price"/>
-                            <field name="stock_qty" force_save="1"/>
-                            <field name="last_purchase_date"/>
+                            <field name="stock_qty" force_save="1" attrs="{'invisible': [('type','=','service')]}"/>
+                            <field name="last_purchase_date" attrs="{'invisible': [('type','=','service')]}"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Description">
                             <field name="description"/>
                         </page>
-                        <page string="Stock Control">
+                        <page string="Stock Control" attrs="{'invisible': [('type','=','service')]}">
                             <group>
                                 <group>
                                     <field name="min_qty"/>

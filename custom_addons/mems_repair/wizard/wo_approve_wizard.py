@@ -15,8 +15,9 @@ class WOApproveWizard(models.TransientModel):
         total_qty = 0
         total_amount = 0
         for item in wo.wo_line:
-            total_qty += item.qty
-            total_amount += item.amount
+            if item.part_id.type == 'product':
+                total_qty += item.qty
+                total_amount += item.amount
 
         # create issue header
         issue = self.env['mems.issue'].sudo().create({
@@ -30,15 +31,16 @@ class WOApproveWizard(models.TransientModel):
 
         # create issue line item
         for item in wo.wo_line:
-            self.env['mems.issue_line'].sudo().create({
-                'issue_id': issue.id,
-                'part_id': item.part_id.id,
-                'uom_id': item.uom_id.id,
-                'name': item.name,
-                'qty': item.qty,
-                'price': item.price,
-                'amount': item.amount,
-            })
+            if item.part_id.type == 'product':
+                self.env['mems.issue_line'].sudo().create({
+                    'issue_id': issue.id,
+                    'part_id': item.part_id.id,
+                    'uom_id': item.uom_id.id,
+                    'name': item.name,
+                    'qty': item.qty,
+                    'price': item.price,
+                    'amount': item.amount,
+                })
 
         # update workorder status
         wo.sudo().write({'state': 'approve'})

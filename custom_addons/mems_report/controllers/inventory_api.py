@@ -25,6 +25,7 @@ class InventoryApi(http.Controller):
                 left join mems_uom uom on sp.uom_id=uom.id
                 left join mems_brand bnd on sp.brand_id=bnd.id
                 left join mems_stock_location loc on sp.location_id=loc.id
+            where sp.type='product'
         """
         request.cr.execute(sql)
         results = request.cr.fetchall()
@@ -103,7 +104,7 @@ class InventoryApi(http.Controller):
                 left join mems_uom uom on sp.uom_id=uom.id
                 left join mems_stock_location lc on sp.location_id=lc.id
                 left join mems_brand bn on sp.brand_id=bn.id
-            where sp.stock_qty <= sp.min_qty
+            where sp.stock_qty <= sp.min_qty and sp.type='product'
         """
         request.cr.execute(sql)
         results = request.cr.fetchall()
@@ -138,7 +139,7 @@ class InventoryApi(http.Controller):
                 left join mems_uom um on sp.uom_id=um.id
                 left join mems_brand bn on sp.brand_id=bn.id
                 left join mems_stock_location lc on sp.location_id=lc.id
-            where mi.state='complete'
+            where mi.state='complete' and sp.type='product'
             group by sp.code, sp.name, ca.name, um.name, bn.name, lc.name
             order by qty desc limit 20
         """
@@ -180,7 +181,7 @@ class InventoryApi(http.Controller):
                 left join mems_supplier sp on mr.supplier_id=sp.id
                 left join mems_spare_part pt on ml.part_id=pt.id
                 left join mems_uom um on ml.uom_id=um.id
-            where mr.date_rcv between '{0}' and '{1}' and mr.state='complete'
+            where mr.date_rcv between '{0}' and '{1}' and mr.state='complete' and pt.type='product'
             order by pt.code,rcv_name asc
         """.format(start_date, end_date)
         request.cr.execute(sql)
@@ -226,7 +227,7 @@ class InventoryApi(http.Controller):
                 left join mems_department dp on isu.department_id=dp.id
                 left join mems_spare_part pt on isl.part_id=pt.id
                 left join mems_uom um on isl.uom_id=um.id
-            where isu.date_issue between '{0}' and '{1}' and isu.state='complete'
+            where isu.date_issue between '{0}' and '{1}' and isu.state='complete' and pt.type='product'
             order by pt.code,issue_name asc
         """.format(start_date, end_date)
         request.cr.execute(sql)

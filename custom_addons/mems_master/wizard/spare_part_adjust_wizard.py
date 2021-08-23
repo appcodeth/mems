@@ -13,27 +13,30 @@ class SparePartAdjustWizard(models.TransientModel):
     amount = fields.Float('Amount')
 
     def do_confirm_adjust(self):
-        # update current stock qty
-        self.env['mems.spare_part'].browse([self.product_id]).sudo().write({
-            'stock_qty': self.new_qty
-        })
+        if self.type == 'product':
+            # update current stock qty
+            self.env['mems.spare_part'].browse([self.product_id]).sudo().write({
+                'stock_qty': self.new_qty
+            })
 
-        # insert the stock_move to keep history for tracking
-        data = {
-            'doc_id': None,
-            'doc_name': '',
-            'doc_type': 'adjust',
-            'move_type': 'adjust',
-            'qty': self.new_qty,
-            'purchase_qty': self.new_qty,
-            'amount': self.amount,
-            'user_id': self.env.user.id,
-            'move_data': datetime.now(),
-            'name': self.name,
-            'product_id': self.product_id,
-            'product_code': self.code,
-        }
-        if self.uom_id:
-            data['uom_id'] = self.uom_id
-            data['purchase_uom_id'] = self.uom_id
-        self.env['mems.stock_move'].sudo().create(data)
+            # insert the stock_move to keep history for tracking
+            data = {
+                'doc_id': None,
+                'doc_name': '',
+                'doc_type': 'adjust',
+                'move_type': 'adjust',
+                'qty': self.new_qty,
+                'purchase_qty': self.new_qty,
+                'amount': self.amount,
+                'user_id': self.env.user.id,
+                'move_data': datetime.now(),
+                'name': self.name,
+                'product_id': self.product_id,
+                'product_code': self.code,
+            }
+            if self.uom_id:
+                data['uom_id'] = self.uom_id
+                data['purchase_uom_id'] = self.uom_id
+            self.env['mems.stock_move'].sudo().create(data)
+        else:
+            print('** product type is service **')

@@ -869,6 +869,11 @@ msgid "Type"
 msgstr "ประเภท"
 
 #. module: mems_master
+#: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_type
+msgid "Type"
+msgstr "ชนิด"
+
+#. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_unit_price
 #: model:ir.ui.view,arch_db:mems_master.form_body
 msgid "Unit Price"
@@ -1010,3 +1015,13 @@ msgstr "mems.uom"
 #: model:ir.model,name:mems_master.model_mems_uom_category
 msgid "mems.uom_category"
 msgstr "mems.uom_category"
+
+#. module: mems_master
+#: selection:mems.spare_part,type:0
+msgid "Service"
+msgstr "บริการ"
+
+#. module: mems_master
+#: selection:mems.spare_part,type:0
+msgid "Product"
+msgstr "สินค้า"

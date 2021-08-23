@@ -27,3 +27,13 @@ function getDate(s) {
 function getLastDay(y, m) {
     return new Date(y, m + 1, 0).getDate();
 }
+
+$(function() {
+    $('#btnExportPDF').on('click', function() {
+        alert('ไม่สามารถดูรายงาน PDF ได้เนื่องจากเป็นเครื่องสาธิต (demo) กรุณาสมัครสมาชิกเพื่อใช้ระบบจริง');
+    });
+    $('#btnExportExcel').on('click', function() {
+        alert('ไม่สามารถดูรายงาน Excel ได้เนื่องจากเป็นเครื่องสาธิต (demo) กรุณาสมัครสมาชิกเพื่อใช้ระบบจริง');
+    });
+});
+

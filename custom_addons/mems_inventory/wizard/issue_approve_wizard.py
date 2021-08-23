@@ -18,6 +18,8 @@ class IssueApproveWizard(models.TransientModel):
                 raise exceptions.ValidationError(_('Please enter product price in issue line'))
 
         for line in issue.issue_line:
+            if line.part_id.type == 'service':
+                continue
             # calculate purchase uom qty
             base_uom = line.part_id.uom_id
             issue_uom = line.uom_id

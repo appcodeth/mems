@@ -14,11 +14,11 @@
                         <a href="#" class="btn btn-default" id="btnClearReport">ยกเลิก</a>
                         <div class="pull-right">
                             <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">
+                                <button type="button" class="btn btn-default" id="btnExportPDF">
                                     <i class="fa fa-file-pdf-o"/>
                                     PDF
                                 </button>
-                                <button type="button" class="btn btn-default">
+                                <button type="button" class="btn btn-default" id="btnExportExcel">
                                     <i class="fa fa-file-excel-o"/>
                                     Excel
                                 </button>
