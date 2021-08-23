@@ -15,7 +15,7 @@ function runReport() {
     $.ajax({
         url: '/api/dashboard/count',
         type: 'get',
-        async: false,
+        async: true,
         success: function (res) {
             $.each(res.rows, function (index, data) {
                 $('#count-active').html(numberWithCommas(data.count_active,0));
@@ -126,7 +126,7 @@ function runBarChart() {
     $.ajax({
         url: '/api/dashboard/barchart',
         type: 'get',
-        async: false,
+        async: true,
         success: function (res) {
             chartData.datasets[0].data = res.rows1;
             chartData.datasets[1].data = res.rows2;
