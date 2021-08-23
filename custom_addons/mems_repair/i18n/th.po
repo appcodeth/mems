@@ -118,10 +118,14 @@ msgid "Amount Total"
 msgstr "จำนวนเงินรามทั้งสิ้น"
 
 #. module: mems_repair
-#: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 #: selection:mems.workorder,state:0
 msgid "Approve"
 msgstr "ซ่อม"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
+msgid "Approve"
+msgstr "อนุมัติงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
