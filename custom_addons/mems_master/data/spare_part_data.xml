@@ -12,9 +12,10 @@
             <field name="min_qty">2</field>
             <field name="max_qty">5</field>
             <field name="location_id">1</field>
+            <field name="type">product</field>
         </record>
         <record model="mems.spare_part" id="spare_part02">
-            <field name="name">เต้ารับไฟฟ้าแบบยุโรปเต้าคู่มีระบบเบรกเกอร์ในตัว</field>
+            <field name="name">เต้ารับไฟฟ้าแบบยุโรปเต้าคู่ มีระบบเบรกเกอร์ในตัว</field>
             <field name="code">PS0002</field>
             <field name="barcode">PS0002</field>
             <field name="category_id">2</field>
@@ -24,6 +25,7 @@
             <field name="min_qty">2</field>
             <field name="max_qty">5</field>
             <field name="location_id">1</field>
+            <field name="type">product</field>
         </record>
         <record model="mems.spare_part" id="spare_part03">
             <field name="name">เอซีอะแดปเตอร์แปลงไฟ OPERATINGTECH OTE-60PFB 24 โวลต์ 2.5 แอมป์</field>
@@ -36,9 +38,10 @@
             <field name="min_qty">2</field>
             <field name="max_qty">5</field>
             <field name="location_id">1</field>
+            <field name="type">product</field>
         </record>
         <record model="mems.spare_part" id="spare_part04">
-            <field name="name">ปลั๊กไฟฟ้าโรงงานอุตสาหกรรม Hubbell HBL560C7W 3 เฟส 227</field>
+            <field name="name">ปลั๊กไฟฟ้า โรงงานอุตสาหกรรม Hubbell HBL560C7W 3 เฟส 227</field>
             <field name="code">HBL560C7W</field>
             <field name="barcode">HBL560C7W</field>
             <field name="category_id">2</field>
@@ -48,6 +51,7 @@
             <field name="min_qty">2</field>
             <field name="max_qty">5</field>
             <field name="location_id">1</field>
+            <field name="type">product</field>
         </record>
         <record model="mems.spare_part" id="spare_part05">
             <field name="name">ชุดหัวปลั๊ก Hubbell GFP15LM GFCI</field>
@@ -60,6 +64,7 @@
             <field name="min_qty">2</field>
             <field name="max_qty">5</field>
             <field name="location_id">1</field>
+            <field name="type">product</field>
         </record>
     </data>
 </odoo>
