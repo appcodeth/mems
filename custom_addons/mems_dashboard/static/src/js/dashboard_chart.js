@@ -42,7 +42,7 @@ window.chartColors = {
 };
 
 // set default fonts
-Chart.defaults.global.defaultFontFamily = 'Sarabun';
+Chart.defaults.global.defaultFontFamily = "Arial";
 
 // bar chart
 var ctx = document.getElementById('myChart').getContext('2d');
