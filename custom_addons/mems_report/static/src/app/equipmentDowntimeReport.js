@@ -21,7 +21,7 @@ function runReport() {
         success: function (res) {
             $.each(res.rows, function (index, data) {
                 tr += '<tr>' +
-                    '<td class="text-center">' + (data.code || '') + '</td>' +
+                    '<td>' + (data.code || '') + '</td>' +
                     '<td>' + (data.name || '') + '</td>' +
                     '<td>' + (data.categ_name || '') + '</td>' +
                     '<td>' + (data.uom_name || '') + '</td>' +

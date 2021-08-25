@@ -26,7 +26,7 @@
                 <table class="table table-bordered table-hover" id="table-report">
                     <thead>
                         <tr>
-                            <th class="text-center">รหัส</th>
+                            <th>รหัส</th>
                             <th>คุรุภัณฑ์</th>
                             <th>ประเภท</th>
                             <th>หน่วยนับ</th>
