@@ -2,23 +2,23 @@
     font-family: "CSPrakas";
     font-style: normal;
     font-weight: 400;
-    src: url("/mems_master/static/src/fonts/CSPraKas.otf");
+    src: url("/mems_theme/static/src/fonts/CSPraKas.otf");
 }
 @font-face {
     font-family: "CSPrakas";
     font-style: normal;
     font-weight: 700;
-    src: url("/mems_master/static/src/fonts/CSPraKasBold.otf");
+    src: url("/mems_theme/static/src/fonts/CSPraKasBold.otf");
 }
 @font-face {
     font-family: "CSPrakasFD";
     font-style: normal;
     font-weight: 400;
-    src: url("/mems_master/static/src/fonts/CSPraKasFD.otf");
+    src: url("/mems_theme/static/src/fonts/CSPraKasFD.otf");
 }
 @font-face {
     font-family: "CSPrakasFD";
     font-style: normal;
     font-weight: 700;
-    src: url("/mems_master/static/src/fonts/CSPraKasBoldFD.otf");
+    src: url("/mems_theme/static/src/fonts/CSPraKasBoldFD.otf");
 }
