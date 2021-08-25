@@ -2,7 +2,7 @@
 <odoo>
     <template id="master_widget_assets_backend" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/mems_master/static/src/js/chat.js"/>
+<!--            <script type="text/javascript" src="/mems_master/static/src/js/chat.js"/>-->
             <script type="text/javascript" src="/mems_master/static/src/js/widgets.js"/>
         </xpath>
     </template>
