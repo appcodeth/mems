@@ -144,7 +144,7 @@ function runPieChart() {
     $.ajax({
         url: '/api/dashboard/piechart',
         type: 'get',
-        async: false,
+        async: true,
         success: function (res) {
             pieChartData.datasets[0].data = res.rows;
             myPieChart.data = pieChartData;
@@ -180,7 +180,7 @@ function runWorkOrderList() {
     $.ajax({
         url: '/api/dashboard/workorder',
         type: 'get',
-        async: false,
+        async: true,
         success: function (res) {
             $('#data-count').html('(' + res.rows.length + ')');
             $.each(res.rows, function (index, data) {

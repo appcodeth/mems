@@ -116,8 +116,6 @@
               </div>
           </div>
       </div>
-      <script type="text/javascript" src="/mems_dashboard/static/src/vendor/chartjs/Chart.min.js"/>
-      <script type="text/javascript" src="/mems_dashboard/static/src/js/chartjs-plugin-datalabels@0.7.0"/>
       <script type="text/javascript" src="/mems_dashboard/static/src/js/dashboard_chart.js"/>
   </t>
 </templates>

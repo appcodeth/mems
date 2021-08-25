@@ -5,6 +5,8 @@
             <link rel="stylesheet" href="/mems_dashboard/static/src/css/dashboard.css"/>
             <link rel="stylesheet" href="/mems_dashboard/static/src/vendor/chartjs/Chart.min.css"/>
             <script type="text/javascript" src="/mems_dashboard/static/src/js/dashboard.js"/>
+            <script type="text/javascript" src="/mems_dashboard/static/src/vendor/chartjs/Chart.min.js"/>
+            <script type="text/javascript" src="/mems_dashboard/static/src/js/chartjs-plugin-datalabels@0.7.0"/>
         </xpath>
     </template>
 
