@@ -100,7 +100,7 @@
                   </div>
                   <div class="panel panel-default shadow-sm mb-5">
                         <div class="panel-heading" style="background-color:transparent">
-                            <h3 class="panel-title m-0">งานของคุณ Backlog <span id="data-count"></span></h3>
+                            <h3 class="panel-title m-0">งานของคุณ <span id="data-count"></span></h3>
                         </div>
                       <table class="table table-hover" id="table-workorder" style="margin-bottom:15px">
                         <thead>
