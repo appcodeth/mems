@@ -369,7 +369,7 @@ msgstr "วันที่ครบกำหนด"
 #: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
 msgid "Fax"
-msgstr "แฟ็กซ์ :"
+msgstr "แฟ็กซ์"
 
 #. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_payment_id
@@ -849,7 +849,7 @@ msgstr "โทรศัพท์ :"
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_logo
 msgid "Fax"
-msgstr "แฟ็กซ์ :"
+msgstr "แฟ็กซ์"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body

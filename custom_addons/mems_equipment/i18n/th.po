@@ -1001,7 +1001,7 @@ msgstr "โทรศัพท์ :"
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
 #: model:ir.ui.view,arch_db:mems_equipment.pm_logo
 msgid "Fax"
-msgstr "แฟ็กซ์ :"
+msgstr "แฟ็กซ์"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_list

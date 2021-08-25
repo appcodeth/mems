@@ -224,7 +224,7 @@ msgstr "อีเมล:"
 #. module: mems_inventory
 #: model:ir.ui.view,arch_db:mems_inventory.receive_form
 msgid "Fax"
-msgstr "แฟ็กซ์ :"
+msgstr "แฟ็กซ์"
 
 #. module: mems_inventory
 #: model:ir.model.fields,field_description:mems_inventory.field_mems_issue_approve_wizard_id

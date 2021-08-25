@@ -398,7 +398,7 @@ msgstr "คุรุภัณฑ์"
 #: model:ir.model.fields,field_description:mems_master.field_mems_supplier_fax
 #: model:ir.model.fields,field_description:mems_master.field_res_company_fax
 msgid "Fax"
-msgstr "แฟ็กซ์ :"
+msgstr "แฟ็กซ์"
 
 #. module: mems_master
 #: model:ir.ui.view,arch_db:mems_master.form_body
