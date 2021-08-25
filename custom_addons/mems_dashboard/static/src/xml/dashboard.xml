@@ -85,7 +85,7 @@
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <canvas id="myChart" height="150"/>
+                        <canvas id="myChart" height="180"/>
                     </div>
                 </div>
               </div>
