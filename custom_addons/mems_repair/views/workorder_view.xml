@@ -130,11 +130,22 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_workorder_calendar">
+        <field name="name">workorder.calendar</field>
+        <field name="model">mems.workorder</field>
+        <field name="arch" type="xml">
+            <calendar string="Work Order Calendar" date_start="date_order" date_stop="date_plan" color="name" mode="month" quick_add="false">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+
     <record model="ir.actions.act_window" id="action_workorder_list">
         <field name="name">Work Order</field>
         <field name="res_model">mems.workorder</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">Click this to create the first workorder</p>
         </field>
