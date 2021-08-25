@@ -3,7 +3,7 @@
     <t t-name="EquipmentWarrantyReport">
         <div class="container-fluid">
             <h1>รายงานเครื่องหมดประกัน</h1>
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-flat">
                 <div class="panel-body">
                     <div class="form-inline">
                         <a href="#" class="btn btn-success" id="btnShowReport">แสดงรายงาน</a>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default" id="panel-report" style="display:none">
+            <div class="panel panel-default panel-flat" id="panel-report" style="display:none">
                 <table class="table table-bordered table-hover" id="table-report">
                     <thead>
                         <tr>

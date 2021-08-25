@@ -28,7 +28,7 @@ msgstr "<span style=\"font-size:14px\">แพคเกจ: Free</span>"
 #. module: mems_theme
 #: model:ir.ui.view,arch_db:mems_theme.menu_secondary_custom
 msgid "Version 0.1.0 (Build 20210101)"
-msgstr "Version 1.0.1 (Build 20210823)"
+msgstr "Version 1.0.2 (Build 20210825)"
 
 #. module: mems_theme
 #: model:ir.ui.view,arch_db:mems_theme.login_layout
