@@ -24,7 +24,9 @@
         <field name="name">equipment.list</field>
         <field name="model">mems.equipment</field>
         <field name="arch" type="xml">
-            <tree string="Equipment List">
+            <tree string="Equipment List"
+                  decoration-warning="state != 'active' and state != 'inactive'"
+                  decoration-danger="state == 'inactive'">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="category_id"/>
