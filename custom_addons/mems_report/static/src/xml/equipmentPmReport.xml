@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
     <t t-name="EquipmentPmReport">
         <div class="container-fluid">
-            <h1>รายงานการบำรุงรักษา</h1>
+            <h1 class="mb-4">รายงานการบำรุงรักษา</h1>
             <div class="panel panel-default panel-flat">
                 <div class="panel-body">
                     <div class="form-inline">
