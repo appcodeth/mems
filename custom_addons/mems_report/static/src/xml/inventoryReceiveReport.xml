@@ -32,12 +32,12 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">วันที่รับ</th>
-                            <th class="text-center">เลขที่ใบรับ</th>
-                            <th class="text-center">เลขที่ P/O</th>
-                            <th class="text-center">วันที่ P/O</th>
+                            <th>วันที่รับ</th>
+                            <th>เลขที่ใบรับ</th>
+                            <th>เลขที่ P/O</th>
+                            <th>วันที่ P/O</th>
                             <th>ผู้จัดจำหน่าย</th>
-                            <th class="text-center">หน่วยนับ</th>
+                            <th>หน่วยนับ</th>
                             <th class="text-center">จำนวน</th>
                             <th class="text-right">ราคา/หน่วย</th>
                             <th class="text-right">รวมเงิน</th>

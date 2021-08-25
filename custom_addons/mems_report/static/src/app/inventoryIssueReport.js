@@ -68,12 +68,12 @@ function runReport() {
 
                 tr += sep + '<tr>' +
                     '<td class="text-center">' + count + '</td>' +
-                    '<td class="text-center">' + data.issue_date + '</td>' +
-                    '<td class="text-center">' + data.issue_name + '</td>' +
-                    '<td class="text-center">' + (data.wo_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.wo_date || '') + '</td>' +
+                    '<td>' + data.issue_date + '</td>' +
+                    '<td>' + data.issue_name + '</td>' +
+                    '<td>' + (data.wo_name || '') + '</td>' +
+                    '<td>' + (data.wo_date || '') + '</td>' +
                     '<td>' + (data.dept_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.uom_name || '') + '</td>' +
+                    '<td>' + (data.uom_name || '') + '</td>' +
                     '<td class="text-center">' + numberWithCommas(data.qty, 0) + '</td>' +
                     '<td class="text-right">' + numberWithCommas(data.price, 2) + '</td>' +
                     '<td class="text-right">' + numberWithCommas(data.amount, 2) + '</td>' +

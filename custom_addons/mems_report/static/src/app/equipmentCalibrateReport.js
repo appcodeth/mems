@@ -41,11 +41,11 @@ function runReport() {
                     '<td class="text-center">' + (data.start_date || '') + '</td>' +
                     '<td class="text-center">' + (data.end_date || '') + '</td>' +
                     '<td>' + (data.sup_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.code || '') + '</td>' +
+                    '<td>' + (data.code || '') + '</td>' +
                     '<td>' + (data.name || '') + '</td>' +
-                    '<td class="text-center">' + (data.categ_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.serial_no || '') + '</td>' +
+                    '<td>' + (data.categ_name || '') + '</td>' +
+                    '<td>' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
+                    '<td>' + (data.serial_no || '') + '</td>' +
                     '<td class="text-center">' + (data.login || '') + '</td>' +
                 '</tr>';
             });

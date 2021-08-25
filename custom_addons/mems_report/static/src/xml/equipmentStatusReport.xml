@@ -28,9 +28,9 @@
                         <tr>
                             <th class="text-center">ลำดับ</th>
                             <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ประเภท</th>
-                            <th class="text-center">หน่วยนับ</th>
-                            <th class="text-center">ยี่ห้อ / รุ่น</th>
+                            <th>ประเภท</th>
+                            <th>หน่วยนับ</th>
+                            <th>ยี่ห้อ / รุ่น</th>
                             <th class="text-center">พร้อมใช้</th>
                             <th class="text-center">ซ่อม</th>
                             <th class="text-center">สอบเทียบ</th>

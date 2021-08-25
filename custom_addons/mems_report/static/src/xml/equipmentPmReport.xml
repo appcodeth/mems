@@ -32,14 +32,14 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">เลขที่ PM</th>
+                            <th>เลขที่ PM</th>
                             <th class="text-center">วันที่เริ่มต้น</th>
                             <th class="text-center">วันที่สิ้นสุด</th>
-                            <th class="text-center">รหัสคุรุภัณฑ์</th>
+                            <th>รหัสคุรุภัณฑ์</th>
                             <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ประเภท</th>
-                            <th class="text-center">ยี่ห้อ/รุ่น</th>
-                            <th class="text-center">เลขเครื่อง S/N</th>
+                            <th>ประเภท</th>
+                            <th>ยี่ห้อ/รุ่น</th>
+                            <th>เลขเครื่อง S/N</th>
                             <th class="text-center">ผู้รับเรื่อง</th>
                         </tr>
                     </thead>

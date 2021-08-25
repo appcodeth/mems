@@ -28,10 +28,10 @@
                         <tr>
                             <th class="text-center">รหัส</th>
                             <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ประเภท</th>
-                            <th class="text-center">หน่วยนับ</th>
-                            <th class="text-center">ยี่ห้อ / รุ่น</th>
-                            <th class="text-center">สถานะ</th>
+                            <th>ประเภท</th>
+                            <th>หน่วยนับ</th>
+                            <th>ยี่ห้อ / รุ่น</th>
+                            <th>สถานะ</th>
                             <th class="text-center">วันที่เริ่ม</th>
                             <th class="text-center">วันที่สิ้นสุด</th>
                             <th class="text-center">จำนวนวัน Down Time</th>

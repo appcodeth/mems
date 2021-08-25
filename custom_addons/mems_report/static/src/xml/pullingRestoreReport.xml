@@ -32,17 +32,17 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">เลขที่คืน</th>
-                            <th class="text-center">วันที่คืน</th>
+                            <th>เลขที่คืน</th>
+                            <th>วันที่คืน</th>
                             <th>แผนก</th>
-                            <th class="text-center">เลขที่ยืม</th>
-                            <th class="text-center">วันที่ยืม</th>
-                            <th class="text-center">ระยะเวลา (วัน)</th>
-                            <th class="text-center">รหัสคุรุภัณฑ์</th>
+                            <th>เลขที่ยืม</th>
+                            <th>วันที่ยืม</th>
+                            <th>ระยะเวลา (วัน)</th>
+                            <th>รหัสคุรุภัณฑ์</th>
                             <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ยี่ห้อ/รุ่น</th>
-                            <th class="text-center">เลขเครื่อง S/N</th>
-                            <th class="text-center">ผู้รับเรื่อง</th>
+                            <th>ยี่ห้อ/รุ่น</th>
+                            <th>เลขเครื่อง S/N</th>
+                            <th>ผู้รับเรื่อง</th>
                             <th class="text-center">จำนวน</th>
                         </tr>
                     </thead>

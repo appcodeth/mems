@@ -32,8 +32,8 @@ function runReport() {
                     '<td class="text-center">' + (data.name || '') + '</td>' +
                     '<td class="text-center">' + (data.date_order || '') + '</td>' +
                     '<td>' + ('[' + data.eq_code + '] ' + data.eq_name) + '</td>' +
-                    '<td class="text-center">' + (data.eq_brand + '/' + data.eq_model) + '</td>' +
-                    '<td class="text-center">' + (data.eq_sn || '') + '</td>' +
+                    '<td>' + (data.eq_brand + '/' + data.eq_model) + '</td>' +
+                    '<td>' + (data.eq_sn || '') + '</td>' +
                     '<td>' + (data.problem_text || '') + '</td>' +
                     '<td>' + (data.service_type == 'by_vendor' ? 'บริษัทภายนอก' : 'ทีมช่าง') + '</td>' +
                     '<td>' + (data.service_type=='by_vendor' ? data.sup_name : data.login) + '</td>' +

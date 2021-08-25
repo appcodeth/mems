@@ -27,11 +27,11 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">รหัส</th>
+                            <th>รหัส</th>
                             <th>ชื่อคุรุภัณฑ์</th>
                             <th>ยี่ห้อ/รุ่น</th>
-                            <th class="text-center">เลขเครื่อง S/N</th>
-                            <th class="text-center">เลขที่ยืม</th>
+                            <th>เลขเครื่อง S/N</th>
+                            <th>เลขที่ยืม</th>
                             <th>แผนกที่ยืม</th>
                             <th class="text-center">วันที่ยืม</th>
                             <th class="text-center">กำหนดคืน</th>

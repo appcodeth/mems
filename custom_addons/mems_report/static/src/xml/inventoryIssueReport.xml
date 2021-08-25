@@ -32,12 +32,12 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">วันที่เบิก</th>
-                            <th class="text-center">เลขที่ใบเบิก</th>
-                            <th class="text-center">เลขที่ใบแจ้งซ่อม</th>
-                            <th class="text-center">วันที่ซ่อม</th>
+                            <th>วันที่เบิก</th>
+                            <th>เลขที่ใบเบิก</th>
+                            <th>เลขที่ใบแจ้งซ่อม</th>
+                            <th>วันที่ซ่อม</th>
                             <th>แผนก</th>
-                            <th class="text-center">หน่วยนับ</th>
+                            <th>หน่วยนับ</th>
                             <th class="text-center">จำนวน</th>
                             <th class="text-right">ราคา/หน่วย</th>
                             <th class="text-right">รวมเงิน</th>

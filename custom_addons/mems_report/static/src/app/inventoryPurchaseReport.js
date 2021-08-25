@@ -58,11 +58,11 @@ function runReport() {
 
                 tr += '<tr>' +
                     '<td class="text-center">' + (index + 1) + '</td>' +
-                    '<td class="text-center">' + (data.name || '') + '</td>' +
-                    '<td class="text-center">' + (data.date_order || '') + '</td>' +
-                    '<td class="text-center">' + (data.ref_rfq || '') + '</td>' +
+                    '<td>' + (data.name || '') + '</td>' +
+                    '<td>' + (data.date_order || '') + '</td>' +
+                    '<td>' + (data.ref_rfq || '') + '</td>' +
                     '<td>' + (data.sup_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.date_payment || '') + '</td>' +
+                    '<td>' + (data.date_payment || '') + '</td>' +
                     '<td class="text-center">' + (state || '') + '</td>' +
                     '<td class="text-right">' + numberWithCommas(data.amount_untaxed, 2) + '</td>' +
                     '<td class="text-right">' + numberWithCommas(data.amount_tax, 2) + '</td>' +

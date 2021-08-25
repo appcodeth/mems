@@ -23,10 +23,10 @@ function runReport() {
                 tr += '<tr>' +
                     '<td class="text-center">' + (data.code || '') + '</td>' +
                     '<td>' + (data.name || '') + '</td>' +
-                    '<td class="text-center">' + (data.categ_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.uom_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.brand_name + '/' + data.model_name) + '</td>' +
-                    '<td class="text-center">' + (data.state || '') + '</td>' +
+                    '<td>' + (data.categ_name || '') + '</td>' +
+                    '<td>' + (data.uom_name || '') + '</td>' +
+                    '<td>' + (data.brand_name + '/' + data.model_name) + '</td>' +
+                    '<td>' + (data.state || '') + '</td>' +
                     '<td class="text-center">' + (data.start_date || '') + '</td>' +
                     '<td class="text-center">' + (data.end_date || '') + '</td>' +
                     '<td class="text-center">' + numberWithCommas(data.no_day, 0) + '</td>' +

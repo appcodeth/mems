@@ -22,11 +22,11 @@ function runReport() {
             $.each(res.rows, function (index, data) {
                 tr += '<tr>' +
                     '<td class="text-center">' + (index + 1) + '</td>' +
-                    '<td class="text-center">' + (data.code || '') + '</td>' +
+                    '<td>' + (data.code || '') + '</td>' +
                     '<td>' + (data.name || '') + '</td>' +
                     '<td>' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.serial_no || '') + '</td>' +
-                    '<td class="text-center">' + (data.borrow_name || '') + '</td>' +
+                    '<td>' + (data.serial_no || '') + '</td>' +
+                    '<td>' + (data.borrow_name || '') + '</td>' +
                     '<td>' + (data.dept_name || '') + '</td>' +
                     '<td class="text-center">' + (data.borrow_date || '') + '</td>' +
                     '<td class="text-center">' + (data.expect_date || '') + '</td>' +

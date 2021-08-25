@@ -41,16 +41,16 @@ function runReport() {
 
                 tr += '<tr>' +
                     '<td class="text-center">' + (index + 1) + '</td>' +
-                    '<td class="text-center">' + (data.name || '') + '</td>' +
-                    '<td class="text-center">' + (data.borrow_date || '') + '</td>' +
-                    '<td class="text-center">' + (data.expect_date || '') + '</td>' +
-                    '<td class="text-center">' + (data.no_day || '') + '</td>' +
+                    '<td>' + (data.name || '') + '</td>' +
+                    '<td>' + (data.borrow_date || '') + '</td>' +
+                    '<td>' + (data.expect_date || '') + '</td>' +
+                    '<td>' + (data.no_day || '') + '</td>' +
                     '<td>' + (data.dept_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.code || '') + '</td>' +
+                    '<td>' + (data.code || '') + '</td>' +
                     '<td>' + (data.equip_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
-                    '<td class="text-center">' + (data.serial_no || '') + '</td>' +
-                    '<td class="text-center">' + (data.login || '') + '</td>' +
+                    '<td>' + (data.brand_name || '') + ' / ' + (data.model_name || '') + '</td>' +
+                    '<td>' + (data.serial_no || '') + '</td>' +
+                    '<td>' + (data.login || '') + '</td>' +
                     '<td class="text-center">' + (data.qty || '') + '</td>' +
                 '</tr>';
             });

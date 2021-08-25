@@ -32,11 +32,11 @@
                     <thead>
                         <tr>
                             <th class="text-center">ลำดับ</th>
-                            <th class="text-center">เลขที่ P/O</th>
-                            <th class="text-center">วันที่ P/O</th>
-                            <th class="text-center">เลขที่ RFQ</th>
+                            <th>เลขที่ P/O</th>
+                            <th>วันที่ P/O</th>
+                            <th>เลขที่ RFQ</th>
                             <th>ผู้จัดจำหน่าย</th>
-                            <th class="text-center">วันที่ชำระเงิน</th>
+                            <th>วันที่ชำระเงิน</th>
                             <th class="text-center">สถานะ</th>
                             <th class="text-right">ราคาไม่รวมภาษี</th>
                             <th class="text-right">ภาษี</th>

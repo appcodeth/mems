@@ -27,11 +27,11 @@
                     <thead>
                         <tr>
                             <th class="text-center">เลขที่ใบแจ้งซ่อม</th>
-                            <th class="text-center">วันที่ซ่อม</th>
-                            <th class="text-center">วันที่กำหนดเสร็จ</th>
+                            <th>วันที่ซ่อม</th>
+                            <th>วันที่กำหนดเสร็จ</th>
                             <th>คุรุภัณฑ์</th>
-                            <th class="text-center">ยี่ห้อ/รุ่น</th>
-                            <th class="text-center">เลขเครื่อง</th>
+                            <th>ยี่ห้อ/รุ่น</th>
+                            <th>เลขเครื่อง</th>
                             <th>อาการเสีย</th>
                             <th>ซ่อมโดย</th>
                             <th>ผู้รับผิดชอบ</th>
