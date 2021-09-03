@@ -52,13 +52,22 @@ class Equipment(models.Model):
         ('field_barcode', 'unique (barcode,company_id)', _('Equipment barcode is existed')),
     ]
 
-    @api.model
+    # @api.model
+    # def name_get(self):
+    #     result = []
+    #     for record in self:
+    #         name = '[{0}] {1}'.format(record.code, record.name)
+    #         result.append((record.id, name))
+    #     return result
+
+    @api.multi
+    @api.depends('name')
     def name_get(self):
-        result = []
+        res = []
         for record in self:
             name = '[{0}] {1}'.format(record.code, record.name)
-            result.append((record.id, name))
-        return result
+            res.append((record.id, name))
+        return res
 
     @api.multi
     def copy(self, default=None):
