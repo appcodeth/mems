@@ -68,9 +68,9 @@
 
         <xpath expr="//div[contains(@class, 'oe_login_buttons')]" position="before">
             <div class="clearfix oe_login_buttons">
-                <div class="small" style="color:#369;margin-bottom:10px">Username/Password คือ
-                    <strong>admin</strong>
-                </div>
+<!--                <div class="small" style="color:#369;margin-bottom:10px">Username/Password คือ-->
+<!--                    <strong>admin</strong>-->
+<!--                </div>-->
                 <input type="submit" class="btn btn-primary btn-login" value="Log in"/>
                 <div class="text-center" style="margin-bottom:15px">
                     <hr/>
