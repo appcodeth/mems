@@ -10,7 +10,7 @@ class Login(http.Controller):
     @http.route('/login', type='http', auth='public')
     def login(self, **kw):
         site = request.params.get('site')
-        if site and site in http.db_list():
+        if site:
             request.session['db'] = site
             return werkzeug.utils.redirect('/web/login')
         return 'Error! Could not redirect to Website %s' % site
