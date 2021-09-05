@@ -33,9 +33,9 @@
         </xpath>
 
         <xpath expr="//div[contains(@class, 'o_database_list')]/div[2]" position="replace">
-            <div class="text-center" t-if="not disable_footer">
-                <a href="/web/database/manager">จัดการฐานข้อมูล</a>
-            </div>
+<!--            <div class="text-center" t-if="not disable_footer">-->
+<!--                <a href="/web/database/manager">จัดการฐานข้อมูล</a>-->
+<!--            </div>-->
         </xpath>
     </template>
 
