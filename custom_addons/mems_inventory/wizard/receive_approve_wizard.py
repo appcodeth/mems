@@ -23,13 +23,12 @@ class ReceiveApproveWizard(models.TransientModel):
             # calculate purchase uom qty
             base_uom = line.part_id.uom_id
             receive_uom = line.uom_id
-            ratio = base_uom.ratio
+            ratio = base_uom.ratio or 1
             if base_uom.id != receive_uom.id:
                 if receive_uom.type == 'bigger':
                     ratio = base_uom.ratio * receive_uom.ratio
                 elif receive_uom.type == 'smaller':
                     ratio = base_uom.ratio / receive_uom.ratio
-
             new_qty = line.qty * ratio
             last_purchase = datetime.now()
 

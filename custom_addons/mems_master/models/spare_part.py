@@ -16,7 +16,7 @@ class SparePart(models.Model):
     uom_id = fields.Many2one('mems.uom', string='Uom')
     purchase_uom_id = fields.Many2one('mems.uom', string='Purchase Uom')
     brand_id = fields.Many2one('mems.brand', string='Brand')
-    stock_qty = fields.Float('Stock Qty', default=1, store=True, readonly=True)
+    stock_qty = fields.Float('Stock Qty', default=0)
     min_qty = fields.Float('Min Qty')
     max_qty = fields.Float('Max Qty')
     unit_price = fields.Float('Unit Price')

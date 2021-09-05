@@ -23,7 +23,7 @@ class IssueApproveWizard(models.TransientModel):
             # calculate purchase uom qty
             base_uom = line.part_id.uom_id
             issue_uom = line.uom_id
-            ratio = base_uom.ratio
+            ratio = base_uom.ratio or 1
             if base_uom.id != issue_uom.id:
                 if issue_uom.type == 'bigger':
                     ratio = base_uom.ratio * issue_uom.ratio

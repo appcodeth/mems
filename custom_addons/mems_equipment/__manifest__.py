@@ -12,7 +12,7 @@
         'data/pm_checklist_data.xml',
         'data/receive_type_data.xml',
         'data/equipment_reason_data.xml',
-        'data/equipment_data.xml',
+        # 'data/equipment_data.xml',
         'report/paper_format.xml',
         'report/equipment_form.xml',
         'report/equipment_qrcode.xml',

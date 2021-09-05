@@ -10,9 +10,9 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
-        'data/sequence.xml',
         'report/paper_format.xml',
         'report/workorder_form.xml',
+        'data/sequence.xml',
         'data/email_data.xml',
         'views/menu.xml',
         'views/workorder_view.xml',

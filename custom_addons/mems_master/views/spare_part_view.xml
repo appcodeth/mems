@@ -55,15 +55,15 @@
                         <group>
                             <field name="code"/>
                             <field name="barcode" attrs="{'invisible': [('type','=','service')]}"/>
-                            <field name="brand_id" attrs="{'invisible': [('type','=','service')]}"/>
+<!--                            <field name="brand_id" attrs="{'invisible': [('type','=','service')]}"/>-->
                             <field name="category_id"/>
+                            <field name="stock_qty" attrs="{'invisible': [('type','=','service')], 'readonly': [('id','!=',False)]}"/>
                             <field name="uom_id"/>
                             <field name="purchase_uom_id" attrs="{'invisible': [('type','=','service')]}"/>
                         </group>
                         <group>
                             <field name="unit_price" attrs="{'invisible': [('type','=','service')]}"/>
                             <field name="cost_price"/>
-                            <field name="stock_qty" force_save="1" attrs="{'invisible': [('type','=','service')]}"/>
                             <field name="last_purchase_date" attrs="{'invisible': [('type','=','service')]}"/>
                         </group>
                     </group>

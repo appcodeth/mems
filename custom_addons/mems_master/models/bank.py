@@ -7,13 +7,22 @@ class Bank(models.Model):
     name = fields.Char('Name', required=True)
     short_name = fields.Char('Short Name')
 
+    # @api.multi
+    # def name_get(self):
+    #     result = []
+    #     for record in self:
+    #         name = '[' + str(record.short_name) + ']' + ' ' + record.name
+    #         result.append((record.id, name))
+    #     return result
+
     @api.multi
+    @api.depends('name')
     def name_get(self):
-        result = []
+        res = []
         for record in self:
-            name = '[' + str(record.short_name) + ']' + ' ' + record.name
-            result.append((record.id, name))
-        return result
+            name = '[{0}] {1}'.format(record.short_name, record.name)
+            res.append((record.id, name))
+        return res
 
 
 class BankAccount(models.Model):
