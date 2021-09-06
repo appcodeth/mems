@@ -19,28 +19,30 @@ class WOApproveWizard(models.TransientModel):
                 total_qty += item.qty
                 total_amount += item.amount
 
-        # create issue header
-        issue = self.env['mems.issue'].sudo().create({
-            'wo_id': wo.id,
-            'department_id': wo.department_id.id,
-            'date_issue': datetime.now(),
-            'amount_qty': total_qty,
-            'amount_total': total_amount,
-            'state': 'draft',
-        })
+        # if have qty to issue?
+        if total_qty > 0:
+            # create issue header
+            issue = self.env['mems.issue'].sudo().create({
+                'wo_id': wo.id,
+                'department_id': wo.department_id.id,
+                'date_issue': datetime.now(),
+                'amount_qty': total_qty,
+                'amount_total': total_amount,
+                'state': 'draft',
+            })
 
-        # create issue line item
-        for item in wo.wo_line:
-            if item.part_id.type == 'product':
-                self.env['mems.issue_line'].sudo().create({
-                    'issue_id': issue.id,
-                    'part_id': item.part_id.id,
-                    'uom_id': item.uom_id.id,
-                    'name': item.name,
-                    'qty': item.qty,
-                    'price': item.price,
-                    'amount': item.amount,
-                })
+            # create issue line item
+            for item in wo.wo_line:
+                if item.part_id.type == 'product':
+                    self.env['mems.issue_line'].sudo().create({
+                        'issue_id': issue.id,
+                        'part_id': item.part_id.id,
+                        'uom_id': item.uom_id.id,
+                        'name': item.name,
+                        'qty': item.qty,
+                        'price': item.price,
+                        'amount': item.amount,
+                    })
 
         # update workorder status
         wo.sudo().write({'state': 'approve'})
