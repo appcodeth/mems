@@ -6,9 +6,18 @@ odoo.define('mems_repair.forms', function (require) {
     FormRenderer.include({
         autofocus: function () {
             var self = this.state;
-            if(self.model === 'mems.workorder'){
+            if(self.model === 'mems.workorder') {
                 var state = self.data.state;
                 if(state == 'close' || state == 'cancel') {
+                    window.$('.o_form_button_edit').hide();
+                    window.$('.o_form_button_create').hide();
+                } else {
+                    window.$('.o_form_button_edit').show();
+                    window.$('.o_form_button_create').show();
+                }
+            } else if(self.model === 'mems.sr') {
+                var state = self.data.state;
+                if(state == 'approve' || state == 'close' || state == 'cancel') {
                     window.$('.o_form_button_edit').hide();
                     window.$('.o_form_button_create').hide();
                 } else {

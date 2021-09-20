@@ -32,7 +32,7 @@
 
     <menuitem id="menu_dashboard" name="Dashboard" sequence="2"/>
     <menuitem id="menu_dashboard_overview" parent="menu_dashboard" name="Overview" action="action_dashboard_overview" sequence="21"/>
-    <menuitem id="menu_price_package" parent="menu_dashboard" name="Packages" action="action_pricing_overview" sequence="22"/>
+<!--    <menuitem id="menu_price_package" parent="menu_dashboard" name="Packages" action="action_pricing_overview" sequence="22"/>-->
     <menuitem id="menu_video_demo" parent="menu_dashboard" name="Videos" action="action_video_overview" sequence="23"/>
     <menuitem id="menu_help_support" parent="menu_dashboard" name="Help &amp; Supports" action="action_manual_overview" sequence="24"/>
 </odoo>

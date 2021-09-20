@@ -68,8 +68,8 @@ msgstr "Chapter03 - การตั้งค่าอีเมล"
 #. openerp-web
 #: code:addons/mems_dashboard/static/src/xml/manual.xml:30
 #, python-format
-msgid "Chapter04 - การจัดการคุรุภัณฑ์"
-msgstr "Chapter04 - การจัดการคุรุภัณฑ์"
+msgid "Chapter04 - การจัดการครุภัณฑ์"
+msgstr "Chapter04 - การจัดการครุภัณฑ์"
 
 #. module: mems_dashboard
 #. openerp-web
@@ -110,8 +110,8 @@ msgstr "Chapter06 - การเพิ่ม แก้ไข และลบฟ�
 #. openerp-web
 #: code:addons/mems_dashboard/static/src/xml/manual.xml:42
 #, python-format
-msgid "Chapter07 - การยืม-คืนคุรุภัณฑ์"
-msgstr "Chapter07 - การยืม-คืนคุรุภัณฑ์"
+msgid "Chapter07 - การยืม-คืนครุภัณฑ์"
+msgstr "Chapter07 - การยืม-คืนครุภัณฑ์"
 
 #. module: mems_dashboard
 #. openerp-web
@@ -266,8 +266,8 @@ msgstr "ขอปรับแต่ง/แก้ไข เพิ่มราย�
 #. openerp-web
 #: code:addons/mems_dashboard/static/src/xml/dashboard.xml:5
 #, python-format
-msgid "คุรุภัณฑ์"
-msgstr "คุรุภัณฑ์"
+msgid "ครุภัณฑ์"
+msgstr "ครุภัณฑ์"
 
 #. module: mems_dashboard
 #. openerp-web

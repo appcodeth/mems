@@ -3,6 +3,8 @@ from odoo import models, fields, api
 
 class PM(models.Model):
     _name = 'mems.pm'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Name')
     equip_id = fields.Many2one('mems.equipment', string='Equipment', domain=[('state', '=', 'active')])
     start_date = fields.Date('Start Date')

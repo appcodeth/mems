@@ -1,10 +1,11 @@
-from odoo import models, fields, api, _
+from odoo import models, fields, api, tools, _
 from odoo.exceptions import ValidationError
 
 
 class Equipment(models.Model):
     _name = 'mems.equipment'
     _rec_name = 'name'
+    _order = 'name desc'
     name = fields.Char('Name', required=True)
     code = fields.Char('Code', required=True, unique=True)
     barcode = fields.Char('Barcode', unique=True)
@@ -46,6 +47,8 @@ class Equipment(models.Model):
     pm_line = fields.One2many('mems.pm', 'equip_id', domain=[('state', '!=', 'draft')])
     calibrate_line = fields.One2many('mems.calibration', 'equip_id', domain=[('state', '!=', 'draft')])
     equipment_line = fields.One2many('mems.equipment_line', 'equip_id')
+    part_history_line = fields.One2many('mems.equipment_part_history', 'equip_id')
+    wo_history_line = fields.One2many('mems.equipment_wo_history', 'equip_id')
 
     _sql_constraints = [
         ('field_code', 'unique (code,company_id)', _('Equipment code is existed')),
@@ -140,3 +143,66 @@ class EquipmentReason(models.Model):
     _name = 'mems.equipment_reason'
     name = fields.Char('Name', required=True)
     description = fields.Text('Description')
+
+
+class EquipmentPartHistory(models.Model):
+    _name = "mems.equipment_part_history"
+    _auto = False
+    equip_id = fields.Many2one('mems.equipment', ondelete='cascade')
+    code = fields.Char('Code')
+    name = fields.Char('Name')
+    wo_name = fields.Char('WO Name')
+    wo_date = fields.Char('WO Date')
+    qty = fields.Integer('Integer')
+    uom_name = fields.Char('Uom')
+
+    @api.model_cr
+    def init(self):
+        tools.drop_view_if_exists(self._cr, 'mems_equipment_part_history')
+        self._cr.execute("""
+            CREATE OR REPLACE VIEW mems_equipment_part_history AS (
+                select
+                    row_number() OVER () as id,
+                    wo.equip_id,
+                    sp.code,
+                    sp.name,
+                    wo.name as wo_name,
+                    wo.date_order as wo_date,
+                    wl.qty,
+                    uom.name as uom_name
+                from mems_workorder wo
+                    left join mems_workorder_line wl on wl.wo_id=wo.id
+                    left join mems_spare_part sp on wl.part_id=sp.id
+                    left join mems_uom uom on sp.uom_id=uom.id
+                where wo.service_type='by_team' and code is not null
+                order by wo_date desc
+            )""")
+
+
+class EquipmentWOHistory(models.Model):
+    _name = "mems.equipment_wo_history"
+    _auto = False
+    equip_id = fields.Many2one('mems.equipment', ondelete='cascade')
+    wo_name = fields.Char('WO Name')
+    wo_date = fields.Char('WO Date')
+    service_type = fields.Char('Service Type')
+    amount_total = fields.Float('Amount Total')
+    state = fields.Char('State')
+
+    @api.model_cr
+    def init(self):
+        tools.drop_view_if_exists(self._cr, 'mems_equipment_wo_history')
+        self._cr.execute("""
+            CREATE OR REPLACE VIEW mems_equipment_wo_history AS (
+                select
+                    row_number() OVER () as id,
+                    wo.equip_id,
+                    wo.name as wo_name,
+                    wo.date_order as wo_date,
+                    wo.service_type,
+                    wo.amount_total,
+                    wo.state
+                from mems_workorder wo
+                where wo.state in ('approve', 'vendor', 'close')
+                order by wo_date desc
+            )""")

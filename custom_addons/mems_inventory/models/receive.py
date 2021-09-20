@@ -1,16 +1,21 @@
 from odoo import models, fields, api, exceptions
 from datetime import datetime
 
+TAX_RATE = 7
+
 
 class Receive(models.Model):
     _name = 'mems.receive'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Receive No')
     po_id = fields.Many2one('mems.purchase', string='Purchase', required=True)
     supplier_id = fields.Many2one('mems.supplier', string='Supplier')
-    date_rcv = fields.Date('Receive Date', default=datetime.now())
+    date_rcv = fields.Date('Receive Date', default=fields.Date.today())
     doc_no = fields.Char('Document No')
     discount_rate = fields.Float(string='Discount %')
     amount_qty = fields.Float('Total Qty', readonly=True, store=True)
+    amount_tax = fields.Float('Taxes', readonly=True, store=True)
     amount_total = fields.Float('Total Amount', readonly=True, store=True)
     remark = fields.Text('Remark')
     state = fields.Selection([
@@ -31,14 +36,17 @@ class Receive(models.Model):
     @api.onchange('receive_line')
     def get_total_amount(self):
         total_qty = 0
-        total_amount = 0
+        subtotal = 0
         for r in self:
             for item in r.receive_line:
                 total_qty += item.qty
-                total_amount += item.amount
+                subtotal += item.amount
 
+        discount = 0
+        price_after_discount = subtotal - discount
         self.amount_qty = total_qty
-        self.amount_total = total_amount
+        self.amount_tax = (price_after_discount * TAX_RATE) / 100
+        self.amount_total = price_after_discount + self.amount_tax
 
     def do_receive_approve(self):
         return {

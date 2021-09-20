@@ -37,7 +37,7 @@ function runReport() {
                     total_qty = data.adjust_qty;
                 }
 
-                if(data.doc_type == 'receive') {
+                if(data.doc_type == 'receive' || data.doc_type == 'return') {
                     total_qty += data.int_qty;
                 } else if(data.doc_type == 'issue') {
                     total_qty -= data.out_qty;

@@ -74,7 +74,7 @@
                         <page string="Receive Line">
                             <field name="receive_line">
                                 <tree editable="bottom">
-                                    <field name="part_id" width="300px"/>
+                                    <field name="part_id" width="300px" options="{'no_quick_create':True,'no_create_edit':True}"/>
                                     <field name="qty"/>
                                     <field name="uom_id"/>
                                     <field name="price" width="250px"/>
@@ -89,6 +89,7 @@
                         </group>
                         <group class="oe_subtotal_footer oe_right no-height" colspan="2">
                             <field name="amount_qty" force_save="1"/>
+                            <field name="amount_tax" force_save="1"/>
                             <div class="oe_subtotal_footer_separator oe_inline o_td_label">
                                 <label for="amount_total"/>
                             </div>

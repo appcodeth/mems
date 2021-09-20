@@ -27,11 +27,11 @@
                     <thead>
                         <tr>
                             <th class="text-center">รหัส</th>
-                            <th>คุรุภัณฑ์</th>
+                            <th>ครุภัณฑ์</th>
                             <th>ประเภท</th>
                             <th>หน่วยนับ</th>
                             <th>ยี่ห้อ / รุ่น</th>
-                            <th>เลขเครื่อง S/N</th>
+                            <th>S/N</th>
                             <th class="text-center">วันที่เริ่มประกัน</th>
                             <th class="text-center">วันที่สิ้นสุด</th>
                             <th>ผู้จัดจำหน่าย</th>

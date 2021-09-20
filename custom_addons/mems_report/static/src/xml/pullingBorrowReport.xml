@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
     <t t-name="PullingBorrowReport">
         <div class="container-fluid">
-            <h1 class="mb-4">รายงานการยืมคุรุภัณฑ์</h1>
+            <h1 class="mb-4">รายงานการยืมครุภัณฑ์</h1>
             <div class="panel panel-default panel-flat">
                 <div class="panel-body">
                     <div class="form-inline">
@@ -37,10 +37,10 @@
                             <th>วันที่กำหนดคืน</th>
                             <th>จำนวนวัน</th>
                             <th>แผนกที่ยืม</th>
-                            <th>รหัสคุรุภัณฑ์</th>
-                            <th>คุรุภัณฑ์</th>
+                            <th>รหัสครุภัณฑ์</th>
+                            <th>ครุภัณฑ์</th>
                             <th>ยี่ห้อ/รุ่น</th>
-                            <th>เลขเครื่อง S/N</th>
+                            <th>S/N</th>
                             <th>ผู้รับเรื่อง</th>
                             <th class="text-center">จำนวน</th>
                         </tr>

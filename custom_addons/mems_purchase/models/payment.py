@@ -6,12 +6,13 @@ from odoo import models, fields, api
 class Payment(models.Model):
     _name = 'mems.payment'
     _rec_name = 'name'
+    _order = 'name desc'
     name = fields.Char(string='Name', required=True)
     doc_id = fields.Integer(string='Doc Id')
     doc_name = fields.Char(string='Doc Name')
     doc_type = fields.Char(string='Doc Type')
     doc_amount = fields.Float(string='Doc Amount')
-    pay_date = fields.Datetime(string='Pay Date', default=datetime.now())
+    pay_date = fields.Datetime(string='Pay Date', default=fields.Date.today())
     pay_method = fields.Char(string='Pay Method')
     pay_amount = fields.Float(string='Pay Amount')
     pay_receive = fields.Float(string='Pay Receive')

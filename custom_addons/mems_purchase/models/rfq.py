@@ -7,8 +7,10 @@ TAX_RATE = 7
 
 class RFQ(models.Model):
     _name = 'mems.rfq'
+    _rec_name = 'name'
+    _order = 'name desc'
     name = fields.Char('Name')
-    date_order = fields.Date('Date Order', required=True, default=datetime.now())
+    date_order = fields.Date('Date Order', required=True, default=fields.Date.today())
     date_payment = fields.Date('Date Payment')
     tax_rate = fields.Float('Tax Rate', default=7)
     tax_type = fields.Selection([

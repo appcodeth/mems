@@ -7,9 +7,11 @@ TAX_RATE = 7
 
 class Purchase(models.Model):
     _name = 'mems.purchase'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Name')
     ref_rfq = fields.Char('Ref RFQ')
-    date_order = fields.Date('Date Order', required=True, default=datetime.now())
+    date_order = fields.Date('Date Order', required=True, default=fields.Date.today())
     date_payment = fields.Date('Date Payment')
     tax_rate = fields.Float('Tax Rate', default=7)
     tax_type = fields.Selection([

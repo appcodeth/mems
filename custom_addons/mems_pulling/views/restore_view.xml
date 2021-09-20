@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.ui.view" id="view_restore_search">
+        <field name="name">restore.search</field>
+        <field name="model">mems.restore</field>
+        <field name="arch" type="xml">
+            <search string="Borrow Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="borrow_id" string="Borrow" filter_domain="[('borrow_id.name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_restore_list">
         <field name="name">restore.list</field>
         <field name="model">mems.restore</field>

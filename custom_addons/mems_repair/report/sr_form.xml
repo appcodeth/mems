@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="action_report_sr"
+        string="Service Request Form"
+        model="mems.sr"
+        report_type="qweb-pdf"
+        file="mems_repair.sr_form"
+        name="mems_repair.sr_form"
+        paperformat="mems_repair.paperformat_sr"
+        print_report_name="'Service Request - %s' % (object.name)"/>
+
+    <template id="sr_logo">
+        <table class="table-logo" style="margin-bottom: 16pt">
+            <tr>
+                <td width="15%">
+                    <img src='/web/binary/company_logo' style="max-height:120px"/>
+                </td>
+                <td width="5%"/>
+                <td style="vertical-align: middle">
+                    <strong style="font-size:16px">
+                        <span t-esc="o.company_id.name"/>
+                    </strong>
+                    <div>
+                        <span t-esc="o.company_id.street"/>
+                        <span t-esc="o.company_id.street2"/>
+                    </div>
+                    <div>
+                        <span t-if="o.company_id.phone">
+                            Tel.
+                            <span t-esc="o.company_id.phone"/>
+                        </span>
+                        <span t-if="o.company_id.fax" style="margin: 0 10px">
+                            Fax
+                            <span t-esc="o.company_id.fax"/>
+                        </span>
+                        <span t-if="o.company_id.vat">
+                            Tax ID
+                            <span t-esc="o.company_id.vat"/>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="sr_body">
+        <tr>
+            <td colspan="5" style="text-align:center">
+                <h3 class="text-center mb-2">ใบแจ้งซ่อม (Service Request)</h3>
+            </td>
+        </tr>
+        <tr style="height:50px">
+            <td colspan="5" style="text-align:center" valign="middle">
+                <img t-if="o.name" class="mb-4" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.name,250,30)"/>
+            </td>
+        </tr>
+        <tr>
+            <td width="65%">
+                <table class="table-header" style="margin:0">
+                    <tr>
+                        <th>Equipment</th>
+                        <td>
+                            <div t-esc="o.equip_id.name"/>
+                            <div style="margin-bottom:10px">
+                                <strong>Brand:</strong>
+                                <span t-esc="o.equip_brand"/>
+                            </div>
+                            <div>
+                                <strong>Model:</strong>
+                                <span t-esc="o.equip_model"/>
+                            </div>
+                            <div>
+                                <strong>S/N:</strong>
+                                <span t-esc="o.equip_sn"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Department</th>
+                        <td>
+                            <span t-esc="o.department_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Problem</th>
+                        <td>
+                            <span t-esc="o.problem_text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Responsible</th>
+                        <td>
+                            <span t-if="o.responsible_id" t-esc="o.responsible_id.name"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="5%"/>
+            <td>
+                <table class="table-header">
+                    <tr>
+                        <th>No.</th>
+                        <td>
+                            <span t-esc="o.name"/>
+                        </td>
+                    </tr>
+                    <tr t-if="o.date_order">
+                        <th>Date</th>
+                        <td>
+                            <span t-esc="o.date_order"/>
+                        </td>
+                    </tr>
+                    <tr t-if="o.date_plan">
+                        <th>Date Plan</th>
+                        <td>
+                            <span t-esc="o.date_plan"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <span t-esc="o.remark"/>
+            </td>
+        </tr>
+    </template>
+
+    <template id="sr_footer">
+        <div class="mt-4 mb-5">
+            <strong>หมายเหตุ</strong>
+            <span t-esc="o.remark"/>
+            <div style="margin-top:40px;border-bottom: 1px dotted #333"/>
+            <div style="margin-top:40px;border-bottom: 1px dotted #333"/>
+            <div style="margin-top:40px;border-bottom: 1px dotted #333"/>
+            <div style="margin-top:40px;border-bottom: 1px dotted #333"/>
+        </div>
+        <div class="row no-gutters" style="margin-top:20px">
+            <div class="col-xs-4">
+                <div style="border: 1px solid #333; border-radius: 10px; text-align:center" class="pt-2 pb-2 px-3 mr-1">
+                    <div>ผู้แจ้งซ่อม</div>
+                    <div style="border-bottom: 1px solid #333; margin: 30px 15px 10px 15px"/>
+                    <div>
+                        (<span t-esc="o.user_id.name"/>)
+                    </div>
+                    <div style="margin-top:10px">
+                        Date
+                        <div style="width:60%; display:inline-block; border-bottom: 1px solid #333"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div style="border: 1px solid #333; border-radius: 10px; text-align:center" class="pt-2 pb-2 px-3 mx-1">
+                    <div>ผู้ตรวจสอบ</div>
+                    <div style="border-bottom: 1px solid #333; margin: 30px 15px 10px 15px"/>
+                    <div>
+                        (<div style="width:80%;display:inline-block"/>)
+                    </div>
+                    <div style="margin-top:10px">
+                        Date
+                        <div style="width:60%; display:inline-block; border-bottom: 1px solid #333"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div style="border: 1px solid #333; border-radius: 10px; text-align:center" class="pt-2 pb-2 px-3 ml-1">
+                    <div>ผู้อนุมัติ</div>
+                    <div style="border-bottom: 1px solid #333; margin: 30px 15px 10px 15px"/>
+                    <div>
+                        (<div style="width:80%;display:inline-block"/>)
+                    </div>
+                    <div style="margin-top:10px">
+                        Date
+                        <div style="width:60%; display:inline-block; border-bottom: 1px solid #333"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="sr_form">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="mems_repair.sr_logo"/>
+                    <table width="100%" style="margin-bottom:16pt">
+                        <t t-call="mems_repair.sr_body"/>
+                    </table>
+                    <t t-call="mems_repair.sr_footer"/>
+                    <div class="footer">
+                        <span>Page:</span>
+                        <span class="page"/>
+                        <span>of</span>
+                        <span class="topage"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -100,6 +100,22 @@ odoo.define('mems_master.widgets', function(require) {
                     cssClass = 'status-info';
                     text = 'จบการคืน';
                 }
+            } else if(this.model === 'mems.sr') {
+                cssClass = '';
+                text = '';
+                if (this.value === 'draft') {
+                    cssClass = 'status-warning';
+                    text = 'รออนุมัติ';
+                } else if (this.value === 'approve') {
+                    cssClass = 'status-info';
+                    text = 'ส่งซ่อม';
+                } else if (this.value === 'cancel') {
+                    cssClass = 'status-danger';
+                    text = 'ยกเลิก';
+                } else if (this.value === 'close') {
+                    cssClass = 'status-default';
+                    text = 'จบงาน';
+                }
             } else if (this.model === 'mems.workorder') {
                 cssClass = '';
                 text = '';
@@ -122,7 +138,7 @@ odoo.define('mems_master.widgets', function(require) {
                     cssClass = 'status-default';
                     text = 'จบงาน';
                 }
-            } else if (this.model === 'mems.receive' || this.model === 'mems.issue') {
+            } else if (this.model === 'mems.receive' || this.model === 'mems.issue' || this.model === 'mems.return') {
                 cssClass = '';
                 text = '';
                 if (this.value === 'draft') {

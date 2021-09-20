@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.ui.view" id="view_pm_search">
+        <field name="name">pm.search</field>
+        <field name="model">mems.pm</field>
+        <field name="arch" type="xml">
+            <search string="PM Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="equip_id" string="Equipment" filter_domain="['|',('equip_id.code', 'ilike', self),('equip_id.name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_pm_list">
         <field name="name">pm.list</field>
         <field name="model">mems.pm</field>

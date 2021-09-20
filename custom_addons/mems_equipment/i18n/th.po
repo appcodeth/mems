@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20201204\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 04:48+0000\n"
-"PO-Revision-Date: 2021-08-15 04:48+0000\n"
+"POT-Creation-Date: 2021-09-20 12:51+0000\n"
+"PO-Revision-Date: 2021-09-20 12:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,11 @@ msgid "Active"
 msgstr "พร้อมใช้"
 
 #. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Actual Value"
+msgstr "ค่าที่ได้"
+
+#. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_adjust_wizard
 msgid "Adjust"
 msgstr "ปรับยอด"
@@ -62,6 +67,11 @@ msgstr "ปรับยอด"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_amount
 msgid "Amount"
 msgstr "รวมเงิน"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_amount_total
+msgid "Amount Total"
+msgstr "จำนวนเงิน"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_cal_approve_wizard
@@ -83,7 +93,6 @@ msgstr "ผู้อนุมัติ"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_barcode
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
@@ -96,11 +105,6 @@ msgid "Borrow"
 msgstr "ยืม"
 
 #. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
-msgid "Branch:"
-msgstr "สาขา:"
-
-#. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_brand_id
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
@@ -108,13 +112,34 @@ msgid "Brand"
 msgstr "ยี่ห้อ"
 
 #. module: mems_equipment
-#: model:ir.ui.menu,name:mems_equipment.menu_sub_calibrate
-#: selection:mems.equipment,state:0
-msgid "Calibrate"
-msgstr "สอบเทียบ"
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Brand/Model"
+msgstr "ยี่ห้อ/รุ่น"
+
+#. module: mems_equipment
+#: model:ir.actions.act_window,name:mems_equipment.action_calibration_checklist
+msgid "CA Checklist"
+msgstr "คุณสมบัติ"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_calibration_check_form
+msgid "CA Checklist Form"
+msgstr "ฟอร์มคุณสมบัติ"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_calibration_check_list
+msgid "CA Checklist List"
+msgstr "รายการคุณสมบัติ"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_cal_id
+msgid "Cal"
+msgstr "รายการ"
 
 #. module: mems_equipment
 #: model:ir.actions.act_window,name:mems_equipment.action_calibration_list
+#: model:ir.ui.menu,name:mems_equipment.menu_sub_calibrate
+#: selection:mems.equipment,state:0
 msgid "Calibrate"
 msgstr "สอบเทียบ/วัด"
 
@@ -124,14 +149,10 @@ msgid "Calibrate Calendar"
 msgstr "ปฏิทินสอบเทียบ"
 
 #. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_calibration_form
 msgid "Calibrate Form"
 msgstr "ฟอร์มสอบเทียบ"
-
-#. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
-msgid "Calibrate Form"
-msgstr "แบบฟอร์มสอบเทียบ/วัด"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_cal_id
@@ -142,6 +163,7 @@ msgstr "รหัส"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_calibrate_line
+#: model:ir.ui.view,arch_db:mems_equipment.view_calibration_form
 msgid "Calibrate Line"
 msgstr "รายการสอบเทียบ"
 
@@ -168,6 +190,11 @@ msgid "Calibration"
 msgstr "สอบเทียบ/วัด"
 
 #. module: mems_equipment
+#: model:ir.ui.menu,name:mems_equipment.menu_calibration_checklist
+msgid "Calibration Checklist"
+msgstr "รายการคุณสมบัติ"
+
+#. module: mems_equipment
 #: model:ir.actions.report,name:mems_equipment.action_report_calibrate
 msgid "Calibration Form"
 msgstr "แบบฟอร์มสอบเทียบ/วัด"
@@ -176,6 +203,16 @@ msgstr "แบบฟอร์มสอบเทียบ/วัด"
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Calibration History"
 msgstr "ประวัติการการสอบเทียบ/วัด"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_calibration_line
+msgid "Calibration Line"
+msgstr "Calibration Line"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_calibration_search
+msgid "Calibration Search"
+msgstr "Calibration Search"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_cal_approve_wizard
@@ -193,7 +230,6 @@ msgstr "ยกเลิก"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_category_id
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
@@ -207,6 +243,12 @@ msgid "Check By"
 msgstr "ผู้ตรวจสอบ"
 
 #. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Check Items"
+msgstr "คุณสมบัติ"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_checklist_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_line_checklist_id
 msgid "Checklist"
 msgstr "รายการ"
@@ -217,6 +259,7 @@ msgid "Click this to create the first calibration"
 msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลการสอบเทียบ/วัด"
 
 #. module: mems_equipment
+#: model:ir.actions.act_window,help:mems_equipment.action_calibration_checklist
 #: model:ir.actions.act_window,help:mems_equipment.action_pm_checklist_list
 msgid "Click this to create the first checklist"
 msgstr "คลิกที่นี่เพื่อเพิ่มรายการบำรุงรักษา"
@@ -224,7 +267,7 @@ msgstr "คลิกที่นี่เพื่อเพิ่มรายก
 #. module: mems_equipment
 #: model:ir.actions.act_window,help:mems_equipment.action_equipment_list
 msgid "Click this to create the first equipment"
-msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลคุรุภัณฑ์"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลครุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.actions.act_window,help:mems_equipment.action_equipment_reason_list
@@ -239,7 +282,7 @@ msgstr "คลิกที่นี่เพื่อเพิ่มข้อม
 #. module: mems_equipment
 #: model:ir.actions.act_window,help:mems_equipment.action_receive_type_list
 msgid "Click this to create the first receive type"
-msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลประเภทการรับคุรุภัณฑ์"
+msgstr "คลิกที่นี่เพื่อเพิ่มข้อมูลประเภทการรับครุภัณฑ์"
 
 #. module: mems_equipment
 #: selection:mems.calibration,state:0
@@ -249,6 +292,7 @@ msgstr "เสร็จสิ้น"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_code
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_code
 #: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_qrcode
@@ -291,7 +335,9 @@ msgstr "ยืนยัน"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_create_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_create_uid
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_create_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_create_uid
@@ -311,7 +357,9 @@ msgstr "Created by"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_create_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard_create_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard_create_date
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_create_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_create_date
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_create_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_create_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_create_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_create_date
@@ -335,7 +383,6 @@ msgstr "วันที่"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_department_id
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_qrcode
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
@@ -349,26 +396,38 @@ msgid "Department :"
 msgstr "แผนก :"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_description
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_description
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_description
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_reason_description
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_checklist_description
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_line_description
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_receive_type_description
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
 msgid "Description"
 msgstr "รายละเอียด"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_diff_value
+msgid "Diff Value"
+msgstr "คลาดเคลื่อน"
+
+#. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard_display_name
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_display_name
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_display_name
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_reason_display_name
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_approve_wizard_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_cancel_wizard_display_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_checklist_display_name
@@ -439,12 +498,14 @@ msgstr "วันที่สิ้นสุด"
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Enter equipment name"
-msgstr "ชื่อคุรุภัณฑ์"
+msgstr "ชื่อครุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_equip_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_equip_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_equip_id
 msgid "Equip"
-msgstr "คุรุภัณฑ์"
+msgstr "ครุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.actions.act_window,name:mems_equipment.action_equipment_list
@@ -453,19 +514,17 @@ msgstr "คุรุภัณฑ์"
 #: model:ir.ui.menu,name:mems_equipment.menu_equipment
 #: model:ir.ui.menu,name:mems_equipment.menu_equipment_list
 #: model:ir.ui.menu,name:mems_equipment.menu_sub_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_calibration_search
+#: model:ir.ui.view,arch_db:mems_equipment.view_pm_search
 msgid "Equipment"
-msgstr "คุรุภัณฑ์"
-
-#. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
-msgid "Equipment Form"
-msgstr "ฟอร์มคุรุภัณฑ์"
+msgstr "ครุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.actions.report,name:mems_equipment.action_report_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
+#: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Equipment Form"
-msgstr "ข้อมูลคุรุภัณฑ์"
+msgstr "ข้อมูลครุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_equip_id
@@ -481,7 +540,7 @@ msgstr "รายการอะไหล่"
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_list
 msgid "Equipment List"
-msgstr "รายการคุรุภัณฑ์"
+msgstr "รายการครุภัณฑ์"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_equip_name
@@ -519,21 +578,33 @@ msgstr "รายการเหตุผลการยกเลิก"
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
 msgid "Equipment Search"
-msgstr "ค้นหาคุรุภัณฑ์"
+msgstr "ค้นหาครุภัณฑ์"
 
 #. module: mems_equipment
-#: code:addons/mems_equipment/models/equipment.py:52
+#: code:addons/mems_equipment/models/equipment.py:55
 #: sql_constraint:mems.equipment:0
 #, python-format
 msgid "Equipment barcode is existed"
-msgstr "บาร์โค้ดของคุรุภัณฑ์นี้มีอยู่แล้ว!"
+msgstr "บาร์โค้ดของครุภัณฑ์นี้มีอยู่แล้ว!"
 
 #. module: mems_equipment
-#: code:addons/mems_equipment/models/equipment.py:51
+#: code:addons/mems_equipment/models/equipment.py:54
 #: sql_constraint:mems.equipment:0
 #, python-format
 msgid "Equipment code is existed"
-msgstr "รหัสของคุรุภัณฑ์นี้มีอยู่แล้ว!"
+msgstr "รหัสของครุภัณฑ์นี้มีอยู่แล้ว!"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Err. Value"
+msgstr "คลาดเคลื่อน"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_logo
+#: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
+#: model:ir.ui.view,arch_db:mems_equipment.pm_logo
+msgid "Fax"
+msgstr "แฟ็กซ์"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
@@ -541,6 +612,7 @@ msgid "Fax:"
 msgstr "แฟ็กซ์:"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_file_attachments
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_spec_attachments
 msgid "File Attachments"
 msgstr "ไฟล์แนบ"
@@ -556,12 +628,16 @@ msgstr "ข้อมูลทั่วไป"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_reason_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_approve_wizard_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_cancel_wizard_id
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_checklist_id
@@ -583,11 +659,17 @@ msgid "In Active"
 msgstr "พร้อมใช้"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_qty
+msgid "Integer"
+msgstr "จำนวน"
+
+#. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Inventory"
 msgstr "คลังสินค้า"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_is_done
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_line_is_done
 msgid "Is Done"
 msgstr "จบงานแล้ว"
@@ -597,11 +679,15 @@ msgstr "จบงานแล้ว"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration___last_update
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist___last_update
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line___last_update
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_reason___last_update
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_approve_wizard___last_update
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_cancel_wizard___last_update
@@ -616,6 +702,8 @@ msgstr "Last Modified on"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_write_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard_write_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_write_uid
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_write_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_write_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_write_uid
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_write_uid
@@ -636,6 +724,8 @@ msgstr "Last Updated by"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_approve_wizard_write_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_cancel_wizard_write_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_cal_complete_wizard_write_date
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_write_date
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_write_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_write_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_adjust_wizard_write_date
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_write_date
@@ -665,7 +755,7 @@ msgstr "MEMs Equipment"
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Make to inactive"
-msgstr "ยกเลิกคุรุภัณฑ์/ตัดจ่าย"
+msgstr "ยกเลิกครุภัณฑ์/ตัดจ่าย"
 
 #. module: mems_equipment
 #: model:res.groups,name:mems_equipment.group_equipment_manager
@@ -701,8 +791,10 @@ msgid "Model Name"
 msgstr "ชื่อรุ่น"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_name
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_reason_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_checklist_name
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_name
@@ -711,7 +803,9 @@ msgstr "ชื่อรุ่น"
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_qrcode
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
+#: model:ir.ui.view,arch_db:mems_equipment.view_calibration_search
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
+#: model:ir.ui.view,arch_db:mems_equipment.view_pm_search
 msgid "Name"
 msgstr "ชื่อ"
 
@@ -721,9 +815,10 @@ msgid "No Warranty"
 msgstr "ไม่มีประกัน"
 
 #. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
 msgid "No."
-msgstr "ลำดับ"
+msgstr "เลขที่"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_note
@@ -778,13 +873,9 @@ msgid "PM Checklist List"
 msgstr "รายการบำรุงรักษา"
 
 #. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.view_pm_form
-msgid "PM Form"
-msgstr "ฟอร์มบำรุงรักษา"
-
-#. module: mems_equipment
 #: model:ir.actions.report,name:mems_equipment.action_report_pm
 #: model:ir.ui.view,arch_db:mems_equipment.pm_form
+#: model:ir.ui.view,arch_db:mems_equipment.view_pm_form
 msgid "PM Form"
 msgstr "แบบฟอร์มบำรุงรักษา"
 
@@ -818,14 +909,34 @@ msgid "PM Name"
 msgstr "ชื่อ"
 
 #. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_pm_search
+msgid "PM Search"
+msgstr "PM Search"
+
+#. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_part_id
 msgid "Part"
 msgstr "อะไหล่"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
+msgid "Part History"
+msgstr "ประวัติการเบิกอะไหล่"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_line
+msgid "Part History Line"
+msgstr "ประวัติการเบิกอะไหล่"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
 msgid "Part Items"
-msgstr "รายการอะไหล่"
+msgstr "อะไหล่ที่ใช้"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Passed"
+msgstr "Passed"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
@@ -858,6 +969,11 @@ msgstr "พิมพ์"
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_qty
 msgid "Qty"
 msgstr "จำนวน"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_real_value
+msgid "Real Value"
+msgstr "ค่าที่แท้จริง"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_cancel_wizard_reason_id
@@ -905,6 +1021,11 @@ msgid "Receive Type List"
 msgstr "รายการประเภทการรับ"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_remark
+msgid "Remark"
+msgstr "หมายเหตุ"
+
+#. module: mems_equipment
 #: selection:mems.equipment,state:0
 msgid "Repair"
 msgstr "ซ่อม"
@@ -922,19 +1043,40 @@ msgid "Responsible By"
 msgstr "ผู้ดำเนินการ"
 
 #. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "S/N"
+msgstr "S/N"
+
+#. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_serial_no
 msgid "Serial No"
-msgstr "เลขเครื่อง"
+msgstr "S/N"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_form
 msgid "Serial No."
-msgstr "เลขเครื่อง"
+msgstr "S/N"
 
 #. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
 msgid "Serial Number"
-msgstr "เลขเครื่อง"
+msgstr "S/N"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_service_type
+msgid "Service Type"
+msgstr "ซ่อมโดย"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_value
+msgid "Spec Value"
+msgstr "ค่าตาม spec."
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_checklist_value
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Spec. Value"
+msgstr "ค่าตาม spec."
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_start_date
@@ -947,6 +1089,7 @@ msgstr "วันที่เริ่มต้น"
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_state
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_state
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_state
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_pm_state
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_search
 msgid "State"
@@ -985,11 +1128,6 @@ msgid "Tax ID"
 msgstr "เลขประจำตัวผู้เสียภาษี"
 
 #. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
-msgid "Tax ID:"
-msgstr "เลขผู้เสียภาษี:"
-
-#. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.calibrate_logo
 #: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
 #: model:ir.ui.view,arch_db:mems_equipment.pm_logo
@@ -997,16 +1135,16 @@ msgid "Tel."
 msgstr "โทรศัพท์ :"
 
 #. module: mems_equipment
-#: model:ir.ui.view,arch_db:mems_equipment.calibrate_logo
-#: model:ir.ui.view,arch_db:mems_equipment.equipment_logo
-#: model:ir.ui.view,arch_db:mems_equipment.pm_logo
-msgid "Fax"
-msgstr "แฟ็กซ์"
-
-#. module: mems_equipment
 #: model:ir.ui.view,arch_db:mems_equipment.view_equipment_list
 msgid "Total Price"
 msgstr "รวมเงิน"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_checklist_unit
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_calibration_line_checklist_unit
+#: model:ir.ui.view,arch_db:mems_equipment.calibrate_form
+msgid "Unit"
+msgstr "หน่วย"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_unit_price
@@ -1022,6 +1160,7 @@ msgstr "หน่วยนับ"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_line_uom_id
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_uom_name
 msgid "Uom"
 msgstr "หน่วยนับ"
 
@@ -1029,6 +1168,23 @@ msgstr "หน่วยนับ"
 #: model:res.groups,name:mems_equipment.group_equipment_user
 msgid "User"
 msgstr "User"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_wo_date
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_wo_date
+msgid "WO Date"
+msgstr "วันที่ซ่อม"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
+msgid "WO History"
+msgstr "ประวัติการซ่อม"
+
+#. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_part_history_wo_name
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_wo_name
+msgid "WO Name"
+msgstr "เลขที่"
 
 #. module: mems_equipment
 #: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_warranty_end_date
@@ -1062,6 +1218,11 @@ msgid "Warranty Type"
 msgstr "ประกันสินค้า"
 
 #. module: mems_equipment
+#: model:ir.model.fields,field_description:mems_equipment.field_mems_equipment_wo_history_line
+msgid "Wo History Line"
+msgstr "ประวัติการซ่อม"
+
+#. module: mems_equipment
 #: model:ir.model,name:mems_equipment.model_mems_cal_approve_wizard
 msgid "mems.cal.approve.wizard"
 msgstr "mems.cal.approve.wizard"
@@ -1080,6 +1241,16 @@ msgstr "mems.cal.complete.wizard"
 #: model:ir.model,name:mems_equipment.model_mems_calibration
 msgid "mems.calibration"
 msgstr "mems.calibration"
+
+#. module: mems_equipment
+#: model:ir.model,name:mems_equipment.model_mems_calibration_checklist
+msgid "mems.calibration_checklist"
+msgstr "mems.calibration_checklist"
+
+#. module: mems_equipment
+#: model:ir.model,name:mems_equipment.model_mems_calibration_line
+msgid "mems.calibration_line"
+msgstr "mems.calibration_line"
 
 #. module: mems_equipment
 #: model:ir.model,name:mems_equipment.model_mems_equipment
@@ -1102,9 +1273,19 @@ msgid "mems.equipment_line"
 msgstr "mems.equipment_line"
 
 #. module: mems_equipment
+#: model:ir.model,name:mems_equipment.model_mems_equipment_part_history
+msgid "mems.equipment_part_history"
+msgstr "mems.equipment_part_history"
+
+#. module: mems_equipment
 #: model:ir.model,name:mems_equipment.model_mems_equipment_reason
 msgid "mems.equipment_reason"
 msgstr "mems.equipment_reason"
+
+#. module: mems_equipment
+#: model:ir.model,name:mems_equipment.model_mems_equipment_wo_history
+msgid "mems.equipment_wo_history"
+msgstr "mems.equipment_wo_history"
 
 #. module: mems_equipment
 #: model:ir.model,name:mems_equipment.model_mems_pm
@@ -1140,3 +1321,8 @@ msgstr "mems.pm_line"
 #: model:ir.model,name:mems_equipment.model_mems_receive_type
 msgid "mems.receive_type"
 msgstr "mems.receive_type"
+
+#. module: mems_equipment
+#: model:ir.ui.view,arch_db:mems_equipment.view_equipment_form
+msgid "ยกเลิก"
+msgstr "ยกเลิก"

@@ -11,6 +11,7 @@ class StockMove(models.Model):
         ('init', 'Initial'),
         ('receive', 'Receive'),
         ('issue', 'Issue'),
+        ('return', 'Return'),
         ('equipment', 'Equipment'),
         ('adjust', 'Adjust'),
     ], string='Doc Type')
@@ -27,4 +28,4 @@ class StockMove(models.Model):
         ('out', 'Out'),
         ('adjust', 'Adjust'),
     ], string='Move Type')
-    move_date = fields.Datetime('Move Date', default=datetime.now())
+    move_date = fields.Datetime('Move Date', default=fields.Date.today())

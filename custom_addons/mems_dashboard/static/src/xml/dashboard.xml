@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
   <t t-name="DashboardOverview">
       <div class="container-fluid dashboard">
-          <h1 class="mt-4 mb-4">คุรุภัณฑ์</h1>
+          <h1 class="mt-4 mb-4">ครุภัณฑ์</h1>
           <div class="row">
               <div class="col-lg-3">
                   <div class="panel card-dashboard card-success mb-5">

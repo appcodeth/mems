@@ -4,10 +4,12 @@ from datetime import datetime
 
 class Borrow(models.Model):
     _name = 'mems.borrow'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Name')
     equip_id = fields.Many2one('mems.equipment', string='Equipment', required=True, domain=[('state', '=', 'active')])
     department_id = fields.Many2one('mems.department', string='Department', required=True)
-    borrow_date = fields.Date('Borrow Date', required=True, default=datetime.now())
+    borrow_date = fields.Date('Borrow Date', required=True, default=fields.Date.today())
     expect_date = fields.Date('Expected Date')
     restore_date = fields.Date('Restore Date')
     duration_day = fields.Integer('Duration Day', compute='cal_duration_day')

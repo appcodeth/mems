@@ -5,3 +5,9 @@ access_workorder_manager,mems.workorder,model_mems_workorder,group_repair_manage
 access_workorder_line_all,mems.workorder_line,model_mems_workorder_line,base.group_user,1,0,0,0
 access_workorder_line_user,mems.workorder_line,model_mems_workorder_line,group_repair_user,1,0,0,0
 access_workorder_line_manager,mems.workorder_line,model_mems_workorder_line,group_repair_manager,1,1,1,1
+access_workorder_expense_all,mems.workorder_expense,model_mems_workorder_expense,base.group_user,1,0,0,0
+access_workorder_expense_user,mems.workorder_expense,model_mems_workorder_expense,group_repair_user,1,0,0,0
+access_workorder_expense_manager,mems.workorder_expense,model_mems_workorder_expense,group_repair_manager,1,1,1,1
+access_sr_all,mems.sr,model_mems_sr,base.group_user,1,0,0,0
+access_sr_user,mems.sr,model_mems_sr,group_repair_user,1,0,0,0
+access_sr_manager,mems.sr,model_mems_sr,group_repair_manager,1,1,1,1

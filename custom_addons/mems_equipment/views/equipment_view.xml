@@ -123,6 +123,29 @@
                                 </tree>
                             </field>
                         </page>
+                        <page string="Part History">
+                            <field name="part_history_line" readonly="1">
+                                <tree create="false" delete="false">
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="wo_name"/>
+                                    <field name="wo_date"/>
+                                    <field name="qty"/>
+                                    <field name="uom_name"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="WO History">
+                            <field name="wo_history_line" readonly="1">
+                                <tree create="false" delete="false">
+                                    <field name="wo_name"/>
+                                    <field name="wo_date"/>
+                                    <field name="service_type"/>
+                                    <field name="amount_total"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
                         <page string="PM History">
                             <field name="pm_line" readonly="1">
                                 <tree create="false" delete="false">

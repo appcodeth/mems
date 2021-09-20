@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20201204\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 14:00+0000\n"
-"PO-Revision-Date: 2021-08-16 14:00+0000\n"
+"POT-Creation-Date: 2021-09-20 13:50+0000\n"
+"PO-Revision-Date: 2021-09-20 13:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "${object.supplier_id.name} ใบสั่งซื้อ (Ref ${object.
 #. module: mems_purchase
 #: model:mail.template,body_html:mems_purchase.mail_template_purchase_form
 msgid "<?xml version=\"1.0\"?>\n"
-"<data><p>เรียน ${object.supplier_id.name}</p>\n"
+"<data><p>Dear ${object.supplier_id.name}</p>\n"
 "                <p>\n"
 "                    Here is your purchase\n"
 "                    <strong>${object.name}</strong>\n"
@@ -39,13 +39,13 @@ msgid "<?xml version=\"1.0\"?>\n"
 "                <p>Thank you</p>\n"
 "            </data>"
 msgstr "<?xml version=\"1.0\"?>\n"
-"<data><p>เรียน ${object.supplier_id.name}</p>\n"
+"<data><p>Dear ${object.supplier_id.name}</p>\n"
 "                <p>\n"
-"                    เราส่งใบสั่งซื้อสินค้า ตามไฟล์แนบ\n"
+"                    Here is your purchase\n"
 "                    <strong>${object.name}</strong>\n"
 "                </p>\n"
-"                <p>สอบถามข้อมูลเพิ่มเติม สามารถตอบกลับได้ที่อีเมลนี้</p>\n"
-"                <p>ขอบคุณ</p>\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you</p>\n"
 "            </data>"
 
 #. module: mems_purchase
@@ -122,14 +122,10 @@ msgstr "ที่อยู่"
 #. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_line_amount
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_line_amount
-msgid "Amount"
-msgstr "รวมเงิน"
-
-#. module: mems_purchase
 #: selection:mems.purchase,discount_type:0
 #: selection:mems.rfq,discount_type:0
 msgid "Amount"
-msgstr "เงินสด"
+msgstr "รวมเงิน"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
@@ -243,15 +239,11 @@ msgstr "เครดิต"
 
 #. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_date_order
-#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
-msgid "Date Order"
-msgstr "วันที่ซื้อ"
-
-#. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_date_order
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
 msgid "Date Order"
-msgstr "วันที่"
+msgstr "วันที่ซื้อ"
 
 #. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_date_payment
@@ -367,7 +359,9 @@ msgstr "วันที่ครบกำหนด"
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_fax
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_fax
 #: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_logo
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_logo
 msgid "Fax"
 msgstr "แฟ็กซ์"
 
@@ -469,7 +463,7 @@ msgstr "ข้อมูล"
 #: model:ir.ui.view,arch_db:mems_purchase.view_purchase_search
 #: model:ir.ui.view,arch_db:mems_purchase.view_rfq_search
 msgid "Name"
-msgstr "เลขที่"
+msgstr "ชื่อ"
 
 #. module: mems_purchase
 #: selection:mems.purchase,discount_type:0
@@ -561,15 +555,11 @@ msgid "Pay Receive"
 msgstr "จำนวนเงิน"
 
 #. module: mems_purchase
-#: model:ir.ui.menu,name:mems_purchase.menu_sub_payment
-#: model:ir.ui.view,arch_db:mems_purchase.view_wizard_payment_form
-#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
-msgid "Payment"
-msgstr "ชำระเงิน"
-
-#. module: mems_purchase
 #: model:ir.actions.act_window,name:mems_purchase.action_payment_list
 #: model:ir.ui.menu,name:mems_purchase.menu_payment_list
+#: model:ir.ui.menu,name:mems_purchase.menu_sub_payment
+#: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
+#: model:ir.ui.view,arch_db:mems_purchase.view_wizard_payment_form
 msgid "Payment"
 msgstr "การชำระเงิน"
 
@@ -643,13 +633,9 @@ msgstr "พิมพ์"
 
 #. module: mems_purchase
 #: model:ir.actions.act_window,name:mems_purchase.action_purchase_list
-msgid "Purchase"
-msgstr "ใบสั่งซื้อ"
-
-#. module: mems_purchase
 #: model:ir.ui.menu,name:mems_purchase.menu_purchase
 msgid "Purchase"
-msgstr "การซื้อ"
+msgstr "ใบสั่งซื้อ"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.view_purchase_form
@@ -769,7 +755,7 @@ msgstr "รายการใบขอราคา"
 #: model:ir.ui.view,arch_db:mems_purchase.view_purchase_search
 #: model:ir.ui.view,arch_db:mems_purchase.view_rfq_search
 msgid "State"
-msgstr "สถานะ"
+msgstr "จังหวัด"
 
 #. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_state
@@ -845,14 +831,6 @@ msgstr "โทรศัพท์ :"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
-#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_logo
-#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
-#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_logo
-msgid "Fax"
-msgstr "แฟ็กซ์"
-
-#. module: mems_purchase
-#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
 #: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
 msgid "Total"
 msgstr "รวมเงิน"
@@ -860,15 +838,11 @@ msgstr "รวมเงิน"
 #. module: mems_purchase
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_purchase_amount_total
 #: model:ir.model.fields,field_description:mems_purchase.field_mems_rfq_amount_total
+#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
+#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
 #: model:ir.ui.view,arch_db:mems_purchase.view_payment_list
 msgid "Total Amount"
 msgstr "จำนวนเงิน"
-
-#. module: mems_purchase
-#: model:ir.ui.view,arch_db:mems_purchase.purchase_form_body
-#: model:ir.ui.view,arch_db:mems_purchase.rfq_form_body
-msgid "Total Amount"
-msgstr "จำนวนเงินรวมทั้งสิ้น"
 
 #. module: mems_purchase
 #: model:ir.ui.view,arch_db:mems_purchase.view_rfq_list

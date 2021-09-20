@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_return_search">
+        <field name="name">return.search</field>
+        <field name="model">mems.return</field>
+        <field name="arch" type="xml">
+            <search string="Return Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_return_list">
+        <field name="name">return.list</field>
+        <field name="model">mems.return</field>
+        <field name="arch" type="xml">
+            <tree string="Return List">
+                <field name="name"/>
+                <field name="date_rtn"/>
+                <field name="doc_no"/>
+                <field name="amount_qty"/>
+                <field name="amount_total"/>
+                <field name="state" widget="labelStatus"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_return_form">
+        <field name="name">return.form</field>
+        <field name="model">mems.return</field>
+        <field name="arch" type="xml">
+            <form string="Return Form">
+                <header attrs="{'invisible': [('id','=',False)]}">
+                    <field name="state" invisible="1"/>
+                    <button string="Approve" class="oe_highlight" type="object" name="do_return_approve" attrs="{'invisible': [('state', 'in', ['complete','cancel'])]}"/>
+                    <button string="Cancel" type="object" name="do_return_cancel" attrs="{'invisible': [('state', 'in', ['complete','cancel'])]}"/>
+                    <button string="Print" type="object" name="do_return_print"/>
+                </header>
+                <sheet>
+                    <h1 attrs="{'invisible': [('name', '=', False)]}">
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="issue_id" domain="[('state', '=', 'complete')]"/>
+                            <field name="doc_no"/>
+                        </group>
+                        <group>
+                            <field name="date_rtn"/>
+                            <field name="user_id"/>
+                        </group>
+                        <templates attrs="{'invisible': [('state', 'not in', ['cancel'])]}">
+                            <t t-name="ribbon-box">
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-red">
+                                        <field name="state" readonly="1"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                        <templates attrs="{'invisible': [('state', 'not in', ['complete'])]}">
+                            <t t-name="ribbon-box">
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-green">
+                                        <field name="state" readonly="1"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </group>
+                    <notebook>
+                        <page string="Return Line">
+                            <field name="return_line">
+                                <tree editable="bottom">
+                                    <field name="part_id" width="300px" options="{'no_quick_create':True,'no_create_edit':True}"/>
+                                    <field name="qty"/>
+                                    <field name="uom_id"/>
+                                    <field name="price" width="250px"/>
+                                    <field name="amount" force_save="1" width="150px"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group>
+                        <group class="no-height">
+                            <field name="remark" placeholder="Add a remark..."/>
+                        </group>
+                        <group class="oe_subtotal_footer oe_right no-height" colspan="2">
+                            <field name="amount_qty" force_save="1"/>
+                            <field name="amount_tax" force_save="1"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="amount_total"/>
+                            </div>
+                            <field name="amount_total" nolabel="1" force_save="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_return_list">
+        <field name="name">Return</field>
+        <field name="res_model">mems.return</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first return</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_return_list" parent="mems_inventory.menu_sub_transfer" name="Return" action="action_return_list"/>
+</odoo>

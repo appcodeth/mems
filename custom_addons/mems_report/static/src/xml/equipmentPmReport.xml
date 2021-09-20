@@ -35,11 +35,11 @@
                             <th>เลขที่ PM</th>
                             <th class="text-center">วันที่เริ่มต้น</th>
                             <th class="text-center">วันที่สิ้นสุด</th>
-                            <th>รหัสคุรุภัณฑ์</th>
-                            <th>คุรุภัณฑ์</th>
+                            <th>รหัสครุภัณฑ์</th>
+                            <th>ครุภัณฑ์</th>
                             <th>ประเภท</th>
                             <th>ยี่ห้อ/รุ่น</th>
-                            <th>เลขเครื่อง S/N</th>
+                            <th>S/N</th>
                             <th class="text-center">ผู้รับเรื่อง</th>
                         </tr>
                     </thead>

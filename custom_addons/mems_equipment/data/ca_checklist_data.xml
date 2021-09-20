@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="mems.calibration_checklist" id="ca_check01">
+            <field name="name">ปริมาณไฟฟ้าเข้า (+/-0.5v)</field>
+            <field name="value">0.5</field>
+            <field name="unit">Volt</field>
+        </record>
+        <record model="mems.calibration_checklist" id="ca_check02">
+            <field name="name">ความคลาดเคลื่อนของหน้าจอ</field>
+            <field name="value">0.01</field>
+            <field name="unit">%</field>
+        </record>
+        <record model="mems.calibration_checklist" id="ca_check03">
+            <field name="name">อัตราทนทานแรงดัน</field>
+            <field name="value">0.25</field>
+            <field name="unit">NA</field>
+        </record>
+        <record model="mems.calibration_checklist" id="ca_check04">
+            <field name="name">ปริมาณไฟฟ้าหัวจ่าย (ไม่เกิน 15mA)</field>
+            <field name="value">15.0</field>
+            <field name="unit">mA</field>
+        </record>
+        <record model="mems.calibration_checklist" id="ca_check05">
+            <field name="name">อัตราการทนแรงบิด</field>
+            <field name="value">1500.0</field>
+            <field name="unit">Nm</field>
+        </record>
+    </data>
+</odoo>

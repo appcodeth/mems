@@ -4,12 +4,14 @@ from datetime import datetime
 
 class Restore(models.Model):
     _name = 'mems.restore'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Name')
     borrow_id = fields.Many2one('mems.borrow', string='Borrow No.', domain=[('state', '=', 'borrow')])
     department = fields.Char('Department', readonly=True, store=True)
     equip_id = fields.Many2one('mems.equipment', related='borrow_id.equip_id', string='Equipment')
     borrow_date = fields.Date('Borrow Date', related='borrow_id.expect_date', readonly=True)
-    restore_date = fields.Date('Restore Date', default=datetime.now())
+    restore_date = fields.Date('Restore Date', default=fields.Date.today())
     over_day = fields.Integer('Over Day', compute='cal_duration_day')
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -36,7 +38,8 @@ class Restore(models.Model):
             if r.borrow_date and r.restore_date:
                 restore_date = fields.Datetime.from_string(r.restore_date)
                 borrow_date = fields.Datetime.from_string(r.borrow_date)
-                r.over_day = (restore_date - borrow_date).days
+                days = (restore_date - borrow_date).days
+                r.over_day = 0 if days < 0 else days
             else:
                 r.over_day = 0
 

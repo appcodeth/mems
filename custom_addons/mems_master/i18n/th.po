@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20201204\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 06:24+0000\n"
-"PO-Revision-Date: 2021-08-17 06:24+0000\n"
+"POT-Creation-Date: 2021-09-20 13:51+0000\n"
+"PO-Revision-Date: 2021-09-20 13:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -218,8 +218,9 @@ msgstr "รหัส"
 
 #. module: mems_master
 #: model:ir.model,name:mems_master.model_res_company
+#: model:ir.ui.menu,name:mems_master.menu_action_res_company_form
 msgid "Companies"
-msgstr "Companies"
+msgstr "บริษัท"
 
 #. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_company_id
@@ -360,6 +361,7 @@ msgstr "ประเภท"
 #. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_department_email
 #: model:ir.model.fields,field_description:mems_master.field_mems_supplier_email
+#: model:ir.ui.view,arch_db:mems_master.view_users_form_simple_modif
 msgid "Email"
 msgstr "อีเมล"
 
@@ -391,12 +393,13 @@ msgstr "เท่ากับหน่วยอ้างอิง"
 #. module: mems_master
 #: selection:mems.stock_move,doc_type:0
 msgid "Equipment"
-msgstr "คุรุภัณฑ์"
+msgstr "ครุภัณฑ์"
 
 #. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_department_fax
 #: model:ir.model.fields,field_description:mems_master.field_mems_supplier_fax
 #: model:ir.model.fields,field_description:mems_master.field_res_company_fax
+#: model:ir.ui.view,arch_db:mems_master.form_logo
 msgid "Fax"
 msgstr "แฟ็กซ์"
 
@@ -665,6 +668,11 @@ msgid "Phone"
 msgstr "โทรศัพท์"
 
 #. module: mems_master
+#: selection:mems.spare_part,type:0
+msgid "Product"
+msgstr "สินค้า"
+
+#. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_product_code
 msgid "Product Code"
 msgstr "รหัสสินค้า"
@@ -675,14 +683,14 @@ msgid "Product ID"
 msgstr "รหัสสินค้า"
 
 #. module: mems_master
-#: code:addons/mems_master/models/spare_part.py:27
+#: code:addons/mems_master/models/spare_part.py:31
 #: sql_constraint:mems.spare_part:0
 #, python-format
 msgid "Product barcode is existed"
 msgstr "บาร์โค้ดของสินค้านี้มีอยู่แล้ว!"
 
 #. module: mems_master
-#: code:addons/mems_master/models/spare_part.py:26
+#: code:addons/mems_master/models/spare_part.py:30
 #: sql_constraint:mems.spare_part:0
 #, python-format
 msgid "Product code is existed"
@@ -691,7 +699,7 @@ msgstr "รหัสของสินค้านี้มีอยู่แล
 #. module: mems_master
 #: model:ir.ui.menu,name:mems_master.menu_sub_purchase
 msgid "Purchase"
-msgstr "การซื้อ"
+msgstr "จัดซื้อ"
 
 #. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_stock_move_purchase_qty
@@ -725,6 +733,11 @@ msgid "Reference Type"
 msgstr "การอ้างอิง"
 
 #. module: mems_master
+#: selection:mems.stock_move,doc_type:0
+msgid "Return"
+msgstr "Return"
+
+#. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_res_company_rub_image
 msgid "Rubber"
 msgstr "ตราประทับ"
@@ -733,6 +746,11 @@ msgstr "ตราประทับ"
 #: selection:mems.bank_account,bank_type:0
 msgid "Saving"
 msgstr "ออมทรัพย์"
+
+#. module: mems_master
+#: selection:mems.spare_part,type:0
+msgid "Service"
+msgstr "บริการ"
 
 #. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_stock_location_shelf_no
@@ -761,13 +779,9 @@ msgid "Spare Part"
 msgstr "อะไหล่"
 
 #. module: mems_master
-#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
-msgid "Spare Part Form"
-msgstr "ฟอร์มอะไหล่"
-
-#. module: mems_master
-#: model:ir.ui.view,arch_db:mems_master.form_body
 #: model:ir.actions.report,name:mems_master.action_report_spare_part
+#: model:ir.ui.view,arch_db:mems_master.form_body
+#: model:ir.ui.view,arch_db:mems_master.view_spare_part_form
 msgid "Spare Part Form"
 msgstr "ข้อมูลอะไหล่"
 
@@ -864,12 +878,8 @@ msgid "Total Qty"
 msgstr "จำนวนรวม"
 
 #. module: mems_master
-#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_type
-msgid "Type"
-msgstr "ประเภท"
-
-#. module: mems_master
 #: model:ir.model.fields,field_description:mems_master.field_mems_spare_part_type
+#: model:ir.model.fields,field_description:mems_master.field_mems_supplier_type
 msgid "Type"
 msgstr "ชนิด"
 
@@ -895,7 +905,7 @@ msgstr "หน่วยนับ"
 
 #. module: mems_master
 #: model:ir.actions.act_window,name:mems_master.action_uom_category_list
-#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_id_2143
+#: model:ir.model.fields,field_description:mems_master.field_mems_uom_category_id_2144
 #: model:ir.ui.menu,name:mems_master.menu_uom_category_list
 msgid "Uom Category"
 msgstr "ประเภทหน่วยนับ"
@@ -939,12 +949,6 @@ msgstr "รหัสผู้ใช้"
 #: model:ir.model.fields,field_description:mems_master.field_mems_supplier_website
 msgid "Website"
 msgstr "เว็บไซต์"
-
-#. module: mems_master
-#: model:ir.model,name:mems_master.model_res_company
-#: model:ir.ui.menu,name:mems_master.menu_action_res_company_form
-msgid "Companies"
-msgstr "บริษัท"
 
 #. module: mems_master
 #: model:ir.model,name:mems_master.model_mems_bank
@@ -1015,13 +1019,3 @@ msgstr "mems.uom"
 #: model:ir.model,name:mems_master.model_mems_uom_category
 msgid "mems.uom_category"
 msgstr "mems.uom_category"
-
-#. module: mems_master
-#: selection:mems.spare_part,type:0
-msgid "Service"
-msgstr "บริการ"
-
-#. module: mems_master
-#: selection:mems.spare_part,type:0
-msgid "Product"
-msgstr "สินค้า"

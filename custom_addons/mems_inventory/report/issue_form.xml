@@ -103,7 +103,7 @@
                     <table width="100%">
                         <tr>
                             <td colspan="5" style="text-align:center">
-                                <h3 class="text-center mb-3">ใบเบิกอะไหล่ / Issue</h3>
+                                <h3 class="text-center mb-3">ใบเบิกอะไหล่</h3>
                             </td>
                         </tr>
                         <tr>
@@ -217,6 +217,12 @@
                                                     <td style="text-align:right">Total Qty</td>
                                                     <td style="text-align:right">
                                                         <span t-esc="'{0:,.2f}'.format(o.amount_qty)" style="margin:0"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right">VAT (7%)</td>
+                                                    <td style="text-align:right">
+                                                        <span t-esc="'{0:,.2f}'.format(o.amount_tax)" style="margin:0"/>
                                                     </td>
                                                 </tr>
                                                 <tr>

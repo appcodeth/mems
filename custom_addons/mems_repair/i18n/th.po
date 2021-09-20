@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20201204\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 07:55+0000\n"
-"PO-Revision-Date: 2021-08-16 07:55+0000\n"
+"POT-Creation-Date: 2021-09-20 13:38+0000\n"
+"PO-Revision-Date: 2021-09-20 13:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mems_repair
+#: model:mail.template,report_name:mems_repair.mail_template_sr_form
 #: model:mail.template,report_name:mems_repair.mail_template_workorder_form
 msgid "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
 msgstr "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
@@ -29,6 +30,27 @@ msgstr "${object.supplier_id.name} ใบแจ้งซ่อม (Ref ${object.
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "( Ref. PO:"
 msgstr "( อ้างอิง P/O:"
+
+#. module: mems_repair
+#: model:mail.template,body_html:mems_repair.mail_template_sr_form
+msgid "<?xml version=\"1.0\"?>\n"
+"<data><p>Dear ${object.responsible_id.name}</p>\n"
+"                <p>\n"
+"                    Here is your service request\n"
+"                    <strong>${object.name}</strong>\n"
+"                </p>\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you</p>\n"
+"            </data>"
+msgstr "<?xml version=\"1.0\"?>\n"
+"<data><p>Dear ${object.responsible_id.name}</p>\n"
+"                <p>\n"
+"                    Here is your service request\n"
+"                    <strong>${object.name}</strong>\n"
+"                </p>\n"
+"                <p>You can reply to this email if you have any questions.</p>\n"
+"                <p>Thank you</p>\n"
+"            </data>"
 
 #. module: mems_repair
 #: model:mail.template,body_html:mems_repair.mail_template_workorder_form
@@ -62,6 +84,7 @@ msgid "<span>Date</span>"
 msgstr "<span>วันที่</span>"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_form
 #: model:ir.ui.view,arch_db:mems_repair.workorder_form
 msgid "<span>Page:</span>\n"
 "                        <span class=\"page\"/>\n"
@@ -78,11 +101,13 @@ msgid "<span>Work By</span>"
 msgstr "<span>ผู้ดำเนินการซ่อม</span>"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "<strong>Brand:</strong>"
 msgstr "<strong>ยี่ห้อ:</strong>"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "<strong>Model:</strong>"
 msgstr "<strong>รุ่น:</strong>"
@@ -93,9 +118,15 @@ msgid "<strong>Remark</strong>"
 msgstr "<strong>หมายเหตุ</strong>"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "<strong>S/N:</strong>"
-msgstr "<strong>เลขเครื่อง:</strong>"
+msgstr "<strong>S/N:</strong>"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_footer
+msgid "<strong>หมายเหตุ</strong>"
+msgstr "<strong>หมายเหตุ</strong>"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
@@ -103,29 +134,19 @@ msgid "Add a remark..."
 msgstr "เพิ่มหมายเหตุ..."
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_amount
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_amount
+#: selection:mems.workorder,discount_type:0
 msgid "Amount"
 msgstr "รวมเงิน"
 
 #. module: mems_repair
-#: selection:mems.workorder,discount_type:0
-msgid "Amount"
-msgstr "เงินสด"
-
-#. module: mems_repair
-#: model:ir.ui.view,arch_db:mems_repair.view_workorder_list
-msgid "Amount Total"
-msgstr "จำนวนเงินรามทั้งสิ้น"
-
-#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
+#: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
+#: selection:mems.sr,state:0
 #: selection:mems.workorder,state:0
 msgid "Approve"
-msgstr "ซ่อม"
-
-#. module: mems_repair
-#: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
-msgid "Approve"
-msgstr "อนุมัติงานซ่อม"
+msgstr "อนุมัติ"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
@@ -133,6 +154,7 @@ msgid "Approve Close Task"
 msgstr "อนุมัติปิดงานซ่อม"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_brand
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_brand
 msgid "Brand"
 msgstr "ยี่ห้อ"
@@ -154,32 +176,44 @@ msgid "By Vendor"
 msgstr "บริษัทภายนอก"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_approve_wizard
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_cancel_wizard
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_approve_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_cancel_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_close_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_revise_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
+#: selection:mems.sr,state:0
 #: selection:mems.workorder,state:0
 msgid "Cancel"
 msgstr "ยกเลิก"
 
 #. module: mems_repair
-#: model:ir.actions.act_window,help:mems_repair.action_workorder_kanban
-#: model:ir.actions.act_window,help:mems_repair.action_workorder_list
-msgid "Click this to create the first workorder"
+#: model:ir.actions.act_window,help:mems_repair.action_sr_list
+msgid "Click this to create the first sr"
 msgstr "คลิกที่นี่เพื่อสร้างใบแจ้งซ่อม"
 
 #. module: mems_repair
+#: model:ir.actions.act_window,help:mems_repair.action_workorder_kanban
+#: model:ir.actions.act_window,help:mems_repair.action_workorder_list
+msgid "Click this to create the first workorder"
+msgstr "คลิกที่นี่เพื่อสร้างใบงานซ่อม"
+
+#. module: mems_repair
+#: selection:mems.sr,state:0
 #: selection:mems.workorder,state:0
 msgid "Close"
 msgstr "ปิดงาน"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_code
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_code
 msgid "Code"
 msgstr "รหัส"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_company_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_company_id
 msgid "Company"
 msgstr "บริษัท"
@@ -195,6 +229,8 @@ msgid "Complete Task"
 msgstr "อนุมัติซ่อมเสร็จ"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_approve_wizard
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_cancel_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_approve_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_cancel_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_close_wizard
@@ -203,42 +239,57 @@ msgid "Confirm"
 msgstr "ยืนยัน"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_create_uid
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_create_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_create_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_create_uid
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_create_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_create_uid
 msgid "Created by"
 msgstr "Created by"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_create_date
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_create_date
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_create_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_create_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard_create_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_create_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_create_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_create_date
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_create_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_create_date
 msgid "Created on"
 msgstr "Created on"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
+#: model:ir.ui.view,arch_db:mems_repair.sr_footer
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Date"
 msgstr "วันที่"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Date Plan"
 msgstr "วันที่คาดว่าจะเสร็จ"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_department_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_department_id
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_search
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Department"
 msgstr "แผนก"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_description
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_description
 msgid "Description"
 msgstr "รายละเอียด"
@@ -264,21 +315,27 @@ msgid "Discount Type"
 msgstr "ประเภทส่วนลด"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_display_name
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_display_name
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_display_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_display_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard_display_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_display_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_display_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_display_name
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_display_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_display_name
 msgid "Display Name"
 msgstr "Display Name"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_approve_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_approve_wizard
 msgid "Do you want to approve"
 msgstr "คุณต้องการอนุมัติ"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_cancel_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_cancel_wizard
 msgid "Do you want to cancel"
 msgstr "คุณต้องการยกเลิก"
@@ -294,25 +351,30 @@ msgid "Do you want to revise"
 msgstr "คุณต้องการกลับมาแก้ไข"
 
 #. module: mems_repair
+#: selection:mems.sr,state:0
 #: selection:mems.workorder,state:0
 msgid "Draft"
 msgstr "รออนุมัติ"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 msgid "Email"
 msgstr "อีเมล"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_id
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_search
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Equipment"
-msgstr "คุรุภัณฑ์"
+msgstr "ครุภัณฑ์"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_search
 msgid "Equipment Name"
-msgstr "ชื่อ"
+msgstr "ครุภัณฑ์"
 
 #. module: mems_repair
 #: selection:mems.workorder,tax_type:0
@@ -320,26 +382,49 @@ msgid "Exclude"
 msgstr "ราคาไม่รวมภาษี"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
+msgid "Expense"
+msgstr "ค่าใช้จ่าย"
+
+#. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_line
+msgid "Expense Line"
+msgstr "รายการค่าใช้จ่าย"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_logo
+#: model:ir.ui.view,arch_db:mems_repair.workorder_logo
+msgid "Fax"
+msgstr "แฟ็กซ์"
+
+#. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_date_finish
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_date_finish
 msgid "Finish Date"
 msgstr "วันที่ซ่อมเสร็จ"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_id
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_id
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_id
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_id
 msgid "ID"
 msgstr "ID"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_image
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_image
 msgid "Image"
 msgstr "รูปภาพ"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_image_attachments
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_image_attachments
 msgid "Image Attachment"
 msgstr "รูปภาพแนบ"
@@ -370,30 +455,42 @@ msgid "Item"
 msgstr "รายการ"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr___last_update
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard___last_update
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard___last_update
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard___last_update
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard___last_update
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard___last_update
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder___last_update
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard___last_update
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense___last_update
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line___last_update
 msgid "Last Modified on"
 msgstr "Last Modified on"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_write_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_write_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard_write_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_write_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_write_uid
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_write_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_write_uid
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_write_uid
 msgid "Last Updated by"
 msgstr "Last Updated by"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_write_date
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_write_date
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_write_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_write_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_close_wizard_write_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_write_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_write_date
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_write_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_write_date
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_write_date
 msgid "Last Updated on"
@@ -410,14 +507,22 @@ msgid "Manager"
 msgstr "Manager"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_model
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_model
 msgid "Model"
 msgstr "รุ่น"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_name
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_name
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_search
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_search
+msgid "Name"
+msgstr "ชื่อ"
+
+#. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_name
 msgid "Name"
 msgstr "เลขที่"
 
@@ -427,11 +532,14 @@ msgid "No Discount"
 msgstr "ไม่มีส่วนลด"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "No."
-msgstr "ลำดับ"
+msgstr "เลขที่"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_approve_wizard
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_cancel_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_approve_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_cancel_wizard
 #: model:ir.ui.view,arch_db:mems_repair.view_wo_close_wizard
@@ -440,6 +548,7 @@ msgid "OK"
 msgstr "ตกลง"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_date_order
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_date_order
 msgid "Order Date"
 msgstr "วันที่"
@@ -452,12 +561,12 @@ msgstr "เลขที่ใบสั่งซื้อ"
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_part_id
 msgid "Part"
-msgstr "รายการ"
+msgstr "อะไหล่"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Part Items"
-msgstr "รายการอะไหล่"
+msgstr "อะไหล่ที่ใช้"
 
 #. module: mems_repair
 #: selection:mems.workorder,discount_type:0
@@ -465,11 +574,13 @@ msgid "Percent"
 msgstr "เปอร์เซ็นต์"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_date_plan
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_date_plan
 msgid "Plan Date"
 msgstr "วันที่คาดว่าจะเสร็จ"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_price
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_price
 msgid "Price"
 msgstr "ราคา/หน่วย"
@@ -481,27 +592,32 @@ msgid "Price after discount"
 msgstr "จำนวนเงินหลังหักส่วนลด"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 msgid "Print"
 msgstr "พิมพ์"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Problem"
 msgstr "ปัญหา"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_problem_text
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_problem_text
 msgid "Problem Description"
 msgstr "ปัญหา / อาการเสีย"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_qty
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_qty
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Qty"
 msgstr "จำนวน"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_remark
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_remark
 msgid "Remark"
 msgstr "หมายเหตุ"
@@ -509,12 +625,18 @@ msgstr "หมายเหตุ"
 #. module: mems_repair
 #: model:ir.ui.menu,name:mems_repair.menu_repair
 msgid "Repair"
-msgstr "การซ่อม"
+msgstr "งานซ่อม"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 msgid "Repair Information"
 msgstr "รายละเอียดงาน"
+
+#. module: mems_repair
+#: model:ir.ui.menu,name:mems_repair.menu_sub_sr
+msgid "Request"
+msgstr "แจ้งซ่อม"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
@@ -522,10 +644,12 @@ msgid "Resolution"
 msgstr "แนวทางแก้ไข"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_responsible_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_responsible_id
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Responsible"
-msgstr "ชื่อช่างซ่อม"
+msgstr "ผู้รับผิดชอบ"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
@@ -533,16 +657,62 @@ msgid "Revise to Draft"
 msgstr "กลับไปแก้ไข"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_sn
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_sn
 msgid "S/N"
-msgstr "หมายเลขเครื่อง"
+msgstr "S/N"
+
+#. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_sr_id
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_sr_id
+msgid "SR ID"
+msgstr "SR ID"
+
+#. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_approve_wizard_sr_name
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_cancel_wizard_sr_name
+msgid "SR Name"
+msgstr "เลขที่"
+
+#. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_sr_no
+msgid "SR No."
+msgstr "ใบแจ้งซ่อม"
 
 #. module: mems_repair
 #: model:ir.ui.menu,name:mems_repair.menu_sub_service
 msgid "Service"
-msgstr "บริการ"
+msgstr "งานซ่อม"
 
 #. module: mems_repair
+#: model:ir.actions.act_window,name:mems_repair.action_sr_list
+#: model:ir.ui.menu,name:mems_repair.menu_sr_list
+msgid "Service Request"
+msgstr "ใบแจ้งซ่อม"
+
+#. module: mems_repair
+#: model:mail.template,subject:mems_repair.mail_template_sr_form
+msgid "Service Request (Ref ${object.name or 'n/a' })"
+msgstr "ใบแจ้งซ่อม (Ref ${object.name or 'n/a' })"
+
+#. module: mems_repair
+#: model:ir.actions.report,name:mems_repair.action_report_sr
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
+msgid "Service Request Form"
+msgstr "ฟอร์มใบแจ้งซ่อม"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_list
+msgid "Service Request List"
+msgstr "รายการใบแจ้งซ่อม"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_search
+msgid "Service Request Search"
+msgstr "Service Request Search"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_form
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 msgid "Service Responsibility"
 msgstr "ผู้ดำเนินการซ่อม"
@@ -559,11 +729,13 @@ msgid "Spare Parts"
 msgstr "รายการอะไหล่"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_sr_search
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_search
 msgid "State"
-msgstr "สถานะ"
+msgstr "จังหวัด"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_state
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_state
 msgid "Status"
 msgstr "สถานะ"
@@ -582,7 +754,7 @@ msgstr "แนวทางแก้ไข"
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_supplier_id
 msgid "Supplier"
-msgstr "บริษัท"
+msgstr "ผู้จัดจำหน่าย"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
@@ -590,6 +762,7 @@ msgid "Tax 7%"
 msgstr "ภาษี 7%"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_logo
 #: model:ir.ui.view,arch_db:mems_repair.workorder_logo
 msgid "Tax ID"
 msgstr "เลขประจำตัวผู้เสียภาษี"
@@ -610,6 +783,7 @@ msgid "Taxes"
 msgstr "ภาษีมูลค่าเพิ่ม"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_logo
 #: model:ir.ui.view,arch_db:mems_repair.workorder_logo
 msgid "Tel."
 msgstr "โทรศัพท์ :"
@@ -625,17 +799,20 @@ msgid "Total Amount"
 msgstr "จำนวนเงินรวมทั้งสิ้น"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_price
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_price
 msgid "Unit Price"
-msgstr "ราคา"
+msgstr "ราคาต่อหน่วย"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_uom_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_uom_id
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
 msgid "Uom"
 msgstr "หน่วยนับ"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_user_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_user_id
 #: model:res.groups,name:mems_repair.group_repair_user
 msgid "User"
@@ -647,36 +824,44 @@ msgid "Vendor"
 msgstr "ส่งซ่อม"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_warty_expire
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_warty_expire
 msgid "Warranty Expire"
 msgstr "วันที่หมดประกัน"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_sr_equip_warty_type
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_equip_warty_type
 msgid "Warranty Type"
-msgstr "สถานะประกัน"
+msgstr "ประกันสินค้า"
 
 #. module: mems_repair
+#: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_expense_wo_id
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_line_wo_id
 msgid "Wo"
-msgstr "ใบแจ้งซ่อม"
+msgstr "ใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_wo_line
 msgid "Wo Line"
-msgstr "รายการใบแจ้งซ่อม"
+msgstr "รายการใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.actions.act_window,name:mems_repair.action_workorder_list
 #: model:ir.ui.menu,name:mems_repair.menu_workorder_list
 msgid "Work Order"
-msgstr "ใบแจ้งซ่อม"
+msgstr "ใบงานซ่อม"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.view_workorder_calendar
+msgid "Work Order Calendar"
+msgstr "Work Order Calendar"
 
 #. module: mems_repair
 #: model:ir.actions.report,name:mems_repair.action_report_workorder
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_form
 msgid "Work Order Form"
-msgstr "แบบฟอร์มใบแจ้งซ่อม"
+msgstr "แบบฟอร์มใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_wo_id
@@ -686,23 +871,23 @@ msgstr "รหัส"
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_list
 msgid "Work Order List"
-msgstr "รายการใบแจ้งซ่อม"
+msgstr "รายการใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_workorder_approve_wizard_wo_name
 msgid "Work Order Name"
-msgstr "เลขที่ใบแจ้งซ่อม"
+msgstr "เลขที่ใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.view_workorder_search
 msgid "Work Order Search"
-msgstr "ค้นหาใบแจ้งซ่อม"
+msgstr "ค้นหาใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.actions.act_window,name:mems_repair.action_workorder_kanban
 #: model:ir.ui.menu,name:mems_repair.menu_workorder_kanban
 msgid "Work Order Tracking"
-msgstr "สถานะใบแจ้งซ่อม"
+msgstr "สถานะใบงานซ่อม"
 
 #. module: mems_repair
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_cancel_wizard_wo_id
@@ -717,6 +902,21 @@ msgstr "รหัส"
 #: model:ir.model.fields,field_description:mems_repair.field_mems_wo_revise_wizard_wo_name
 msgid "WorkOrder Name"
 msgstr "เลขที่"
+
+#. module: mems_repair
+#: model:ir.model,name:mems_repair.model_mems_sr
+msgid "mems.sr"
+msgstr "mems.sr"
+
+#. module: mems_repair
+#: model:ir.model,name:mems_repair.model_mems_sr_approve_wizard
+msgid "mems.sr.approve.wizard"
+msgstr "mems.sr.approve.wizard"
+
+#. module: mems_repair
+#: model:ir.model,name:mems_repair.model_mems_sr_cancel_wizard
+msgid "mems.sr.cancel.wizard"
+msgstr "mems.sr.cancel.wizard"
 
 #. module: mems_repair
 #: model:ir.model,name:mems_repair.model_mems_wo_cancel_wizard
@@ -744,11 +944,36 @@ msgid "mems.workorder.approve.wizard"
 msgstr "mems.workorder.approve.wizard"
 
 #. module: mems_repair
+#: model:ir.model,name:mems_repair.model_mems_workorder_expense
+msgid "mems.workorder_expense"
+msgstr "mems.workorder_expense"
+
+#. module: mems_repair
 #: model:ir.model,name:mems_repair.model_mems_workorder_line
 msgid "mems.workorder_line"
 msgstr "mems.workorder_line"
 
 #. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_footer
+msgid "ผู้ตรวจสอบ"
+msgstr "ผู้ตรวจสอบ"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_footer
+msgid "ผู้อนุมัติ"
+msgstr "ผู้อนุมัติ"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_footer
+msgid "ผู้แจ้งซ่อม"
+msgstr "ผู้แจ้งซ่อม"
+
+#. module: mems_repair
 #: model:ir.ui.view,arch_db:mems_repair.workorder_body
-msgid "ใบแจ้งซ่อม"
-msgstr "ใบแจ้งซ่อม"
+msgid "ใบงานซ่อม"
+msgstr "ใบงานซ่อม"
+
+#. module: mems_repair
+#: model:ir.ui.view,arch_db:mems_repair.sr_body
+msgid "ใบแจ้งซ่อม (Service Request)"
+msgstr "ใบแจ้งซ่อม (Service Request)"

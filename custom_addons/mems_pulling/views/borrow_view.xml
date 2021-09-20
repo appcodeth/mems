@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.ui.view" id="view_borrow_search">
+        <field name="name">borrow.search</field>
+        <field name="model">mems.borrow</field>
+        <field name="arch" type="xml">
+            <search string="Borrow Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="equip_id" string="Equipment" filter_domain="['|',('equip_id.code', 'ilike', self),('equip_id.name', 'ilike', self)]"/>
+                <field name="department_id" string="Department" filter_domain="[('department_id.name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_borrow_list">
         <field name="name">borrow.list</field>
         <field name="model">mems.borrow</field>
@@ -32,8 +44,8 @@
                     </h1>
                     <group>
                         <group>
-                            <field name="equip_id"/>
                             <field name="department_id"/>
+                            <field name="equip_id" domain="[('department_id', '=', department_id),('state', '=', 'active')]"/>
                             <field name="responsible_id" readonly="1"/>
                         </group>
                         <group>

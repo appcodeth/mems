@@ -13,9 +13,12 @@ class SparePartAdjustWizard(models.TransientModel):
     amount = fields.Float('Amount')
 
     def do_confirm_adjust(self):
-        if self.type == 'product':
+        part = self.env['mems.spare_part'].browse([self.product_id])
+
+        # check type of product
+        if part.type == 'product':
             # update current stock qty
-            self.env['mems.spare_part'].browse([self.product_id]).sudo().write({
+            part.sudo().write({
                 'stock_qty': self.new_qty
             })
 
@@ -29,7 +32,7 @@ class SparePartAdjustWizard(models.TransientModel):
                 'purchase_qty': self.new_qty,
                 'amount': self.amount,
                 'user_id': self.env.user.id,
-                'move_data': datetime.now(),
+                'move_date': datetime.now(),
                 'name': self.name,
                 'product_id': self.product_id,
                 'product_code': self.code,

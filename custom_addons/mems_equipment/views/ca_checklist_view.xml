@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_calibration_check_list">
+        <field name="name">calibration_checklist.list</field>
+        <field name="model">mems.calibration_checklist</field>
+        <field name="arch" type="xml">
+            <tree string="CA Checklist List">
+                <field name="name"/>
+                <field name="value"/>
+                <field name="unit"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_calibration_check_form">
+        <field name="name">calibration_checklist.form</field>
+        <field name="model">mems.calibration_checklist</field>
+        <field name="arch" type="xml">
+            <form string="CA Checklist Form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="value"/>
+                            <field name="unit"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_calibration_checklist">
+        <field name="name">CA Checklist</field>
+        <field name="res_model">mems.calibration_checklist</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first checklist</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_calibration_checklist" parent="mems_equipment.menu_sub_calibrate" name="Calibration Checklist" action="action_calibration_checklist"/>
+</odoo>

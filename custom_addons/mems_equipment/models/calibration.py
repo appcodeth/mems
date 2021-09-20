@@ -3,6 +3,8 @@ from odoo import models, fields, api
 
 class Calibration(models.Model):
     _name = 'mems.calibration'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Name')
     equip_id = fields.Many2one('mems.equipment', string='Equipment', domain=[('state', '=', 'active')])
     supplier_id = fields.Many2one('mems.supplier', string='Supplier')
@@ -14,7 +16,10 @@ class Calibration(models.Model):
         ('close', 'Close'),
     ], default='draft', string='State')
     responsible_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user.id)
+    remark = fields.Text('Remark')
+    file_attachments = fields.Many2many('ir.attachment', string='File Attachments')
     company_id = fields.Many2one('res.company', default=lambda self: self.env.user.company_id.id)
+    calibration_line = fields.One2many('mems.calibration_line', 'cal_id')
 
     @api.model
     def create(self, vals):
@@ -69,3 +74,23 @@ class Calibration(models.Model):
                 'default_cal_name': self.name,
             }
         }
+
+
+class CalibrationChecklist(models.Model):
+    _name = 'mems.calibration_checklist'
+    name = fields.Char('Name', required=True)
+    value = fields.Char('Spec Value')
+    unit = fields.Char('Unit')
+    description = fields.Text('Description')
+
+
+class CalibrationLine(models.Model):
+    _name = 'mems.calibration_line'
+    cal_id = fields.Many2one('mems.calibration', ondelete='cascade')
+    checklist_id = fields.Many2one('mems.calibration_checklist', ondelete='cascade')
+    checklist_value = fields.Char('Spec. Value', related='checklist_id.value', readonly=True, store=True)
+    checklist_unit = fields.Char('Unit', related='checklist_id.unit', readonly=True, store=True)
+    diff_value = fields.Char('Diff Value')
+    real_value = fields.Char('Real Value')
+    is_done = fields.Boolean('Is Done')
+    description = fields.Text('Description')

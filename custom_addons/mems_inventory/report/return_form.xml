@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="action_report_return"
+        string="Return Form"
+        model="mems.return"
+        report_type="qweb-pdf"
+        file="mems_inventory.return_form"
+        name="mems_inventory.return_form"
+        paperformat="mems_inventory.paperformat_inventory"
+        print_report_name="'Return - %s' % (object.name)"/>
+
+    <template id="return_logo">
+        <table class="table-logo" style="margin-bottom: 16pt">
+            <tr>
+                <td width="15%">
+                    <img src='/web/binary/company_logo' style="max-height:120px"/>
+                </td>
+                <td width="5%"/>
+                <td style="vertical-align: middle">
+                    <strong style="font-size:16px">
+                        <span t-esc="o.company_id.name"/>
+                    </strong>
+                    <div>
+                        <span t-esc="o.company_id.street"/>
+                        <span t-esc="o.company_id.street2"/>
+                    </div>
+                    <div>
+                        <span t-if="o.company_id.phone">
+                            Tel.
+                            <span t-esc="o.company_id.phone"/>
+                        </span>
+                        <span t-if="o.company_id.fax" style="margin: 0 10px">
+                            Fax
+                            <span t-esc="o.company_id.fax"/>
+                        </span>
+                        <span t-if="o.company_id.vat">
+                            Tax ID
+                            <span t-esc="o.company_id.vat"/>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="return_footer">
+        <tr>
+            <td colspan="5">
+                <table width="100%">
+                    <tr>
+                        <td width="33.3%">
+                            <table class="table-signature">
+                                <tr style="height:70px">
+                                    <td colspan="3"/>
+                                </tr>
+                                <tr>
+                                    <td width="60%">
+                                        <div class="line"/>
+                                        <span>Check By</span>
+                                    </td>
+                                    <td width="5%"/>
+                                    <td>
+                                        <div class="line"/>
+                                        <span>Date</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="33.3%" style="vertical-align:middle">
+                            <div style="text-align:center"/>
+                        </td>
+                        <td width="33.3%">
+                            <table class="table-signature">
+                                <tr style="height:70px">
+                                    <td colspan="2"/>
+                                    <td style="vertical-align:bottom"/>
+                                </tr>
+                                <tr>
+                                    <td width="60%">
+                                        <div class="line"/>
+                                        <span>Approved By</span>
+                                    </td>
+                                    <td width="5%"/>
+                                    <td>
+                                        <div class="line"/>
+                                        <span>Date</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </template>
+
+    <template id="return_form">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-call="mems_inventory.return_logo"/>
+                    <table width="100%">
+                        <tr>
+                            <td colspan="5" style="text-align:center">
+                                <h3 class="text-center mb-3">ใบคืนสินค้า</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" style="text-align:center">
+                                <img t-if="o.name" class="mb-4" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.name,250,30)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height:20px"/>
+                        </tr>
+                        <tr>
+                            <td width="70%">
+                                <table class="table-header">
+                                    <tr t-if="o.issue_id">
+                                        <th>Issue No</th>
+                                        <td>
+                                            <span t-esc="o.issue_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Issue Date</th>
+                                        <td>
+                                            <span t-if="o.issue_id.date_issue" t-esc="o.issue_id.date_issue"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.doc_no">
+                                        <th>Doc No</th>
+                                        <td>
+                                            <span t-esc="o.doc_no"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="30%">
+                                <table class="table-header">
+                                    <tr>
+                                        <th>Doc No</th>
+                                        <td>
+                                            <span t-esc="o.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Return Date</th>
+                                        <td>
+                                            <span t-if="o.date_rtn" t-esc="o.date_rtn"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table class="table table-line">
+                                    <thead>
+                                        <tr style="background-color: #0097e6; color: #fff">
+                                            <th width="5%">No.</th>
+                                            <th width="30%">Item</th>
+                                            <th width="15%" style="text-align:right">Qty</th>
+                                            <th width="10%">Uom</th>
+                                            <th width="15%" style="text-align:right">Price</th>
+                                            <th width="15%" style="text-align:right">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.return_line" t-as="line">
+                                            <tr>
+                                                <td>
+                                                    <span t-esc="line_index + 1"/>
+                                                </td>
+                                                <td>
+                                                    [<span t-esc="line.part_id.code"/>]
+                                                    <span t-esc="line.part_id.name"/>
+                                                </td>
+                                                <td style="text-align:right">
+                                                    <span t-esc="line.qty"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="line.uom_id.name"/>
+                                                </td>
+                                                <td style="text-align:right">
+                                                    <span t-esc="'{0:,.2f}'.format(line.price)"/>
+                                                </td>
+                                                <td style="text-align:right">
+                                                    <span t-esc="'{0:,.2f}'.format(line.amount)"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <strong>Remark</strong>
+                                            </div>
+                                            <span t-esc="o.remark"/>
+                                        </td>
+                                        <td width="40%">
+                                            <table class="table-sum-noline" width="100%">
+                                                <tr>
+                                                    <td style="text-align:right">Total Qty</td>
+                                                    <td style="text-align:right">
+                                                        <span t-esc="'{0:,.2f}'.format(o.amount_qty)" style="margin:0"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right">VAT (7%)</td>
+                                                    <td style="text-align:right">
+                                                        <span t-esc="'{0:,.2f}'.format(o.amount_tax)" style="margin:0"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:right">Total Amount</td>
+                                                    <td style="text-align:right">
+                                                        <span t-esc="'{0:,.2f}'.format(o.amount_total)" style="margin:0"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <t t-call="mems_inventory.return_footer"/>
+                    </table>
+                    <div class="footer">
+                        <span>Page:</span>
+                        <span class="page"/>
+                        <span>of</span>
+                        <span class="topage"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

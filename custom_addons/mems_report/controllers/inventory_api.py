@@ -59,14 +59,16 @@ class InventoryApi(http.Controller):
                     when mv.doc_type='init' then 'กำหนดค่าเริ่มต้น'
                     when mv.doc_type='adjust' then 'ปรับยอด'
                     when mv.doc_type='receive' then 'รับเข้า'
+                    when mv.doc_type='return' then 'รับคืน'
                     when mv.doc_type='issue' then 'เบิกออก' end as doc_type_desc,
                 case when mv.move_type='in' then mv.qty else 0 end as int_qty,
                 case when mv.move_type='out' then mv.qty else 0 end as out_qty,
                 case when mv.move_type='adjust' then mv.qty else 0 end as adjust_qty,
-                (select stock_qty from mems_spare_part sp where sp.code=mv.product_code) as stock_qty
+                (select stock_qty from mems_spare_part sp where sp.code=mv.product_code) as stock_qty,
+                mv.move_date as mv_date
             from mems_stock_move mv
                 left join mems_uom uom on mv.uom_id=uom.id
-            order by product_code, move_date asc
+            order by product_code, mv_date asc
         """
         request.cr.execute(sql)
         results = request.cr.fetchall()

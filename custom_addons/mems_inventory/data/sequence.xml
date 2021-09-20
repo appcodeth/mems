@@ -19,5 +19,14 @@
             <field name="number_next">1</field>
             <field name="number_increment">1</field>
         </record>
+        <record id="seq_return01" model="ir.sequence">
+            <field name="name">Return No</field>
+            <field name="code">mems.return_no</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">RTN%(y)s%(month)s</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
     </data>
 </odoo>

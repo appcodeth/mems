@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record model="ir.ui.view" id="view_calibration_search">
+        <field name="name">calibration.search</field>
+        <field name="model">mems.calibration</field>
+        <field name="arch" type="xml">
+            <search string="Calibration Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="equip_id" string="Equipment" filter_domain="['|',('equip_id.code', 'ilike', self),('equip_id.name', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_calibration_list">
         <field name="name">calibration.list</field>
         <field name="model">mems.calibration</field>
@@ -40,6 +51,28 @@
                             <field name="start_date"/>
                             <field name="end_date"/>
                             <field name="responsible_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Calibrate Line">
+                            <field name="calibration_line">
+                                <tree editable="bottom">
+                                    <field name="checklist_id" width="350px"/>
+                                    <field name="checklist_value"/>
+                                    <field name="checklist_unit"/>
+                                    <field name="diff_value"/>
+                                    <field name="real_value"/>
+                                    <field name="is_done" width="250px"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group>
+                        <group>
+                            <field name="file_attachments" widget="many2many_binary"/>
+                        </group>
+                        <group>
+                            <field name="remark"/>
                         </group>
                     </group>
                 </sheet>

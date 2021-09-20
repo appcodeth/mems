@@ -6,8 +6,10 @@ TAX_RATE = 7
 
 class WorkOrder(models.Model):
     _name = 'mems.workorder'
+    _order = 'name desc'
+    _rec_name = 'name'
     name = fields.Char('Name')
-    date_order = fields.Date('Order Date', default=datetime.now())
+    date_order = fields.Date('Order Date', default=fields.Date.today())
     department_id = fields.Many2one('mems.department', string='Department', required=True)
     equip_id = fields.Many2one('mems.equipment', string='Equipment', required=True, domain=[('state', '=', 'active')])
     equip_code = fields.Char('Code', related='equip_id.code', readonly=True, store=True)
@@ -31,6 +33,7 @@ class WorkOrder(models.Model):
     po_id = fields.Many2one('mems.purchase', string='PO No.')
     date_plan = fields.Date('Plan Date')
     date_finish = fields.Date('Finish Date')
+    sr_no = fields.Char('SR No.')
     tax_rate = fields.Float('Tax Rate', default=7)
     tax_type = fields.Selection([
         ('include', 'Include'),
@@ -58,6 +61,7 @@ class WorkOrder(models.Model):
         ('close', 'Close'),
     ], string='Status', group_expand='_expand_groups', default='draft')
     wo_line = fields.One2many('mems.workorder_line', 'wo_id')
+    expense_line = fields.One2many('mems.workorder_expense', 'wo_id')
     issue_count = fields.Integer('Issue Count', compute='get_count_issue', readonly=True)
 
     @api.model
@@ -93,6 +97,34 @@ class WorkOrder(models.Model):
         subtotal = 0
         for r in self:
             for item in r.wo_line:
+                subtotal += item.amount
+
+        discount = 0
+        if self.discount_type == 'percent':
+            discount = (subtotal * self.discount_rate / 100)
+        elif self.discount_type == 'amount':
+            discount = self.amount_discount
+
+        price_after_discount = subtotal - discount
+
+        self.tax_rate = TAX_RATE
+        self.amount_tax = 0
+        self.amount_untaxed = subtotal
+        self.amount_after_discount = price_after_discount
+        self.amount_total = price_after_discount
+        if self.tax_type == 'include':
+            amount_exclude_tax = (price_after_discount * 100) / (100 + TAX_RATE)
+            self.amount_tax = price_after_discount - amount_exclude_tax
+            self.amount_total = price_after_discount
+        else:
+            self.amount_tax = (price_after_discount * TAX_RATE) / 100
+            self.amount_total = price_after_discount + self.amount_tax
+
+    @api.onchange('expense_line')
+    def get_total_expense_amount(self):
+        subtotal = 0
+        for r in self:
+            for item in r.expense_line:
                 subtotal += item.amount
 
         discount = 0
@@ -291,6 +323,25 @@ class WorkOrderLine(models.Model):
         if not self.qty:
             self.qty = 1
         self.amount = self.price * self.qty
+
+    @api.onchange('price', 'qty')
+    def price_qty_change(self):
+        if not self.qty:
+            self.qty = 1
+        if not self.price:
+            self.price = 0
+        self.amount = self.price * self.qty
+
+
+class WorkOrderExpenseLine(models.Model):
+    _name = 'mems.workorder_expense'
+    wo_id = fields.Many2one('mems.workorder', ondelete='cascade')
+    name = fields.Char('Name')
+    description = fields.Text('Description')
+    qty = fields.Float('Qty')
+    uom_id = fields.Many2one('mems.uom', string='Uom')
+    price = fields.Float('Price')
+    amount = fields.Float('Amount', readonly=True, store=True)
 
     @api.onchange('price', 'qty')
     def price_qty_change(self):

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_sr_search">
+        <field name="name">sr.search</field>
+        <field name="model">mems.sr</field>
+        <field name="arch" type="xml">
+            <search string="Service Request Search">
+                <field name="name" string="Name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="equip_id" string="Equipment" filter_domain="['|',('equip_id.code', 'ilike', self),('equip_id.name', 'ilike', self)]"/>
+                <field name="department_id" string="Department" filter_domain="[('department_id.name', 'ilike', self)]"/>
+                <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_sr_list">
+        <field name="name">sr.list</field>
+        <field name="model">mems.sr</field>
+        <field name="arch" type="xml">
+            <tree string="Service Request List">
+                <field name="name"/>
+                <field name="date_order"/>
+                <field name="equip_id"/>
+                <field name="department_id"/>
+                <field name="responsible_id"/>
+                <field name="state" widget="labelStatus"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_sr_form">
+        <field name="name">sr.form</field>
+        <field name="model">mems.sr</field>
+        <field name="arch" type="xml">
+            <form string="Service Request Form">
+                <header attrs="{'invisible': [('id','=',False)]}">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete" attrs="{'invisible': [('state', 'in', ['draft','cancel'])]}"/>
+                    <button string="Approve" class="btn-primary" type="object" name="do_sr_approve" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                    <button string="Cancel" type="object" name="do_sr_cancel" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+                    <button string="Email" type="object" name="do_sr_email" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+                    <button string="Print" type="object" name="do_sr_print"/>
+                </header>
+                <sheet>
+                    <h1 attrs="{'invisible': [('name', '=', False)]}">
+                        <field name="name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="department_id"/>
+                            <field name="equip_id" domain="[('department_id', '=', department_id),('state', '=', 'active')]"/>
+                            <field name="equip_code" force_save="1"/>
+                            <field name="equip_brand" force_save="1"/>
+                            <field name="equip_model" force_save="1"/>
+                            <field name="equip_sn"/>
+                            <field name="equip_warty_type"/>
+                            <field name="equip_warty_expire"/>
+                        </group>
+                        <group>
+                            <field name="equip_price"/>
+                            <field name="equip_image" widget="image" style="max-width:150px"/>
+                        </group>
+                    </group>
+                    <h2 class="o_horizontal_separator">Repair Information</h2>
+                    <group>
+                        <group>
+                            <field name="problem_text"/>
+                            <field name="image_attachments" widget="many2many_binary"/>
+                        </group>
+                        <group>
+                            <field name="date_order"/>
+                            <field name="user_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <h2 class="o_horizontal_separator">Service Responsibility</h2>
+                    <group>
+                        <group class="no-height">
+                            <field name="responsible_id"/>
+                        </group>
+                        <group>
+                            <field name="date_plan"/>
+                            <field name="date_finish"/>
+                        </group>
+                    </group>
+                    <templates attrs="{'invisible': [('state', 'not in', ['approve'])]}">
+                        <t t-name="ribbon-box">
+                            <div class="ribbon-wrapper">
+                                <div class="ribbon-green">
+                                    <field name="state" readonly="1"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                    <templates attrs="{'invisible': [('state', 'not in', ['cancel'])]}">
+                        <t t-name="ribbon-box">
+                            <div class="ribbon-wrapper">
+                                <div class="ribbon-red">
+                                    <field name="state" readonly="1"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sr_list">
+        <field name="name">Service Request</field>
+        <field name="res_model">mems.sr</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click this to create the first sr</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_sr_list" parent="mems_repair.menu_sub_sr" name="Service Request" action="action_sr_list"/>
+</odoo>
