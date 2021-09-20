@@ -34,7 +34,7 @@
         <field name="arch" type="xml">
             <form string="Service Request Form">
                 <header attrs="{'invisible': [('id','=',False)]}">
-                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete" attrs="{'invisible': [('state', 'in', ['draft','cancel'])]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete"/>
                     <button string="Approve" class="btn-primary" type="object" name="do_sr_approve" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
                     <button string="Cancel" type="object" name="do_sr_cancel" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
                     <button string="Email" type="object" name="do_sr_email" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
@@ -71,25 +71,16 @@
                             <field name="user_id" readonly="1"/>
                         </group>
                     </group>
-                    <h2 class="o_horizontal_separator">Service Responsibility</h2>
-                    <group>
-                        <group class="no-height">
-                            <field name="responsible_id"/>
-                        </group>
-                        <group>
-                            <field name="date_plan"/>
-                            <field name="date_finish"/>
-                        </group>
-                    </group>
-                    <templates attrs="{'invisible': [('state', 'not in', ['approve'])]}">
-                        <t t-name="ribbon-box">
-                            <div class="ribbon-wrapper">
-                                <div class="ribbon-green">
-                                    <field name="state" readonly="1"/>
-                                </div>
-                            </div>
-                        </t>
-                    </templates>
+                    <!--                    <h2 class="o_horizontal_separator">Service Responsibility</h2>-->
+                    <!--                    <group>-->
+                    <!--                        <group class="no-height">-->
+                    <!--                            <field name="responsible_id"/>-->
+                    <!--                        </group>-->
+                    <!--                        <group>-->
+                    <!--                            <field name="date_plan"/>-->
+                    <!--                            <field name="date_finish"/>-->
+                    <!--                        </group>-->
+                    <!--                    </group>-->
                     <templates attrs="{'invisible': [('state', 'not in', ['cancel'])]}">
                         <t t-name="ribbon-box">
                             <div class="ribbon-wrapper">

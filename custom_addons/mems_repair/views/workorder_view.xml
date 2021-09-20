@@ -36,7 +36,7 @@
         <field name="arch" type="xml">
             <form string="Work Order Form">
                 <header attrs="{'invisible': [('id','=',False)]}">
-                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete" attrs="{'invisible': [('state', 'in', ['draft','cancel'])]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,complete"/>
                     <button string="Approve" class="btn-primary" type="object" name="do_work_approve" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
                     <button string="Complete Task" class="oe_highlight" type="object" name="do_work_complete" attrs="{'invisible': [('state', 'not in', ['approve'])]}"/>
                     <button string="Approve Close Task" class="oe_highlight" type="object" name="do_workorder_close" attrs="{'invisible': [('state', 'not in', ['complete'])]}"/>
