@@ -114,7 +114,7 @@ odoo.define('mems_master.widgets', function(require) {
                     text = 'ยกเลิก';
                 } else if (this.value === 'close') {
                     cssClass = 'status-default';
-                    text = 'จบงาน';
+                    text = 'ซ่อมเสร็จ';
                 }
             } else if (this.model === 'mems.workorder') {
                 cssClass = '';
